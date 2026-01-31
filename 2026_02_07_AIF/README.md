@@ -1,131 +1,133 @@
-# AI Productivity Hacks for Leaders
+# KI-Produktivitaets-Hacks fuer Fuehrungskraefte
 
-**Start Here** | CAS AI in Finance | HWZ Zurich
+**Start hier** | CAS AI in Finance | HWZ Zuerich
+
+[English Version](README.en.md)
 
 ---
 
 | | |
 |---|---|
-| **Date** | Saturday, February 7, 2026 |
-| **Time** | 13:00 - 16:45 |
-| **Instructor** | Thomas Winter |
-| **Module** | Applied AI |
+| **Datum** | Samstag, 7. Februar 2026 |
+| **Zeit** | 13:00 - 16:45 |
+| **Dozent** | Thomas Winter |
+| **Modul** | Applied AI |
 
 ---
 
-## What You'll Build
+## Was Sie aufbauen werden
 
-By the end of this session, you'll have a working personal productivity system:
+Am Ende dieser Session haben Sie ein funktionierendes persoenliches Produktivitaetssystem:
 
-1. **GitHub repository** — Your version-controlled knowledge base
-2. **Notion database** — Your searchable "second brain"
-3. **Writing style profile** — AI that writes like you
-4. **Company research document** — Structured business analysis
-5. **Working AI integrations** — GitHub + Notion + Claude
+1. **GitHub Repository** — Ihre versionskontrollierte Wissensbasis
+2. **Notion Datenbank** — Ihr durchsuchbares "Second Brain"
+3. **Schreibstil-Profil** — KI, die wie Sie schreibt
+4. **Unternehmensanalyse** — Strukturierte Business-Analyse
+5. **Funktionierende KI-Integrationen** — GitHub + Notion + Claude
 
-This isn't theory. You'll leave with a functioning system you can use Monday morning.
+Das ist keine Theorie. Sie verlassen den Kurs mit einem funktionierenden System, das Sie am Montag nutzen koennen.
 
 ---
 
-## Prerequisites (Complete Before Feb 7)
+## Voraussetzungen (vor dem 7. Februar erledigen)
 
-### Required Accounts
+### Erforderliche Accounts
 
-| Tool | Cost | Why | Sign Up |
-|------|------|-----|---------|
-| **GitHub** | Free | Knowledge repository | [github.com/signup](https://github.com/signup) |
-| **Notion** | Free | Second brain interface | [notion.so](https://notion.so) |
-| **Claude Pro** | $20/mo | AI with Notion write capability | [claude.ai](https://claude.ai) |
+| Tool | Kosten | Wozu | Anmeldung |
+|------|--------|------|-----------|
+| **GitHub** | Kostenlos | Wissens-Repository | [github.com/signup](https://github.com/signup) |
+| **Notion** | Kostenlos | Second Brain Interface | [notion.so](https://notion.so) |
+| **Claude Pro** | $20/Monat | KI mit Notion-Schreibzugriff | [claude.ai](https://claude.ai) |
 
-### Why Claude Pro?
+### Warum Claude Pro?
 
-We validated all major AI platforms for Notion integration:
+Wir haben alle grossen KI-Plattformen fuer die Notion-Integration validiert:
 
-| Platform | Read Notion | Write to Notion | Setup |
-|----------|-------------|-----------------|-------|
-| **Claude Pro** | Yes | Yes (native) | Simple |
-| ChatGPT Plus | Yes | No (needs custom GPT + API) | Complex |
-| Perplexity Pro | Yes | No (needs Make/Zapier) | Complex |
+| Plattform | Notion lesen | In Notion schreiben | Setup |
+|-----------|--------------|---------------------|-------|
+| **Claude Pro** | Ja | Ja (nativ) | Einfach |
+| ChatGPT Plus | Ja | Nein (braucht Custom GPT + API) | Komplex |
+| Perplexity Pro | Ja | Nein (braucht Make/Zapier) | Komplex |
 
-**Claude Pro is the only platform with native, web-based write capability to Notion.** This is essential for the hands-on exercises.
+**Claude Pro ist die einzige Plattform mit nativer, webbasierter Schreibfaehigkeit in Notion.** Dies ist essenziell fuer die praktischen Uebungen.
 
-### Optional (Recommended)
+### Optional (empfohlen)
 
-- **Wispr Flow** — Voice-to-text for rapid capture ([wispr.ai](https://wispr.ai))
-- **5-10 writing samples** — Emails, reports, LinkedIn posts (for your style profile)
+- **Wispr Flow** — Sprache-zu-Text fuer schnelle Erfassung ([wispr.ai](https://wispr.ai))
+- **5-10 Schreibproben** — E-Mails, Berichte, LinkedIn-Posts (fuer Ihr Stilprofil)
 
 ### Hardware
 
-- Laptop with modern browser (Chrome, Firefox, Safari, Edge)
-- Headphones (for voice exercises)
+- Laptop mit modernem Browser (Chrome, Firefox, Safari, Edge)
+- Kopfhoerer (fuer Sprachuebungen)
 
 ---
 
-## Pre-Work (15 minutes)
+## Vorbereitung (15 Minuten)
 
-Complete these before the session:
+Vor der Session erledigen:
 
-- [ ] Create GitHub account and verify email
-- [ ] Create Notion account
-- [ ] Subscribe to Claude Pro
-- [ ] Install Wispr Flow (optional)
-- [ ] Gather 5-10 writing samples in a folder
-- [ ] Fork this repository to your GitHub account
-
----
-
-## Session Structure
-
-| Time | Module | What You'll Do |
-|------|--------|----------------|
-| 13:00 | The Architecture | See the system in action, understand the components |
-| 13:30 | GitHub Knowledge Base | Build your repo structure |
-| 14:15 | Writing Style Profile | Generate your AI profile (Ruben Hassid method) |
-| 14:45 | *Break* | |
-| 15:00 | Notion Second Brain | Set up databases, connect to Claude |
-| 15:45 | Company Research | Use AI for structured business analysis |
-| 16:30 | Wrap-up | Next steps, Q&A |
+- [ ] GitHub-Account erstellen und E-Mail verifizieren
+- [ ] Notion-Account erstellen
+- [ ] Claude Pro abonnieren
+- [ ] Wispr Flow installieren (optional)
+- [ ] 5-10 Schreibproben in einem Ordner sammeln
+- [ ] Dieses Repository in Ihren GitHub-Account forken
 
 ---
 
-## Resources
+## Ablauf
 
-### Exercises
-- [exercises/](exercises/) — Step-by-step guides for each module
+| Zeit | Modul | Was Sie tun werden |
+|------|-------|---------------------|
+| 13:00 | Die Architektur | System in Aktion sehen, Komponenten verstehen |
+| 13:30 | GitHub Wissensbasis | Ihre Repo-Struktur aufbauen |
+| 14:15 | Schreibstil-Profil | Ihr KI-Profil generieren (Ruben Hassid Methode) |
+| 14:45 | *Pause* | |
+| 15:00 | Notion Second Brain | Datenbanken einrichten, mit Claude verbinden |
+| 15:45 | Unternehmensrecherche | KI fuer strukturierte Business-Analyse nutzen |
+| 16:30 | Abschluss | Naechste Schritte, Q&A |
+
+---
+
+## Ressourcen
+
+### Uebungen
+- [exercises/](exercises/) — Schritt-fuer-Schritt-Anleitungen pro Modul
 
 ### Prompts
-- [prompts/](prompts/) — Master prompts you'll use during the session
+- [prompts/](prompts/) — Master-Prompts fuer die Session
 
-### Templates
-- [templates/](templates/) — Starter files for your knowledge base
+### Vorlagen
+- [templates/](templates/) — Starter-Dateien fuer Ihre Wissensbasis
 
 ---
 
-## The System You're Building
+## Das System, das Sie aufbauen
 
 ```
-Voice Input (Wispr Flow)
+Spracheingabe (Wispr Flow)
         |
         v
-   Raw Content
+   Roher Content
         |
         v
-  GitHub (markdown)  <---->  Claude Pro  <---->  Notion (databases)
+  GitHub (Markdown)  <---->  Claude Pro  <---->  Notion (Datenbanken)
         |                        |
         v                        v
-Version-controlled          Classified,
-knowledge base              searchable
-                           second brain
+Versionskontrollierte       Klassifiziert,
+Wissensbasis                durchsuchbares
+                           Second Brain
 ```
 
-**Key principle:** Your knowledge is stored in portable markdown (not locked in proprietary tools). AI connects and classifies. Notion makes it searchable.
+**Kernprinzip:** Ihr Wissen liegt in portablem Markdown (nicht in proprietaeren Tools eingesperrt). KI verbindet und klassifiziert. Notion macht es durchsuchbar.
 
 ---
 
-## Questions?
+## Fragen?
 
-Contact the instructor or raise issues in this repository.
+Kontaktieren Sie den Dozenten oder erstellen Sie Issues in diesem Repository.
 
 ---
 
-*Last updated: January 31, 2026*
+*Zuletzt aktualisiert: 31. Januar 2026*
