@@ -46,10 +46,10 @@ We validated all major AI platforms for Notion integration:
 | Platform | Read Notion | Write to Notion | Setup |
 |----------|-------------|-----------------|-------|
 | **Claude Pro** | Yes | Yes (native) | Simple |
+| **Perplexity Pro** | Yes | Yes (native) | Simple |
 | ChatGPT Plus | Yes | No (needs custom GPT + API) | Complex |
-| Perplexity Pro | Yes | No (needs Make/Zapier) | Complex |
 
-**Claude Pro is the only platform with native, web-based write capability to Notion.** This is essential for the hands-on exercises.
+**Claude Pro and Perplexity Pro** both offer native Notion write capability. For this session we recommend Claude Pro for its Projects feature (persistent context).
 
 ### Optional (Recommended)
 

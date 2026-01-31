@@ -46,10 +46,10 @@ Wir haben alle grossen KI-Plattformen fuer die Notion-Integration validiert:
 | Plattform | Notion lesen | In Notion schreiben | Setup |
 |-----------|--------------|---------------------|-------|
 | **Claude Pro** | Ja | Ja (nativ) | Einfach |
+| **Perplexity Pro** | Ja | Ja (nativ) | Einfach |
 | ChatGPT Plus | Ja | Nein (braucht Custom GPT + API) | Komplex |
-| Perplexity Pro | Ja | Nein (braucht Make/Zapier) | Komplex |
 
-**Claude Pro ist die einzige Plattform mit nativer, webbasierter Schreibfaehigkeit in Notion.** Dies ist essenziell fuer die praktischen Uebungen.
+**Claude Pro und Perplexity Pro** bieten beide native Notion-Schreibfaehigkeit. Fuer diese Session empfehlen wir Claude Pro wegen der Projektfunktion (persistenter Kontext).
 
 ### Optional (empfohlen)
 

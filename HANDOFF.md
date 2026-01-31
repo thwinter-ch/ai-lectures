@@ -1,7 +1,7 @@
 # Context Handoff
 
-**Last updated:** 2026-01-31 (evening session 2)
-**Session:** Lecture structure decision made
+**Last updated:** 2026-01-31 (evening session 4)
+**Session:** Lecture content build — COMPLETE
 
 ---
 
@@ -19,113 +19,200 @@
 
 ---
 
-## NEW Lecture Structure (Decided This Session)
+## Current Status: 100% Content Complete
 
-**Thesis:** Hybrid approach — teaching + exercises with reusable deliverables
+**All lecture segments and exercises built.** Pending: folder structure decision + final README update.
 
-| Block | Content | Deliverable |
-|-------|---------|-------------|
-| **Opening** | AI for productivity & value | Context setting |
-| **Writing Profile** | Ruben Hassid LITE (shortened, not 100 questions) | Reusable profile for all AI work |
-| **Company Research** | Prompts: Research → Golden Circle → BMC → VPC | Analysis framework (self or customer) |
-| **Second Brain** | Claude/Perplexity → Notion push | Working knowledge capture system |
+### Slides (6 segments)
 
-### Key Design Decisions
+| Segment | Status | Files |
+|---------|--------|-------|
+| 01 - How I Built This | ✅ Complete | `script.md`, `gamma-prompt.md`, `tech-stack.md` |
+| 02 - Technology Revolution | ✅ Complete | `script.md`, `gamma-prompt.md` |
+| 03 - AI Managerial Skill | ✅ Complete | `script.md`, `gamma-prompt.md` |
+| 04 - Information Overload | ✅ Complete | `script.md`, `gamma-prompt.md` |
+| 05 - Cognitive Limits | ✅ Complete | `script.md`, `gamma-prompt.md` |
+| 06 - Demo: Personalized Summary | ✅ Complete | `script.md`, `gamma-prompt.md`, `n8n-workflow.md` |
 
-1. **Writing Profile exercise needs LITE version** — full Ruben Hassid is 100 questions (2+ hours). Create shortened version in `exercises/` folder with full version as optional.
+### Exercises (3 exercises)
 
-2. **Company Research sequence:** Golden Circle → Business Model Canvas → Value Proposition Canvas (in that order)
-
-3. **Second Brain simplified:** Just Claude project or Perplexity project → push to Notion database. No GitHub infrastructure.
-
-4. **VALIDATE: Perplexity → Notion native write** — User claims they just built a Notion database from Perplexity. If true, this changes tool recommendation. Need to verify workflow.
-
----
-
-## Reference: 2025 Lecture Structure
-
-From `2025-04_AIF/2025 04 12 AI Productivity Hacks for Leaders.pdf`:
-
-| Time | Type | Content |
-|------|------|---------|
-| 13:30 | Lecture | Welcome, Galloway quote, About me |
-| 13:45 | Lecture | Confidential and Sovereign AI |
-| 14:00 | Lecture | AI toolbox, Maturity model |
-| 14:30 | Break | |
-| 14:45 | Exercise | Golden Circle → HeyGen script |
-| 15:15 | Exercise | HeyGen video creation |
-| 15:45 | Break | |
-| 16:00 | Exercise | Managing emotions with AI |
-| 16:15 | Exercise | Boss email triage |
-| 16:45 | Closing | 3 Superpowers |
-
-**Ratio:** ~60min lecture / ~105min exercises / ~30min breaks
+| Exercise | Status | Files |
+|----------|--------|-------|
+| Writing Profile | ✅ Complete | `lite-interview.md`, `bridge-to-full.md`, `platform-guide.md`, `question-analysis.md`, `README.md` |
+| Company Research | ✅ Complete | `01-deep-research.md`, `02-strategy-synthesis.md`, `README.md` |
+| Second Brain | ✅ Complete | `claude-notion-setup.md`, `auto-push-project.md`, `README.md` |
+| Exercises Index | ✅ Complete | `exercises/README.md` |
 
 ---
 
-## This Session Completed
+## Video Sources (Correct URLs)
 
-- [x] Renamed folder to `2026_02_07_AIF`
-- [x] Created German README.md (primary) + English README.en.md
-- [x] Moved brainstorm out of HWZ briefing (now public)
-- [x] Renamed `HWZ briefing/` → `docs.gitignore/` (private)
-- [x] Added `2026-02_ZFU/` to gitignore (separate project)
-- [x] Analyzed 2025 lecture structure
-- [x] Decided new lecture structure (hybrid approach)
-- [x] Committed and pushed to GitHub
+Both videos are from **Nate B Jones** (AI News & Strategy Daily):
 
----
+### Segment 02: Technology Revolution
+- **URL:** `https://www.youtube.com/watch?v=LwKnvqVdUgA`
+- **Title:** "The Skill Gap That Will Separate AI Winners from Everyone Else"
+- **Thesis:** 2026 = breakthrough for personal AI agents. Technical pieces exist (MCP, skills, browser use). Missing: UX layer + task formulation skills. You need to be organized to delegate.
 
-## Outstanding Tasks
-
-### Immediate (before Monday Feb 3)
-- [ ] **Validate Perplexity → Notion write** — user says it works natively now
-- [ ] Update prereqs email based on tool validation
-- [ ] Send prereq email to students
-
-### Before Wednesday Feb 5
-- [ ] Create `exercises/` folder structure
-- [ ] Build Ruben Hassid LITE exercise
-- [ ] Build Company Research prompts (Golden Circle, BMC, VPC)
-- [ ] Build Second Brain setup guide
-- [ ] Create Gamma slides for lecture
-
-### Tool Validation Needed
-
-| Platform | Read Notion | Write Notion | Status |
-|----------|-------------|--------------|--------|
-| Claude Pro | Yes | Yes (native) | Confirmed |
-| Perplexity Pro | Yes | **NEEDS VALIDATION** | User claims native works |
+### Segment 03: AI as Managerial Skill
+- **URL:** `https://www.youtube.com/watch?v=EZ4EjJ0iDDQ`
+- **Title:** "Why Your Best Employees Quit Using AI After 3 Weeks"
+- **Thesis:** 80% abandon AI tools. Success requires management skills, not prompting. BCG/Harvard jagged frontier. Centaurs vs Cyborgs. Six 201-level skills.
 
 ---
 
-## Key Files
+## YouTube Extraction Skill Created
 
-| File | Purpose |
-|------|---------|
-| `2026_02_07_AIF/README.md` | German participant cookbook |
-| `2026_02_07_AIF/README.en.md` | English version |
-| `2026_02_07_AIF/AI Productivity Hacks for Executives Barainstorm.md` | Original brainstorm (public) |
-| `2026_02_07_AIF/docs.gitignore/` | Private files (student list, schedule) |
-| `2025-04_AIF/2025 04 12 AI Productivity Hacks for Leaders.pdf` | Reference: last year's slides |
+**Location:** `C:/Users/tw/.claude/skills/youtube-extraction/skill.md`
+
+**Key findings:**
+- `google/gemini-2.5-flash` does NOT reliably process videos (hallucinated wrong content)
+- `google/gemini-2.0-flash-001` works but ALSO hallucinated on these specific videos
+- For these videos, manual extraction from YouTube page (title, description, chapters) was more reliable
+
+**Skill documents the API pattern but notes reliability issues.**
 
 ---
 
 ## Resume Instructions
 
-**Next session goal:** Build lecture content
+### If agents completed:
+1. Check files exist:
+   - `slides/02-technology-revolution/script.md`
+   - `slides/02-technology-revolution/gamma-prompt.md`
+   - `slides/03-ai-managerial-skill/script.md`
+   - `slides/03-ai-managerial-skill/gamma-prompt.md`
 
-1. Read this HANDOFF.md
-2. **First:** Validate Perplexity → Notion write capability with user
-3. Create `exercises/` folder with:
-   - `writing-profile-lite.md`
-   - `writing-profile-full.md` (optional)
-   - `company-research.md`
-   - `second-brain-setup.md`
-4. Create `prompts/` folder with reusable prompts
-5. Update README files with correct prereqs based on validation
+2. If all files exist → Update main READMEs (Wave 3)
+3. Commit and push
 
-**Timeline:**
+### If agents still running or failed:
+1. Check with: `Glob 2026_02_07_AIF/slides/**/*.md`
+2. Re-run agents for missing segments using the video content above
+3. Agents need explicit absolute paths to write files
+
+### Final integration (Wave 3):
+- Update `2026_02_07_AIF/README.md` with complete structure
+- Update `2026_02_07_AIF/README.en.md` with English version
+- Commit all changes
+
+---
+
+## Key Learnings This Session
+
+### What Fixed the Agent Failures:
+1. **Create folders first** — Agents failed silently when target folders didn't exist
+2. **Explicit absolute paths** — Full paths in prompts, not relative
+3. **Clear deliverable specs** — Tell agent exactly what files to create
+
+### YouTube Extraction:
+- Gemini via OpenRouter CAN process YouTube but hallucinated on these specific videos
+- Model `google/gemini-2.0-flash-001` is more reliable than `gemini-2.5-flash`
+- Sometimes manual extraction (title + description + chapters) is more reliable than AI extraction
+
+---
+
+## File Structure (Current)
+
+```
+2026_02_07_AIF/
+├── input/
+│   ├── me-in-a-doc.md          # Full 100-question interview prompt
+│   ├── company-research.md      # Deep research prompt
+│   └── GC-BMC-VPC.md           # Strategy synthesis prompt
+│
+├── slides/
+│   ├── 01-how-i-built-this/
+│   │   ├── tech-stack.md       ✅
+│   │   ├── script.md           ✅
+│   │   └── gamma-prompt.md     ✅
+│   ├── 02-technology-revolution/
+│   │   ├── script.md           ✅
+│   │   └── gamma-prompt.md     ✅
+│   ├── 03-ai-managerial-skill/
+│   │   ├── script.md           ✅
+│   │   └── gamma-prompt.md     ✅
+│   ├── 04-information-overload/
+│   │   ├── script.md           ✅
+│   │   └── gamma-prompt.md     ✅
+│   ├── 05-cognitive-limits/
+│   │   ├── script.md           ✅
+│   │   └── gamma-prompt.md     ✅
+│   └── 06-demo-personalized-summary/
+│       ├── script.md           ✅
+│       ├── gamma-prompt.md     ✅
+│       └── n8n-workflow.md     ✅
+│
+├── exercises/
+│   ├── README.md               ✅ Index
+│   ├── writing-profile/
+│   │   ├── README.md           ✅
+│   │   ├── lite-interview.md   ✅
+│   │   ├── bridge-to-full.md   ✅
+│   │   ├── platform-guide.md   ✅
+│   │   └── question-analysis.md ✅
+│   ├── company-research/
+│   │   ├── README.md           ✅
+│   │   ├── 01-deep-research.md ✅
+│   │   └── 02-strategy-synthesis.md ✅
+│   └── second-brain/
+│       ├── README.md           ✅
+│       ├── claude-notion-setup.md ✅
+│       └── auto-push-project.md ✅
+│
+├── README.md                    # German (needs update)
+├── README.en.md                 # English (needs update)
+└── .env.local                   # OpenRouter API key (gitignored)
+```
+
+---
+
+## Outstanding Tasks
+
+1. **Verify segments 02 + 03 complete** — Check agent output files exist
+2. **Decide folder structure** — See "Pending Decision" below
+3. **Review content quality** — Spot check a few files
+4. **Commit and push** — All changes to GitHub
+
+---
+
+## Pending Decision: Folder Structure
+
+Current structure separates `slides/` (lectures) and `exercises/`. User questioned if this is clear.
+
+**Options:**
+
+**A) Unified segments with type labels:**
+```
+segments/
+├── 01-how-i-built-this-lecture/
+├── 02-technology-revolution-lecture/
+├── 03-writing-profile-exercise/
+├── 04-ai-managerial-skill-lecture/
+├── 05-company-research-exercise/
+├── 06-information-overload-lecture/
+├── 07-second-brain-exercise/
+├── 08-cognitive-limits-lecture/
+├── 09-demo-personalized-summary-lecture/
+```
+
+**B) Keep separate, just rename `slides/` → `lectures/`**
+
+**C) Keep current structure** (slides + exercises separate)
+
+Decision needed before finalizing READMEs.
+
+---
+
+## Fixes Applied This Session
+
+- ✅ Fixed Perplexity/Notion claim in both READMEs — Perplexity Pro now shown as native Notion write capable
+
+---
+
+## Timeline
+
+- ✅ Friday Jan 31: Lecture content built
 - Monday Feb 3: Student prereq email
 - Wednesday Feb 5: Materials to HWZ
 - Saturday Feb 7: Lecture delivery
