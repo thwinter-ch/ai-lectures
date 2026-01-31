@@ -64,6 +64,54 @@ Documentation of how this repository and lectures are built. Updated as work pro
 
 ---
 
+## 2026-01-31: HWZ AIF Lecture Planning
+
+**Session goal:** Clean up repo, plan Feb 7 "AI Productivity Hacks for Executives" lecture.
+
+### Brainstorm Origin
+
+The lecture brainstorm document (`2026 02 07 AIF/HWZ briefing/AI Productivity Hacks for Executives Barainstorm.md`) was created via:
+
+1. **Perplexity AI voice conversation** (Jan 24, 2026)
+   - Used Wispr Flow for voice-to-text during ideation
+   - Iteratively refined structure through conversational AI
+   - Generated comprehensive markdown briefing
+2. **Process demonstrates the lecture content itself** — building with AI-assisted voice capture
+
+### Work Completed
+
+1. **Archived 2025 lectures:**
+   - Added `2025-04_AIF/` and `2025_12_HWZ_CAS_VR/` to `.gitignore`
+   - Removed from git tracking (files remain local)
+   - Committed and pushed
+
+2. **Clarified naming convention:**
+   - `YYYY-MM_INSTITUTION` (dash for date, underscore for parts)
+   - Documented in HANDOFF.md
+
+3. **Folder renames still blocked** by Google Drive sync — documented for manual fix later
+
+### Critical Validation Required
+
+**Notion Write Capabilities:**
+
+| Platform | Read from Notion | Write to Notion | Notes |
+|----------|------------------|-----------------|-------|
+| ChatGPT Plus | ✓ | ❓ UNVERIFIED | May be read-only |
+| Claude Pro | ✓ | ❓ UNVERIFIED | Need to test |
+| Perplexity Pro | ✓ | ❓ UNVERIFIED | Claims bidirectional |
+
+**Action:** Before Monday email, validate which platforms can actually WRITE to Notion databases from the web interface. This affects prereq recommendations.
+
+### Outstanding
+
+- [ ] Validate Notion write capabilities for ChatGPT/Claude/Perplexity
+- [ ] Confirm lecture date (Feb 7 vs Feb 8)
+- [ ] Get participant list
+- [ ] Build lecture content via GSD workflow
+
+---
+
 ## Template for Future Entries
 
 ```markdown
