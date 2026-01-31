@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Board Member's Tech Glossary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #F7F9FC;
+            --card-bg: #FFFFFF;
+            --text-main: #1E293B;
+            --text-secondary: #64748B;
+            --accent-color: #2563EB; /* Royal Blue */
+            --border-color: #E2E8F0;
+            --sidebar-width: 250px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Header & Search */
+        header {
+            background: var(--card-bg);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            font-weight: 700;
+            font-size: 2.25rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.05em;
+        }
+
+        p.subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 16px 24px;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            outline: none;
+            font-family: inherit;
+        }
+
+        #searchInput:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            gap: 40px;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 80px;
+            position: sticky;
+            top: 180px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .alpha-link {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: color 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .alpha-link:hover, .alpha-link.active {
+            color: var(--accent-color);
+            background: #EFF6FF;
+        }
+
+        /* Content Area */
+        .content {
+            flex: 1;
+        }
+
+        .letter-section {
+            margin-bottom: 40px;
+            scroll-margin-top: 200px; /* Offset for sticky header */
+        }
+
+        .letter-header {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+        }
+
+        /* Term Cards */
+        .term-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .term-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border-color: var(--accent-color);
+        }
+
+        .term-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+        }
+
+        .definition-box {
+            margin-bottom: 16px;
+        }
+
+        .label {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .text {
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        .analogy-box {
+            background: #F8FAFC;
+            padding: 12px 16px;
+            border-left: 4px solid #10B981; /* Emerald Green */
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 16px;
+        }
+
+        .why-box {
+            background: #EFF6FF;
+            padding: 12px 16px;
+            border-left: 4px solid var(--accent-color);
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Utilities */
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            display: none;
+        }
+
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--text-main);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: background 0.3s;
+        }
+
+        #scrollTopBtn:hover {
+            background: var(--accent-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 0 15px;
+            }
+            .sidebar {
+                width: 100%;
+                position: static;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-bottom: 20px;
+                height: auto;
+            }
+            .alpha-link {
+                padding: 8px 12px;
+                font-size: 1rem;
+            }
+            header {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Tech Clarity for the Boardroom</h1>
+        <p class="subtitle">A jargon-free glossary for strategic decision makers.</p>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Type to filter (e.g., 'Token', 'Sovereignty')...">
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="sidebar" id="sidebar">
+            </nav>
+
+        <main class="content" id="glossaryContent">
+            <div id="noResults" class="no-results">No terms found matching your search.</div>
+            
+            <div class="letter-section" id="section-A" data-letter="A">
+                <div class="letter-header">A</div>
+                
+                <div class="term-card">
+                    <div class="term-title">API (Application Programming Interface)</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">A digital messenger that allows two different software programs to talk to each other and exchange data.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">Think of a waiter in a restaurant. You (the user) don't go into the kitchen (the server) to cook. You hand your order to the waiter, they take it to the kitchen, and bring the food back to you.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">APIs are the "glue" of modern business; without them, your expensive software silos cannot share data or automate workflows.</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Augmented Reality (AR)</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">Technology that overlays digital information (like images or text) onto the real world you see through a screen or glasses.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">Like a car's Heads-Up Display (HUD) projecting your speed onto the windshield so you don't have to look down at the dashboard.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">Critical for future field service efficiency (e.g., a technician seeing repair manuals overlaid on a broken machine).</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-B" data-letter="B">
+                <div class="letter-header">B</div>
+                
+                <div class="term-card">
+                    <div class="term-title">Blockchain</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">A shared digital ledger where transactions are recorded permanently and cannot be deleted or altered by anyone.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">Imagine a Google Doc shared with the whole world where everyone can view it, anyone can add a line, but absolutely no one—not even the creator—can delete or edit a line once it's written.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">It removes the need for expensive "middlemen" (intermediaries) to establish trust in transactions.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-C" data-letter="C">
+                <div class="letter-header">C</div>
+
+                <div class="term-card">
+                    <div class="term-title">Cloud Act</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">A US law that allows US authorities to demand data from American tech companies (like Microsoft/Google), even if that data is stored on servers in Switzerland.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">Like a parent telling their child, "I don't care that you hid your diary at your friend's house; you live under my roof, so you have to go get it for me."</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">Storing data in a "Swiss Data Center" owned by a US company does not guarantee total legal immunity from US jurisdiction.</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Context Window</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">The amount of information (short-term memory) an AI can hold in its "head" during a single conversation before it forgets the beginning.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">Like a whiteboard in a meeting. Once the board is full, you have to erase the top to write new ideas, losing the earlier context.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">If your documents are larger than the window, the AI cannot analyze the whole thing at once.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-D" data-letter="D">
+                <div class="letter-header">D</div>
+
+                <div class="term-card">
+                    <div class="term-title">Data Sovereignty</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">The concept that data is subject to the laws and governance structures within the nation it is collected.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">Having a safe in your own house (Sovereignty) vs. renting a locker in a bank owned by a foreign country (Residency).</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">Crucial for risk management; "Data Residency" (location) is not the same as "Sovereignty" (legal control).</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Digital Twin</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">A virtual replica of a physical object (like a machine) or process that lets you run tests without risking the real asset.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">Like a flight simulator for a specific plane; you can crash the simulator 100 times to learn, without scratching the real aircraft.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">Allows companies to predict maintenance and optimize production lines without expensive downtime.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-G" data-letter="G">
+                <div class="letter-header">G</div>
+
+                <div class="term-card">
+                    <div class="term-title">Generative AI (GenAI)</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">AI that can create *new* content (text, images, code) rather than just analyzing existing data.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">Traditional AI is a librarian who finds a book for you. Generative AI is a ghostwriter who writes a new book for you.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">It democratizes creativity and drastically lowers the cost of producing drafts, code, and marketing assets.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-H" data-letter="H">
+                <div class="letter-header">H</div>
+
+                <div class="term-card">
+                    <div class="term-title">Hallucination</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">When an AI confidently presents false or made-up information as fact.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">Like a very confident person at a bar who doesn't know the answer but invents a believable story so they don't look stupid.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">This is a major liability risk; AI output must be verified, not blindly trusted.</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Hype Cycle (Gartner)</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">A graphic curve that predicts how technologies go from "Over-Enthusiasm" to "Deep Disappointment" before finally becoming useful.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">Like a teenage romance: Infatuation (Peak of Expectations), the Breakup (Trough of Disillusionment), and finally a mature friendship (Plateau of Productivity).</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">Helps the Board decide *when* to invest—too early creates waste, too late means missing the boat.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-I" data-letter="I">
+                <div class="letter-header">I</div>
+
+                <div class="term-card">
+                    <div class="term-title">Inference</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">The moment the AI actually "thinks" and answers your specific question using its training.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">"Training" is the student studying for 4 years. "Inference" is the student actually sitting down to take the exam.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">When you use AI, you aren't "training" it; you are running inference. Data entered here (usually) doesn't teach the model new facts permanently unless specified.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-L" data-letter="L">
+                <div class="letter-header">L</div>
+
+                <div class="term-card">
+                    <div class="term-title">Large Language Model (LLM)</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">A type of AI trained on vast amounts of text to understand and generate human-like language (e.g., GPT-4).</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">Imagine a parrot that has read every book in the world and is incredibly good at predicting which word should come next in a sentence.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">These are the engines powering the current AI revolution; they are general-purpose reasoning engines.</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Legacy System</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">Old software or hardware that is still essential for operations but difficult to update or integrate with modern tools.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">The foundation of a house built in 1950. It holds the house up, but if you try to drill into it to add new wiring, the whole thing might crack.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">These are major security vulnerabilities (hard to patch) and innovation blockers.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-O" data-letter="O">
+                <div class="letter-header">O</div>
+
+                <div class="term-card">
+                    <div class="term-title">One-Way Door Decision</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">A strategic decision that is nearly impossible or extremely expensive to reverse once made.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">Quitting your job (One-Way) vs. trying a new restaurant for lunch (Two-Way).</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">Boards should spend 80% of their energy on One-Way Doors (e.g., major ERP migration) and delegate Two-Way Doors.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-P" data-letter="P">
+                <div class="letter-header">P</div>
+
+                <div class="term-card">
+                    <div class="term-title">Prompt Engineering</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">The art of writing precise instructions to get the best possible result out of an AI.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">It's the difference between Googling "pasta" vs. "authentic carbonara recipe without cream." The quality of the question dictates the quality of the answer.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">Employees need training on this; a standardized "Prompt Library" increases organizational productivity.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-Q" data-letter="Q">
+                <div class="letter-header">Q</div>
+
+                <div class="term-card">
+                    <div class="term-title">Quantum Computing</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">A new type of computer based on physics that solves simulation problems (like chemistry or logistics) exponentially faster than current computers.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">A classic computer tries to find the way out of a maze by walking every path one by one. A quantum computer walks all paths simultaneously.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">It will eventually break current encryption standards and revolutionize drug discovery and logistics.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-R" data-letter="R">
+                <div class="letter-header">R</div>
+
+                <div class="term-card">
+                    <div class="term-title">RAG (Retrieval-Augmented Generation)</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">A technique where you link an AI to your own private company data so it answers questions accurately based on *your* facts.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">Taking a test with an open textbook. You don't have to memorize the facts; you just need to know how to read the book (your data) to find the answer.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">This is the standard for Enterprise AI—it reduces hallucinations and keeps data private/relevant.</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Ransomware</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">Malware that locks up your company's data and demands payment to release it.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">Someone changing the locks on your house while you are outside, then charging you $50,000 for the new key.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">It is a business continuity risk, not just an IT problem. Paying doesn't guarantee data recovery.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-S" data-letter="S">
+                <div class="letter-header">S</div>
+
+                <div class="term-card">
+                    <div class="term-title">Shadow AI</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">When employees use unauthorized AI tools (like free ChatGPT) for work without IT's knowledge.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">Employees bringing their own power tools to a construction site because the company tools are too slow—it gets the job done but creates massive safety risks.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">Leads to data leakage (e.g., pasting strategy documents into public AI models).</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Smart Contract</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">A self-executing digital contract where the terms are written into code—if X happens, Y executes automatically.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">A vending machine. You don't need a lawyer to verify the transaction. You put money in, select item, and the machine automatically releases the product.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">Automates compliance and payments, reducing legal disputes and administrative overhead.</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Social Engineering</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">Hacking the *human*, not the machine, by manipulating people into giving up passwords or money.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">The "Prince of Nigeria" email scam, or a fake CEO calling finance to request an "urgent wire transfer."</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">Humans are the "weakest link" in cybersecurity; technical firewalls cannot stop a tricked employee.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-T" data-letter="T">
+                <div class="letter-header">T</div>
+
+                <div class="term-card">
+                    <div class="term-title">Token (AI Context)</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">The basic unit of text that an AI processes; roughly equivalent to 3/4 of a word.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">Think of syllables. You pay the AI provider per syllable generated, not per request.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">This is the cost basis for AI. "Cost per token" is the key metric for scaling AI operations.</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Token (Blockchain/Crypto)</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">A digital asset representing ownership or value (money, a vote, a share) on a blockchain.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">A casino chip. It represents value within the casino (the blockchain ecosystem) that can be exchanged or cashed out.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">Allows for the digitization of real-world assets like company shares (e.g., Daura) or real estate.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-Z" data-letter="Z">
+                <div class="letter-header">Z</div>
+
+                <div class="term-card">
+                    <div class="term-title">Zero Trust</div>
+                    <div class="definition-box">
+                        <span class="label">The "Cocktail Party" Definition</span>
+                        <div class="text">A security concept where no user or device is trusted by default, even if they are already inside the office network.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">The Analogy</span>
+                        <div class="text">Most offices have a badge reader at the front door (perimeter security). Zero Trust puts a badge reader on every single door inside the building, including the bathroom.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Why It Matters</span>
+                        <div class="text">The only effective defense against modern ransomware, assuming hackers *will* eventually get past the firewall.</div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <button id="scrollTopBtn" title="Go to top">↑</button>
+
+    <script>
+        // --- Generate Alphabet Sidebar ---
+        const glossaryContent = document.getElementById('glossaryContent');
+        const sidebar = document.getElementById('sidebar');
+        const sections = glossaryContent.querySelectorAll('.letter-section');
+        
+        const letters = [];
+        sections.forEach(section => {
+            letters.push(section.getAttribute('data-letter'));
+        });
+
+        letters.forEach(letter => {
+            const link = document.createElement('a');
+            link.href = `#section-${letter}`;
+            link.innerText = letter;
+            link.className = 'alpha-link';
+            link.onclick = (e) => {
+                e.preventDefault();
+                document.querySelector(link.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            };
+            sidebar.appendChild(link);
+        });
+
+        // --- Search Functionality ---
+        const searchInput = document.getElementById('searchInput');
+        const termCards = document.querySelectorAll('.term-card');
+        const noResults = document.getElementById('noResults');
+
+        searchInput.addEventListener('keyup', (e) => {
+            const term = e.target.value.toLowerCase();
+            let hasVisibleTerms = false;
+
+            termCards.forEach(card => {
+                const title = card.querySelector('.term-title').innerText.toLowerCase();
+                const text = card.innerText.toLowerCase();
+                
+                if (title.includes(term) || text.includes(term)) {
+                    card.style.display = 'block';
+                    hasVisibleTerms = true;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Hide/Show Letter Headers based on visible cards
+            sections.forEach(section => {
+                const visibleCardsInSection = section.querySelectorAll('.term-card[style="display: block;"], .term-card:not([style*="display: none"])');
+                if (visibleCardsInSection.length > 0) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+
+            noResults.style.display = hasVisibleTerms ? 'none' : 'block';
+        });
+
+        // --- Scroll to Top ---
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollTopBtn.style.display = "flex";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        };
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- Active State for Sidebar on Scroll ---
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 250)) {
+                    current = section.getAttribute('data-letter');
+                }
+            });
+
+            document.querySelectorAll('.alpha-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.innerText === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech-Klarheit für den Verwaltungsrat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #F7F9FC;
+            --card-bg: #FFFFFF;
+            --text-main: #1E293B;
+            --text-secondary: #64748B;
+            --accent-color: #2563EB; /* Royal Blue */
+            --border-color: #E2E8F0;
+            --sidebar-width: 250px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Header & Search */
+        header {
+            background: var(--card-bg);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            font-weight: 700;
+            font-size: 2.25rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.05em;
+        }
+
+        p.subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 16px 24px;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            outline: none;
+            font-family: inherit;
+        }
+
+        #searchInput:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            gap: 40px;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 80px;
+            position: sticky;
+            top: 180px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .alpha-link {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: color 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .alpha-link:hover, .alpha-link.active {
+            color: var(--accent-color);
+            background: #EFF6FF;
+        }
+
+        /* Content Area */
+        .content {
+            flex: 1;
+        }
+
+        .letter-section {
+            margin-bottom: 40px;
+            scroll-margin-top: 200px; /* Offset for sticky header */
+        }
+
+        .letter-header {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+        }
+
+        /* Term Cards */
+        .term-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .term-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border-color: var(--accent-color);
+        }
+
+        .term-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+        }
+
+        .definition-box {
+            margin-bottom: 16px;
+        }
+
+        .label {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .text {
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        .analogy-box {
+            background: #F8FAFC;
+            padding: 12px 16px;
+            border-left: 4px solid #10B981; /* Emerald Green */
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 16px;
+        }
+
+        .why-box {
+            background: #EFF6FF;
+            padding: 12px 16px;
+            border-left: 4px solid var(--accent-color);
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Utilities */
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            display: none;
+        }
+
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--text-main);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: background 0.3s;
+        }
+
+        #scrollTopBtn:hover {
+            background: var(--accent-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 0 15px;
+            }
+            .sidebar {
+                width: 100%;
+                position: static;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-bottom: 20px;
+                height: auto;
+            }
+            .alpha-link {
+                padding: 8px 12px;
+                font-size: 1rem;
+            }
+            header {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Tech-Klarheit für den VR</h1>
+        <p class="subtitle">Ein jargonfreies Glossar für strategische Entscheidungsträger.</p>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Tippen zum Filtern (z.B. 'Token', 'FISA', 'Cloud Act')...">
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="sidebar" id="sidebar">
+            </nav>
+
+        <main class="content" id="glossaryContent">
+            <div id="noResults" class="no-results">Keine Begriffe gefunden.</div>
+            
+            <div class="letter-section" id="section-A" data-letter="A">
+                <div class="letter-header">A</div>
+                
+                <div class="term-card">
+                    <div class="term-title">API (Schnittstelle)</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Ein digitaler Bote, der es zwei unterschiedlichen Softwareprogrammen ermöglicht, miteinander zu sprechen und Daten auszutauschen.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Denken Sie an einen Kellner im Restaurant. Sie (der Nutzer) gehen nicht in die Küche (den Server), um zu kochen. Sie geben die Bestellung dem Kellner, er bringt sie in die Küche und liefert das Essen an Sie zurück.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">APIs sind der «Klebstoff» des modernen Geschäfts; ohne sie bleiben Ihre teuren Software-Silos isoliert und können keine Workflows automatisieren.</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Augmented Reality (AR)</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Technologie, die digitale Informationen (Bilder, Text) über die reale Welt legt, die Sie durch einen Bildschirm oder eine Brille sehen.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Wie das Head-up-Display (HUD) im Auto, das die Geschwindigkeit direkt auf die Windschutzscheibe projiziert, damit Sie nicht auf das Armaturenbrett schauen müssen.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Entscheidend für die Effizienz im Aussendienst (z. B. sieht ein Techniker Reparaturanleitungen direkt über der defekten Maschine eingeblendet).</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-B" data-letter="B">
+                <div class="letter-header">B</div>
+                
+                <div class="term-card">
+                    <div class="term-title">Blockchain</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Ein gemeinsames digitales Hauptbuch, in dem Transaktionen dauerhaft aufgezeichnet werden und von niemandem nachträglich gelöscht oder geändert werden können.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Stellen Sie sich ein Google Doc vor, das mit der ganzen Welt geteilt wird. Jeder kann es lesen, jeder kann eine Zeile hinzufügen, aber absolut niemand – nicht einmal der Ersteller – kann eine geschriebene Zeile löschen oder ändern.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Sie beseitigt die Notwendigkeit für teure «Mittelsmänner» (Intermediäre), um Vertrauen in Transaktionen zu schaffen.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-C" data-letter="C">
+                <div class="letter-header">C</div>
+
+                <div class="term-card">
+                    <div class="term-title">Cloud Act</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Ein US-Gesetz, das US-Behörden erlaubt, Daten von amerikanischen Tech-Firmen einzufordern, selbst wenn diese Daten physisch auf Servern in der Schweiz liegen.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Wie ein Elternteil, der zum Kind sagt: «Es ist mir egal, dass du dein Tagebuch im Haus deines Freundes versteckt hast; du wohnst unter meinem Dach, also musst du es mir holen.»</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Ein «Schweizer Datencenter», das einer US-Firma gehört, bietet keine absolute rechtliche Immunität vor US-Zugriffen.</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Context Window (Kontextfenster)</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Die Menge an Informationen (Kurzzeitgedächtnis), die eine KI während eines Gesprächs im «Kopf» behalten kann, bevor sie den Anfang vergisst.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Wie eine Wandtafel in einem Meeting. Wenn die Tafel voll ist, müssen Sie oben etwas wegwischen, um neue Ideen zu notieren, wodurch der frühere Kontext verloren geht.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Wenn Ihre Dokumente grösser sind als das Fenster, kann die KI nicht das ganze Dokument auf einmal analysieren.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-D" data-letter="D">
+                <div class="letter-header">D</div>
+
+                <div class="term-card">
+                    <div class="term-title">Datensouveränität (Data Sovereignty)</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Das Konzept, dass Daten den Gesetzen und der Kontrolle des Landes unterliegen, in dem sie gesammelt wurden, ohne ausländischen Rechtszugriff.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Einen Tresor im eigenen Haus haben (Souveränität) vs. ein Schliessfach in einer Bank mieten, die einem fremden Staat gehört (Residenz).</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Entscheidend für das Risikomanagement; «Datenresidenz» (Standort) ist nicht dasselbe wie «Souveränität» (rechtliche Kontrolle).</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Digital Twin (Digitaler Zwilling)</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Eine virtuelle Kopie eines physischen Objekts oder Prozesses, mit der man Tests durchführen kann, ohne das echte Asset zu gefährden.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Wie ein Flugsimulator für ein spezifisches Flugzeug; Sie können im Simulator 100 Mal abstürzen, um zu lernen, ohne am echten Flugzeug einen Kratzer zu hinterlassen.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Erlaubt Unternehmen (z. B. Pharma, Produktion), Wartung vorherzusagen und Prozesse zu optimieren ohne teure Ausfallzeiten.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-F" data-letter="F">
+                <div class="letter-header">F</div>
+
+                <div class="term-card">
+                    <div class="term-title">FISA (Foreign Intelligence Surveillance Act)</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Ein US-Gesetz, das die Überwachung ausländischer Ziele regelt und US-Geheimdiensten erlaubt, Daten von Nicht-US-Bürgern (auch in der Cloud) ohne richterlichen Beschluss zu überwachen.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Ein spezielles Gericht, das Abhörwanzen gegen «ausländische Spione» genehmigt, wobei die Definition, wer als Ziel gilt, sehr breit ausgelegt wird.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Dies ist der rechtliche Hauptgrund für Konflikte mit dem Datenschutz (Schrems II), da Schweizer Unternehmen, die US-Clouds nutzen, theoretisch überwacht werden können.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-G" data-letter="G">
+                <div class="letter-header">G</div>
+
+                <div class="term-card">
+                    <div class="term-title">Generative AI (GenAI)</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">KI, die *neue* Inhalte (Text, Bilder, Code) erstellen kann, anstatt nur bestehende Daten zu analysieren.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Herkömmliche KI ist ein Bibliothekar, der ein Buch für Sie findet. Generative KI ist ein Ghostwriter, der ein neues Buch für Sie schreibt.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Sie demokratisiert Kreativität und senkt drastisch die Kosten für die Erstellung von Entwürfen, Code und Marketingmaterial.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-H" data-letter="H">
+                <div class="letter-header">H</div>
+
+                <div class="term-card">
+                    <div class="term-title">Hallucination (Halluzination)</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Wenn eine KI voller Selbstvertrauen falsche oder erfundene Informationen als Fakten präsentiert.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Wie eine sehr selbstbewusste Person in einer Bar, die die Antwort nicht weiss, aber eine glaubwürdige Geschichte erfindet, um nicht dumm dazustehen.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Dies ist ein grosses Haftungsrisiko; KI-Output muss verifiziert und darf nicht blind vertraut werden.</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Hype Cycle (Gartner)</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Eine Kurve, die vorhersagt, wie Technologien von «Übertriebener Begeisterung» zu «Tiefer Enttäuschung» gehen, bevor sie endlich nützlich werden.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Wie eine Teenager-Romanze: Verliebtheit (Gipfel der Erwartungen), die Trennung (Tal der Enttäuschung) und schliesslich eine reife Freundschaft (Pfad der Erleuchtung).</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Hilft dem VR zu entscheiden, *wann* investiert werden soll – zu früh schafft Verschwendung, zu spät verpasst man den Anschluss.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-I" data-letter="I">
+                <div class="letter-header">I</div>
+
+                <div class="term-card">
+                    <div class="term-title">Inference (Inferenz)</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Der Moment, in dem die KI tatsächlich «denkt» und Ihre spezifische Frage unter Verwendung ihres Trainings beantwortet.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">«Training» ist der Student, der 4 Jahre lang lernt. «Inferenz» ist der Student, der sich hinsetzt, um die Prüfung zu schreiben.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Wenn Sie KI nutzen, «trainieren» Sie sie nicht; Sie nutzen Inferenz. Daten, die hier eingegeben werden, lehren das Modell (normalerweise) keine neuen Fakten.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-L" data-letter="L">
+                <div class="letter-header">L</div>
+
+                <div class="term-card">
+                    <div class="term-title">Large Language Model (LLM)</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Eine Art von KI, die mit riesigen Mengen Text trainiert wurde, um menschenähnliche Sprache zu verstehen und zu generieren (z. B. GPT-4).</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Stellen Sie sich einen Papagei vor, der jedes Buch der Welt gelesen hat und unglaublich gut darin ist, vorherzusagen, welches Wort als nächstes in einem Satz kommen sollte.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Dies sind die Motoren, die die aktuelle KI-Revolution antreiben; sie sind universelle Denkmaschinen.</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Legacy System (Altlasten)</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Alte Software oder Hardware, die für den Betrieb noch essenziell ist, aber schwer zu aktualisieren oder mit modernen Tools zu verbinden ist.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Das Fundament eines Hauses aus dem Jahr 1950. Es hält das Haus hoch, aber wenn Sie versuchen hineinzubohren, um neue Leitungen zu verlegen, könnte das Ganze Risse bekommen.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Dies sind grosse Sicherheitslücken (schwer zu patchen) und Innovationsblocker.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-N" data-letter="N">
+                <div class="letter-header">N</div>
+
+                <div class="term-card">
+                    <div class="term-title">National Security Letter (NSL)</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Eine administrative Vorladung (meist vom FBI), um Daten von US-Firmen zu erhalten, ohne richterliche Genehmigung und oft mit einem «Gag Order» (Maulkorberlass).</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Ein geheimer Zettel vom Schulleiter, der die Kombination für das Schliessfach eines Schülers verlangt, wobei es dem Schüler streng verboten ist, seinen Eltern davon zu erzählen.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Ihr US-Cloud-Provider könnte gezwungen sein, Ihre Daten herauszugeben, und darf Sie gesetzlich nicht darüber informieren.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-O" data-letter="O">
+                <div class="letter-header">O</div>
+
+                <div class="term-card">
+                    <div class="term-title">One-Way Door Decision</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Eine strategische Entscheidung, die fast unmöglich oder extrem teuer rückgängig zu machen ist.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Den Job kündigen (Einbahnstrasse) vs. ein neues Restaurant zum Mittagessen ausprobieren (Zweibahnstrasse).</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Verwaltungsräte sollten 80% ihrer Energie auf Einbahnstrassen (z. B. grosse ERP-Migration) verwenden und den Rest delegieren.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-P" data-letter="P">
+                <div class="letter-header">P</div>
+
+                <div class="term-card">
+                    <div class="term-title">Patriot Act</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Ein nach 9/11 erlassenes US-Gesetz, das die Überwachungsbefugnisse der Behörden zur Terrorabwehr massiv ausweitete und die Hürden für Datenzugriffe senkte.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Der Polizei einen Generalschlüssel für jedes Haus geben, um einen bestimmten Kriminellen schneller zu finden.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Er bildet die rechtliche Grundlage dafür, dass US-Behörden potenziell auf Daten bei US-Providern (auch im Ausland) zugreifen können.</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Prompt Engineering</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Die Kunst, präzise Anweisungen zu schreiben, um das bestmögliche Ergebnis aus einer KI zu erhalten.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Der Unterschied zwischen der Google-Suche nach «Pasta» vs. «authentisches Carbonara-Rezept ohne Rahm». Die Qualität der Frage bestimmt die Qualität der Antwort.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Mitarbeitende müssen darin geschult werden; eine standardisierte «Prompt Library» steigert die Produktivität der Organisation.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-Q" data-letter="Q">
+                <div class="letter-header">Q</div>
+
+                <div class="term-card">
+                    <div class="term-title">Quantum Computing</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Ein neuer Computertyp, basierend auf Physik, der Simulationsprobleme (wie Chemie oder Logistik) exponentiell schneller löst als heutige Computer.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Ein klassischer Computer versucht, den Weg aus einem Labyrinth zu finden, indem er jeden Pfad nacheinander abgeht. Ein Quantencomputer geht alle Pfade gleichzeitig.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Er wird irgendwann aktuelle Verschlüsselungsstandards brechen und die Medikamentenentwicklung sowie Logistik revolutionieren.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-R" data-letter="R">
+                <div class="letter-header">R</div>
+
+                <div class="term-card">
+                    <div class="term-title">RAG (Retrieval-Augmented Generation)</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Eine Technik, bei der Sie eine KI mit Ihren privaten Firmendaten verknüpfen, damit sie Fragen basierend auf *Ihren* Fakten beantwortet.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Eine Prüfung mit offenem Lehrbuch schreiben. Sie müssen die Fakten nicht auswendig lernen; Sie müssen nur wissen, wie man im Buch (Ihren Daten) liest, um die Antwort zu finden.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Dies ist der Standard für Enterprise-KI – es reduziert Halluzinationen und hält Daten privat/relevant.</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Ransomware</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Schadsoftware, die Ihre Firmendaten verschlüsselt (sperrt) und Lösegeld verlangt, um sie freizugeben.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Jemand tauscht die Schlösser an Ihrem Haus aus, während Sie draussen sind, und verlangt dann 50'000 Franken für den neuen Schlüssel.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Es ist ein Geschäftsrisiko (Kontinuität), nicht nur ein IT-Problem. Zahlen garantiert keine Datenwiederherstellung.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-S" data-letter="S">
+                <div class="letter-header">S</div>
+
+                <div class="term-card">
+                    <div class="term-title">Shadow AI (Schatten-KI)</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Wenn Mitarbeitende unautorisierte KI-Tools (wie das kostenlose ChatGPT) für die Arbeit nutzen, ohne dass die IT davon weiss.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Mitarbeiter bringen ihre eigenen Elektrowerkzeuge auf die Baustelle, weil die Firmenwerkzeuge zu langsam sind – der Job wird erledigt, aber es entstehen massive Sicherheitsrisiken.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Führt zu Datenabfluss (z. B. Einfügen von Strategiedokumenten in öffentliche KI-Modelle).</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Smart Contract</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Ein selbstausführender digitaler Vertrag, bei dem die Bedingungen in Code geschrieben sind – wenn X passiert, wird Y automatisch ausgeführt.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Ein Getränkeautomat. Sie brauchen keinen Anwalt, um die Transaktion zu prüfen. Sie werfen Geld ein, wählen das Produkt, und die Maschine gibt es automatisch heraus.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Automatisiert Compliance und Zahlungen, reduziert Rechtsstreitigkeiten und administrativen Aufwand.</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Social Engineering</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Das Hacken des *Menschen*, nicht der Maschine, indem Personen manipuliert werden, Passwörter oder Geld herauszugeben.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Der «Prinz aus Nigeria»-E-Mail-Betrug oder ein gefälschter CEO (Deepfake), der die Finanzabteilung anruft und eine «dringende Überweisung» fordert.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Menschen sind das «schwächste Glied» der Cybersicherheit; technische Firewalls können einen getäuschten Mitarbeiter nicht stoppen.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-T" data-letter="T">
+                <div class="letter-header">T</div>
+
+                <div class="term-card">
+                    <div class="term-title">Token (KI Kontext)</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Die Grundeinheit an Text, die eine KI verarbeitet; entspricht ungefähr 3/4 eines Wortes.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Denken Sie an Silben. Sie bezahlen den KI-Anbieter pro generierte Silbe, nicht pro Anfrage.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Dies ist die Kostenbasis für KI. «Kosten pro Token» ist die Schlüsselkennzahl für die Skalierung von KI-Operationen.</div>
+                    </div>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-title">Token (Blockchain/Krypto)</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Ein digitaler Vermögenswert, der Eigentum oder Wert (Geld, eine Stimme, eine Aktie) auf einer Blockchain repräsentiert.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Ein Casino-Chip. Er repräsentiert einen Wert innerhalb des Casinos (dem Blockchain-Ökosystem), der getauscht oder ausgezahlt werden kann.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Ermöglicht die Digitalisierung realer Vermögenswerte wie Firmenanteile (z. B. Daura) oder Immobilien.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="letter-section" id="section-Z" data-letter="Z">
+                <div class="letter-header">Z</div>
+
+                <div class="term-card">
+                    <div class="term-title">Zero Trust</div>
+                    <div class="definition-box">
+                        <span class="label">Die «Apéro»-Definition</span>
+                        <div class="text">Ein Sicherheitskonzept, bei dem keinem Benutzer oder Gerät standardmässig vertraut wird, selbst wenn sie sich bereits im Firmennetzwerk befinden.</div>
+                    </div>
+                    <div class="analogy-box">
+                        <span class="label">Die Analogie</span>
+                        <div class="text">Die meisten Büros haben einen Kartenleser am Haupteingang (Perimeter-Sicherheit). Zero Trust installiert einen Kartenleser an absolut jeder Tür im Gebäude, sogar am WC.</div>
+                    </div>
+                    <div class="why-box">
+                        <span class="label">Warum es wichtig ist</span>
+                        <div class="text">Die einzig wirksame Verteidigung gegen moderne Ransomware, unter der Annahme, dass Hacker die Firewall *irgendwann* überwinden werden.</div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <button id="scrollTopBtn" title="Nach oben">↑</button>
+
+    <script>
+        // --- Alphabet-Navigation generieren ---
+        const glossaryContent = document.getElementById('glossaryContent');
+        const sidebar = document.getElementById('sidebar');
+        const sections = glossaryContent.querySelectorAll('.letter-section');
+        
+        const letters = [];
+        sections.forEach(section => {
+            letters.push(section.getAttribute('data-letter'));
+        });
+
+        letters.forEach(letter => {
+            const link = document.createElement('a');
+            link.href = `#section-${letter}`;
+            link.innerText = letter;
+            link.className = 'alpha-link';
+            link.onclick = (e) => {
+                e.preventDefault();
+                document.querySelector(link.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            };
+            sidebar.appendChild(link);
+        });
+
+        // --- Suchfunktion ---
+        const searchInput = document.getElementById('searchInput');
+        const termCards = document.querySelectorAll('.term-card');
+        const noResults = document.getElementById('noResults');
+
+        searchInput.addEventListener('keyup', (e) => {
+            const term = e.target.value.toLowerCase();
+            let hasVisibleTerms = false;
+
+            termCards.forEach(card => {
+                const title = card.querySelector('.term-title').innerText.toLowerCase();
+                const text = card.innerText.toLowerCase();
+                
+                if (title.includes(term) || text.includes(term)) {
+                    card.style.display = 'block';
+                    hasVisibleTerms = true;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Buchstaben-Header ausblenden, wenn keine Karten sichtbar sind
+            sections.forEach(section => {
+                const visibleCardsInSection = section.querySelectorAll('.term-card[style="display: block;"], .term-card:not([style*="display: none"])');
+                if (visibleCardsInSection.length > 0) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+
+            noResults.style.display = hasVisibleTerms ? 'none' : 'block';
+        });
+
+        // --- Scroll to Top ---
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollTopBtn.style.display = "flex";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        };
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- Aktiver Status in der Sidebar beim Scrollen ---
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 250)) {
+                    current = section.getAttribute('data-letter');
+                }
+            });
+
+            document.querySelectorAll('.alpha-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.innerText === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
