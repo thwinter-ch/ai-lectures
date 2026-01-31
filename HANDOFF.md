@@ -1,87 +1,101 @@
 # Context Handoff
 
-**Last updated:** 2026-01-31 (evening)
-**Session:** Cleanup complete, ready for GSD project init
+**Last updated:** 2026-01-31 (evening session 2)
+**Session:** Lecture structure decision made
 
 ---
 
-## Lecture Details (Gathered This Session)
-
-### AI Productivity Hacks for Executives
+## Lecture Details
 
 | Field | Value |
 |-------|-------|
-| Date | **Saturday Feb 7, 2026** (confirmed via Stundenplan) |
-| Duration | 3.75 hours (13:00-16:45) |
-| Audience | Financial services executives (AIF program) |
+| Date | **Saturday Feb 7, 2026** |
+| Time | 13:00 - 16:45 (3.75 hours) |
+| Audience | Financial services executives (CAS AI in Finance) |
 | Location | HWZ, Zurich |
-| Second session | **Saturday Apr 25, 2026** — "AI und Deep Tech Future Outlook" (13:00-16:45) |
+| Second session | **Saturday Apr 25, 2026** — "AI und Deep Tech Future Outlook" |
 | Material due | Wednesday Feb 5 |
 | Student email | Monday Feb 3 |
 
-### Brainstorm Document
+---
 
-**Location:** `2026_02_07_AIF/AI Productivity Hacks for Executives Barainstorm.md`
+## NEW Lecture Structure (Decided This Session)
 
-**Origin:** Perplexity AI voice conversation (Jan 24) using Wispr Flow — the process itself demonstrates the lecture content.
+**Thesis:** Hybrid approach — teaching + exercises with reusable deliverables
 
-### Module Structure (from brainstorm)
+| Block | Content | Deliverable |
+|-------|---------|-------------|
+| **Opening** | AI for productivity & value | Context setting |
+| **Writing Profile** | Ruben Hassid LITE (shortened, not 100 questions) | Reusable profile for all AI work |
+| **Company Research** | Prompts: Research → Golden Circle → BMC → VPC | Analysis framework (self or customer) |
+| **Second Brain** | Claude/Perplexity → Notion push | Working knowledge capture system |
 
-1. The Productivity Architecture (45 min)
-2. Setting Up GitHub Knowledge Base (60 min)
-3. Ruben Hassid Exercise — Writing Style Profile (45 min)
-4. Building Second Brain in Notion (60 min)
-5. Company Research & Analysis Frameworks (60 min)
-6. Voice Capture with Wispr Flow (30 min)
-7. Advanced Workflows (Optional, 20 min)
-8. Wrap-up (20 min)
+### Key Design Decisions
 
-### Participant Deliverables
+1. **Writing Profile exercise needs LITE version** — full Ruben Hassid is 100 questions (2+ hours). Create shortened version in `exercises/` folder with full version as optional.
 
-1. GitHub repository with knowledge base
-2. Notion database as second brain
-3. Personalized writing style profile (markdown)
-4. Company research document with frameworks
-5. Working integrations (GitHub, Notion, AI platform)
-6. Master prompts for knowledge management
+2. **Company Research sequence:** Golden Circle → Business Model Canvas → Value Proposition Canvas (in that order)
+
+3. **Second Brain simplified:** Just Claude project or Perplexity project → push to Notion database. No GitHub infrastructure.
+
+4. **VALIDATE: Perplexity → Notion native write** — User claims they just built a Notion database from Perplexity. If true, this changes tool recommendation. Need to verify workflow.
 
 ---
 
-## Critical Finding: Notion Integration
+## Reference: 2025 Lecture Structure
 
-**Validated 2026-01-31:**
+From `2025-04_AIF/2025 04 12 AI Productivity Hacks for Leaders.pdf`:
 
-| Platform | Read Notion | Write Notion | Setup |
-|----------|-------------|--------------|-------|
-| **Claude Pro** | ✓ | ✓ | Simple (Notion MCP one-click) |
-| ChatGPT Plus | ✓ (extensions) | ❌ native | Complex (custom GPT + API) |
-| Perplexity Pro | ✓ | ❌ native | Complex (requires Make/Zapier) |
+| Time | Type | Content |
+|------|------|---------|
+| 13:30 | Lecture | Welcome, Galloway quote, About me |
+| 13:45 | Lecture | Confidential and Sovereign AI |
+| 14:00 | Lecture | AI toolbox, Maturity model |
+| 14:30 | Break | |
+| 14:45 | Exercise | Golden Circle → HeyGen script |
+| 15:15 | Exercise | HeyGen video creation |
+| 15:45 | Break | |
+| 16:00 | Exercise | Managing emotions with AI |
+| 16:15 | Exercise | Boss email triage |
+| 16:45 | Closing | 3 Superpowers |
 
-**Conclusion:** The brainstorm doc incorrectly recommended Perplexity. **Claude Pro ($20/mo) is the only platform with native web-based write capability to Notion.**
-
-**Prereq change:** Claude Pro is now the PRIMARY requirement for hands-on exercises.
+**Ratio:** ~60min lecture / ~105min exercises / ~30min breaks
 
 ---
 
-## Current State
+## This Session Completed
 
-### Repository
-- **GitHub:** https://github.com/thwinter-ch/ai-lectures
-- **Local:** `c:\Users\tw\My Drive\BlizzardVentures\edu\AI lectures`
-- **Branch:** `master`
-- **Status:** Clean, pushed
+- [x] Renamed folder to `2026_02_07_AIF`
+- [x] Created German README.md (primary) + English README.en.md
+- [x] Moved brainstorm out of HWZ briefing (now public)
+- [x] Renamed `HWZ briefing/` → `docs.gitignore/` (private)
+- [x] Added `2026-02_ZFU/` to gitignore (separate project)
+- [x] Analyzed 2025 lecture structure
+- [x] Decided new lecture structure (hybrid approach)
+- [x] Committed and pushed to GitHub
 
-### This Session Completed
-- [x] Archived 2025 lectures (gitignored, removed from tracking)
-- [x] Clarified naming convention (dash for date, underscore for parts)
-- [x] Validated Notion write capabilities (Claude Pro wins)
-- [x] Documented brainstorm origin in BUILD_LOG.md
-- [ ] Folder renames still blocked by Google Drive
+---
 
-### Outstanding Questions (Ask User)
-1. ~~**Date confirmation:**~~ **RESOLVED** — Saturday Feb 7, 2026, 13:00-16:45
-2. ~~**Participant list:**~~ **RESOLVED** — `Studiengruppenliste_MCA-AIF25-1.pdf` available with emails
-3. **Material format:** What does HWZ expect by Feb 5?
+## Outstanding Tasks
+
+### Immediate (before Monday Feb 3)
+- [ ] **Validate Perplexity → Notion write** — user says it works natively now
+- [ ] Update prereqs email based on tool validation
+- [ ] Send prereq email to students
+
+### Before Wednesday Feb 5
+- [ ] Create `exercises/` folder structure
+- [ ] Build Ruben Hassid LITE exercise
+- [ ] Build Company Research prompts (Golden Circle, BMC, VPC)
+- [ ] Build Second Brain setup guide
+- [ ] Create Gamma slides for lecture
+
+### Tool Validation Needed
+
+| Platform | Read Notion | Write Notion | Status |
+|----------|-------------|--------------|--------|
+| Claude Pro | Yes | Yes (native) | Confirmed |
+| Perplexity Pro | Yes | **NEEDS VALIDATION** | User claims native works |
 
 ---
 
@@ -89,37 +103,29 @@
 
 | File | Purpose |
 |------|---------|
-| `BUILD_LOG.md` | Full session documentation + Notion validation |
-| `2026_02_07_AIF/AI Productivity Hacks for Executives Barainstorm.md` | Comprehensive lecture brainstorm |
-| `templates/prereqs-email-template.md` | Email templates (needs update for Claude Pro) |
-
----
-
-## Conventions
-
-| Item | Convention | Example |
-|------|------------|---------|
-| Lecture folders | `YYYY-MM_INSTITUTION_TOPIC` | `2026-02_AIF` |
-| Date separator | dash `-` | `2026-02` |
-| Part separator | underscore `_` | `HWZ_CAS_VR` |
-| Private content | `docs.gitignore/` subfolder | |
+| `2026_02_07_AIF/README.md` | German participant cookbook |
+| `2026_02_07_AIF/README.en.md` | English version |
+| `2026_02_07_AIF/AI Productivity Hacks for Executives Barainstorm.md` | Original brainstorm (public) |
+| `2026_02_07_AIF/docs.gitignore/` | Private files (student list, schedule) |
+| `2025-04_AIF/2025 04 12 AI Productivity Hacks for Leaders.pdf` | Reference: last year's slides |
 
 ---
 
 ## Resume Instructions
 
-**Next session goal:** Initialize GSD project for the lecture build.
+**Next session goal:** Build lecture content
 
-```
-/gsd:new-project
-```
-
-**Context to provide:**
-- Read this HANDOFF.md
-- Read the brainstorm doc at `2026_02_07_AIF/AI Productivity Hacks for Executives Barainstorm.md`
-- Answer the 3 outstanding questions (date, participant list, material format)
+1. Read this HANDOFF.md
+2. **First:** Validate Perplexity → Notion write capability with user
+3. Create `exercises/` folder with:
+   - `writing-profile-lite.md`
+   - `writing-profile-full.md` (optional)
+   - `company-research.md`
+   - `second-brain-setup.md`
+4. Create `prompts/` folder with reusable prompts
+5. Update README files with correct prereqs based on validation
 
 **Timeline:**
 - Monday Feb 3: Student prereq email
 - Wednesday Feb 5: Materials to HWZ
-- Saturday Feb 8: Lecture delivery (pending date confirmation)
+- Saturday Feb 7: Lecture delivery
