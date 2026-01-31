@@ -45,7 +45,7 @@ Documentation of how this repository and lectures are built. Updated as work pro
 5. **Renamed folders** (partial — Drive sync blocked some):
    - `2025 04 12 AIF` → `2025-04_AIF`
    - `2026 02 ZFU` → `2026-02_ZFU`
-   - Still pending: `2026 02 07 AIF`, `2026 Sovereignty`
+   - Still pending: `2026_02_07_AIF`, `2026 Sovereignty`
 
 6. **Pushed to GitHub:**
    - https://github.com/thwinter-ch/ai-lectures
@@ -61,6 +61,7 @@ Documentation of how this repository and lectures are built. Updated as work pro
 - Claude Code (Opus 4.5) for planning and execution
 - Git for version control
 - GitHub CLI (`gh`) for repo creation
+- **Wispr Flow** for voice-to-text dictation (productivity tool demonstrated in lecture content)
 
 ---
 
@@ -70,7 +71,7 @@ Documentation of how this repository and lectures are built. Updated as work pro
 
 ### Brainstorm Origin
 
-The lecture brainstorm document (`2026 02 07 AIF/HWZ briefing/AI Productivity Hacks for Executives Barainstorm.md`) was created via:
+The lecture brainstorm document (`2026_02_07_AIF/AI Productivity Hacks for Executives Barainstorm.md`) was created via:
 
 1. **Perplexity AI voice conversation** (Jan 24, 2026)
    - Used Wispr Flow for voice-to-text during ideation

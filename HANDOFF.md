@@ -11,16 +11,17 @@
 
 | Field | Value |
 |-------|-------|
-| Date | **Saturday Feb 8, 2026** (confirm — user said "Saturday Feb 7" but Feb 7 is Friday) |
-| Duration | 4 hours |
+| Date | **Saturday Feb 7, 2026** (confirmed via Stundenplan) |
+| Duration | 3.75 hours (13:00-16:45) |
 | Audience | Financial services executives (AIF program) |
-| Location | HWZ / Financial Institution, Switzerland |
+| Location | HWZ, Zurich |
+| Second session | **Saturday Apr 25, 2026** — "AI und Deep Tech Future Outlook" (13:00-16:45) |
 | Material due | Wednesday Feb 5 |
 | Student email | Monday Feb 3 |
 
 ### Brainstorm Document
 
-**Location:** `2026 02 07 AIF/HWZ briefing/AI Productivity Hacks for Executives Barainstorm.md`
+**Location:** `2026_02_07_AIF/AI Productivity Hacks for Executives Barainstorm.md`
 
 **Origin:** Perplexity AI voice conversation (Jan 24) using Wispr Flow — the process itself demonstrates the lecture content.
 
@@ -78,8 +79,8 @@
 - [ ] Folder renames still blocked by Google Drive
 
 ### Outstanding Questions (Ask User)
-1. **Date confirmation:** Feb 7 (Friday) or Feb 8 (Saturday)?
-2. **Participant list:** Do you have it? Needed for Monday email
+1. ~~**Date confirmation:**~~ **RESOLVED** — Saturday Feb 7, 2026, 13:00-16:45
+2. ~~**Participant list:**~~ **RESOLVED** — `Studiengruppenliste_MCA-AIF25-1.pdf` available with emails
 3. **Material format:** What does HWZ expect by Feb 5?
 
 ---
@@ -89,7 +90,7 @@
 | File | Purpose |
 |------|---------|
 | `BUILD_LOG.md` | Full session documentation + Notion validation |
-| `2026 02 07 AIF/HWZ briefing/AI Productivity Hacks for Executives Barainstorm.md` | Comprehensive lecture brainstorm |
+| `2026_02_07_AIF/AI Productivity Hacks for Executives Barainstorm.md` | Comprehensive lecture brainstorm |
 | `templates/prereqs-email-template.md` | Email templates (needs update for Claude Pro) |
 
 ---
@@ -115,7 +116,7 @@
 
 **Context to provide:**
 - Read this HANDOFF.md
-- Read the brainstorm doc at `2026 02 07 AIF/HWZ briefing/AI Productivity Hacks for Executives Barainstorm.md`
+- Read the brainstorm doc at `2026_02_07_AIF/AI Productivity Hacks for Executives Barainstorm.md`
 - Answer the 3 outstanding questions (date, participant list, material format)
 
 **Timeline:**

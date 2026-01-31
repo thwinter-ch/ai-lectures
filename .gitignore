@@ -12,6 +12,7 @@
 # CRITICAL: Per-lecture private folders (PII, speaker notes, full IP versions)
 # -----------------------------------------------------------------------------
 **/docs.gitignore/
+**/HWZ briefing/
 
 # -----------------------------------------------------------------------------
 # Google Drive artifacts (shortcuts, not actual files)
