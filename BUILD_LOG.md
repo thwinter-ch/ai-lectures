@@ -91,17 +91,22 @@ The lecture brainstorm document (`2026 02 07 AIF/HWZ briefing/AI Productivity Ha
 
 3. **Folder renames still blocked** by Google Drive sync — documented for manual fix later
 
-### Critical Validation Required
+### Critical Validation — COMPLETED
 
-**Notion Write Capabilities:**
+**Notion Write Capabilities (Validated 2026-01-31):**
 
-| Platform | Read from Notion | Write to Notion | Notes |
-|----------|------------------|-----------------|-------|
-| ChatGPT Plus | ✓ | ❓ UNVERIFIED | May be read-only |
-| Claude Pro | ✓ | ❓ UNVERIFIED | Need to test |
-| Perplexity Pro | ✓ | ❓ UNVERIFIED | Claims bidirectional |
+| Platform | Read Notion | Write Notion | Setup | Notes |
+|----------|-------------|--------------|-------|-------|
+| **Claude Pro** | ✓ | ✓ | Simple | Notion MCP one-click integration |
+| ChatGPT Plus | ✓ (extensions) | ❌ native | Complex | Requires custom GPT + API |
+| Perplexity Pro | ✓ | ❌ native | Complex | Requires Make/Zapier for writes |
 
-**Action:** Before Monday email, validate which platforms can actually WRITE to Notion databases from the web interface. This affects prereq recommendations.
+**Conclusion:** The brainstorm doc incorrectly recommended Perplexity for bidirectional integration. **Claude Pro is the only platform with native web-based write capability to Notion.**
+
+**Prereq recommendation change:**
+- Primary: **Claude Pro** ($20/mo) — required for hands-on exercises
+- Alternative: ChatGPT Plus only if participant already has it AND is willing to set up custom GPT
+- Perplexity: Remove from prereqs (read-only without automation tools)
 
 ### Outstanding
 
