@@ -1,7 +1,7 @@
 # Context Handoff
 
 **Last updated:** 2026-01-31
-**Session:** Repository initialization and structure setup
+**Session:** Cleanup + HWZ CAS lecture planning
 
 ---
 
@@ -11,23 +11,23 @@
 - **GitHub:** https://github.com/thwinter-ch/ai-lectures
 - **Local:** `c:\Users\tw\My Drive\BlizzardVentures\edu\AI lectures`
 - **Branch:** `master`
-- **Status:** Clean, 2 commits pushed
+- **Status:** Clean, pushed
 
 ### Structure
 ```
 ai-lectures/
-├── .gitignore              # Privacy patterns configured
+├── .gitignore              # Privacy patterns + 2025 archives
 ├── README.md               # Overview + prerequisites
-├── BUILD_LOG.md            # This session's work documented
+├── BUILD_LOG.md            # Session work documentation
 ├── HANDOFF.md              # This file
 ├── modules/                # Reusable content blocks
 │   └── governance-frameworks/  # House model, board questions
 ├── templates/              # Email templates (DE/EN)
 ├── lectures/               # Empty - for future lectures
-├── 2025-04_AIF/           # Past lecture
-├── 2025_12_HWZ_CAS_VR/    # Past lecture (summaries moved to docs.gitignore/)
-├── 2026 02 07 AIF/        # NEEDS RENAME → 2026-02_AIF
-├── 2026 Sovereignty/      # NEEDS RENAME → 2026_Sovereignty
+├── 2025-04_AIF/           # GITIGNORED - local only
+├── 2025_12_HWZ_CAS_VR/    # GITIGNORED - local only
+├── 2026 02 07 AIF/        # NEEDS RENAME → 2026-02_AIF (Google Drive blocking)
+├── 2026 Sovereignty/      # NEEDS RENAME → 2026_Sovereignty (Google Drive blocking)
 └── 2026-02_ZFU/           # Current project brief
 ```
 
@@ -81,12 +81,14 @@ git push
 
 ## Conventions
 
-| Item | Convention |
-|------|------------|
-| Lecture folders | `YYYY-MM_INSTITUTION_TOPIC` |
-| Private content | Always in `docs.gitignore/` subfolder |
-| Build logs | Update `BUILD_LOG.md` after each session |
-| Modules | `kebab-case` names |
+| Item | Convention | Example |
+|------|------------|---------|
+| Lecture folders | `YYYY-MM_INSTITUTION_TOPIC` | `2026-02_AIF` |
+| Date separator | dash `-` | `2026-02` |
+| Part separator | underscore `_` | `HWZ_CAS_VR` |
+| Private content | Always in `docs.gitignore/` subfolder | |
+| Build logs | Update `BUILD_LOG.md` after each session | |
+| Modules | `kebab-case` names | `governance-frameworks` |
 
 ---
 
