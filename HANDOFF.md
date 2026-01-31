@@ -90,12 +90,25 @@ git push
 
 ---
 
-## Questions to Ask User
+## Resume Instructions
 
-When resuming:
-1. "What's the exact date for the HWZ CAS lecture?"
-2. "Do you have the participant list ready?"
-3. "What's the lecture topic/focus?"
+**User intent:** Use GSD workflow to plan and build the HWZ CAS lecture.
+
+Start next session with:
+```
+/gsd:new-project
+```
+
+Or if continuing existing work:
+```
+/gsd:progress
+```
+
+### Info to gather at start:
+- Lecture date
+- Topic/focus
+- Participant list (for docs.gitignore/)
+- Duration (half-day, full-day, etc.)
 
 ---
 
