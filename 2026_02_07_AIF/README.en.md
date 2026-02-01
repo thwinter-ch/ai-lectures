@@ -53,7 +53,8 @@ We validated all major AI platforms for Notion integration:
 
 ### Optional (Recommended)
 
-- **Wispr Flow** — Voice-to-text for rapid capture ([wispr.ai](https://wispr.ai))
+- **Wispr Flow** — Voice-to-text for rapid capture ([wisprflow.ai](https://wisprflow.ai))
+- **OpenClaw** — Open-source AI agent for local automation ([openclaw.ai](https://openclaw.ai)) — experimental
 - **5-10 writing samples** — Emails, reports, LinkedIn posts (for your style profile)
 
 ### Hardware

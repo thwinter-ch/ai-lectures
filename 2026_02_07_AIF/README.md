@@ -53,7 +53,8 @@ Wir haben alle grossen KI-Plattformen fuer die Notion-Integration validiert:
 
 ### Optional (empfohlen)
 
-- **Wispr Flow** — Sprache-zu-Text fuer schnelle Erfassung ([wispr.ai](https://wispr.ai))
+- **Wispr Flow** — Sprache-zu-Text fuer schnelle Erfassung ([wisprflow.ai](https://wisprflow.ai))
+- **OpenClaw** — Open-Source KI-Agent fuer lokale Automatisierung ([openclaw.ai](https://openclaw.ai)) — experimentell
 - **5-10 Schreibproben** — E-Mails, Berichte, LinkedIn-Posts (fuer Ihr Stilprofil)
 
 ### Hardware
