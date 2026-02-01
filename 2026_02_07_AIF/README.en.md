@@ -78,28 +78,26 @@ Complete these before the session:
 
 ## Session Structure
 
-| Time | Module | What You'll Do |
-|------|--------|----------------|
-| 13:00 | The Architecture | See the system in action, understand the components |
-| 13:30 | GitHub Knowledge Base | Build your repo structure |
-| 14:15 | Writing Style Profile | Generate your AI profile (Ruben Hassid method) |
-| 14:45 | *Break* | |
-| 15:00 | Notion Second Brain | Set up databases, connect to Claude |
-| 15:45 | Company Research | Use AI for structured business analysis |
-| 16:30 | Wrap-up | Next steps, Q&A |
+| # | Segment | Type | Content |
+|---|---------|------|---------|
+| 01 | [How I Built This](segments/01-how-i-built-this-lecture/) | Lecture | See the system in action, understand components |
+| 02 | [Technology Revolution](segments/02-technology-revolution-lecture/) | Lecture | 2026 as breakthrough year for AI agents |
+| 03 | [Writing Profile](segments/03-writing-profile-exercise/) | Exercise | Create your personal writing style profile |
+| 04 | [AI as Managerial Skill](segments/04-ai-managerial-skill-lecture/) | Lecture | Why 80% abandon AI tools |
+| 05 | [Company Research](segments/05-company-research-exercise/) | Exercise | Structured business analysis with AI |
+| | *Break* | | |
+| 06 | [Information Overload](segments/06-information-overload-lecture/) | Lecture | The problem we're solving |
+| 07 | [Second Brain](segments/07-second-brain-exercise/) | Exercise | Set up Claude + Notion integration |
+| 08 | [Cognitive Limits](segments/08-cognitive-limits-lecture/) | Lecture | Why human-AI systems work |
+| 09 | [Demo: Personalized Summary](segments/09-demo-personalized-summary-lecture/) | Demo | n8n workflow in action |
 
 ---
 
 ## Resources
 
-### Exercises
-- [exercises/](exercises/) — Step-by-step guides for each module
-
-### Prompts
-- [prompts/](prompts/) — Master prompts you'll use during the session
-
-### Templates
-- [templates/](templates/) — Starter files for your knowledge base
+All materials are in the [segments/](segments/) folder:
+- Each segment folder contains `script.md` (speaker notes) and `gamma-prompt.md` (slide generator)
+- Exercises include step-by-step instructions
 
 ---
 
@@ -130,4 +128,4 @@ Contact the instructor or raise issues in this repository.
 
 ---
 
-*Last updated: January 31, 2026*
+*Last updated: February 1, 2026*

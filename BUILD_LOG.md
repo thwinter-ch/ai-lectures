@@ -44,7 +44,6 @@ Documentation of how this repository and lectures are built. Updated as work pro
 
 5. **Renamed folders** (partial — Drive sync blocked some):
    - `2025 04 12 AIF` → `2025-04_AIF`
-   - `2026 02 ZFU` → `2026-02_ZFU`
    - Still pending: `2026_02_07_AIF`, `2026 Sovereignty`
 
 6. **Pushed to GitHub:**

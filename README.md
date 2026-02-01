@@ -25,7 +25,6 @@ ai-lectures/
 | 2025-04 | AIF | AI Productivity Hacks for Leaders | (archived) |
 | 2025-12 | HWZ CAS VR | Technology for Board Directors | (archived) |
 | **2026-02-07** | **AIF** | **AI Productivity Hacks for Leaders** | **[README](2026_02_07_AIF/README.md)** |
-| 2026-02 | ZFU | Executive AI Seminars | TBD |
 | 2026-04-25 | AIF | AI und Deep Tech Future Outlook | TBD |
 
 ## Modules

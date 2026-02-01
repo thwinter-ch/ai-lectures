@@ -78,28 +78,26 @@ Vor der Session erledigen:
 
 ## Ablauf
 
-| Zeit | Modul | Was Sie tun werden |
-|------|-------|---------------------|
-| 13:00 | Die Architektur | System in Aktion sehen, Komponenten verstehen |
-| 13:30 | GitHub Wissensbasis | Ihre Repo-Struktur aufbauen |
-| 14:15 | Schreibstil-Profil | Ihr KI-Profil generieren (Ruben Hassid Methode) |
-| 14:45 | *Pause* | |
-| 15:00 | Notion Second Brain | Datenbanken einrichten, mit Claude verbinden |
-| 15:45 | Unternehmensrecherche | KI fuer strukturierte Business-Analyse nutzen |
-| 16:30 | Abschluss | Naechste Schritte, Q&A |
+| # | Segment | Typ | Inhalt |
+|---|---------|-----|--------|
+| 01 | [How I Built This](segments/01-how-i-built-this-lecture/) | Vortrag | System in Aktion, Komponenten verstehen |
+| 02 | [Technology Revolution](segments/02-technology-revolution-lecture/) | Vortrag | 2026 als Durchbruchsjahr fuer KI-Agenten |
+| 03 | [Writing Profile](segments/03-writing-profile-exercise/) | Uebung | Ihr persoenliches Schreibstil-Profil erstellen |
+| 04 | [AI as Managerial Skill](segments/04-ai-managerial-skill-lecture/) | Vortrag | Warum 80% die KI-Nutzung abbrechen |
+| 05 | [Company Research](segments/05-company-research-exercise/) | Uebung | Strukturierte Unternehmensanalyse mit KI |
+| | *Pause* | | |
+| 06 | [Information Overload](segments/06-information-overload-lecture/) | Vortrag | Das Problem, das wir loesen |
+| 07 | [Second Brain](segments/07-second-brain-exercise/) | Uebung | Claude + Notion einrichten |
+| 08 | [Cognitive Limits](segments/08-cognitive-limits-lecture/) | Vortrag | Warum Mensch-KI-Systeme funktionieren |
+| 09 | [Demo: Personalized Summary](segments/09-demo-personalized-summary-lecture/) | Demo | n8n-Workflow in Aktion |
 
 ---
 
 ## Ressourcen
 
-### Uebungen
-- [exercises/](exercises/) — Schritt-fuer-Schritt-Anleitungen pro Modul
-
-### Prompts
-- [prompts/](prompts/) — Master-Prompts fuer die Session
-
-### Vorlagen
-- [templates/](templates/) — Starter-Dateien fuer Ihre Wissensbasis
+Alle Materialien befinden sich im [segments/](segments/) Ordner:
+- Jeder Segment-Ordner enthaelt `script.md` (Vortragsnotizen) und `gamma-prompt.md` (Folien-Generator)
+- Uebungen enthalten Schritt-fuer-Schritt-Anleitungen
 
 ---
 
@@ -130,4 +128,4 @@ Kontaktieren Sie den Dozenten oder erstellen Sie Issues in diesem Repository.
 
 ---
 
-*Zuletzt aktualisiert: 31. Januar 2026*
+*Zuletzt aktualisiert: 1. Februar 2026*
