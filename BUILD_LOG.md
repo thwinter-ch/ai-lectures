@@ -28,15 +28,9 @@ Documentation of how this repository and lectures are built. Updated as work pro
 2. **Moved PII content:**
    - `2025_12_HWZ_CAS_VR/summaries/` → `docs.gitignore/summaries/` (participant names in filenames)
 
-3. **Created module structure:**
+3. **Created module structure** (later deleted — see 2026-02-01):
    ```
-   modules/
-   ├── governance-frameworks/
-   │   ├── house-model/        # Tech investment validation
-   │   └── board-questions/    # Armour-piercing questions
-   ├── ai-governance/          # Placeholder
-   ├── hands-on-tools/         # Placeholder
-   └── prompting-basics/       # Placeholder
+   modules/  # DELETED 2026-02-01 — empty scaffolding, never used
    ```
 
 4. **Created templates:**
@@ -178,10 +172,54 @@ The lecture brainstorm document (`2026_02_07_AIF/AI Productivity Hacks for Execu
 
 ### Outstanding
 
-- [ ] Translate all content to German (Swiss orthography)
+- [x] Translate all content to German (Swiss orthography)
 - [ ] Validate gamma-prompts in Gamma.app
 - [ ] Generate slide decks
 - [ ] Send student prereq email (Feb 3)
+- [ ] Package materials for HWZ (Feb 5)
+
+---
+
+## 2026-02-01: README + Email Prep (Session 6)
+
+**Session goal:** Finalize README with "Lecture as Code" concept, prepare student email workflow.
+
+### Decisions Made
+
+| Decision | Rationale |
+|----------|-----------|
+| Delete `modules/` | Empty scaffolding, no real content — YAGNI |
+| Delete `lectures/` | Empty directory, no purpose |
+| Add n8n MCP to project | Enable workflow automation for email sending |
+| Lecture as Code framing | Analogous to Infrastructure as Code — makes concept accessible to tech audience |
+
+### Work Completed
+
+1. **Updated README.md:**
+   - Added "Lecture as Code" concept (EN/DE bilingual)
+   - Links to BUILD_LOG.md for transparency
+   - Removed modules/ reference (deleted)
+   - Clean structure diagram
+
+2. **Extracted student data:**
+   - Parsed `Studiengruppenliste_MCA-AIF25-1.pdf` (21 students)
+   - Created `docs.gitignore/students.csv` (gitignored, contains PII)
+   - Fields: first_name, last_name, company, function, email
+
+3. **Deleted unused directories:**
+   - `modules/` — placeholder READMEs only, never used
+   - `lectures/` — empty
+
+4. **Added project-level n8n MCP:**
+   - Created `.mcp.json` with n8n-mcp config
+   - Enables workflow automation within this project
+
+### Outstanding
+
+- [ ] Build/adapt n8n workflow for prereqs email
+- [ ] Send prereqs email (Feb 3 deadline)
+- [ ] Validate gamma-prompts in Gamma.app
+- [ ] Generate slide decks
 - [ ] Package materials for HWZ (Feb 5)
 
 ---

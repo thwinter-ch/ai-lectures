@@ -1,6 +1,16 @@
-# AI Lectures
+# AI Lectures | KI-Vorlesungen
 
-Educational materials for AI and technology literacy courses targeting board directors, executives, and non-technical leaders.
+## Lecture as Code
+
+This repository treats lectures like software: version-controlled, modular, and built with AI assistance. Just as **Infrastructure as Code** revolutionized DevOps, **Lecture as Code** makes educational content reproducible, auditable, and collaboratively improvable.
+
+Every lecture segment has its own folder with scripts, prompts, and build artifacts. The entire Feb 7 lecture was built in ~4 sessions using Claude Code + GSD workflow. See **[BUILD_LOG.md](BUILD_LOG.md)** for the full build history.
+
+---
+
+**[Deutsche Version unten](#deutsche-version)**
+
+---
 
 ## Instructors
 
@@ -11,52 +21,95 @@ Educational materials for AI and technology literacy courses targeting board dir
 
 ```
 ai-lectures/
-├── modules/              # Reusable building blocks
-├── lectures/             # Future lecture assemblies
+├── 2026_02_07_AIF/       # Current: Feb 7 AI Productivity Hacks
+│   └── segments/         # 9 segments (6 lectures + 3 exercises)
 ├── templates/            # Starter files for participants
-├── 2025-*/               # Past lectures (archived)
-└── 2026-*/               # Current/upcoming lectures
+├── BUILD_LOG.md          # How this repo was built
+└── HANDOFF.md            # Current status for session continuity
 ```
 
 ## Lectures
 
-| Date | Institution | Topic | Start Here |
-|------|-------------|-------|------------|
-| 2025-04 | AIF | AI Productivity Hacks for Leaders | (archived) |
-| 2025-12 | HWZ CAS VR | Technology for Board Directors | (archived) |
-| **2026-02-07** | **AIF** | **AI Productivity Hacks for Leaders** | **[README](2026_02_07_AIF/README.md)** |
-| 2026-04-25 | AIF | AI und Deep Tech Future Outlook | TBD |
-
-## Modules
-
-Reusable content blocks that can be assembled into different lectures:
-
-- **Governance Frameworks** — House model, armour-piercing questions, technology validation
-- **AI Governance** — Policy templates, risk frameworks, hallucination handling
-- **Hands-on Tools** — Claude, ChatGPT, Perplexity workflows
-- **Prompting Basics** — Prompt engineering for non-technical users
+| Date | Institution | Topic | Status |
+|------|-------------|-------|--------|
+| 2025-04 | AIF | AI Productivity Hacks for Leaders | archived |
+| 2025-12 | HWZ CAS VR | Technology for Board Directors | archived |
+| **2026-02-07** | **AIF** | **AI Productivity Hacks for Leaders** | **[Active](2026_02_07_AIF/README.md)** |
+| 2026-04-25 | AIF | AI und Deep Tech Future Outlook | planned |
 
 ## For Participants
 
 ### Prerequisites
 
-Before attending, please ensure you have:
-
-- [ ] **GitHub account** (free) — [Create here](https://github.com/signup)
-- [ ] **Claude Pro account** ($20/month) — [Sign up here](https://claude.ai)
-- [ ] **Laptop** with a modern browser (Chrome, Firefox, Safari, Edge)
-- [ ] Optional: ChatGPT Plus, Perplexity Pro for comparison
+- [ ] **Claude Pro account** ($20/month) — [Sign up](https://claude.ai) — required for exercises
+- [ ] **Notion account** (free) — [Sign up](https://notion.so)
+- [ ] **Laptop** with modern browser
 
 ### Getting Started
 
-1. Clone this repository or download specific materials
-2. Check the lecture folder for your session
-3. Complete any pre-work exercises in `exercises/`
-
-## License
-
-Content is provided for educational purposes. Contact instructors for commercial use.
+1. Check your lecture folder (e.g., `2026_02_07_AIF/`)
+2. Follow the segment structure for exercises
+3. Bring questions — this is hands-on learning
 
 ---
 
-*Questions? Contact the instructors directly.*
+## License
+
+Educational use. Contact instructors for commercial licensing.
+
+---
+
+---
+
+# Deutsche Version
+
+## Lecture as Code
+
+Dieses Repository behandelt Vorlesungen wie Software: versionskontrolliert, modular und mit KI-Unterstützung erstellt. Wie **Infrastructure as Code** DevOps revolutioniert hat, macht **Lecture as Code** Bildungsinhalte reproduzierbar, nachvollziehbar und kollaborativ verbesserbar.
+
+Die gesamte Vorlesung vom 7. Februar wurde in ~4 Sessions mit Claude Code + GSD-Workflow erstellt. Siehe **[BUILD_LOG.md](BUILD_LOG.md)** für die vollständige Build-Historie.
+
+## Dozenten
+
+- **Thomas Winter** — Technologiestrategie, KI-Governance
+- **Patrick Comboeuf** — Go-to-Market, Partnerschaften, Silicon Valley Speed
+
+## Struktur
+
+```
+ai-lectures/
+├── 2026_02_07_AIF/       # Aktuell: 7. Feb KI-Produktivitäts-Hacks
+│   └── segments/         # 9 Segmente (6 Vorträge + 3 Übungen)
+├── templates/            # Vorlagen für Teilnehmende
+├── BUILD_LOG.md          # Wie dieses Repo erstellt wurde
+└── HANDOFF.md            # Aktueller Status für Session-Kontinuität
+```
+
+## Vorlesungen
+
+| Datum | Institution | Thema | Status |
+|-------|-------------|-------|--------|
+| 2025-04 | AIF | KI-Produktivitäts-Hacks für Führungskräfte | archiviert |
+| 2025-12 | HWZ CAS VR | Technologie für Verwaltungsräte | archiviert |
+| **2026-02-07** | **AIF** | **KI-Produktivitäts-Hacks für Führungskräfte** | **[Aktiv](2026_02_07_AIF/README.md)** |
+| 2026-04-25 | AIF | KI und Deep Tech Zukunftsausblick | geplant |
+
+## Für Teilnehmende
+
+### Voraussetzungen
+
+- [ ] **Claude Pro Konto** (CHF 20/Monat) — [Anmelden](https://claude.ai) — erforderlich für Übungen
+- [ ] **Notion Konto** (kostenlos) — [Anmelden](https://notion.so)
+- [ ] **Laptop** mit modernem Browser
+
+### Erste Schritte
+
+1. Prüfen Sie Ihren Vorlesungsordner (z.B. `2026_02_07_AIF/`)
+2. Folgen Sie der Segment-Struktur für Übungen
+3. Bringen Sie Fragen mit — dies ist praxisorientiertes Lernen
+
+---
+
+## Lizenz
+
+Für Bildungszwecke. Kontaktieren Sie die Dozenten für kommerzielle Nutzung.
