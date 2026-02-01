@@ -110,10 +110,79 @@ The lecture brainstorm document (`2026_02_07_AIF/AI Productivity Hacks for Execu
 
 ### Outstanding
 
-- [ ] Validate Notion write capabilities for ChatGPT/Claude/Perplexity
-- [ ] Confirm lecture date (Feb 7 vs Feb 8)
+- [x] Validate Notion write capabilities for ChatGPT/Claude/Perplexity
+- [x] Confirm lecture date (Feb 7 vs Feb 8)
 - [ ] Get participant list
-- [ ] Build lecture content via GSD workflow
+- [x] Build lecture content via GSD workflow
+
+---
+
+## 2026-01-31: Lecture Content Build (Sessions 3-4)
+
+**Session goal:** Build all 9 lecture segments (6 lectures + 3 exercises) for Feb 7 session.
+
+### Work Completed
+
+1. **Created 6 lecture segments** with `script.md` + `gamma-prompt.md`:
+   - 01: How I Built This (system demo)
+   - 02: Technology Revolution (2026 agent breakthrough)
+   - 04: AI as Managerial Skill (80% abandon AI)
+   - 06: Information Overload (the problem)
+   - 08: Cognitive Limits (human-AI systems)
+   - 09: Demo Personalized Summary (n8n workflow)
+
+2. **Created 3 exercise segments** with guides:
+   - 03: Writing Profile (Ruben Hassid method)
+   - 05: Company Research (deep research + strategy synthesis)
+   - 07: Second Brain (Claude + Notion setup)
+
+3. **YouTube extraction skill created** at `~/.claude/skills/youtube-extraction/skill.md`
+   - Tested Gemini API for video processing
+   - Documented reliability issues with hallucination
+
+### Learnings
+
+- Gemini 2.0 Flash can process YouTube but hallucinated on specific videos
+- Agent failures often due to missing folders — create folders before spawning agents
+- Always use explicit absolute paths in agent prompts
+
+---
+
+## 2026-02-01: Folder Restructure + ZFU Cleanup
+
+**Session goal:** Unify folder structure for chronological delivery, remove confidential ZFU content.
+
+### Decisions Made
+
+| Decision | Rationale |
+|----------|-----------|
+| Unified `segments/` folder | Chronological delivery order, easier prep |
+| Number + type suffix | `01-name-lecture/` or `03-name-exercise/` for clarity |
+| Purge ZFU from history | Confidential content, force-push acceptable |
+
+### Work Completed
+
+1. **Migrated folder structure:**
+   - `slides/` + `exercises/` → unified `segments/` (01-09)
+   - Chronological order matching delivery sequence
+
+2. **Removed ZFU from repo:**
+   - Deleted folder and all references from tracked files
+   - Used `git filter-repo` to purge from history
+   - Force-pushed clean history
+
+3. **Updated documentation:**
+   - Both READMEs (DE/EN) with new segment structure
+   - HANDOFF.md with current status
+   - .gitignore and BUILD_LOG.md cleaned
+
+### Outstanding
+
+- [ ] Translate all content to German (Swiss orthography)
+- [ ] Validate gamma-prompts in Gamma.app
+- [ ] Generate slide decks
+- [ ] Send student prereq email (Feb 3)
+- [ ] Package materials for HWZ (Feb 5)
 
 ---
 
