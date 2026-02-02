@@ -21,6 +21,7 @@
 | Tool | Use |
 |------|-----|
 | **Wispr Flow** | Daily voice-to-text — capture ideas, draft content, think out loud |
+| **Optiverse** | Meeting transcription and AI-powered summary interpretation |
 
 ---
 
@@ -57,7 +58,7 @@
 | Tool | Use |
 |------|-----|
 | **Claude Code** | Daily driver — this lecture was built with it |
-| **Google IDX** | Cloud-based IDE experiments |
+| **Google Anti-Gravity** | Cloud-based IDE experiments |
 | **Lovable** | On the radar — next to try |
 
 ---

@@ -1,6 +1,6 @@
 # Context Handoff
 
-**Last updated:** 2026-02-01 (session 5)
+**Last updated:** 2026-02-02 (session 6)
 **Project:** Feb 7 HWZ Lecture — AI Productivity Hacks for Executives
 
 ---
@@ -20,7 +20,7 @@
 
 ## Current Status
 
-**Structure complete. Translation in progress.**
+**Translations complete. Ready for Gamma slide generation.**
 
 ```
 2026_02_07_AIF/segments/
@@ -37,33 +37,46 @@
 
 ---
 
+## Session 6 Changes (Feb 2)
+
+- ✅ Fixed Wispr Flow URL: `wispr.ai` → `wisprflow.ai` in READMEs
+- ✅ Added OpenClaw (experimental) to READMEs
+- ✅ Updated `auto-push-project.de.md`: Sie → du form
+- ✅ Clarified DB ID workflow: Claude creates DB, user copies ID to project prompt
+- ✅ Added Gamma MCP to `.mcp.json`
+- ✅ Updated tech stack: Added Optiverse, fixed Google IDX → Google Anti-Gravity
+
+---
+
 ## Outstanding Tasks
 
-### 1. Complete German translations (DONE)
-- ✅ 25 markdown files translated to `.de.md` versions
-- Swiss German orthography applied (ss not ß)
-- Formal register (Sie) throughout
-- Technical terms kept in English where natural
-
-### 2. Validate Gamma prompts
-- Test each `gamma-prompt.md` in Gamma.app
-- Document exact paste workflow
+### 1. Validate Gamma prompts
+- Test each `gamma-prompt.md` in Gamma.app (or use Gamma MCP)
 - Verify slide generation works correctly
 - Fix any prompt issues
 
-### 3. Generate slide decks
+### 2. Generate slide decks
 - Run validated gamma-prompts through Gamma
 - Export as PDF or PPTX
 - Store in each segment folder
 
-### 4. Student prereq email
+### 3. Student prereq email
 - Draft email with prereqs (GitHub, Notion, Claude Pro accounts)
 - Send by Monday Feb 3
 - Template exists at `templates/prereqs-email-template.md`
 
-### 5. Package materials for HWZ
+### 4. Package materials for HWZ
 - Compile final materials
 - Send by Wednesday Feb 5
+
+---
+
+## MCP Servers Available
+
+| Server | Purpose |
+|--------|---------|
+| `n8n-mcp` | Workflow automation |
+| `gamma-mcp` | Slide generation via API |
 
 ---
 
@@ -72,29 +85,24 @@
 **Swiss German orthography rules:**
 - No ß — always use "ss" (Strasse, nicht Straße)
 - Standard Hochdeutsch vocabulary and grammar
-- Formal register (Sie, not du)
+- **Informal register (du)** for exercise instructions
 - Keep technical terms in English where appropriate (AI, GitHub, Notion)
 - Audience: senior executives in finance
-
-**File structure after translation:**
-- Keep English originals as `filename.md`
-- Add German versions as `filename.de.md` OR replace originals if German-only delivery
 
 ---
 
 ## Gamma Prompt Workflow
 
-**How to use gamma-prompt.md files:**
-
+**Option 1: Manual (Gamma.app)**
 1. Open [gamma.app](https://gamma.app)
 2. Click "Create" → "Paste in text"
 3. Copy entire content of `gamma-prompt.md`
-4. Paste into Gamma's text input
-5. Select presentation style/theme
-6. Generate slides
-7. Export and save to segment folder
+4. Paste and generate
 
-**Test each prompt before bulk generation.**
+**Option 2: Via MCP (Claude Code)**
+1. Use `generate_gamma` tool with inputText from gamma-prompt.md
+2. Poll with `get_gamma_generation` for completion
+3. Export URLs returned automatically
 
 ---
 
@@ -116,12 +124,10 @@
 
 ## Resume Instructions
 
-1. Check if translation agents completed
-2. Review translated files for quality
-3. Test gamma-prompts in Gamma.app
-4. Generate slide decks
-5. Draft student email
-6. Commit all changes
+1. Generate slides using Gamma (manual or MCP)
+2. Draft student prereq email
+3. Test exercise workflows end-to-end
+4. Package and send to HWZ by Feb 5
 
 ---
 
@@ -130,6 +136,7 @@
 - ✅ Jan 31: Content built (English)
 - ✅ Feb 1: Folder restructure + ZFU cleanup
 - ✅ Feb 1: German translations (complete)
+- ✅ Feb 2: Fixes (URLs, tech stack, du-form)
 - ⏳ Feb 2-3: Gamma slide generation
 - ⏳ Feb 3: Student email sent
 - ⏳ Feb 5: Materials to HWZ

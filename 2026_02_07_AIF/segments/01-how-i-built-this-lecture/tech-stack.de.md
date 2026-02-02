@@ -21,6 +21,7 @@
 | Tool | Nutzung |
 |------|---------|
 | **Wispr Flow** | Tägliche Sprache-zu-Text — Ideen erfassen, Inhalte entwerfen, laut denken |
+| **Optiverse** | Meeting-Transkription und KI-gestützte Zusammenfassungen |
 
 ---
 
@@ -57,7 +58,7 @@
 | Tool | Nutzung |
 |------|---------|
 | **Claude Code** | Tägliches Arbeitstier — diese Vorlesung wurde damit erstellt |
-| **Google IDX** | Cloud-basierte IDE-Experimente |
+| **Google Anti-Gravity** | Cloud-basierte IDE-Experimente |
 | **Lovable** | Auf dem Radar — als Nächstes ausprobieren |
 
 ---
