@@ -16,11 +16,11 @@ Mach jede Claude-Konversation zu einem dauerhaften Wissens-Asset. Diese Anleitun
 
 ## Schritt 1: Notion-Datenbank erstellen lassen
 
-Du musst die Datenbank nicht manuell erstellen — Claude kann das direkt für dich erledigen. Starte einfach eine Konversation und sag:
+Du musst die Datenbank nicht manuell erstellen — Claude kann das direkt für dich erledigen. Starte eine Konversation und sag:
 
-> «Erstelle mir eine Second-Brain-Datenbank in Notion mit Feldern für Titel, Datum, Kernerkenntnisse, Quelle, Tags, Aktionspunkte und Konfidenz.»
+> «Erstelle mir eine Second-Brain-Datenbank in Notion mit Feldern für Titel, Datum, Kernerkenntnisse, Quelle, Tags, Aktionspunkte und Konfidenz. Gib mir die Datenbank-ID.»
 
-Claude erstellt die Datenbank mit der richtigen Struktur und merkt sich die ID automatisch für zukünftige Einträge.
+Claude erstellt die Datenbank und gibt dir die ID zurück. **Kopiere diese ID** — du brauchst sie im nächsten Schritt für die Projektanweisungen.
 
 ---
 
@@ -36,7 +36,7 @@ Erstelle ein neues Claude-Projekt und füge diese Anweisungen ein:
 Du hast Zugriff auf Notion via MCP. Am Ende substantieller Gespräche überträgst du Erkenntnisse in mein Second Brain.
 
 ## Notion-Datenbank
-- Nutze meine Second-Brain-Datenbank (bei Bedarf nach dem Namen fragen oder neue erstellen)
+- Datenbank-ID: [HIER DEINE ID EINFÜGEN]
 
 ## Automatische Erfassungsauslöser
 Übertragung zu Notion bei:
