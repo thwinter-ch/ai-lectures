@@ -2,7 +2,7 @@
 
 **Einrichtungszeit: ca. 10 Minuten**
 
-Machen Sie jede Claude-Konversation zu einem dauerhaften Wissens-Asset. Diese Anleitung zeigt Ihnen, wie Sie ein Claude-Projekt konfigurieren, das automatisch Erkenntnisse zusammenfasst und in Ihr Notion Second Brain überträgt.
+Mach jede Claude-Konversation zu einem dauerhaften Wissens-Asset. Diese Anleitung zeigt dir, wie du ein Claude-Projekt konfigurierst, das automatisch Erkenntnisse zusammenfasst und in dein Notion Second Brain überträgt.
 
 ---
 
@@ -14,44 +14,33 @@ Machen Sie jede Claude-Konversation zu einem dauerhaften Wissens-Asset. Diese An
 
 ---
 
-## Schritt 1: Ihre Notion-Datenbank erstellen
+## Schritt 1: Notion-Datenbank erstellen lassen
 
-Erstellen Sie eine neue Datenbank in Notion mit diesen Eigenschaften:
+Du musst die Datenbank nicht manuell erstellen — Claude kann das direkt für dich erledigen. Starte einfach eine Konversation und sag:
 
-| Eigenschaft | Typ | Zweck |
-|-------------|-----|-------|
-| **Titel** | Titel | Kurze Themenbeschreibung |
-| **Datum** | Datum | Automatisch ausgefülltes Konversationsdatum |
-| **Kernerkenntnisse** | Text (lang) | 3-5 Aufzählungspunkte mit Learnings |
-| **Quelle** | Auswahl | `Claude Chat`, `Recherche`, `Meeting`, `Brainstorming` |
-| **Tags** | Mehrfachauswahl | Domänen-Tags zum Filtern |
-| **Aktionspunkte** | Text | Nächste Schritte, falls vorhanden |
-| **Konfidenz** | Auswahl | `Hoch`, `Mittel`, `Spekulativ` |
+> «Erstelle mir eine Second-Brain-Datenbank in Notion mit Feldern für Titel, Datum, Kernerkenntnisse, Quelle, Tags, Aktionspunkte und Konfidenz.»
 
-**Notieren Sie sich Ihre Datenbank-ID** — Sie benötigen diese für die Projektanweisungen. Sie finden sie in Ihrer Datenbank-URL:
-```
-https://notion.so/workspace/[DATABASE_ID]?v=...
-```
+Claude erstellt die Datenbank mit der richtigen Struktur und merkt sich die ID automatisch für zukünftige Einträge.
 
 ---
 
 ## Schritt 2: Claude-Projektanweisungen
 
-Erstellen Sie ein neues Claude-Projekt und fügen Sie diese Anweisungen ein:
+Erstelle ein neues Claude-Projekt und füge diese Anweisungen ein:
 
 ### Basisanweisungen (Kopierfertig)
 
 ```
 # Wissenserfassungsprotokoll
 
-Sie haben Zugriff auf Notion via MCP. Am Ende substantieller Gespräche übertragen Sie Erkenntnisse in mein Second Brain.
+Du hast Zugriff auf Notion via MCP. Am Ende substantieller Gespräche überträgst du Erkenntnisse in mein Second Brain.
 
 ## Notion-Datenbank
-- Datenbank-ID: [IHRE_DATABASE_ID]
+- Nutze meine Second-Brain-Datenbank (bei Bedarf nach dem Namen fragen oder neue erstellen)
 
 ## Automatische Erfassungsauslöser
 Übertragung zu Notion bei:
-- Benutzer sagt «speichere das», «erfasse das», «push zu Notion» oder «Sitzung beenden»
+- Ich sage «speichere das», «erfasse das», «push zu Notion» oder «Sitzung beenden»
 - Gespräch enthält umsetzbare Erkenntnisse, Entscheidungen oder neuartige Frameworks
 - Recherche liefert wiederverwendbare Ergebnisse
 
@@ -91,21 +80,21 @@ Bei Übertragung zu Notion wie folgt strukturieren:
 
 ## Schritt 3: Gesprächsabschluss-Prompt-Muster
 
-Verwenden Sie diese Phrasen, um die Erfassung auszulösen:
+Verwende diese Phrasen, um die Erfassung auszulösen:
 
 | Phrase | Verhalten |
 |--------|-----------|
 | `«Speichere das in Notion»` | Sofortige Übertragung |
 | `«Sitzung beenden»` | Zusammenfassen + übertragen + bestätigen |
-| `«Was ist erfassenswert?»` | Claude schlägt vor, Sie genehmigen |
+| `«Was ist erfassenswert?»` | Claude schlägt vor, du genehmigst |
 | `«Übertrage [spezifische Erkenntnis] zu Notion»` | Gezielte Erfassung |
 
 ### Beispielinteraktion
 
 ```
-Sie: «Dieses Framework zur Lieferantenbewertung ist nützlich. Speichere das in Notion.»
+Du: «Dieses Framework zur Lieferantenbewertung ist nützlich. Speichere das in Notion.»
 
-Claude: «Übertragung in Ihr Second Brain:
+Claude: «Übertragung in dein Second Brain:
 
 **Titel**: Lieferantenbewertungs-Framework — Make vs Buy
 **Kernerkenntnisse**:
@@ -123,7 +112,7 @@ Bestätigt: Eintrag erfolgreich erstellt.»
 
 ## Variante: Recherche-Modus
 
-Für dedizierte Recherchesitzungen fügen Sie dies zu Ihren Projektanweisungen hinzu:
+Für dedizierte Recherchesitzungen füge dies zu deinen Projektanweisungen hinzu:
 
 ```
 ## Recherche-Modus
@@ -183,7 +172,7 @@ Am Ende: Ideen nach potenziellem Impact ranken, bevor sie übertragen werden.
 |---------|--------|
 | «Kann nicht auf Notion zugreifen» | MCP-Konfiguration in den Claude Desktop-Einstellungen prüfen |
 | Übertragung schlägt stillschweigend fehl | Überprüfen, ob die Datenbank-ID korrekt ist |
-| Falsche Datenbank | Bestätigen, dass Sie die Datenbank-ID verwenden, nicht die Seiten-ID |
+| Falsche Datenbank | Bestätigen, dass die Datenbank-ID verwendet wird, nicht die Seiten-ID |
 | Fehlende Eigenschaften | Sicherstellen, dass die Notion-Datenbank alle erforderlichen Spalten hat |
 
 ---
@@ -208,11 +197,11 @@ Am Ende: Ideen nach potenziellem Impact ranken, bevor sie übertragen werden.
 
 ---
 
-## Was Ihnen das bringt
+## Was dir das bringt
 
 - **Gespräche werden zu Assets** — Erkenntnisse überdauern den Chatverlauf
 - **Durchsuchbare Wissensbasis** — Notions Filterung schlägt das Durchscrollen von Chats
 - **Weniger Reibung** — kein manuelles Kopieren und Einfügen, keine Neuformatierung
 - **Konsistente Struktur** — jede Erkenntnis wird gleich erfasst
 
-Das beste Second Brain ist eines, das Sie tatsächlich nutzen. Dies beseitigt die Reibung, die die meisten Wissensmanagement-Systeme scheitern lässt.
+Das beste Second Brain ist eines, das du tatsächlich nutzt. Dies beseitigt die Reibung, die die meisten Wissensmanagement-Systeme scheitern lässt.
