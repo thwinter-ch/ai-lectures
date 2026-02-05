@@ -31,49 +31,36 @@ Das ist keine Theorie. Sie verlassen den Kurs mit einem funktionierenden System,
 
 ## Voraussetzungen (vor dem 7. Februar erledigen)
 
-### Erforderliche Accounts
+### Erforderlich
 
 | Tool | Kosten | Wozu | Anmeldung |
 |------|--------|------|-----------|
-| **GitHub** | Kostenlos | Wissens-Repository | [github.com/signup](https://github.com/signup) |
+| **Laptop** | — | Mit aktuellem Browser (Chrome, Firefox, Safari, Edge) | — |
 | **Notion** | Kostenlos | Second Brain Interface | [notion.so](https://notion.so) |
 | **Claude Pro** | $20/Monat | KI mit Notion-Schreibzugriff | [claude.ai](https://claude.ai) |
 
-### Warum Claude Pro?
+Alternativ zu Claude Pro: **Perplexity Pro**
 
-Wir haben alle grossen KI-Plattformen fuer die Notion-Integration validiert:
+### Warum die Bezahlversion?
 
-| Plattform | Notion lesen | In Notion schreiben | Setup |
-|-----------|--------------|---------------------|-------|
-| **Claude Pro** | Ja | Ja (nativ) | Einfach |
-| **Perplexity Pro** | Ja | Ja (nativ) | Einfach |
-| ChatGPT Plus | Ja | Nein (braucht Custom GPT + API) | Komplex |
+Fuer die Second Brain Uebung bauen wir ein System, bei dem die KI automatisch in eure Notion-Datenbank schreibt:
 
-**Claude Pro und Perplexity Pro** bieten beide native Notion-Schreibfaehigkeit. Fuer diese Session empfehlen wir Claude Pro wegen der Projektfunktion (persistenter Kontext).
+| Plattform | Notion lesen | In Notion schreiben |
+|-----------|--------------|---------------------|
+| **Claude Pro** | Ja | Ja (nativ) |
+| **Perplexity Pro** | Ja | Ja (nativ) |
+| Claude (kostenlos) | Nein | Nein |
+| Perplexity (kostenlos) | Nein | Nein |
+| ChatGPT Plus | Ja | Nein |
 
-### Optional (empfohlen)
-
-- **Wispr Flow** — Sprache-zu-Text fuer schnelle Erfassung ([wisprflow.ai](https://wisprflow.ai))
-- **OpenClaw** — Open-Source KI-Agent fuer lokale Automatisierung ([openclaw.ai](https://openclaw.ai)) — experimentell
-- **5-10 Schreibproben** — E-Mails, Berichte, LinkedIn-Posts (fuer Ihr Stilprofil)
-
-### Hardware
-
-- Laptop mit modernem Browser (Chrome, Firefox, Safari, Edge)
-- Kopfhoerer (fuer Sprachuebungen)
+Falls ihr die CHF 20 nicht investieren moechtet: Kein Problem — ihr koennt die Uebung theoretisch mitverfolgen. Das Abo kann nach dem ersten Monat gekuendigt werden.
 
 ---
 
-## Vorbereitung (15 Minuten)
+## Vorbereitung
 
-Vor der Session erledigen:
-
-- [ ] GitHub-Account erstellen und E-Mail verifizieren
 - [ ] Notion-Account erstellen
-- [ ] Claude Pro abonnieren
-- [ ] Wispr Flow installieren (optional)
-- [ ] 5-10 Schreibproben in einem Ordner sammeln
-- [ ] Dieses Repository in Ihren GitHub-Account forken
+- [ ] Claude Pro oder Perplexity Pro abonnieren
 
 ---
 
@@ -102,7 +89,7 @@ Alle Materialien befinden sich im [segments/](segments/) Ordner:
 
 ---
 
-## Das System, das Sie aufbauen
+## Das System, das ich nutze (Demo)
 
 ```
 Spracheingabe (Wispr Flow)
@@ -119,7 +106,9 @@ Wissensbasis                durchsuchbares
                            Second Brain
 ```
 
-**Kernprinzip:** Ihr Wissen liegt in portablem Markdown (nicht in proprietaeren Tools eingesperrt). KI verbindet und klassifiziert. Notion macht es durchsuchbar.
+**Kernprinzip:** Wissen liegt in portablem Markdown (nicht in proprietaeren Tools eingesperrt). KI verbindet und klassifiziert. Notion macht es durchsuchbar.
+
+*Wispr Flow ([wisprflow.ai](https://wisprflow.ai)) ist Teil meines Workflows, den ich in der Session zeige — keine Voraussetzung fuer die Uebungen.*
 
 ---
 

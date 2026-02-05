@@ -1,47 +1,47 @@
-# Second Brain Exercise: Claude + Notion Integration
+# Second Brain Übung: Claude + Notion Integration
 
-Build external memory that captures insights automatically. No more losing good ideas to chat history.
-
----
-
-## What You're Building
-
-A knowledge capture system where Claude:
-1. Connects to your Notion workspace
-2. Reads existing notes for context
-3. Auto-pushes valuable insights at end of conversations
-4. Structures everything consistently for retrieval
-
-**Why this matters:** Most knowledge management dies from friction. This removes the friction.
+Bauen Sie ein externes Gedächtnis auf, das Erkenntnisse automatisch erfasst. Keine wertvollen Ideen mehr, die im Chatverlauf verloren gehen.
 
 ---
 
-## System Flow
+## Was Sie entwickeln
+
+Ein Wissenserfassungssystem, bei dem Claude:
+1. Sich mit Ihrem Notion-Workspace verbindet
+2. Bestehende Notizen als Kontext ausliest
+3. Wertvolle Erkenntnisse am Ende von Gesprächen automatisch speichert
+4. Alles konsistent strukturiert für späteren Abruf
+
+**Warum das wichtig ist:** Die meisten Wissensmanagement-Systeme scheitern an der Reibung. Dieses System beseitigt diese Reibung.
+
+---
+
+## Systemablauf
 
 ```mermaid
 flowchart LR
-    subgraph Setup ["1. Setup (One-time)"]
-        A[Claude Settings] --> B[Connect Notion Integration]
-        B --> C[Authorize Pages]
+    subgraph Setup ["1. Setup (Einmalig)"]
+        A[Claude Einstellungen] --> B[Notion Integration verbinden]
+        B --> C[Seiten autorisieren]
     end
 
-    subgraph Project ["2. Create Project"]
-        D[New Claude Project] --> E[Add Auto-Push Instructions]
-        E --> F[Configure Database ID]
+    subgraph Project ["2. Projekt erstellen"]
+        D[Neues Claude Projekt] --> E[Auto-Push Anweisungen hinzufügen]
+        E --> F[Datenbank-ID konfigurieren]
     end
 
-    subgraph Usage ["3. Auto-Push Pattern"]
-        G[Have Conversation] --> H{Worth Capturing?}
-        H -->|Yes| I["Trigger: 'save this' / 'end session'"]
-        H -->|No| J[End Chat]
-        I --> K[Claude Summarizes + Pushes]
+    subgraph Usage ["3. Auto-Push Muster"]
+        G[Gespräch führen] --> H{Erfassenswert?}
+        H -->|Ja| I["Auslöser: 'speichern' / 'Sitzung beenden'"]
+        H -->|Nein| J[Chat beenden]
+        I --> K[Claude fasst zusammen + speichert]
     end
 
-    subgraph Notion ["4. Notion Database"]
+    subgraph Notion ["4. Notion Datenbank"]
         K --> L[(Second Brain DB)]
-        L --> M[Searchable Insights]
-        L --> N[Tagged by Domain]
-        L --> O[Action Items Tracked]
+        L --> M[Durchsuchbare Erkenntnisse]
+        L --> N[Nach Domäne getaggt]
+        L --> O[Aktionspunkte nachverfolgt]
     end
 
     Setup --> Project --> Usage
@@ -49,54 +49,54 @@ flowchart LR
 
 ---
 
-## Time Estimates
+## Zeitschätzungen
 
-| Phase | Duration | Notes |
-|-------|----------|-------|
-| Notion connection setup | 10-15 min | One-time |
-| Project configuration | 10 min | Per project, reusable template |
-| **Total initial setup** | **20-25 min** | Then zero friction ongoing |
-
----
-
-## Prerequisites
-
-| Requirement | Why |
-|-------------|-----|
-| **Claude Pro or Max** | Free tier lacks MCP integrations |
-| **Notion account** | Free tier works; any paid tier also works |
-| **Desktop browser** | Mobile not supported for initial setup |
+| Phase | Dauer | Hinweise |
+|-------|-------|----------|
+| Notion-Verbindung einrichten | 10-15 Min. | Einmalig |
+| Projektkonfiguration | 10 Min. | Pro Projekt, wiederverwendbare Vorlage |
+| **Gesamte Ersteinrichtung** | **20-25 Min.** | Danach fortlaufend ohne Reibungsverluste |
 
 ---
 
-## Exercise Files
+## Voraussetzungen
 
-| File | Purpose | Time |
-|------|---------|------|
-| [claude-notion-setup.md](./claude-notion-setup.md) | Connect Claude to Notion (one-time) | 10-15 min |
-| [auto-push-project.md](./auto-push-project.md) | Configure auto-capture project | 10 min |
-
-**Do them in order.** Setup first, then project configuration.
-
----
-
-## Quick Start
-
-1. **Setup connection** — Follow `claude-notion-setup.md` to authorize Claude
-2. **Create Notion database** — Use schema from `auto-push-project.md`
-3. **Create Claude project** — Paste the capture instructions
-4. **Test** — Have a conversation, say "save this", verify it lands in Notion
+| Anforderung | Grund |
+|-------------|-------|
+| **Claude Pro oder Max** | Die kostenlose Version enthält keine MCP-Integrationen |
+| **Notion-Konto** | Kostenlose Version funktioniert; jede Bezahlversion ebenfalls |
+| **Desktop-Browser** | Mobile Geräte werden für die Ersteinrichtung nicht unterstützt |
 
 ---
 
-## What Success Looks Like
+## Übungsdateien
 
-After setup, your workflow becomes:
+| Datei | Zweck | Zeit |
+|-------|-------|------|
+| [claude-notion-setup.de.md](./claude-notion-setup.de.md) | Claude mit Notion verbinden (einmalig) | 10-15 Min. |
+| [auto-push-project.de.md](./auto-push-project.de.md) | Auto-Erfassungsprojekt konfigurieren | 10 Min. |
+
+**Führen Sie diese in der richtigen Reihenfolge aus.** Zuerst das Setup, dann die Projektkonfiguration.
+
+---
+
+## Schnellstart
+
+1. **Verbindung einrichten** — Folgen Sie `claude-notion-setup.de.md`, um Claude zu autorisieren
+2. **Notion-Datenbank erstellen** — Verwenden Sie das Schema aus `auto-push-project.de.md`
+3. **Claude-Projekt erstellen** — Fügen Sie die Erfassungsanweisungen ein
+4. **Testen** — Führen Sie ein Gespräch, sagen Sie «Speichere das», überprüfen Sie, ob es in Notion erscheint
+
+---
+
+## Was Erfolg bedeutet
+
+Nach der Einrichtung wird Ihr Workflow zu:
 
 ```
-You: [Have substantive conversation with Claude]
-You: "Save this to Notion"
-Claude: [Summarizes key insights, pushes to database, confirms]
+Sie: [Führen ein substantielles Gespräch mit Claude]
+Sie: «Speichere das in Notion»
+Claude: [Fasst wichtige Erkenntnisse zusammen, speichert in Datenbank, bestätigt]
 ```
 
-Every valuable conversation becomes a searchable, tagged entry in your second brain. No copy-paste. No reformatting. No friction.
+Jedes wertvolle Gespräch wird zu einem durchsuchbaren, getaggten Eintrag in Ihrem Second Brain. Kein Kopieren und Einfügen. Keine Neuformatierung. Keine Reibung.

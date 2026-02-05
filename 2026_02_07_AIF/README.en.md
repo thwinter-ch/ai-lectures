@@ -31,49 +31,36 @@ This isn't theory. You'll leave with a functioning system you can use Monday mor
 
 ## Prerequisites (Complete Before Feb 7)
 
-### Required Accounts
+### Required
 
 | Tool | Cost | Why | Sign Up |
 |------|------|-----|---------|
-| **GitHub** | Free | Knowledge repository | [github.com/signup](https://github.com/signup) |
+| **Laptop** | — | With modern browser (Chrome, Firefox, Safari, Edge) | — |
 | **Notion** | Free | Second brain interface | [notion.so](https://notion.so) |
 | **Claude Pro** | $20/mo | AI with Notion write capability | [claude.ai](https://claude.ai) |
 
-### Why Claude Pro?
+Alternative to Claude Pro: **Perplexity Pro**
 
-We validated all major AI platforms for Notion integration:
+### Why the Paid Version?
 
-| Platform | Read Notion | Write to Notion | Setup |
-|----------|-------------|-----------------|-------|
-| **Claude Pro** | Yes | Yes (native) | Simple |
-| **Perplexity Pro** | Yes | Yes (native) | Simple |
-| ChatGPT Plus | Yes | No (needs custom GPT + API) | Complex |
+For the Second Brain exercise, we build a system where AI automatically writes to your Notion database:
 
-**Claude Pro and Perplexity Pro** both offer native Notion write capability. For this session we recommend Claude Pro for its Projects feature (persistent context).
+| Platform | Read Notion | Write to Notion |
+|----------|-------------|-----------------|
+| **Claude Pro** | Yes | Yes (native) |
+| **Perplexity Pro** | Yes | Yes (native) |
+| Claude (free) | No | No |
+| Perplexity (free) | No | No |
+| ChatGPT Plus | Yes | No |
 
-### Optional (Recommended)
-
-- **Wispr Flow** — Voice-to-text for rapid capture ([wisprflow.ai](https://wisprflow.ai))
-- **OpenClaw** — Open-source AI agent for local automation ([openclaw.ai](https://openclaw.ai)) — experimental
-- **5-10 writing samples** — Emails, reports, LinkedIn posts (for your style profile)
-
-### Hardware
-
-- Laptop with modern browser (Chrome, Firefox, Safari, Edge)
-- Headphones (for voice exercises)
+If you don't want to invest the $20: No problem — you can follow the exercise theoretically. The subscription can be cancelled after the first month.
 
 ---
 
-## Pre-Work (15 minutes)
+## Preparation
 
-Complete these before the session:
-
-- [ ] Create GitHub account and verify email
 - [ ] Create Notion account
-- [ ] Subscribe to Claude Pro
-- [ ] Install Wispr Flow (optional)
-- [ ] Gather 5-10 writing samples in a folder
-- [ ] Fork this repository to your GitHub account
+- [ ] Subscribe to Claude Pro or Perplexity Pro
 
 ---
 
@@ -102,7 +89,7 @@ All materials are in the [segments/](segments/) folder:
 
 ---
 
-## The System You're Building
+## The System I Use (Demo)
 
 ```
 Voice Input (Wispr Flow)
@@ -119,7 +106,9 @@ knowledge base              searchable
                            second brain
 ```
 
-**Key principle:** Your knowledge is stored in portable markdown (not locked in proprietary tools). AI connects and classifies. Notion makes it searchable.
+**Key principle:** Knowledge is stored in portable markdown (not locked in proprietary tools). AI connects and classifies. Notion makes it searchable.
+
+*Wispr Flow ([wisprflow.ai](https://wisprflow.ai)) is part of my workflow that I demo in the session — not a prerequisite for the exercises.*
 
 ---
 

@@ -1,19 +1,19 @@
-# Company Research Exercise
+# Übung: Unternehmensrecherche
 
-**Two-part exercise that builds AI-assisted research muscle.**
+**Zweiteilige Übung zur Entwicklung von AI-gestützten Recherchefähigkeiten.**
 
-Transform scattered web intelligence into a structured strategy document in under 45 minutes.
+Verwandeln Sie verstreute Web-Informationen in weniger als 45 Minuten in ein strukturiertes Strategiedokument.
 
 ---
 
-## What This Teaches
+## Was Sie lernen
 
-| Skill | Why It Matters |
-|-------|----------------|
-| Prompt engineering for research | Most people get shallow results because they ask shallow questions |
-| Source triangulation | AI can hallucinate; you need citation discipline |
-| Framework application | Raw data is useless without structure (Golden Circle, BMC, VPC) |
-| Two-stage AI workflow | Research and synthesis require different tools and prompts |
+| Kompetenz | Warum sie wichtig ist |
+|-----------|----------------------|
+| Prompt Engineering für Recherche | Die meisten erhalten oberflächliche Ergebnisse, weil sie oberflächliche Fragen stellen |
+| Quellen-Triangulation | AI kann halluzinieren; Zitationsdisziplin ist unerlässlich |
+| Framework-Anwendung | Rohdaten sind ohne Struktur nutzlos (Golden Circle, BMC, VPC) |
+| Zweistufiger AI-Workflow | Recherche und Synthese erfordern unterschiedliche Tools und Prompts |
 
 ---
 
@@ -21,9 +21,9 @@ Transform scattered web intelligence into a structured strategy document in unde
 
 ```mermaid
 flowchart LR
-    A[Deep Research<br/>01-deep-research.md] --> B[Save Output<br/>Copy full response]
-    B --> C[Strategy Synthesis<br/>02-strategy-synthesis.md]
-    C --> D[Final Document<br/>Board-ready strategy]
+    A[Deep Research<br/>01-deep-research.md] --> B[Output speichern<br/>Vollständige Antwort kopieren]
+    B --> C[Strategie-Synthese<br/>02-strategy-synthesis.md]
+    C --> D[Finales Dokument<br/>Vorstandsreifes Strategiepapier]
 
     style A fill:#e1f5fe
     style B fill:#fff3e0
@@ -31,89 +31,89 @@ flowchart LR
     style D fill:#f3e5f5
 ```
 
-**Critical:** Save your research output before starting synthesis. The second prompt requires the first output as input.
+**Kritisch:** Speichern Sie Ihr Recherche-Output, bevor Sie mit der Synthese beginnen. Der zweite Prompt benötigt den Output des ersten als Input.
 
 ---
 
-## Time Estimates
+## Zeitschätzungen
 
-| Phase | Duration | Notes |
-|-------|----------|-------|
-| **Part 1: Deep Research** | 25-30 min | Includes quick scan + full protocol |
-| **Handoff** | 2 min | Copy and save research output |
-| **Part 2: Strategy Synthesis** | 10-15 min | Single prompt, review and validate |
-| **Total** | ~45 min | First time; gets faster with practice |
-
----
-
-## Platform Recommendations
-
-### Part 1: Deep Research
-
-| Recommended | Also Works | Avoid |
-|-------------|------------|-------|
-| **Perplexity Pro** | ChatGPT with browsing | Base Claude (no web access) |
-
-Perplexity Pro is the default because:
-- Real-time web search
-- Automatic inline citations
-- Source links for verification
-- Fast iteration on follow-up questions
-
-### Part 2: Strategy Synthesis
-
-Any capable LLM works. The synthesis prompt is framework-heavy, not research-heavy.
-
-| Platform | Notes |
-|----------|-------|
-| **Claude** | Best for structured, long-form output |
-| **ChatGPT** | Solid alternative |
-| **Perplexity** | Works, but overkill since no web search needed |
+| Phase | Dauer | Hinweise |
+|-------|-------|----------|
+| **Teil 1: Deep Research** | 25-30 Min. | Inklusive Schnell-Scan + vollständiges Protokoll |
+| **Übergabe** | 2 Min. | Recherche-Output kopieren und speichern |
+| **Teil 2: Strategie-Synthese** | 10-15 Min. | Ein Prompt, prüfen und validieren |
+| **Total** | ~45 Min. | Beim ersten Mal; wird mit Übung schneller |
 
 ---
 
-## Exercise Files
+## Plattform-Empfehlungen
 
-1. **[01-deep-research.md](./01-deep-research.md)** - Research protocol with prompts for quick scan and full analysis
-2. **[02-strategy-synthesis.md](./02-strategy-synthesis.md)** - Framework synthesis (Golden Circle + BMC + VPC)
+### Teil 1: Deep Research
+
+| Empfohlen | Funktioniert auch | Vermeiden |
+|-----------|-------------------|-----------|
+| **Perplexity Pro** | ChatGPT mit Browsing | Basis-Claude (kein Web-Zugang) |
+
+Perplexity Pro ist die Standardempfehlung, weil:
+- Echtzeit-Websuche
+- Automatische Inline-Zitate
+- Quellenlinks zur Verifizierung
+- Schnelle Iteration bei Folgefragen
+
+### Teil 2: Strategie-Synthese
+
+Jedes leistungsfähige LLM funktioniert. Der Synthese-Prompt ist framework-intensiv, nicht recherche-intensiv.
+
+| Plattform | Hinweise |
+|-----------|----------|
+| **Claude** | Am besten für strukturierten, langen Output |
+| **ChatGPT** | Solide Alternative |
+| **Perplexity** | Funktioniert, aber überdimensioniert, da keine Websuche nötig |
 
 ---
 
-## Quick Start
+## Übungsdateien
 
-1. Open Perplexity Pro
-2. Copy the Quick Start prompt from `01-deep-research.md`
-3. Replace `[COMPANY NAME]` with your target
-4. Run and iterate
-5. Save the full output
-6. Open Claude or ChatGPT
-7. Paste your research output + the prompt from `02-strategy-synthesis.md`
-8. Review and validate the strategy document
+1. **[01-deep-research.md](./01-deep-research.md)** - Recherche-Protokoll mit Prompts für Schnell-Scan und Vollanalyse
+2. **[02-strategy-synthesis.md](./02-strategy-synthesis.md)** - Framework-Synthese (Golden Circle + BMC + VPC)
 
 ---
 
-## Expected Outputs
+## Schnellstart
 
-### After Part 1
-- Executive summary (1 page)
-- Products table
-- Competitor matrix
-- Risk flags with evidence
-- Citation trail
+1. Öffnen Sie Perplexity Pro
+2. Kopieren Sie den Schnellstart-Prompt aus `01-deep-research.md`
+3. Ersetzen Sie `[COMPANY NAME]` durch Ihr Zielunternehmen
+4. Ausführen und iterieren
+5. Vollständigen Output speichern
+6. Öffnen Sie Claude oder ChatGPT
+7. Fügen Sie Ihren Recherche-Output + den Prompt aus `02-strategy-synthesis.md` ein
+8. Strategiedokument prüfen und validieren
 
-### After Part 2
-- Executive maxim (1 sentence thesis)
+---
+
+## Erwartete Ergebnisse
+
+### Nach Teil 1
+- Executive Summary (1 Seite)
+- Produktetabelle
+- Wettbewerbermatrix
+- Risikohinweise mit Evidenz
+- Zitationsnachweis
+
+### Nach Teil 2
+- Executive Maxim (1-Satz-These)
 - Golden Circle (Why/How/What)
-- Business Model Canvas (9 blocks)
+- Business Model Canvas (9 Blöcke)
 - Value Proposition Canvas (Jobs/Pains/Gains + Fit Statement)
 
 ---
 
-## Common Pitfalls
+## Häufige Fehler
 
-| Mistake | Fix |
-|---------|-----|
-| Skipping Part 1, going straight to synthesis | Garbage in, garbage out. The synthesis prompt needs real research. |
-| Not saving Part 1 output | You'll lose it when you start Part 2. Copy before switching. |
-| Accepting uncited claims | Push back: "Cite sources for the revenue estimate." |
-| Using synthesis output without validation | The AI structures; you verify. Check the TBD items. |
+| Fehler | Lösung |
+|--------|--------|
+| Teil 1 überspringen, direkt zur Synthese | Garbage in, garbage out. Der Synthese-Prompt braucht echte Recherche. |
+| Teil 1 Output nicht speichern | Sie verlieren ihn, wenn Sie Teil 2 starten. Vorher kopieren. |
+| Unbelegte Behauptungen akzeptieren | Nachfragen: "Belegen Sie die Umsatzschätzung mit Quellen." |
+| Synthese-Output ohne Validierung verwenden | AI strukturiert; Sie verifizieren. Prüfen Sie die TBD-Punkte. |

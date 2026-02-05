@@ -1,32 +1,32 @@
-# Writing Profile Exercise
+# Übung: Schreibprofil erstellen
 
-Build a personal voice profile that teaches AI to write like you.
-
----
-
-## What This Is
-
-A structured self-interview that extracts your writing DNA: beliefs, constraints, pet peeves, and patterns. The output is a markdown document you can attach to any AI conversation to get writing that sounds like you rather than generic AI slop.
-
-**Why it works:** Most people can't articulate their own taste. They give vague answers like "I like to keep things simple." This interview framework pushes past that with specific questions designed to surface:
-
-- Negative constraints (what you hate) over positive aspirations
-- Concrete examples over abstract descriptions
-- Visceral reactions over reasoned positions
+Erstellen Sie ein persönliches Stimmprofil, das einer AI beibringt, wie Sie zu schreiben.
 
 ---
 
-## Pathways
+## Was ist das?
+
+Ein strukturiertes Selbstinterview, das Ihre Schreib-DNA extrahiert: Überzeugungen, Einschränkungen, Ärgernisse und Muster. Das Ergebnis ist ein Markdown-Dokument, das Sie jeder AI-Konversation beifügen können, um Texte zu erhalten, die nach Ihnen klingen -- nicht nach generischem AI-Einheitsbrei.
+
+**Warum es funktioniert:** Die meisten Menschen können ihren eigenen Geschmack nicht artikulieren. Sie geben vage Antworten wie "Ich halte die Dinge gerne einfach." Dieses Interview-Framework geht darüber hinaus mit spezifischen Fragen, die Folgendes ans Licht bringen:
+
+- Negative Einschränkungen (was Sie hassen) statt positive Absichten
+- Konkrete Beispiele statt abstrakter Beschreibungen
+- Instinktive Reaktionen statt durchdachter Positionen
+
+---
+
+## Vorgehensweise
 
 ```mermaid
 flowchart TD
-    START([Start Here]) --> LITE[LITE Interview<br/>10 questions]
-    LITE --> USE[Use Profile in AI<br/>Attach to conversations]
-    USE --> DECISION{Want deeper<br/>calibration?}
-    DECISION -->|No| DONE([Done])
-    DECISION -->|Yes| BRIDGE[Bridge Session<br/>Add 5-10 targeted questions]
-    BRIDGE --> FULL[Full Profile<br/>100 questions]
-    FULL --> USE2[Enhanced Profile<br/>in AI]
+    START([Start]) --> LITE[LITE-Interview<br/>10 Fragen]
+    LITE --> USE[Profil in AI nutzen<br/>Konversationen beifügen]
+    USE --> DECISION{Tiefere<br/>Kalibrierung<br/>gewünscht?}
+    DECISION -->|Nein| DONE([Fertig])
+    DECISION -->|Ja| BRIDGE[Bridge-Session<br/>5-10 gezielte Fragen]
+    BRIDGE --> FULL[Vollständiges Profil<br/>100 Fragen]
+    FULL --> USE2[Erweitertes Profil<br/>in AI]
     USE2 --> DONE
 
     style START fill:#e1e1e1
@@ -37,83 +37,83 @@ flowchart TD
 
 ---
 
-## Time Estimates
+## Zeitaufwand
 
-| Path | Time | What You Get |
-|------|------|--------------|
-| **LITE Interview** | 15-20 min | Usable profile covering all 7 categories |
-| **Bridge Session** | +10-15 min | Targeted refinements based on gaps you notice |
-| **Full Profile** | 60-90 min | Comprehensive 100-question deep dive |
+| Variante | Zeit | Ergebnis |
+|----------|------|----------|
+| **LITE-Interview** | 15-20 Min. | Nutzbares Profil mit allen 7 Kategorien |
+| **Bridge-Session** | +10-15 Min. | Gezielte Verfeinerungen basierend auf erkannten Lücken |
+| **Vollständiges Profil** | 60-90 Min. | Umfassendes 100-Fragen-Tiefeninterview |
 
-**Recommendation:** Start with LITE. Most people get 80% of the value in 20% of the time. Only go full profile if you're serious about AI ghostwriting or building a persistent custom GPT.
-
----
-
-## Exercise Files
-
-| File | Purpose |
-|------|---------|
-| [lite-interview.md](./lite-interview.md) | 10-question prompt (copy/paste ready) |
-| [question-analysis.md](./question-analysis.md) | Why these 10 questions were selected |
-| [platform-guide.md](./platform-guide.md) | Setup instructions for Claude, ChatGPT, Perplexity, Gemini |
-| [Full Interview Prompt](../input/me-in-a-doc.md) | 100-question version for the deep dive |
+**Empfehlung:** Beginnen Sie mit LITE. Die meisten erhalten 80% des Nutzens in 20% der Zeit. Das vollständige Profil lohnt sich nur, wenn Sie AI-Ghostwriting ernsthaft betreiben oder einen dauerhaften Custom GPT aufbauen möchten.
 
 ---
 
-## Expected Outcomes
+## Übungsdateien
 
-After completing the LITE interview, you'll have:
-
-1. **A Voice Profile document** with:
-   - Core identity summary (2-3 sentences)
-   - Full responses to all 10 questions
-   - Quick reference card: Always / Never / Voice calibration
-
-2. **Practical artifacts:**
-   - Banned words list
-   - At least one signature sentence example
-   - Documented red flags and aesthetic crimes
-   - Tonal range markers (skeptical vs. excited)
-
-3. **Immediate usability:**
-   - Drop the profile into Claude Projects or ChatGPT custom instructions
-   - Reference it in any "write like me" prompt
-   - Iterate as you notice gaps
+| Datei | Zweck |
+|-------|-------|
+| [lite-interview.md](./lite-interview.md) | 10-Fragen-Prompt (kopierfertig) |
+| [question-analysis.md](./question-analysis.md) | Warum diese 10 Fragen ausgewählt wurden |
+| [platform-guide.md](./platform-guide.md) | Einrichtungsanleitung für Claude, ChatGPT, Perplexity, Gemini |
+| [Vollständiger Interview-Prompt](../input/me-in-a-doc.md) | 100-Fragen-Version für die Tiefenanalyse |
 
 ---
 
-## Quick Start
+## Erwartete Ergebnisse
 
-1. Open [lite-interview.md](./lite-interview.md)
-2. Copy the interview prompt
-3. Paste into a new AI conversation (see [platform-guide.md](./platform-guide.md) for setup)
-4. Block 20 minutes
-5. Answer honestly -- specific beats polished
-6. Save the generated profile as `voice-profile.md`
+Nach Abschluss des LITE-Interviews haben Sie:
 
----
+1. **Ein Stimmprofil-Dokument** mit:
+   - Kernidentitäts-Zusammenfassung (2-3 Sätze)
+   - Vollständige Antworten auf alle 10 Fragen
+   - Kurzreferenz: Immer / Niemals / Stimmkalibrierung
 
-## Bridge Session (Optional)
+2. **Praktische Artefakte:**
+   - Liste verbotener Wörter
+   - Mindestens ein Beispiel für einen charakteristischen Satz
+   - Dokumentierte Warnsignale und ästhetische Sünden
+   - Tonale Marker (skeptisch vs. begeistert)
 
-After using your LITE profile for a week, you'll notice where it's thin. Common gaps:
-
-- Transitions between ideas
-- Formatting preferences (lists vs. prose)
-- Handling disagreement or controversy
-- Domain-specific voice shifts
-
-Run a targeted 5-10 question follow-up to patch these. Append to your existing profile.
+3. **Sofortige Einsatzbereitschaft:**
+   - Profil in Claude Projects oder ChatGPT Custom Instructions hinterlegen
+   - In jedem "Schreib wie ich"-Prompt referenzieren
+   - Iterieren, wenn Lücken auffallen
 
 ---
 
-## Full Profile
+## Schnellstart
 
-For comprehensive coverage, use the [100-question interview](../input/me-in-a-doc.md). This is overkill for most use cases but valuable if:
-
-- You're building a persistent writing assistant
-- You do significant AI-assisted content creation
-- You want the process of articulating your taste (therapeutic side effect)
+1. Öffnen Sie [lite-interview.md](./lite-interview.md)
+2. Kopieren Sie den Interview-Prompt
+3. Fügen Sie ihn in eine neue AI-Konversation ein (siehe [platform-guide.md](./platform-guide.md) für die Einrichtung)
+4. Blockieren Sie 20 Minuten
+5. Antworten Sie ehrlich -- spezifisch schlägt poliert
+6. Speichern Sie das generierte Profil als `voice-profile.md`
 
 ---
 
-*Last updated: January 31, 2026*
+## Bridge-Session (Optional)
+
+Nachdem Sie Ihr LITE-Profil eine Woche lang verwendet haben, werden Sie feststellen, wo es dünn ist. Häufige Lücken:
+
+- Übergänge zwischen Ideen
+- Formatierungspräferenzen (Listen vs. Fliesstext)
+- Umgang mit Meinungsverschiedenheiten oder Kontroversen
+- Domänenspezifische Stimmwechsel
+
+Führen Sie ein gezieltes Follow-up mit 5-10 Fragen durch, um diese zu beheben. Fügen Sie die Ergebnisse Ihrem bestehenden Profil hinzu.
+
+---
+
+## Vollständiges Profil
+
+Für umfassende Abdeckung nutzen Sie das [100-Fragen-Interview](../input/me-in-a-doc.md). Das ist für die meisten Anwendungsfälle übertrieben, aber wertvoll, wenn:
+
+- Sie einen dauerhaften Schreibassistenten aufbauen
+- Sie erhebliche AI-gestützte Inhaltserstellung betreiben
+- Sie den Prozess der Geschmacksartikulation schätzen (therapeutischer Nebeneffekt)
+
+---
+
+*Letzte Aktualisierung: 31. Januar 2026*
