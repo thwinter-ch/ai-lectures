@@ -8,11 +8,22 @@
 
 | Tool | Primary Use |
 |------|-------------|
-| **Claude Max** | Almost everything — reasoning, writing, analysis |
+| **Claude** | Almost everything — reasoning, writing, analysis |
 | **Perplexity** | Structured research with citations |
-| **Gemini** | Image creation and visual content |
-| **HeyGen** | Video creation (avatar-based) |
+| **Notion** | Central second brain — daily knowledge hub |
 | **ChatGPT** | Legacy/nostalgic use cases |
+
+---
+
+## Visual Design
+
+| Tool | Use |
+|------|-----|
+| **Gemini / nanoBanana** | Image generation — API and web interface |
+| **Miro** | Collaborative whiteboarding and diagrams |
+| **GAMMA** | Slides — primary tool |
+| **HeyGen** | Video creation (avatar-based) |
+| **Canva** | Quick visual design |
 
 ---
 
@@ -29,7 +40,6 @@
 
 | Tool | Use |
 |------|-----|
-| **Notion** | Central second brain |
 | **Telegram → Notion** | Smart feeder mechanism for quick captures |
 | **Classification Agent** | Auto-categorizes incoming content |
 
@@ -40,16 +50,20 @@
 | Tool | Use |
 |------|-----|
 | **n8n** | Workflow automation |
+| **OpenClaw** | Autonomous AI agents (Hugo, Kari) |
 | **VPS Containers** | Self-hosted automation, vibe-coded with Claude Code |
 
 ---
 
-## Content Creation
+## Content Production Chain
 
-| Tool | Use |
-|------|-----|
-| **GAMMA** | Slides — primary tool |
-| **Canva** | Occasional visual design |
+OpenClaw → Typefully → Gemini/nanoBanana
+
+| Tool | Role |
+|------|------|
+| **OpenClaw** | Agent-generated drafts |
+| **Typefully** | Scheduling and publishing |
+| **Gemini / nanoBanana** | Visual assets |
 
 ---
 

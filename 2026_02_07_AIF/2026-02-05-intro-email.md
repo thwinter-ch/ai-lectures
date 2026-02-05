@@ -1,4 +1,4 @@
-# Student Email — Ready to Send
+# Intro Email — Ready to Send
 
 Copy everything below the line into Outlook.
 

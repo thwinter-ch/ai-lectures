@@ -224,6 +224,52 @@ The lecture brainstorm document (`2026_02_07_AIF/AI Productivity Hacks for Execu
 
 ---
 
+## 2026-02-05: Security Breach Fix + Repo Cleanup
+
+**Session goal:** Address security incident and clean up repository.
+
+### Security Incident
+
+**What happened:** Student discovered that `.mcp.json` files containing API keys (n8n-mcp and gamma-mcp) were committed to the public GitHub repository. The n8n API key provided access to automation workflows including "Milkee Support Ingestion".
+
+**Resolution:**
+1. Identified the leaked keys via JWT decoding
+2. Rotated both n8n and Gamma API keys immediately
+3. Added `.mcp.json` and `**/.mcp.json` to `.gitignore`
+4. Used `git filter-branch` to purge `.mcp.json` from entire git history
+5. Force-pushed clean history to GitHub
+6. Verified repo is clean of secrets via grep scan
+
+**Lesson learned:** Always gitignore MCP configuration files from the start — they contain API keys by design.
+
+### Cleanup Work
+
+1. **Deleted empty files:**
+   - `jounrey.md` (empty, typo of "journey")
+   - `segments/07-second-brain-exercise/Untitled.md` (empty)
+
+2. **Renamed files:**
+   - `student-email.md` → `intro-email.md` (with date added)
+   - `AI Productivity Hacks for Executives Barainstorm.md` → `2026-01-24 AI Productivity Hacks Brainstorm.md`
+
+3. **Added to .gitignore:**
+   - `HANDOFF.md` — internal session notes, not for public repo
+
+4. **Updated tech-stack.md:**
+   - Reorganized into Visual Design, Content Production Chain sections
+   - Added OpenClaw to Automation
+   - Added Typefully, Miro, nanoBanana
+   - Removed "Max" from Claude (sounds like bragging)
+
+### Outstanding
+
+- [ ] Delete prereqs-email-template.md (never sent, superseded by intro-email)
+- [ ] Validate gamma-prompts in Gamma.app
+- [ ] Generate slide decks
+- [ ] Package materials for HWZ
+
+---
+
 ## Template for Future Entries
 
 ```markdown
