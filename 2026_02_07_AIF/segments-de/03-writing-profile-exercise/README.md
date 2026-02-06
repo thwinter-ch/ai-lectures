@@ -29,6 +29,8 @@ Füge den kopierten Text ein und drücke Enter. Die AI stellt dir 10 Fragen, ein
 
 > **Tipp:** Vage Antworten wie "Ich halte es gerne einfach" produzieren generische Profile. Was zählt: konkrete Beispiele, echte Ärgernisse, spezifische Wörter die du hasst. Je ehrlicher, desto besser das Ergebnis.
 
+> **Zeit knapp?** Falls du nicht alle 10 Fragen schaffst: Schreib einfach "Profil erstellen" in den Chat. Die AI erstellt das Profil dann mit dem, was du bis dahin beantwortet hast. 5-6 Fragen reichen für ein brauchbares Ergebnis.
+
 ### 4. Speichere dein Profil
 
 Nach der letzten Frage generiert die AI dein Stimmprofil. So speicherst du es:
