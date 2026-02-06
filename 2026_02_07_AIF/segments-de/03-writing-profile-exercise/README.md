@@ -6,59 +6,58 @@
 
 ---
 
-## Los geht's
+## Anleitung
 
-1. Öffne [lite-interview.md](./lite-interview.md)
-2. Kopiere den gesamten Prompt
-3. Öffne eine neue Konversation in [Claude](https://claude.ai) (oder ChatGPT, falls du kein Claude hast)
-4. Füge den Prompt ein und drücke Enter
-5. Beantworte die 10 Fragen — ehrlich und konkret, nicht poliert
-6. Speichere das generierte Profil am Ende
+### 1. Prompt kopieren
 
-**Wichtig:** Die AI stellt dir eine Frage nach der anderen. Nimm dir Zeit. Vage Antworten wie "Ich halte es gerne einfach" produzieren generische Profile. Konkrete Beispiele und echte Ärgernisse sind das, was zählt.
+Öffne [lite-interview.md](./lite-interview.md) und kopiere **alles unterhalb der horizontalen Linie** (den gesamten Prompt-Text).
+
+### 2. Neue AI-Konversation starten
+
+Öffne [claude.ai](https://claude.ai) und starte eine neue Konversation. Falls du kein Claude hast, funktioniert auch ChatGPT oder eine andere AI.
+
+### 3. Prompt einfügen und loslegen
+
+Füge den kopierten Text ein und drücke Enter. Die AI stellt dir 10 Fragen, eine nach der anderen. Beantworte jede ehrlich und konkret.
+
+> **Tipp:** Vage Antworten wie "Ich halte es gerne einfach" produzieren generische Profile. Was zählt: konkrete Beispiele, echte Ärgernisse, spezifische Wörter die du hasst. Je ehrlicher, desto besser das Ergebnis.
+
+### 4. Profil speichern
+
+Nach der letzten Frage generiert die AI dein Stimmprofil. So speicherst du es:
+
+**In Claude:**
+1. Das Profil erscheint als Artifact (rechte Seite)
+2. Klicke auf das Kopier-Symbol oben rechts im Artifact
+3. Öffne einen Texteditor (z.B. Notepad, VS Code, oder was du hast)
+4. Füge den Text ein und speichere als `stimmprofil.md`
+
+**In ChatGPT:**
+1. Markiere den gesamten Profiltext im Chat
+2. Kopiere mit Ctrl+C / Cmd+C
+3. Füge in einem Texteditor ein und speichere als `stimmprofil.md`
+
+### 5. Profil einsetzen
+
+Füge dein Stimmprofil als Projektanweisung in Claude oder als Custom Instructions in ChatGPT ein. Ab jetzt kennt die AI deinen Stil.
 
 ---
 
 ## Was du am Ende hast
 
-- **Stimmprofil-Dokument** — Kernidentität, verbotene Wörter, tonale Marker
+- **Kernidentität** — 2-3 Sätze, die dein Schreiben auf den Punkt bringen
+- **Verbotene Wörter** — was die AI nie verwenden darf
+- **Tonale Marker** — wie du klingst wenn du skeptisch bist vs. begeistert
 - **Kurzreferenz** — Immer / Niemals / Stimmkalibrierung
-- **Sofort einsetzbar** — als Projektanweisung in Claude oder Custom Instructions in ChatGPT hinterlegen
-
-```mermaid
-flowchart LR
-    A[Prompt einfügen] --> B[10 Fragen beantworten]
-    B --> C[Profil generieren lassen]
-    C --> D[Speichern & nutzen]
-
-    style A fill:#d4edda
-    style D fill:#d4edda
-```
-
----
-
-## Tipps
-
-- **Claude Pro:** Erstelle ein Projekt namens "Schreibprofil" und füge den Prompt in die Projektanweisungen ein — so bleibt alles erhalten
-- **ChatGPT:** Starte einen neuen Chat und füge den Prompt direkt ein
-- **Spracheingabe:** Funktioniert gut — sprich deine Antworten, statt zu tippen
-- Details zur Einrichtung auf verschiedenen Plattformen: [platform-guide.md](./platform-guide.md)
 
 ---
 
 ## Für Neugierige: Das vollständige Interview
 
-Die 10 Fragen decken alle sieben Kategorien des Frameworks ab und liefern ca. 80% des Signals in 20% der Zeit.
+Die 10 Fragen decken ~80% deines Schreibstils ab. Wer tiefer einsteigen will, kann das vollständige 100-Fragen-Interview machen:
 
-Wer tiefer einsteigen will — z.B. für einen dauerhaften Schreibassistenten oder hochvolumige Inhaltserstellung — kann das vollständige 100-Fragen-Interview durchführen:
+1. Mache zuerst die Übung oben
+2. Nutze [bridge-to-full.md](./bridge-to-full.md) für den Übergang
+3. Zeitaufwand: 2–3 Stunden zusätzlich (am besten in mehreren Sitzungen)
 
-1. Mache zuerst die LITE-Version (oben)
-2. Nutze dann [bridge-to-full.md](./bridge-to-full.md) für den Übergang
-3. Zeitaufwand: 60–90 Minuten zusätzlich
-
-| Variante | Zeit | Abdeckung |
-|----------|------|-----------|
-| **LITE (diese Übung)** | 20 Min. | ~80% des Signals |
-| **Vollständig** | 90 Min. | ~95% des Signals |
-
-Für die meisten reicht LITE. Abnehmende Erträge sind real.
+Das lohnt sich nur, wenn du ernsthaft AI-Ghostwriting betreibst oder einen dauerhaften Schreibassistenten aufbauen willst. Für die meisten reicht die LITE-Version.

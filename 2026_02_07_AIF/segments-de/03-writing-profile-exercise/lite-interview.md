@@ -1,30 +1,6 @@
-# Schreibprofil: LITE-Interview (10 Fragen)
+# Schreibprofil-Interview — Prompt
 
-Eine 15-20-minütige Version des vollständigen Geschmacksinterviews. Diese erfasst genug Signal, um ein nutzbares Schreibprofil zu erstellen -- ohne den zweistündigen Aufwand.
-
-Die 10 Fragen sind so kuratiert, dass sie alle sieben Kategorien des vollständigen Interviews abdecken und dabei priorisieren:
-- Negative Einschränkungen statt positive Absichten
-- Konkrete Beispiele statt abstrakter Beschreibungen
-- Instinktive Reaktionen statt durchdachter Positionen
-- Umsetzbare Spezifika statt allgemeiner Prinzipien
-
----
-
-## Anleitung
-
-1. Öffnen Sie eine neue Konversation mit Claude (oder Ihrer bevorzugten AI)
-2. Fügen Sie den gesamten Prompt unten ein
-3. Beantworten Sie jede Frage in 2-3 Sätzen, mit mindestens einem konkreten Beispiel
-4. Zwingen Sie sich zur Spezifität -- vage Antworten produzieren generische Profile
-5. Speichern Sie das resultierende Stimmprofil-Dokument nach Abschluss
-
-**Zeitaufwand:** 15-20 Minuten
-
----
-
-## Der Interview-Prompt
-
-Kopieren Sie alles zwischen den Linien und fügen Sie es in eine neue AI-Konversation ein:
+> Kopiere alles unterhalb dieser Linie und füge es in eine neue AI-Konversation ein.
 
 ---
 
@@ -151,16 +127,3 @@ Wenn Sie als ich schreiben:
 </output_format>
 
 Beginnen Sie, indem Sie mir Ihre erste Frage stellen.
-
----
-
-## Nach dem Interview
-
-Sobald die AI Ihr Stimmprofil generiert hat:
-
-1. **Speichern Sie es** als `voice-profile.md` an einem Ort, auf den Sie verweisen können
-2. **Verwenden Sie es in Projekten**, indem Sie es in Ihren System-Prompt oder Projektanweisungen einbinden
-3. **Referenzieren Sie es**, wenn Sie eine AI bitten, in Ihrer Stimme zu schreiben: "Verwenden Sie das beigefügte Stimmprofil"
-4. **Iterieren Sie** -- wenn die AI etwas falsch macht, fügen Sie Klarstellungen zum Profil hinzu
-
-Das Profil funktioniert am besten, wenn es zu Beginn einer Schreibsitzung beigefügt wird, nicht mitten in der Konversation zitiert.
