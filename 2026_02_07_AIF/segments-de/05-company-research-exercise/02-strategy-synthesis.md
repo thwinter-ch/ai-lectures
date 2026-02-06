@@ -1,27 +1,24 @@
-# Prompt für Strategie-Synthese
+# Strategie-Synthese — Prompt (Bonus)
 
-## Anleitung
+> **Das ist der optionale zweite Schritt.** Du brauchst dafür das Ergebnis aus der Unternehmensrecherche (01-deep-research.md).
 
-**Fügen Sie Ihr Deep-Research-Output oberhalb dieses Prompts ein und führen Sie ihn dann aus.**
+## So geht's
 
-Dieser Prompt transformiert Rohdaten der Unternehmensrecherche in ein strukturiertes Strategiedokument unter Verwendung dreier bewährter Frameworks.
+1. Öffne Claude oder ChatGPT
+2. Füge dein Recherche-Ergebnis aus Schritt 1 ein
+3. Füge den Prompt unten direkt darunter ein
+4. Enter drücken
 
----
-
-## Die Frameworks (30-Sekunden-Überblick)
-
-| Framework | Zweck |
-|-----------|-------|
-| **Golden Circle** | Artikuliert den Unternehmenszweck (Why), die Differenzierung (How) und das Angebot (What) - die strategische Identität. |
-| **Business Model Canvas (BMC)** | Bildet die neun Bausteine ab, wie das Unternehmen Wert schafft, liefert und erfasst. |
-| **Value Proposition Canvas (VPC)** | Zoomt auf Kundenjobs, Schmerzen und Gewinne - und wie das Unternehmen diese adressiert. |
+> Kopiere alles unterhalb dieser Linie.
 
 ---
-
-## Der Prompt
 
 ```
 You are a senior, McKinsey-level strategy consultant. Using the research provided above, produce a **board-ready strategy document** that integrates the Golden Circle, Business Model Canvas, and Value Proposition Canvas.
+
+**Language:** Respond entirely in German. Use Swiss German orthography (ss instead of ß).
+
+**Output limit:** Maximum 2,000 words.
 
 **Opening Requirement:**
 Begin with a **one-sentence executive maxim** — a crisp, authoritative quote capturing the strategic thesis.
@@ -31,7 +28,6 @@ Begin with a **one-sentence executive maxim** — a crisp, authoritative quote c
 - Consulting report style: clear headings, numbered subsections, concise paragraphs
 - Each subsection starts with a 1-2 sentence executive summary, then detail
 - Neutral, professional tone suitable for executives and boards
-- Length: ~1,200–2,000 words
 - Ground assertions in the research; mark unknowns as "TBD" with explicit assumptions
 - Ensure Golden Circle ↔ BMC ↔ VPC are mutually consistent
 
@@ -89,52 +85,3 @@ Mark financial unknowns as **TBD** and specify what evidence would resolve them.
 
 Now analyze the research above and produce the strategy document.
 ```
-
----
-
-## Was Sie mit dem Output machen
-
-Die Synthese liefert Ihnen drei Ebenen strategischer Klarheit. So nutzen Sie jede:
-
-### Sofortige Anwendungen
-
-| Output-Abschnitt | Anwendungsfall |
-|------------------|----------------|
-| **Executive Maxim** | Pitch Decks, Investorengespräche, interne Alignment-Dokumente |
-| **Golden Circle** | Markenbotschaft, Kulturdokumente, "Über uns"-Texte, Einstellungskriterien |
-| **BMC** | Vorstandspräsentationen, Partnerschaftsgespräche, operative Planung |
-| **VPC** | Produkt-Roadmaps, Marketing-Messaging, Sales Enablement |
-
-### Folgeaktionen
-
-1. **Annahmen validieren** — Die Synthese markiert "TBD"-Punkte. Dies sind Ihre Recherche-Lücken. Priorisieren Sie das Schliessen derjenigen, die wichtige Entscheidungen beeinflussen.
-
-2. **Das Fit Statement testen** — Entspricht Ihr VPC Fit Statement dem, was echte Kunden sagen? Falls nicht, haben Sie ein Positionierungsproblem oder eine Recherche-Lücke gefunden.
-
-3. **Auf Widersprüche prüfen** — Die Frameworks sollten sich gegenseitig verstärken. Wenn Ihr Golden Circle "Why" nicht mit Ihrem VPC "Jobs to be Done" übereinstimmt, stimmt etwas nicht.
-
-4. **Abgeleitete Artefakte erstellen:**
-   - Verwandeln Sie den BMC in eine Investoren-Folie
-   - Extrahieren Sie die VPC Pain Relievers für Feature-Priorisierung
-   - Nutzen Sie den Golden Circle als Input für Messaging-Workshops
-
-### Qualitätsprüfung
-
-Bevor Sie den Output verwenden, verifizieren Sie:
-
-- [ ] Das Executive Maxim ist verteidigbar (kein generisches Füllwort)
-- [ ] BMC Kosten-/Umsatzstrukturen sind plausibel (oder als TBD markiert)
-- [ ] VPC Jobs entsprechen Ihrem Zielkunden, nicht einem idealisierten
-- [ ] Keine Widersprüche zwischen Golden Circle Positionierung und BMC Value Propositions
-
----
-
-## Workflow-Zusammenfassung
-
-```
-Schritt 1: Deep Research      → Rohe Analyse und Fakten über das Unternehmen
-Schritt 2: Strategie-Synthese → Strukturierte Frameworks (dieser Prompt)
-Schritt 3: Ihr Urteil         → Validieren, verfeinern und einsetzen
-```
-
-AI übernimmt die Strukturierung. Sie übernehmen den Plausibilitäts-Check.

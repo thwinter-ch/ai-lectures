@@ -16,16 +16,16 @@
 
 | # | Segment | Typ | Inhalt |
 |---|---------|-----|--------|
-| 01 | [How I Built This](segments-de/01-how-i-built-this-lecture/) | Vortrag | Wie diese Vorlesung mit AI erstellt wurde |
-| 02 | [Technology Revolution](segments-de/02-technology-revolution-lecture/) | Vortrag | 2026 als Durchbruchsjahr für KI-Agenten |
-| 03 | [Writing Profile](segments-de/03-writing-profile-exercise/) | Übung | Persönliches Schreibstil-Profil erstellen |
-| 04 | [AI as Managerial Skill](segments-de/04-ai-managerial-skill-lecture/) | Vortrag | Warum 80% die KI-Nutzung abbrechen |
-| 05 | [Company Research](segments-de/05-company-research-exercise/) | Übung | Strukturierte Unternehmensanalyse mit KI |
+| 01 | [How I Built This](https://gamma.app/docs/01-Wie-ich-diese-Vorlesung-erstellt-habe-atjj9amvea35m4a) | Vortrag | Wie diese Vorlesung mit AI erstellt wurde |
+| 02 | [Technology Revolution](https://gamma.app/docs/02-Die-Technologie-Revolution-myy1vq3y7d4x16s) | Vortrag | 2026 als Durchbruchsjahr für KI-Agenten |
+| 03 | [Writing Profile](segments-de/03-writing-profile-exercise/README.md) | Übung | Persönliches Schreibstil-Profil erstellen |
+| 04 | [AI as Managerial Skill](https://gamma.app/docs/v5gsyrz3bf5anxo) | Vortrag | Warum 80% die KI-Nutzung abbrechen |
+| 05 | [Company Research](segments-de/05-company-research-exercise/README.md) | Übung | Strukturierte Unternehmensanalyse mit KI |
 | | *Pause* | | |
-| 06 | [Information Overload](segments-de/06-information-overload-lecture/) | Vortrag | Das Problem, das wir lösen |
-| 07 | [Second Brain](segments-de/07-second-brain-exercise/) | Übung | Claude + Notion einrichten |
-| 08 | [Cognitive Limits](segments-de/08-cognitive-limits-lecture/) | Vortrag | Warum Mensch-KI-Systeme funktionieren |
-| 09 | [Demo: Personalized Summary](segments-de/09-demo-personalized-summary-lecture/) | Demo | n8n-Workflow in Aktion |
+| 06 | [Information Overload](https://gamma.app/docs/ldxhtipj5074jgy) | Vortrag | Das Problem, das wir lösen |
+| 07 | [Second Brain](segments-de/07-second-brain-exercise/README.md) | Übung | Claude + Notion einrichten |
+| 08 | [Cognitive Limits](https://gamma.app/docs/memzql9819s9le0) | Vortrag | Warum Mensch-KI-Systeme funktionieren |
+| 09 | [Demo: Personalized Summary](https://gamma.app/docs/rb4i5myl7jbqrw8) | Demo | n8n-Workflow in Aktion |
 
 ---
 

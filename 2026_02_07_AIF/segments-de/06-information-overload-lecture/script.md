@@ -1,6 +1,6 @@
 # Informationsflut — Moderationsskript
 
-**Segment:** 04 | **Dauer:** 15 Minuten | **Position:** Vor der Unternehmensrecherche-Übung
+**Segment:** 06 | **Dauer:** 15 Minuten | **Position:** Block 3 (nach Pause, vor Second Brain Übung)
 
 ---
 
@@ -115,25 +115,23 @@ Informationsvolumen      Entscheidungsqualität
 
 ## Überleitung zur Übung [12:00–14:00]
 
-**Einführung der Unternehmensrecherche-Übung:**
+**Rückbezug auf die Unternehmensrecherche:**
 
-"In 15 Minuten werden Sie etwas tun, das früher einen Junior-Analysten 2 Tage gekostet hätte."
+"Sie haben vor der Pause genau das getan — anstatt 20 Analystenberichte zu lesen, haben Sie eine strukturierte Frage gestellt und in Minuten ein Briefing erhalten. Das ist Pull statt Push in Aktion."
+
+**Einführung der Second Brain Übung:**
+
+"Jetzt gehen wir einen Schritt weiter. Die Unternehmensrecherche war ein Einzelbild — eine Momentaufnahme. Aber was passiert mit den Erkenntnissen morgen? Nächste Woche?
+
+Genau hier kommt das Second Brain ins Spiel. Wir bauen jetzt ein System, das Ihre Erkenntnisse dauerhaft speichert, organisiert und abrufbar macht — nicht in Ihrem Kopf, sondern in einem Tool, das nicht vergisst."
 
 Führen Sie durch, was sie tun werden:
 
-1. **Unternehmen auswählen** — eines, das Sie wirklich interessiert (Wettbewerber, Partner, Akquisitionsziel)
-2. **Research-Prompt verwenden** — strukturierter Output im McKinsey-Stil
-3. **Briefing erhalten** — Executive Summary, Risiken, Finanzdaten, Wettbewerbspositionierung
+1. **Notion-Datenbank einrichten** — strukturierter Wissensspeicher
+2. **Claude mit Notion verbinden** — AI, die direkt in Ihr System schreibt
+3. **Ersten Eintrag erstellen** — z.B. das Unternehmens-Briefing von vorhin
 
-**Warum das für sie wichtig ist:**
-
-- Due Diligence vor Meetings
-- Competitive Intelligence
-- Investment-Screening
-- Partnerevaluierung
-- Vorbereitung für Verwaltungsratssitzungen
-
-**Die Meta-Erkenntnis:** "Das ist Informationsflut umgekehrt. Anstatt alles zu konsumieren und zu hoffen, dass Muster entstehen, definieren Sie die Frage und lassen AI die schwere Arbeit erledigen."
+**Die Meta-Erkenntnis:** "Informationsflut lösen Sie nicht durch mehr Filtern. Sie lösen sie durch ein System, das für Sie kuratiert, speichert und kontextualisiert."
 
 ---
 
@@ -141,11 +139,11 @@ Führen Sie durch, was sie tun werden:
 
 **Ein Satz zum Merken:**
 
-> "Die Frage ist nicht 'wie lese ich mehr?' — sondern 'wie stelle ich bessere Fragen?'"
+> "Die Frage ist nicht 'wie lese ich mehr?' — sondern 'wie baue ich ein System, das für mich liest?'"
 
 **Überleitung:**
 
-"Lassen Sie uns das in die Praxis umsetzen. Öffnen Sie Ihren Browser, navigieren Sie zu [Perplexity/Claude], und recherchieren wir ein Unternehmen, das Sie wirklich interessiert."
+"Genau das bauen wir jetzt. Öffnen Sie Notion und Claude — wir richten Ihr Second Brain ein."
 
 ---
 
@@ -180,4 +178,4 @@ Führen Sie durch, was sie tun werden:
 - "Informations-Fluchtgeschwindigkeit"
 - "Kuratierung ist der neue Vorteil"
 - "Pull, nicht Push"
-- "Definieren Sie die Frage, nicht die Leseliste"
+- "Ein System, das für Sie liest"

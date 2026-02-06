@@ -164,29 +164,20 @@ NEU: Frage → AI → Relevante Antwort → Aktion
 
 ---
 
-## Folie 9: Überleitung zur Übung
+## Folie 9: Von der Theorie zum System
 
-**Titel:** Setzen wir das in die Praxis um
+**Titel:** Sie haben es schon erlebt
 
-**Untertitel:** Unternehmensrecherche in 15 Minuten
+**Layout:** Zwei Schritte mit Fortschrittsanzeige
 
-**Layout:** Nummerierte Liste
+- Schritt 1 (abgehakt): "Unternehmensrecherche — Pull statt Push in Aktion" ✓
+- Schritt 2 (aktiv): "Second Brain — System, das für Sie kuratiert und speichert" →
 
-1. Wählen Sie ein Unternehmen, das Sie interessiert
-2. Nutzen Sie den strukturierten Research-Prompt
-3. Erhalten Sie ein Briefing im McKinsey-Stil
-
-**Anwendungsfälle (kleine Icons):**
-- Due Diligence
-- Competitive Intelligence
-- Investment-Screening
-- Partnerevaluierung
-
-**Visual:** Einfaches Dokumenten-Icon mit Häkchen
+**Visual:** Einfaches Fortschrittsdiagramm, zwei Stufen
 
 **Sprechpunkte:**
-- "Das hat früher einen Junior-Analysten 2 Tage gekostet"
-- "Wählen Sie etwas, das Sie wirklich interessiert"
+- "Die Recherche war ein Einzelbild. Jetzt bauen wir das Dauersystem."
+- "Erkenntnisse, die morgen noch abrufbar sind"
 
 ---
 
@@ -196,13 +187,13 @@ NEU: Frage → AI → Relevante Antwort → Aktion
 
 **Layout:** Einzelnes Zitat, grosse Schrift, zentriert
 
-> "Die Frage ist nicht 'wie lese ich mehr?' — sondern 'wie stelle ich bessere Fragen?'"
+> "Die Frage ist nicht 'wie lese ich mehr?' — sondern 'wie baue ich ein System, das für mich liest?'"
 
 **Visual:** Sauber, minimal, Zitat steht allein
 
 **Sprechpunkte:**
 - Wirken lassen
-- Überleitung: "Öffnen Sie Ihren Browser, legen wir los"
+- Überleitung: "Öffnen Sie Notion und Claude — wir richten Ihr Second Brain ein"
 
 ---
 

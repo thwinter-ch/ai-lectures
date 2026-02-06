@@ -165,24 +165,25 @@
 
 ---
 
-## Folie 8: Brücke zur Selbstkenntnis
+## Folie 8: Von der Theorie zur Anwendung
 
-**Titel:** Wo wir beginnen
+**Titel:** Sie haben bereits angefangen
 
-**Visuell:** Fundament-/Baustein-Diagramm:
-- Unterste Ebene (hervorgehoben): "Kennen Sie sich selbst" — Kontextqualitäts-Fundament
-- Pfeil nach oben zeigend zu: Schreibprofil, Unternehmensrecherche, Second Brain
+**Visuell:** Fortschritts-Diagramm mit drei Stufen:
+- Stufe 1 (abgehakt/hervorgehoben): "Schreibprofil" — Kontextqualität ✓
+- Stufe 2 (aktiv/pulsierend): "Unternehmensrecherche" — Aufgabenzerlegung →
+- Stufe 3 (kommend): "Second Brain" — Workflow-Integration
 
-**Schlüsseltext:** "Die erste 201-Fähigkeit erfordert, sich selbst gut genug zu kennen, um AI den richtigen Kontext zu geben."
+**Schlüsseltext:** "Fähigkeit #1 haben Sie gerade geübt. Jetzt wenden wir Fähigkeit #3 auf eine echte Business-Analyse an."
 
-**Übergangstext:** "Erstellen wir Ihr Schreibprofil. →"
+**Übergangstext:** "Analysieren wir Ihr Unternehmen. →"
 
 **Unterstützende Punkte:**
-- Wie denken Sie?
-- Was ist Ihr Kommunikationsstil?
-- Was schätzen Sie an Ergebnissen?
+- Schreibprofil = Kontextqualität (erledigt)
+- Unternehmensrecherche = Aufgabenzerlegung (jetzt)
+- Nicht "analysiere mir die UBS" — strategisch zerlegen
 
-**Sprechernotiz:** Erste Fähigkeit ist Kontextqualität. Das beginnt mit Selbstkenntnis. Die Schreibprofil-Übung erfasst, wie Sie arbeiten — Fundament für alles, was wir heute aufbauen.
+**Sprechernotiz:** Rückbezug auf Schreibprofil-Übung — das war Fähigkeit #1 in Aktion. Jetzt Fähigkeit #3: Aufgabenzerlegung. Überleitung zur Unternehmensrecherche.
 
 ---
 
@@ -220,7 +221,7 @@ Folien:
 5. "Zentauren vs. Cyborgs" - Seite-an-Seite-Vergleich zweier AI-Arbeitsmuster: klare Trennung vs. kontinuierliche Integration
 6. "Die sechs 201-Fähigkeiten" - Sechs-Felder-Raster: Kontextqualität, Qualitätsurteil, Aufgabenzerlegung, Iterative Verfeinerung, Workflow-Integration, Grenz-Bewusstsein
 7. "Die Erlaubnis-Lücke" - Venn-Diagramm zeigt Kompetenzlücke + Erlaubnis-Lücke, Schlüsselerkenntnis über gewissenhafte Mitarbeitende, die aussteigen
-8. "Wo wir beginnen" - Fundament-Diagramm führt zur Schreibprofil-Übung
+8. "Sie haben bereits angefangen" - Fortschritts-Diagramm: Schreibprofil ✓ → Unternehmensrecherche → Second Brain
 
 Stil: Dunkle professionelle Hintergründe (dunkelblau/anthrazit), weisser Text, orange/roter Akzent für Kontrastdaten. Minimaler Text, strategische Frameworks, Fokus auf Datenvisualisierung. Executive/herausfordernde Tonalität.
 
@@ -233,8 +234,8 @@ Vermeiden: Stockfotos, generische AI-Gehirn-Bilder, Aufzählungslisten, mehr als
 
 ## Verbindung zum Vorlesungsbogen
 
-**Vor diesem Segment:** Kognitive Grenzen (warum Ihr Gehirn AI-Unterstützung braucht)
-**Dieses Segment:** AI als Führungskompetenz (welche Fähigkeiten AI zum Funktionieren bringen)
-**Nach diesem Segment:** Schreibprofil-Übung (erste praktische Anwendung von Kontextqualität)
+**Vor diesem Segment:** Schreibprofil-Übung (03) — Studenten haben Fähigkeit #1 (Kontextqualität) bereits praktisch angewendet
+**Dieses Segment:** AI als Führungskompetenz (04) — warum das, was sie gerade gemacht haben, eine Führungskompetenz ist
+**Nach diesem Segment:** Unternehmensrecherche-Übung (05) — Fähigkeit #3 (Aufgabenzerlegung) auf eine echte Business-Analyse anwenden
 
-**Die Brücke:** Die sechs 201-Fähigkeiten sind Führungskompetenzen. Die erste Fähigkeit (Kontextqualität) erfordert Selbstkenntnis. Das erfasst das Schreibprofil.
+**Die Brücke:** Rückbezug auf Schreibprofil ("Das war Fähigkeit #1") → Theorie (sechs 201-Fähigkeiten) → Vorwärts zur Unternehmensrecherche ("Jetzt Fähigkeit #3").

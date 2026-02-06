@@ -117,23 +117,21 @@
 
 ---
 
-## Folie 7: Überleitung zur Aktion
+## Folie 7: Überleitung zur Demo
 
-**Titel:** Ihr Second Brain
+**Titel:** Die Systeme, die Sie gebaut haben
 
-**Hauptvisualisierung:** Einfaches Systemdiagramm:
+**Hauptvisualisierung:** Drei-Stufen-Fortschrittsdiagramm:
 
-```
-[Erfassen] → [Organisieren] → [Verarbeiten] → [Aufzeigen]
-     ↓            ↓              ↓              ↓
-  GitHub       Notion           AI        Entscheidungen
-```
+- Stufe 1 (abgehakt): „Unternehmensrecherche" — Gedächtnis + Mustererkennung ✓
+- Stufe 2 (abgehakt): „Second Brain" — Abruf + Organisation ✓
+- Stufe 3 (aktiv): „Personalisierter Workflow" — Automatisierung →
 
 **Zentraler Text:** „Externes Gedächtnis für ein 7-Elemente-Gehirn in einer 181-ZB-Welt."
 
-**Übergangstext (unten):** „Lassen Sie uns bauen. →"
+**Übergangstext (unten):** „Jetzt zeige ich Ihnen, wie man das automatisiert. →"
 
-**Visueller Stil:** Flussdiagramm mit Icons für jede Komponente. Vorwärtspfeil, der Bewegung zum nächsten Modul suggeriert.
+**Visueller Stil:** Fortschrittsanzeige mit Icons für jede Stufe. Vorwärtspfeil zur Demo.
 
 ---
 
@@ -170,7 +168,7 @@ Folien:
 4. „Datenexplosion" - Hockeyschläger-Diagramm, „Mehr Daten 2020-2025 als gesamte bisherige Geschichte", 97ZB→181ZB
 5. „Der Engpass" - Statistiken zur menschlichen Bandbreite (250 WpM Lesen, 40 WpM Tippen), Kontrast zu exponentiellem Datenwachstum
 6. „Das Argument für Augmentation" - Zwei Spalten: was auslagern (Gedächtnis, Muster, Entwürfe) vs. was behalten (Urteilsvermögen, Kontext, Ethik)
-7. „Ihr Second Brain" - Systemfluss: Erfassen→Organisieren→Verarbeiten→Aufzeigen zugeordnet zu GitHub→Notion→AI→Entscheidungen
+7. „Die Systeme, die Sie gebaut haben" - Drei-Stufen-Fortschritt: Unternehmensrecherche ✓ → Second Brain ✓ → Personalisierter Workflow →
 
 Stil: Dunkle professionelle Hintergründe, minimaler Text, Fokus auf Datenvisualisierung, klare serifenlose Typografie. Executive/autoritative Tonalität. Quellenangaben in Fusszeilen wo zutreffend.
 

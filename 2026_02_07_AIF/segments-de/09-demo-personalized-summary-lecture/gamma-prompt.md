@@ -1,6 +1,6 @@
 # GAMMA-Prompt: Demo Personalisierter Zusammenfassungs-Workflow
 
-**Segment:** 06 - Demo: Personalisierter Zusammenfassungs-Workflow
+**Segment:** 09 - Demo: Personalisierter Zusammenfassungs-Workflow
 **Dauer:** 15 Minuten (inkl. Q&A)
 
 ---

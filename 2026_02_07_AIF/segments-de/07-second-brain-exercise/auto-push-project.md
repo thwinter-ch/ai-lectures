@@ -8,9 +8,8 @@ Mach jede Claude-Konversation zu einem dauerhaften Wissens-Asset. Diese Anleitun
 
 ## Voraussetzungen
 
-- Claude Pro/Team Abonnement (für die Projekte-Funktion)
-- Notion-Workspace mit API-Zugang
-- Notion MCP-Integration in Claude Desktop konfiguriert
+- Claude Pro Abonnement (für die Projekte-Funktion)
+- Notion mit Claude verbunden (siehe [claude-notion-setup.md](./claude-notion-setup.md))
 
 ---
 

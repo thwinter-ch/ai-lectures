@@ -1,8 +1,8 @@
 # AI als Führungskompetenz — Redeskript
 
 **Dauer:** 15 Minuten
-**Position:** Frühe Vorlesung (nach kognitiven Grenzen, vor Schreibprofil-Übung)
-**Ziel:** AI-Kompetenz als Management-Fähigkeit neu einordnen; Überleitung zur Selbstkenntnis-Übung
+**Position:** Block 1 (nach Schreibprofil-Übung, vor Unternehmensrecherche-Übung)
+**Ziel:** AI-Kompetenz als Management-Fähigkeit neu einordnen; Rückbezug auf Schreibprofil, Überleitung zur Unternehmensrecherche
 **Quelle:** Nate B Jones Video "Why Your Best Employees Quit Using AI After 3 Weeks"
 
 ---
@@ -172,29 +172,25 @@ Die Menschen, die Sie am meisten für 201-Arbeit wollen, werden zuerst aussteige
 
 ---
 
-## Folie 8: Brücke zur Selbstkenntnis (1,5 Min.)
+## Folie 8: Von der Theorie zur Anwendung (1,5 Min.)
 
-**[ÜBERLEITUNG ZUR ÜBUNG]**
+**[RÜCKBEZUG AUF DIE ÜBUNG]**
 
-"Wo beginnen wir also mit dem Aufbau von 201-Fähigkeiten?
+"Erinnern Sie sich an die Schreibprofil-Übung, die Sie gerade gemacht haben? Das war Fähigkeit Nummer 1 in Aktion — Kontextqualität.
 
-Die erste Fähigkeit — Kontextqualität — erfordert etwas, das die meisten überspringen: sich selbst gut genug zu kennen, um AI den richtigen Kontext zu geben.
+Sie haben ein Dokument erstellt, das festhält, wie Sie denken, schreiben und arbeiten. Das ist kein Selbstfindungsprojekt. Das ist das Fundament, damit AI Ergebnisse produziert, die es wert sind, verfeinert zu werden. Ohne diesen Kontext bekommen Sie generischen Einheitsbrei.
 
-Wie denken Sie? Was ist Ihr Kommunikationsstil? Was schätzen Sie an Ergebnissen? Was sind Ihre blinden Flecken?
+**[VORSCHAU AUF DIE NÄCHSTE ÜBUNG]**
 
-**[VORSCHAU AUF DIE ÜBUNG]**
+Jetzt wenden wir Fähigkeit Nummer 3 an — Aufgabenzerlegung.
 
-Die Schreibprofil-Übung, die wir gleich machen, adressiert genau das. Sie werden ein Dokument erstellen, das festhält, wie Sie arbeiten — Ihren Stil, Ihre Präferenzen, Ihre Muster.
-
-Das ist keine Eitelkeit. Es ist das Fundament für Kontextqualität. Wenn AI Sie kennt, produziert sie Ergebnisse, die es wert sind, verfeinert zu werden. Wenn nicht, bekommen Sie generischen Einheitsbrei, der alle Zeit verschwendet.
+In der nächsten Übung analysieren Sie ein Unternehmen: Ihr eigenes oder einen Kunden. Aber Sie werfen nicht einfach 'Analysiere mir die UBS' in den Chat. Sie zerlegen die Aufgabe strategisch — genau wie ein guter Manager ein Projekt für sein Team aufteilt.
 
 **[DEN KREIS SCHLIESSEN]**
 
-Die 201-Kompetenzlücke ist das, was wir heute angehen. Und wir beginnen mit dem Aufbau der Urteilsebene — beginnend damit, sich selbst zu kennen.
+Die 201-Kompetenzlücke ist das, was wir heute Schritt für Schritt schliessen. Sie haben bereits angefangen — mit dem Schreibprofil. Jetzt wenden wir dieselbe Denkweise auf eine echte Business-Analyse an."
 
-Beginnen wir mit der Übung."
-
-**[ÜBERGANGS-CUE: Weiter zur Schreibprofil-Übung]**
+**[ÜBERGANGS-CUE: Weiter zur Unternehmensrecherche-Übung]**
 
 ---
 
@@ -209,7 +205,7 @@ Beginnen wir mit der Übung."
 | 5 | Zentauren vs. Cyborgs | 2,5 Min. |
 | 6 | Die sechs 201-Fähigkeiten | 2,5 Min. |
 | 7 | Die Erlaubnis-Lücke | 1,5 Min. |
-| 8 | Brücke zur Selbstkenntnis | 1,5 Min. |
+| 8 | Von der Theorie zur Anwendung | 1,5 Min. |
 | **Total** | | **16 Min.** |
 
 *Puffer: Folien 5-6 können komprimiert werden, falls die Zeit knapp wird; die Diskussion zur Erlaubnis-Lücke kann erweitert werden, wenn das Publikum engagiert ist*
@@ -234,9 +230,9 @@ Beginnen wir mit der Übung."
 - Die Erlaubnis-Lücke ist besonders relevant in compliance-geprägten Kulturen
 
 **Verbindung zu den Übungen:**
-- Schreibprofil = Aufbau des Fundaments für Kontextqualität
-- Unternehmensrecherche = Üben der Aufgabenzerlegung
-- Second Brain = Workflow-Integration
+- Schreibprofil (bereits gemacht) = Fähigkeit #1, Kontextqualität
+- Unternehmensrecherche (als nächstes) = Fähigkeit #3, Aufgabenzerlegung
+- Second Brain (später) = Fähigkeit #5, Workflow-Integration
 
 **Mögliche Publikumsfragen:**
 - "Was ist mit Halluzinationen?" → Das ist Qualitätsurteil, Fähigkeit Nr. 2

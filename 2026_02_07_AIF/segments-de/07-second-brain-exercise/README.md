@@ -1,71 +1,57 @@
-# Second Brain Übung: Claude + Notion Integration
+# Übung: Second Brain mit Claude + Notion
 
-Bauen Sie ein externes Gedächtnis auf, das Erkenntnisse automatisch erfasst. Keine wertvollen Ideen mehr, die im Chatverlauf verloren gehen.
+> Baue ein System, das deine Erkenntnisse aus Claude-Gesprächen automatisch in Notion speichert. Kein Copy-Paste, keine Reibung.
 
----
-
-## Was Sie entwickeln
-
-Ein Wissenserfassungssystem, bei dem Claude:
-1. Sich mit Ihrem Notion-Workspace verbindet
-2. Bestehende Notizen als Kontext ausliest
-3. Wertvolle Erkenntnisse am Ende von Gesprächen automatisch speichert
-4. Alles konsistent strukturiert für späteren Abruf
-
-**Warum das wichtig ist:** Die meisten Wissensmanagement-Systeme scheitern an der Reibung. Dieses System beseitigt diese Reibung.
-
----
-
-## Systemablauf
+**Dauer:** 20 Minuten
 
 ```mermaid
 flowchart LR
-    subgraph Setup ["1. Setup (Einmalig)"]
-        A[Claude Einstellungen] --> B[Notion Integration verbinden]
-        B --> C[Seiten autorisieren]
-    end
-
-    subgraph Project ["2. Projekt erstellen"]
-        D[Neues Claude Projekt] --> E[Auto-Push Anweisungen hinzufügen]
-        E --> F[Datenbank-ID konfigurieren]
-    end
-
-    subgraph Usage ["3. Auto-Push Muster"]
-        G[Gespräch führen] --> H{Erfassenswert?}
-        H -->|Ja| I["Auslöser: 'speichern' / 'Sitzung beenden'"]
-        H -->|Nein| J[Chat beenden]
-        I --> K[Claude fasst zusammen + speichert]
-    end
-
-    subgraph Notion ["4. Notion Datenbank"]
-        K --> L[(Second Brain DB)]
-        L --> M[Durchsuchbare Erkenntnisse]
-        L --> N[Nach Domäne getaggt]
-        L --> O[Aktionspunkte nachverfolgt]
-    end
-
-    Setup --> Project --> Usage
+    A[Notion verbinden] --> B[Datenbank erstellen]
+    B --> C[Projekt konfigurieren]
+    C --> D["Testen: 'Speichere das'"]
 ```
 
 ---
 
-## Zeitschätzungen
+## Los geht's
 
-| Phase | Dauer | Hinweise |
-|-------|-------|----------|
-| Notion-Verbindung einrichten | 10-15 Min. | Einmalig |
-| Projektkonfiguration | 10 Min. | Pro Projekt, wiederverwendbare Vorlage |
-| **Gesamte Ersteinrichtung** | **20-25 Min.** | Danach fortlaufend ohne Reibungsverluste |
+### 1. Claude mit Notion verbinden
+
+Folge der Anleitung in [claude-notion-setup.md](./claude-notion-setup.md). Am Ende hast du Claude mit deinem Notion-Workspace verbunden.
+
+> **Voraussetzung:** Claude Pro und ein Notion-Konto (kostenlose Version reicht).
+
+### 2. Notion-Datenbank erstellen
+
+Öffne eine neue Claude-Konversation und sag:
+
+> «Erstelle mir eine Second-Brain-Datenbank in Notion mit Feldern für Titel, Datum, Kernerkenntnisse, Quelle, Tags, Aktionspunkte und Konfidenz. Gib mir die Datenbank-ID.»
+
+Claude erstellt die Datenbank und gibt dir die ID. **Kopiere diese ID.**
+
+### 3. Claude-Projekt einrichten
+
+Folge der Anleitung in [auto-push-project.md](./auto-push-project.md). Du erstellst ein Claude-Projekt mit Anweisungen, die automatisch Erkenntnisse in dein Notion speichern.
+
+### 4. Testen
+
+Führe ein kurzes Gespräch in deinem neuen Projekt. Am Ende sag:
+
+> «Speichere das in Notion.»
+
+Prüfe in Notion, ob der Eintrag erscheint.
 
 ---
 
-## Voraussetzungen
+## Was du am Ende hast
 
-| Anforderung | Grund |
-|-------------|-------|
-| **Claude Pro oder Max** | Die kostenlose Version enthält keine MCP-Integrationen |
-| **Notion-Konto** | Kostenlose Version funktioniert; jede Bezahlversion ebenfalls |
-| **Desktop-Browser** | Mobile Geräte werden für die Ersteinrichtung nicht unterstützt |
+```
+Du: [Führst ein Gespräch mit Claude]
+Du: «Speichere das in Notion»
+Claude: [Fasst zusammen, speichert in Datenbank, bestätigt]
+```
+
+Jedes wertvolle Gespräch wird zu einem durchsuchbaren, getaggten Eintrag in deinem Second Brain. Kein Kopieren. Keine Reibung.
 
 ---
 
@@ -73,30 +59,7 @@ flowchart LR
 
 | Datei | Zweck | Zeit |
 |-------|-------|------|
-| [claude-notion-setup.de.md](./claude-notion-setup.de.md) | Claude mit Notion verbinden (einmalig) | 10-15 Min. |
-| [auto-push-project.de.md](./auto-push-project.de.md) | Auto-Erfassungsprojekt konfigurieren | 10 Min. |
+| [claude-notion-setup.md](./claude-notion-setup.md) | Claude mit Notion verbinden (einmalig) | 10 Min. |
+| [auto-push-project.md](./auto-push-project.md) | Auto-Erfassungsprojekt konfigurieren | 10 Min. |
 
-**Führen Sie diese in der richtigen Reihenfolge aus.** Zuerst das Setup, dann die Projektkonfiguration.
-
----
-
-## Schnellstart
-
-1. **Verbindung einrichten** — Folgen Sie `claude-notion-setup.de.md`, um Claude zu autorisieren
-2. **Notion-Datenbank erstellen** — Verwenden Sie das Schema aus `auto-push-project.de.md`
-3. **Claude-Projekt erstellen** — Fügen Sie die Erfassungsanweisungen ein
-4. **Testen** — Führen Sie ein Gespräch, sagen Sie «Speichere das», überprüfen Sie, ob es in Notion erscheint
-
----
-
-## Was Erfolg bedeutet
-
-Nach der Einrichtung wird Ihr Workflow zu:
-
-```
-Sie: [Führen ein substantielles Gespräch mit Claude]
-Sie: «Speichere das in Notion»
-Claude: [Fasst wichtige Erkenntnisse zusammen, speichert in Datenbank, bestätigt]
-```
-
-Jedes wertvolle Gespräch wird zu einem durchsuchbaren, getaggten Eintrag in Ihrem Second Brain. Kein Kopieren und Einfügen. Keine Neuformatierung. Keine Reibung.
+**Reihenfolge:** Zuerst Setup, dann Projekt.

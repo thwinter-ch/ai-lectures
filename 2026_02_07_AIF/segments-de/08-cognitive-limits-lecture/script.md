@@ -1,8 +1,8 @@
 # Kognitive Grenzen — Redeskript
 
 **Dauer:** 15 Minuten
-**Position:** Früh in der Vorlesung (nach „Warum AI?" / vor praktischen Übungen)
-**Zweck:** Die kognitive Begründung für AI-Augmentation etablieren
+**Position:** Block 3 (nach Second Brain Übung, vor Demo)
+**Zweck:** Die kognitive Begründung für AI-Augmentation vertiefen — warum das, was Sie gerade gebaut haben, notwendig ist
 
 ---
 
@@ -10,11 +10,11 @@
 
 **[ERÖFFNUNG MIT PROVOKATION]**
 
-„Bevor wir irgendetwas bauen, sprechen wir darüber, warum Sie das wirklich brauchen.
+„Sie haben in den letzten Stunden zwei Systeme gebaut — Unternehmensrecherche und Second Brain. Lassen Sie mich erklären, warum das nicht optional ist.
 
-Nicht weil AI gerade angesagt ist. Nicht weil Ihre Konkurrenten es tun. Sondern weil Ihr Gehirn — das Gehirn, auf das Sie sich bei jeder strategischen Entscheidung verlassen — ein hartes Limit hat. Und dieses Limit hat sich seit 10'000 Jahren nicht verändert.
+Ihr Gehirn — das Gehirn, auf das Sie sich bei jeder strategischen Entscheidung verlassen — hat ein hartes Limit. Und dieses Limit hat sich seit 10'000 Jahren nicht verändert.
 
-Heute treffen Sie Entscheidungen mit derselben kognitiven Hardware wie ein prähistorischer Jäger und Sammler. Nur dass Sie statt einem Reh Marktbewegungen, regulatorische Veränderungen, Teamdynamiken, Kundenbedürfnisse und Wettbewerbsbedrohungen verfolgen. Gleichzeitig."
+Sie treffen Entscheidungen mit derselben kognitiven Hardware wie ein prähistorischer Jäger und Sammler. Nur dass Sie statt einem Reh Marktbewegungen, regulatorische Veränderungen, Teamdynamiken, Kundenbedürfnisse und Wettbewerbsbedrohungen verfolgen. Gleichzeitig."
 
 **[PAUSE — wirken lassen]**
 
@@ -161,35 +161,28 @@ AI ersetzt Denken nicht. Es gibt Ihnen mehr Kapazität, über das nachzudenken, 
 
 ---
 
-## Folie 7: Überleitung zum Second Brain (2 Min.)
+## Folie 7: Überleitung zur Demo (2 Min.)
 
-**[ÜBERGANG ZUM PRAKTISCHEN]**
+**[RÜCKBEZUG AUF DAS ERLEBTE]**
 
-„Hier ist also, wohin wir steuern.
+„Genau dieses Problem haben wir heute gelöst. Schauen wir zurück:
 
-Die heutigen Übungen sind um dieses Prinzip herum konzipiert: kognitive Last auslagern, kognitive Autorität bewahren.
+Die Systeme, die Sie gebaut haben, adressieren exakt diese kognitiven Grenzen:
 
-Wir bauen das, was man ein ‚Second Brain' nennt — ein Begriff, den Tiago Forte populär gemacht hat. Es ist ein persönliches Wissensmanagement-System, das:
+- Die Unternehmensrecherche — AI liest 50 Quellen, damit Sie es nicht müssen. Augmentation von Gedächtnis und Mustererkennung.
+- Das Second Brain — Erkenntnisse landen automatisch in Notion, statt in Ihrem 7±2-Arbeitsgedächtnis. Augmentation von Abruf und Organisation.
 
-- Informationen erfasst, damit Sie sie nicht im Gedächtnis behalten müssen
-- Informationen organisiert, damit Sie sie finden, wenn nötig
-- Informationen verarbeitet, damit sie entscheidungsreif sind
-- Informationen proaktiv aufzeigt, wenn der Kontext relevant ist
+**[VORSCHAU AUF DIE DEMO]**
 
-**[VORSCHAU]**
-
-In den nächsten Modulen:
-- GitHub wird Ihr externes Gedächtnis (versionskontrolliert, durchsuchbar)
-- Notion wird Ihr organisiertes Abrufsystem
-- AI wird die Intelligenzschicht, die verbindet und klassifiziert
+Jetzt zeige ich Ihnen den nächsten Schritt: einen Workflow, der das automatisiert. Nicht ein Einzelbild wie die Recherche, sondern ein System, das dauerhaft für Sie arbeitet — personalisiert, ohne manuelle Schritte.
 
 **[DEN KREIS SCHLIESSEN]**
 
-Sie bauen kein Produktivitätssystem, weil Produktivität tugendhaft ist. Sie bauen es, weil Ihr Gehirn ein 7-Elemente-Limit hat und die Welt 181 Zettabytes an Daten.
+Sie bauen das nicht, weil Produktivität tugendhaft ist. Sie bauen es, weil Ihr Gehirn ein 7-Elemente-Limit hat und die Welt 181 Zettabytes an Daten.
 
-Diese Lücke? Das ist das Problem, das wir heute lösen."
+Das ist die Lücke, die wir heute schliessen."
 
-**[ÜBERGANGS-CUE: Weiter zum GitHub-Setup-Modul]**
+**[ÜBERGANGS-CUE: Weiter zur Demo — Personalisierter Zusammenfassungs-Workflow]**
 
 ---
 
@@ -203,7 +196,7 @@ Diese Lücke? Das ist das Problem, das wir heute lösen."
 | 4 | Die Datenexplosion | 2 Min. |
 | 5 | Menschliche Bandbreite | 2 Min. |
 | 6 | Das Argument für AI-Augmentation | 2,5 Min. |
-| 7 | Überleitung zum Second Brain | 2 Min. |
+| 7 | Überleitung zur Demo | 2 Min. |
 | **Total** | | **14,5 Min.** |
 
 *Puffer: 30 Sekunden für Übergänge/Publikumsreaktionen*
