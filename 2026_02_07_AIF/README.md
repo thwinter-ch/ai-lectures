@@ -6,7 +6,8 @@
 |---|---|
 | **Datum** | Samstag, 7. Februar 2026 |
 | **Zeit** | 13:00–16:45 |
-| **Dozenten** | Thomas Winter, Patrick Comboeuf |
+| **Dozent** | Thomas Winter |
+| **Studiengangsleiter** | Patrick Comboeuf |
 | **Modul** | Applied AI |
 
 ---
