@@ -182,7 +182,7 @@ Drei Konkurrenten:
 
 Verweis auf "How I Built This"-Demo:
 
-> "Sie haben das System gerade in Aktion gesehen. Jetzt verstehen Sie, warum es funktioniert: MCP verbindet Claude mit Notion. Memory-Persistenz bedeutet, dass er sich erinnert, was wir letzte Woche besprochen haben. Die Always-on-Architektur bedeutet, dass ich den Kontext nicht neu erklären musste."
+> "Sie haben das System gerade in Aktion gesehen. Jetzt verstehen Sie, warum es funktioniert: MCP verbindet Claude mit externen Tools. Memory-Persistenz bedeutet, dass er sich erinnert, was wir letzte Woche besprochen haben. Die Always-on-Architektur bedeutet, dass ich den Kontext nicht neu erklären musste."
 
 ---
 

@@ -244,24 +244,6 @@ Zuletzt → Second Brain (Erfassungssystem)
 
 ---
 
-## Folie 12: Rückbezug (Optional)
-
-**Titel:** How I Built This — Jetzt verstehen Sie es
-
-**Layout:** Schneller visueller Bezug zur vorherigen Demo
-
-- MCP verbindet Claude mit Notion
-- Memory-Persistenz erhält den Kontext
-- Always-on-Architektur eliminiert Neu-Erklärungen
-
-**Visualisierung:** Vereinfachtes Architekturdiagramm aus Segment 01
-
-**Gesprächspunkte:**
-- Schneller Rückbezug, wenn Zeit erlaubt
-- Verstärkt, dass das Gesehene genau diese Architektur in Aktion ist
-
----
-
 ## GAMMA-Einstellungen
 
 - **Präsentationslänge:** Prägnant (10–12 Folien)
@@ -301,7 +283,7 @@ Bei Erstellung eigener Visualisierungen:
 ## Thematische Konsistenz
 
 Visuelle Sprache der anderen Segmente angleichen:
-- Gleiches dunkles Theme wie "Information Overload" (04)
-- Gleicher Icon-Stil wie "Cognitive Limits" (05)
+- Gleiches dunkles Theme wie "Information Overload" (06)
+- Gleicher Icon-Stil wie "Cognitive Limits" (08)
 - Daten-orientiert, nicht Dekoration-orientiert
 - Professionelle Financial-Services-Ästhetik, nicht Silicon-Valley-Startup-Vibes

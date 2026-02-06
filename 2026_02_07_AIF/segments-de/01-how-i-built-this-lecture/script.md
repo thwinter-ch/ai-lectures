@@ -58,82 +58,80 @@ Gehen Sie jedes Tool durch. Seien Sie spezifisch. Zeigen Sie Screenshots, falls 
 
 ### 4. GAMMA — Folien (60 Sekunden)
 
-> "Die Folien-Prompts — die wir heute in Übungen verwenden werden — gingen in GAMMA. Text rein, Folien raus. Kein Kampf mit PowerPoint. Keine Suche nach Stockfotos. Einfach strukturierter Inhalt, der visuell wird."
+> "Die Folien-Prompts gingen in GAMMA. Text rein, Folien raus. Kein Kampf mit PowerPoint. Keine Suche nach Stockfotos. Einfach strukturierter Inhalt, der visuell wird."
 
 **Kernpunkt:** Folien sind jetzt ein Textgenerierungs-Problem, kein Design-Problem.
-
-### 5. Notion — Wissenserfassung (60 Sekunden)
-
-> "Alles landet in Notion. Jede Entscheidung, jede Iteration, jeder Prompt, der funktioniert hat. Es ist mein zweites Gehirn. Wenn ich das nächste Mal eine Vorlesung erstelle, starte ich nicht bei null — ich starte mit Mustern, die bereits funktioniert haben."
-
-**Kernpunkt:** Das System lernt. Jedes Projekt macht das nächste schneller.
 
 ---
 
 ## Der Zeitplan [8:00–10:00]
 
-Zeigen Sie den tatsächlichen Entwicklungsverlauf:
+Zeigen Sie den tatsächlichen Entwicklungsverlauf (aus dem BUILD_LOG):
 
 | Phase | Was passierte | Tool |
 |-------|---------------|------|
-| **24. Januar, 19:30** | Sprach-Brainstorming beim Spazieren | Wispr Flow |
-| **24. Januar, 20:00** | Strukturierte Recherche + erstes Briefing | Perplexity |
-| **25.–30. Januar** | Parallele Entwicklung der Module | Claude Code |
-| **31. Januar** | Finale Integration und Feinschliff | Claude Code + GAMMA |
-| **Laufend** | Wissenserfassung für nächste Iteration | Notion |
+| **24. Januar, Abend** | Sprach-Brainstorming beim Spazieren | Wispr Flow |
+| **24. Januar, danach** | Strukturierte Recherche + erstes Briefing | Perplexity |
+| **25.–30. Januar** | Parallele Entwicklung aller 9 Segmente | Claude Code |
+| **31. Januar** | Finale Integration, Gamma-Prompts | Claude Code + GAMMA |
+| **1. Februar** | Deutsche Übersetzung (Schweizer Orthographie) | Claude Code |
+| **2.–5. Februar** | Korrekturen, Sicherheits-Fixes, Feinschliff | Claude Code |
 
-**Kerninsight:** "Von Sprachnotiz zur fertigen Vorlesung in unter zwei Wochen. Und ich habe nicht Vollzeit daran gearbeitet. Das war ein Hintergrundprozess während der eigentlichen Arbeit."
+**Kerninsight:** "Von Sprachnotiz zur fertigen Vorlesung in knapp zwei Wochen. Und ich habe nicht Vollzeit daran gearbeitet. Das war ein Hintergrundprozess während der eigentlichen Arbeit."
 
 ---
 
-## Was sich dadurch ändert [10:00–12:30]
+## Wie man mit AI zusammenarbeitet — ehrlich [10:00–12:30]
 
-**Das alte Modell:**
+> "Jetzt muss ich Ihnen etwas gestehen. Dieser Prozess war nicht harmonisch. Claude und ich hatten echte Meinungsverschiedenheiten. Über die Struktur. Über den Ton. Über Prioritäten. Ich habe ihn angeschrien. Ich habe Schimpfwörter benutzt, die ich hier nicht wiederholen werde."
+>
+> [Pause für Lacher]
+>
+> "Und das ist genau der Punkt. AI zu leiten ist wie einen neuen Mitarbeiter einzuarbeiten. Am Anfang ist es Kalibrierung. Sie müssen Ihre Standards durchsetzen, klar kommunizieren, und manchmal deutlich sagen: 'Nein, so nicht.' Mit der Zeit wird die Zusammenarbeit besser."
 
+**Was sich dadurch verändert:**
+
+Das alte Modell:
 - Gliederung (manuell)
 - Recherche (manuell, langsam)
 - Schreiben (linear, eine Folie nach der anderen)
-- Design (separate Fähigkeit, separates Tool)
-- Review (von Anfang bis Ende, sequenziell)
+- Einheits-Grösse — jedes Publikum kriegt das Gleiche
 
-**Das neue Modell:**
+Das neue Modell:
+- Sie bauen ein Repository von Bausteinen auf
+- Jede Vorlesung kann auf das spezifische Publikum zugeschnitten werden
+- In einer Zeit, wo sich alles alle 3 Monate ändert, müssen Sie sowieso jedes Mal neu bauen — jetzt geht das schnell
 
-- Erfassen (Sprache, jederzeit)
-- Recherchieren (AI-beschleunigt, 10x schneller)
-- Orchestrieren (parallele Agenten, nicht-linear)
-- Generieren (Inhalt → Visuals automatisch)
-- Iterieren (schnelle Zyklen, keine perfekten Entwürfe)
-
-**Der Wandel:** "Ich bin vom 'Inhalte erstellen' zum 'Produktion leiten' übergegangen. Meine Aufgabe ist es, Vision und Qualitätsstandard zu definieren. Die Ausführung skaliert."
+**Anekdote:** "Meine Freundin besucht gerade eine Weiterbildung zum Thema Licht- und Farbdesign. Der Inhalt ist spannend. Aber die Lehrperson schafft es, sie damit einzuschläfern. Guter Inhalt schlecht verpackt bleibt wirkungslos. AI kann Ihnen auch dabei helfen — eine kohärente Storyline aufzubauen, die Ihr Publikum tatsächlich wach hält."
 
 ---
 
 ## Die ehrlichen Vorbehalte [12:30–13:30]
 
-Nicht übertreiben. Seien Sie ehrlich.
-
-> "Ist jeder Output perfekt? Nein. AI macht Fehler. Sie halluziniert. Sie wird generisch, wenn man sie lässt."
+> "Ist AI ein Wundermittel? Nein. Kennen Sie den alten Ovomaltine-Spruch: 'Mit Ovomaltine kannst du's nicht besser, aber länger'?"
+>
+> [Pause]
+>
+> "Mit AI ist es ähnlich: Sie werden nicht automatisch besser. Sie werden schneller. Aber nur, wenn Sie die AI richtig führen und instruieren. Ohne Ihre Fachkompetenz, ohne Ihr Urteilsvermögen kommt generischer Einheitsbrei raus."
 
 **Was nach wie vor menschliches Urteilsvermögen erfordert:**
 
 - Wissen, was gestrichen werden muss (AI liebt es, alles einzuschliessen)
-- Ton-Kalibrierung (AI tendiert zu Konzernsprache)
-- Domänenwissen (AI kennt Ihr Publikum nicht so gut wie Sie)
-- Der finale Durchgang (immer, immer menschliche Augen)
-
-**Kernaussage:** "AI gibt Ihnen Entwurf 7 statt Entwurf 1. Sie müssen immer noch zu Entwurf 10 kommen."
+- Ihre Stimme und Ihren Ton durchsetzen (AI tendiert zu Konzernsprache)
+- Domänenwissen einbringen (AI kennt Ihr Publikum nicht so gut wie Sie)
+- Den finalen Durchgang machen (immer, immer menschliche Augen)
 
 ---
 
 ## Überleitung zur Session [13:30–14:30]
 
-> "Heute werden Sie Teile dieses Systems für sich selbst aufbauen. Nicht das Ganze — das braucht Zeit. Aber die Grundlagen: ein Schreibprofil, das AI wie Sie klingen lässt, einen Recherche-Workflow, der Stunden auf Minuten reduziert, eine Wissenserfassungs-Gewohnheit, die sich kumuliert."
+> "Heute werden Sie Teile dieses Systems für sich selbst aufbauen. Nicht das Ganze — das braucht Zeit. Aber die Grundlagen."
 
 **Vorschau auf das Kommende:**
 
-1. Schreibstil-Profil (Ruben Hassid Methode)
-2. Firmenrecherche-Übung (strukturierte AI-Briefings)
-3. Second Brain Setup (Notion + Claude Integration)
+1. **Schreibstil-Profil** — damit AI weiss, wie Sie klingen
+2. **Firmenrecherche-Übung** — strukturierte AI-Briefings in Minuten statt Stunden
+3. **Second Brain Setup** — ein Erfassungssystem, das sich über Zeit kumuliert
 
 **Reframing:** "Sie lernen keine Tools. Sie bauen Infrastruktur. Der Gewinn liegt nicht heute — er liegt an jedem Tag danach."
 
@@ -147,7 +145,7 @@ Nicht übertreiben. Seien Sie ehrlich.
 
 **Überleitung:**
 
-"Als Erstes: Wir werden die Informationsüberflutung angehen — das Problem, das dieses gesamte System lösen soll."
+"Als Nächstes schauen wir uns an, warum 2026 das Jahr der AI-Agenten ist — und was das für Ihre Arbeit bedeutet."
 
 ---
 
@@ -159,7 +157,7 @@ Nicht übertreiben. Seien Sie ehrlich.
 | 3:30 | Dogfooding-Prinzip abgeschlossen |
 | 8:00 | Stack-Durchgang abgeschlossen |
 | 10:00 | Zeitplan abgeschlossen |
-| 12:30 | "Was sich ändert" abgeschlossen |
+| 12:30 | "Wie man mit AI zusammenarbeitet" abgeschlossen |
 | 13:30 | Ehrliche Vorbehalte abgeschlossen |
 | 14:30 | Überleitung zur Session abgeschlossen |
 | 15:00 | Übergang zum nächsten Segment |
@@ -173,16 +171,17 @@ Nicht übertreiben. Seien Sie ehrlich.
 
 ## Falls die Zeit überzogen wird
 
-- Streichen Sie den "altes Modell vs. neues Modell"-Vergleich
-- Kürzen Sie den Vorbehalte-Abschnitt auf einen Satz
+- Anekdote über die Freundin kürzen
+- Ovomaltine-Vergleich auf einen Satz komprimieren
 
 ---
 
 ## Schlüsselphrasen zum Landen
 
 - "Mein eigenes Hundefutter essen"
-- "Produktion leiten, nicht Inhalte erstellen"
-- "Entwurf 7 statt Entwurf 1"
+- "Sie leiten ein Team, nicht chatten mit einem Bot"
+- "Wie einen neuen Mitarbeiter einarbeiten"
+- "Nicht besser, aber schneller — wenn Sie führen"
 - "Infrastruktur, nicht Tools"
 - "Hintergrundprozess während der eigentlichen Arbeit"
 
@@ -192,6 +191,6 @@ Nicht übertreiben. Seien Sie ehrlich.
 
 **Energie:** Das ist die Eröffnung. Setzen Sie den Ton — selbstbewusst, praktisch, leicht respektlos. Sie sind kein Tech-Evangelist. Sie sind ein Praktiker, der seine Arbeit zeigt.
 
-**Authentizität:** Lassen Sie es nicht zu poliert klingen. Der Punkt ist, dass dieser Prozess Reibung hat, Iteration erfordert und Urteilsvermögen braucht. Das macht ihn glaubwürdig.
+**Authentizität:** Lassen Sie es nicht zu poliert klingen. Der Punkt ist, dass dieser Prozess Reibung hat, Iteration erfordert und Urteilsvermögen braucht. Die Anekdote über die Streitereien mit Claude macht das glaubwürdig.
 
-**Visuelle Unterstützung:** Wenn Sie tatsächliche Screenshots von Claude Code mit laufenden parallelen Agenten zeigen können, oder eine Notion-Datenbank mit Vorlesungsinhalten, tun Sie es. Belege > Behauptungen.
+**Visuelle Unterstützung:** Wenn Sie tatsächliche Screenshots von Claude Code mit laufenden parallelen Agenten zeigen können, tun Sie es. Belege > Behauptungen.

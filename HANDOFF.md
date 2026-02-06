@@ -1,6 +1,6 @@
 # Context Handoff
 
-**Last updated:** 2026-02-02 (session 6)
+**Last updated:** 2026-02-06 (session 7)
 **Project:** Feb 7 HWZ Lecture — AI Productivity Hacks for Executives
 
 ---
@@ -13,70 +13,85 @@
 | Location | HWZ Zurich |
 | Audience | Financial services executives (CAS AI in Finance) |
 | Language | **German (Swiss orthography)** |
-| Material due | Wednesday Feb 5 |
-| Student email | Monday Feb 3 |
+| Student email | Sent |
+| Materials | Link to repo shared |
 
 ---
 
 ## Current Status
 
-**Translations complete. Ready for Gamma slide generation.**
+**Segment 01 script + gamma prompt updated. Ready for Gamma MCP test.**
 
+**Directory restructured:**
 ```
-2026_02_07_AIF/segments/
-├── 01-how-i-built-this-lecture/
-├── 02-technology-revolution-lecture/
-├── 03-writing-profile-exercise/
-├── 04-ai-managerial-skill-lecture/
-├── 05-company-research-exercise/
-├── 06-information-overload-lecture/
-├── 07-second-brain-exercise/
-├── 08-cognitive-limits-lecture/
-└── 09-demo-personalized-summary-lecture/
+2026_02_07_AIF/
+├── segments-de/          ← PRIMARY (lecture is in German)
+│   ├── 01-how-i-built-this-lecture/       ✅ UPDATED
+│   ├── 02-technology-revolution-lecture/   ⏳ reviewed, needs walk-through
+│   ├── 03-writing-profile-exercise/       ⏳ pending
+│   ├── 04-ai-managerial-skill-lecture/    ⏳ pending
+│   ├── 05-company-research-exercise/      ⏳ pending
+│   ├── 06-information-overload-lecture/   ⏳ pending
+│   ├── 07-second-brain-exercise/          ⏳ pending
+│   ├── 08-cognitive-limits-lecture/       ⏳ pending
+│   └── 09-demo-personalized-summary-lecture/ ⏳ pending
+├── segments-en/          ← English mirror (same structure)
 ```
 
----
-
-## Session 6 Changes (Feb 2)
-
-- ✅ Fixed Wispr Flow URL: `wispr.ai` → `wisprflow.ai` in READMEs
-- ✅ Added OpenClaw (experimental) to READMEs
-- ✅ Updated `auto-push-project.de.md`: Sie → du form
-- ✅ Clarified DB ID workflow: Claude creates DB, user copies ID to project prompt
-- ✅ Added Gamma MCP to `.mcp.json`
-- ✅ Updated tech stack: Added Optiverse, fixed Google IDX → Google Anti-Gravity
+Old `segments/` directory has been DELETED.
 
 ---
 
-## Outstanding Tasks
+## Session 7 Changes (Feb 6)
 
-### 1. Validate Gamma prompts
-- Test each `gamma-prompt.md` in Gamma.app (or use Gamma MCP)
-- Verify slide generation works correctly
-- Fix any prompt issues
-
-### 2. Generate slide decks
-- Run validated gamma-prompts through Gamma
-- Export as PDF or PPTX
-- Store in each segment folder
-
-### 3. Student prereq email
-- Draft email with prereqs (GitHub, Notion, Claude Pro accounts)
-- Send by Monday Feb 3
-- Template exists at `templates/prereqs-email-template.md`
-
-### 4. Package materials for HWZ
-- Compile final materials
-- Send by Wednesday Feb 5
+- ✅ Restructured: `segments/` → `segments-de/` + `segments-en/` (25 files each)
+- ✅ Deleted old `segments/` directory
+- ✅ Segment 01 script rewritten with user input:
+  - Removed Notion from stack (wasn't used)
+  - Added "arguing with Claude" section (new employee analogy)
+  - Added girlfriend/design school anecdote
+  - Replaced "draft 7 vs 1" with Ovomaltine analogy
+  - Timeline updated to match BUILD_LOG
+  - Fixed transition (was pointing to segment 06, now points to 02)
+- ✅ Segment 01 gamma prompt updated to match new script
 
 ---
 
-## MCP Servers Available
+## Next Steps (Resume Here)
 
-| Server | Purpose |
-|--------|---------|
-| `n8n-mcp` | Workflow automation |
-| `gamma-mcp` | Slide generation via API |
+### Immediate: Test Gamma MCP
+1. Fire `generate_gamma` with segment 01 DE gamma-prompt.md content
+2. Settings: format=presentation, textMode=preserve, language=de, numCards=10, cardOptions.dimensions=16x9, textOptions.amount=brief
+3. Review output, adjust prompt if needed
+4. Once pattern works → replicate for segments 02, 04, 06, 08, 09
+
+### Then: Walk Through Remaining Segments
+For each segment (02–09):
+1. Read DE script in plain language — what are you saying on stage?
+2. User says what works, what doesn't, what to change
+3. Update script + gamma prompt
+4. Generate slides
+
+### Also Needed
+- Exercise segments (03, 05, 07): make idiot-proof, consider email handout
+- Check all segment transitions point to correct next segment
+- Sovereignty content (`2026 Sovereignty/`) — possible caveat slide
+
+---
+
+## Segment Overview (9 segments, 3h 45m)
+
+| # | Segment | Type | Duration | Slides Needed |
+|---|---------|------|----------|---------------|
+| 01 | How I Built This | Lecture | 15 min | Yes (gamma ready) |
+| 02 | Technology Revolution | Lecture | 15 min | Yes |
+| 03 | Writing Profile | Exercise | ~20 min | No |
+| 04 | AI as Managerial Skill | Lecture | 15 min | Yes |
+| 05 | Company Research | Exercise | ~25 min | No |
+| 06 | Information Overload | Lecture | 15 min | Yes |
+| 07 | Second Brain | Exercise | ~25 min | No |
+| 08 | Cognitive Limits | Lecture | 15 min | Yes |
+| 09 | Demo: Personalized Summary | Demo | 15 min | Yes |
 
 ---
 
@@ -86,27 +101,29 @@
 - No ß — always use "ss" (Strasse, nicht Straße)
 - Standard Hochdeutsch vocabulary and grammar
 - **Informal register (du)** for exercise instructions
+- **Formal register (Sie)** for lecture scripts
 - Keep technical terms in English where appropriate (AI, GitHub, Notion)
 - Audience: senior executives in finance
 
 ---
 
-## Gamma Prompt Workflow
+## Gamma MCP Settings (Tested Pattern)
 
-**Option 1: Manual (Gamma.app)**
-1. Open [gamma.app](https://gamma.app)
-2. Click "Create" → "Paste in text"
-3. Copy entire content of `gamma-prompt.md`
-4. Paste and generate
-
-**Option 2: Via MCP (Claude Code)**
-1. Use `generate_gamma` tool with inputText from gamma-prompt.md
-2. Poll with `get_gamma_generation` for completion
-3. Export URLs returned automatically
+```
+format: presentation
+textMode: preserve
+numCards: 10
+textOptions.language: de
+textOptions.audience: Financial services executives
+textOptions.amount: brief
+cardOptions.dimensions: 16x9
+imageOptions.source: aiGenerated
+exportAs: pptx
+```
 
 ---
 
-## Files by Segment
+## Files by Segment (in segments-de/)
 
 | Segment | Files |
 |---------|-------|
@@ -122,22 +139,13 @@
 
 ---
 
-## Resume Instructions
+## MCP Servers Available
 
-1. Generate slides using Gamma (manual or MCP)
-2. Draft student prereq email
-3. Test exercise workflows end-to-end
-4. Package and send to HWZ by Feb 5
-
----
-
-## Timeline
-
-- ✅ Jan 31: Content built (English)
-- ✅ Feb 1: Folder restructure + ZFU cleanup
-- ✅ Feb 1: German translations (complete)
-- ✅ Feb 2: Fixes (URLs, tech stack, du-form)
-- ⏳ Feb 2-3: Gamma slide generation
-- ⏳ Feb 3: Student email sent
-- ⏳ Feb 5: Materials to HWZ
-- ⏳ Feb 7: Lecture delivery
+| Server | Purpose |
+|--------|---------|
+| `gamma-mcp` | Slide generation via API |
+| `n8n-mcp` | Workflow automation |
+| `notion` | Notion pages, databases |
+| `perplexity` | Web search / research |
+| `playwright` | Browser automation |
+| `typefully` | Social media drafts |

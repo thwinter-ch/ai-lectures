@@ -147,7 +147,7 @@ Don't oversell. Be real.
 
 **Transition:**
 
-"First up: We're going to tackle information overload — the problem this entire system is designed to solve."
+"First up: We'll look at why 2026 is the year of AI agents — and what that means for your work."
 
 ---
 

@@ -52,7 +52,7 @@
 
 **Titel:** Die Tools, die das hier gebaut haben
 
-**Layout:** 5 horizontale Tool-Karten in einer Reihe oder vertikal gestapelt
+**Layout:** 4 horizontale Tool-Karten in einer Reihe
 
 | Tool | Rolle |
 |------|-------|
@@ -60,7 +60,6 @@
 | **Perplexity** | Recherche mit Quellenangaben |
 | **Claude Code** | Planung + parallele Agenten |
 | **GAMMA** | Folien aus Text-Prompts |
-| **Notion** | Wissenserfassung und Iteration |
 
 **Visual:** Jedes Tool als Icon oder Logo-Platzhalter mit seiner Einzeiler-Funktion
 
@@ -122,11 +121,11 @@ Agent     Agent     Agent
 
 | Datum | Phase | Tools |
 |-------|-------|-------|
-| 24. Jan | Sprach-Brainstorming | Wispr Flow |
-| 24. Jan | Recherche + Briefing | Perplexity |
-| 25.–30. Jan | Parallele Entwicklung | Claude Code |
+| 24. Jan, Abend | Sprach-Brainstorming | Wispr Flow |
+| 24. Jan, danach | Recherche + Briefing | Perplexity |
+| 25.–30. Jan | Parallele Entwicklung (9 Segmente) | Claude Code |
 | 31. Jan | Finale Integration | Claude Code + GAMMA |
-| Laufend | Wissenserfassung | Notion |
+| 1.–5. Feb | Übersetzung, Korrekturen, Feinschliff | Claude Code |
 
 **Visual:** Zeitleiste mit Punkten und Verbindungslinie, Tool-Icons über jeder Phase
 
@@ -136,7 +135,31 @@ Agent     Agent     Agent
 
 ---
 
-## Folie 7: Der Wandel
+## Folie 7: Wie einen neuen Mitarbeiter einarbeiten
+
+**Titel:** AI leiten — ehrlich
+
+**Layout:** Zwei Spalten
+
+| Die Realität | Was es braucht |
+|--------------|----------------|
+| Meinungsverschiedenheiten über Struktur | Ihre Standards klar durchsetzen |
+| AI produziert Konzernsprache | Ihren Ton kalibrieren |
+| Generischer Output ohne Kontext | Domänenwissen einbringen |
+| Manchmal: Schimpfwörter | Geduld. Und nochmal Geduld. |
+
+**Schlüsselzitat zur Anzeige:** "AI zu leiten ist wie einen neuen Mitarbeiter einzuarbeiten. Am Anfang ist es Kalibrierung."
+
+**Visual:** Einfache Zwei-Spalten-Darstellung, kontrastierende Farben
+
+**Gesprächspunkte:**
+- Der Prozess war nicht harmonisch — das ist normal
+- Mit der Zeit wird die Zusammenarbeit besser
+- Anekdote: Streitereien mit Claude, Schimpfwörter inklusive
+
+---
+
+## Folie 8: Was sich ändert
 
 **Titel:** Vom Ersteller zum Regisseur
 
@@ -144,44 +167,44 @@ Agent     Agent     Agent
 
 | Altes Modell | Neues Modell |
 |--------------|--------------|
-| Manuelle Gliederung | Spracherfassung |
-| Langsame Recherche | AI-beschleunigt (10x) |
-| Lineares Schreiben | Parallele Agenten |
-| Separates Design | Auto-generierte Visuals |
-| Sequenzielles Review | Schnelle Iterationszyklen |
+| Manuelle Gliederung | Repository von Bausteinen |
+| Langsame Recherche | AI-beschleunigt |
+| Einheits-Grösse für alle | Zugeschnitten auf Ihr Publikum |
+| Jedes Mal bei Null | Schnelle Iteration auf Bestehendem |
+
+**Schlüsselzitat zur Anzeige:** "Alles ändert sich alle 3 Monate. Jetzt können Sie mithalten."
 
 **Visual:** Einfache Links/Rechts-Aufteilung, kontrastierende Farben (grau vs. leuchtend)
 
-**Schlüsselzitat zur Anzeige:** "Ich bin vom Inhalte erstellen zum Produktion leiten übergegangen."
-
 **Gesprächspunkte:**
-- Die Arbeit ändert sich: Vision und Qualitätsstandard
-- Ausführung skaliert; Urteilsvermögen nicht
+- Sie bauen Bausteine auf, die wiederverwendbar sind
+- Guter Inhalt schlecht verpackt bleibt wirkungslos — AI hilft bei der Storyline
+- Anekdote: Freundin in Weiterbildung — spannender Inhalt, einschläfernde Lehrperson
 
 ---
 
-## Folie 8: Die ehrlichen Vorbehalte
+## Folie 9: Die ehrlichen Vorbehalte
 
-**Titel:** Was AI (noch) nicht kann
+**Titel:** Nicht besser. Schneller.
 
-**Layout:** Vertikale Liste mit kleinen Icons
+**Layout:** Einzelnes Zitat + Liste
 
-- **Wissen, was gestrichen werden muss** — AI schliesst alles ein
-- **Ton-Kalibrierung** — AI tendiert zu Konzernsprache
-- **Domänenwissen** — AI kennt Ihr Publikum nicht
-- **Der finale Durchgang** — Immer menschliche Augen
+**Schlüsselzitat zur Anzeige:** "Mit Ovomaltine kannst du's nicht besser, aber länger. Mit AI ist es ähnlich — schneller, aber nur wenn Sie führen."
 
-**Visual:** Einfaches Warnungs-/Vorsicht-Icon neben dem Titel
+**Liste darunter:**
+- Ohne Fachkompetenz → generischer Einheitsbrei
+- Ohne Urteilsvermögen → AI schliesst alles ein
+- Ohne finalen Durchgang → peinliche Fehler
 
-**Schlüsselzitat zur Anzeige:** "AI gibt Ihnen Entwurf 7 statt Entwurf 1. Sie müssen immer noch zu Entwurf 10 kommen."
+**Visual:** Einfaches Warnungs-Icon, aber mit Augenzwinkern (Ovomaltine-Referenz)
 
 **Gesprächspunkte:**
-- Nicht übertreiben
-- Menschliches Urteilsvermögen ist der Engpass, der zählt
+- Ehrlich bleiben: AI ist ein Werkzeug, kein Ersatz
+- Menschliches Urteilsvermögen bleibt der Engpass, der zählt
 
 ---
 
-## Folie 9: Was Sie heute bauen werden
+## Folie 10: Was Sie heute bauen werden
 
 **Titel:** Sie sind dran
 
@@ -198,22 +221,7 @@ Agent     Agent     Agent
 **Gesprächspunkte:**
 - Das sind Grundlagen
 - Der Gewinn liegt nicht heute — er liegt an jedem Tag danach
-
----
-
-## Folie 10: Die Kernbotschaft
-
-**Titel:** Sehen. Bauen.
-
-**Layout:** Einzelnes Zitat, grosse Schrift, zentriert
-
-> "Der beste Weg, AI-Produktivität zu verstehen, ist zu sehen, wie sie produziert. Das haben Sie gerade getan. Jetzt bauen wir Ihre."
-
-**Visual:** Sauber, minimal, Zitat steht allein
-
-**Gesprächspunkte:**
-- Wirken lassen
-- Überleitung: "Als Erstes — Informationsüberflutung"
+- Überleitung: "Als Nächstes: warum 2026 das Jahr der AI-Agenten ist"
 
 ---
 
@@ -246,7 +254,7 @@ GAMMA wird Visuals generieren — prüfen und ersetzen Sie alles, was generisch 
 Falls verfügbar, echte Screenshots einbinden:
 
 - Claude Code Terminal, das parallele Agenten-Ausführung zeigt
-- Notion-Datenbank mit Vorlesungsinhalts-Zeilen
 - GAMMA-Interface mit Prompt → Folien-Vorschau
+- Git-Repository mit der Segment-Struktur
 
 Belege > Behauptungen. Echte Screenshots schlagen Icons jedes Mal.
