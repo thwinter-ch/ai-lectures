@@ -4,25 +4,32 @@
 
 **Dauer:** 20 Minuten
 
+```mermaid
+flowchart LR
+    A[Prompt einfügen] --> B[10 Fragen beantworten]
+    B --> C[Profil generieren lassen]
+    C --> D[Speichern & nutzen]
+```
+
 ---
 
 ## Anleitung
 
-### 1. Prompt kopieren
+### 1. Kopiere den Prompt
 
 Öffne [lite-interview.md](./lite-interview.md) und kopiere **alles unterhalb der horizontalen Linie** (den gesamten Prompt-Text).
 
-### 2. Neue AI-Konversation starten
+### 2. Starte eine neue AI-Konversation
 
 Öffne [claude.ai](https://claude.ai) und starte eine neue Konversation. Falls du kein Claude hast, funktioniert auch ChatGPT oder eine andere AI.
 
-### 3. Prompt einfügen und loslegen
+### 3. Füge den Prompt ein und leg los
 
 Füge den kopierten Text ein und drücke Enter. Die AI stellt dir 10 Fragen, eine nach der anderen. Beantworte jede ehrlich und konkret.
 
 > **Tipp:** Vage Antworten wie "Ich halte es gerne einfach" produzieren generische Profile. Was zählt: konkrete Beispiele, echte Ärgernisse, spezifische Wörter die du hasst. Je ehrlicher, desto besser das Ergebnis.
 
-### 4. Profil speichern
+### 4. Speichere dein Profil
 
 Nach der letzten Frage generiert die AI dein Stimmprofil. So speicherst du es:
 
@@ -37,9 +44,14 @@ Nach der letzten Frage generiert die AI dein Stimmprofil. So speicherst du es:
 2. Kopiere mit Ctrl+C / Cmd+C
 3. Füge in einem Texteditor ein und speichere als `stimmprofil.md`
 
-### 5. Profil einsetzen
+### 5. Setze dein Profil ein
 
-Füge dein Stimmprofil als Projektanweisung in Claude oder als Custom Instructions in ChatGPT ein. Ab jetzt kennt die AI deinen Stil.
+Füge dein Stimmprofil dort ein, wo die AI es bei jeder Konversation sieht:
+
+- **Claude:** Erstelle ein Projekt und füge das Profil in die Projektanweisungen ein
+- **ChatGPT:** Erstelle ein Projekt oder hinterlege es als Custom Instructions
+
+Ab jetzt kennt die AI deinen Stil.
 
 ---
 
