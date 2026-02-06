@@ -81,7 +81,6 @@ node_modules/
 # Session handoff & internal planning (not for students)
 # -----------------------------------------------------------------------------
 HANDOFF.md
-**/TIMETABLE.md
 **/temp-gamma-payload.json
 
 # -----------------------------------------------------------------------------
