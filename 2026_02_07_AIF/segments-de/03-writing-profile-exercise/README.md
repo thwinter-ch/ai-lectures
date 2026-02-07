@@ -70,8 +70,8 @@ Ab jetzt kennt die AI deinen Stil.
 
 Die 10 Fragen decken ~80% deines Schreibstils ab. Wer tiefer einsteigen will, kann das vollständige 100-Fragen-Interview machen:
 
-1. Mache zuerst die Übung oben
-2. Nutze [bridge-to-full.md](./bridge-to-full.md) für den Übergang
-3. Zeitaufwand: 2–3 Stunden zusätzlich (am besten in mehreren Sitzungen)
+- **Von Null starten:** Öffne [full-interview.md](./full-interview.md) und kopiere den Prompt in eine neue Konversation. Das Interview führt dich durch alle 100 Fragen.
+- **Vom LITE-Profil aus erweitern:** Nutze [bridge-to-full.md](./bridge-to-full.md), wenn du die LITE-Übung oben bereits gemacht hast und dein bestehendes Profil vertiefen willst.
+- **Zeitaufwand:** 2–3 Stunden zusätzlich (am besten in mehreren Sitzungen)
 
 Das lohnt sich nur, wenn du ernsthaft AI-Ghostwriting betreibst oder einen dauerhaften Schreibassistenten aufbauen willst. Für die meisten reicht die LITE-Version.
