@@ -1,176 +1,185 @@
-# GAMMA-Prompt: Kognitive Grenzen
+# GAMMA Prompt — Ausblick & Realitätscheck (Closer)
 
-**Präsentation:** AI-Produktivitäts-Hacks für Führungskräfte
-**Segment:** Kognitive Grenzen (15 Minuten)
-**Folien:** 7
-**Stil:** Executive/professionell, datengetrieben, minimaler Text, wirkungsstarke Visualisierungen
+**Dauer:** 20 Minuten | **Folien:** 8–10
 
 ---
 
-## Globale Design-Anweisungen
+## Gesamtstil
 
-- **Farbpalette:** Dunkel professionell (marineblaue/anthrazitfarbene Hintergründe, weisser Text, eine Akzentfarbe für Hervorhebungen)
-- **Typografie:** Klare serifenlose Schrift, grosser lesbarer Text, minimale Wörter pro Folie
-- **Visueller Stil:** Datenvisualisierung, Infografiken, Icons statt Clipart
-- **Tonalität:** Autoritativ, leicht provokativ, forschungsgestützt
+- Sauber, modern, dunkler oder marinblauer Hintergrund mit kontrastreichem Text
+- Minimaler Text pro Folie — maximal 25 Wörter
+- Zweiteilige Struktur: Teil A (Inspiration, hell/dynamisch), Teil B (Warnung, dunkel/kontrastreich)
+- Daten-Callouts gross und kontrastreich
+- Icons: einfach, monoline Stil, Blueprint-Ästhetik
 
 ---
 
 ## Folie 1: Titelfolie
 
-**Titel:** Die kognitive Lücke
+**Titel:** Ausblick & Realitätscheck
+**Untertitel:** Was möglich ist — und worauf Sie achten müssen
 
-**Untertitel:** Warum Ihr Gehirn Unterstützung braucht
+**Visuell:** Split-Screen — linke Seite: Raketen-Icon (Möglichkeiten), rechte Seite: Schild-Icon (Schutz)
 
-**Visualisierung:** Geteiltes Bild — linke Seite: stilisiertes Gehirn-Icon; rechte Seite: exponentielle Datenkurve mit steilem Anstieg. Die beiden visuell durch eine Lücke/Kluft getrennt.
-
-**Sprechernotiz:** Eröffnende Provokation — dasselbe Gehirn wie vor 10'000 Jahren, exponentiell andere Welt.
-
----
-
-## Folie 2: Millers Gesetz
-
-**Titel:** Die 7±2 Beschränkung
-
-**Hauptvisualisierung:** Grosses stilisiertes „7±2" in der Mitte, umgeben von 7 einfachen geometrischen Formen (Kreise oder Quadrate), die Speicherplätze repräsentieren.
-
-**Zentraler Text (minimal):**
-- „Das Arbeitsgedächtnis hält ~7 Elemente"
-- „Keine Ausnahmen. Biologie, nicht Disziplin."
-
-**Fusszeilen-Zitat:** Miller, G. (1956). *Psychological Review*
-
-**Optionale Hervorhebungsbox:** „Jede Führungskraft in diesem Raum operiert innerhalb derselben Beschränkung."
+**Sprechernotiz:** Übergang vom Hands-on zum Big Picture. Zwei Akte: Inspiration, dann Realität.
 
 ---
 
-## Folie 3: Entscheidungsmüdigkeit
+## Folie 2: Die Bausteine stehen
 
-**Titel:** 35'000 tägliche Entscheidungen
+**Titel:** Was Sie heute gebaut haben
 
-**Hauptvisualisierung:** Infografik mit einer abfallenden Kurve durch den Tag — hohe Entscheidungsqualität am Morgen, Absturz am Nachmittag.
+**Layout:** Drei Karten mit Häkchen
 
-**Zentrale Statistik-Hervorhebung:**
-- Morgens: 65% Bewährungsgenehmigung
-- Vor dem Mittagessen: ~0%
+| Baustein | Was es kann |
+|----------|-------------|
+| Schreibstil-Profil ✓ | AI schreibt in Ihrem Stil |
+| Unternehmensrecherche ✓ | 50 Quellen in Minuten |
+| Second Brain ✓ | Erkenntnisse automatisch gespeichert |
 
-**Untertext:** „Dieselben Richter. Dieselben Fälle. Andere Tageszeit."
+**Übergangstext:** "Jetzt: Was passiert, wenn man diese Bausteine kombiniert?"
 
-**Visuelles Element:** Uhr-Icon, das den Verlauf von 9 Uhr bis 12 Uhr zeigt, mit abfallendem Balkendiagramm darunter.
-
-**Fusszeilen-Zitat:** Danziger et al. (2011). *PNAS*
-
----
-
-## Folie 4: Die Datenexplosion
-
-**Titel:** Mehr Daten 2020-2025 als in der gesamten bisherigen Menschheitsgeschichte
-
-**Hauptvisualisierung:** Dramatische Zeitachse/Hockeyschläger-Diagramm, das das Wachstum des Datenvolumens zeigt:
-- Vor 2020: Flache Linie
-- 2020-2025: Steiler exponentieller Anstieg
-- Beschriftung: „97 ZB (2022) → 181 ZB (2025)"
-
-**Definitions-Hervorhebung:** „1 Zettabyte = 1 Billion Gigabytes"
-
-**Visuelle Metapher (optional):** Papierstapel, der von der Erde bis zum Pluto reicht, beschriftet mit „Nur die Daten von 2020"
-
-**Fusszeilen-Zitat:** IDC Global DataSphere Forecast
+**Sprechernotiz:** Kurzer Rückbezug. Schnell durch, die Demos sind der Star.
 
 ---
 
-## Folie 5: Der Engpass
+## Folie 3: Telegram Classifier
 
-**Titel:** Menschliche Bandbreite: Fix
+**Titel:** Automatische Nachrichtenklassifikation
 
-**Hauptvisualisierung:** Horizontales Balken-Vergleichsdiagramm:
-- Lesen: ~250 Wörter/Min.
-- Tippen: ~40 Wörter/Min.
-- Sprechen: ~125 Wörter/Min.
-- Anhaltende Konzentration: ~20-50 Minuten
-
-**Kontrastierendes Element:** Pfeil, der auf „Datenwachstum: Exponentiell" zeigt
-
-**Hervorhebungsbox:** „100 E-Mails × 200 Wörter = 80 Minuten reines Lesen. Bevor Sie eine einzige Entscheidung getroffen haben."
-
-**Visueller Stil:** Klare Infografik-Balken, gedämpfte Farben für menschliche Grenzen, kräftige Akzentfarbe für den Datenkontrast.
-
----
-
-## Folie 6: Das Argument für Augmentation
-
-**Titel:** Auslagern, nicht Ersetzen
-
-**Hauptvisualisierung:** Dreispaltiges Layout:
-
-| An AI auslagern | Für sich behalten |
-|-----------------|-------------------|
-| Gedächtnis & Abruf | Urteilsvermögen |
-| Mustererkennung | Kontext |
-| Erstentwurf-Erstellung | Ethik & Strategie |
-
-**Visueller Stil:** Linke Spalte in Blau/Violett (AI), rechte Spalte in warmer Farbe (Mensch). Klare visuelle Unterscheidung.
-
-**Schlüsselsatz unten:** „AI erweitert Denken. Es ersetzt es nicht."
-
-**Icon-Vorschläge:** Gehirn + Zahnrad-Icon für AI-Seite; Kompass/Nordstern-Icon für Menschen-Seite.
-
----
-
-## Folie 7: Überleitung zur Demo
-
-**Titel:** Die Systeme, die Sie gebaut haben
-
-**Hauptvisualisierung:** Drei-Stufen-Fortschrittsdiagramm:
-
-- Stufe 1 (abgehakt): „Unternehmensrecherche" — Gedächtnis + Mustererkennung ✓
-- Stufe 2 (abgehakt): „Second Brain" — Abruf + Organisation ✓
-- Stufe 3 (aktiv): „Personalisierter Workflow" — Automatisierung →
-
-**Zentraler Text:** „Externes Gedächtnis für ein 7-Elemente-Gehirn in einer 181-ZB-Welt."
-
-**Übergangstext (unten):** „Jetzt zeige ich Ihnen, wie man das automatisiert. →"
-
-**Visueller Stil:** Fortschrittsanzeige mit Icons für jede Stufe. Vorwärtspfeil zur Demo.
-
----
-
-## GAMMA-Generierungshinweise
-
-**Seitenverhältnis:** 16:9
-**Animation:** Dezente Einblendungen bevorzugt gegenüber komplexen Übergängen
-**Bildstil:** Abstrakt/konzeptuell statt wörtlicher Fotografie
-**Datenvisualisierung:** Klar, minimaler Chartjunk, die Zahlen sprechen lassen
-
-**Vermeiden:**
-- Stockfotos von Menschen, die auf Laptops starren
-- Unruhige Hintergründe
-- Mehr als 20 Wörter pro Folie
-- Aufzählungslastige Textfolien
-
-**Betonen:**
-- Eine wirkungsvolle Statistik pro Folie
-- Visueller Kontrast zwischen menschlichen Grenzen und Datenexplosion
-- Klare Ikonografie
-- Weissraum
-
----
-
-## Prompt für GAMMA (Kopierfertig)
+**Layout:** Flussdiagramm
 
 ```
-Erstellen Sie ein 7-Folien-Präsentationssegment mit dem Titel „Die kognitive Lücke: Warum Ihr Gehirn Unterstützung braucht" für ein Executive-Publikum bei einer Vorlesung über AI-Produktivität im Finanzdienstleistungssektor.
-
-Folien:
-1. Titel: „Die kognitive Lücke" - Geteilte Visualisierung von Gehirn vs. exponentielle Datenkurve
-2. „Die 7±2 Beschränkung" - Millers Gesetz, Arbeitsgedächtnisgrenze, grosses „7±2" zentral
-3. „35'000 tägliche Entscheidungen" - Entscheidungsmüdigkeit, abfallende Qualitätskurve durch den Tag, Bewährungsrichter-Studie (65% morgens → 0% vor dem Mittagessen)
-4. „Datenexplosion" - Hockeyschläger-Diagramm, „Mehr Daten 2020-2025 als gesamte bisherige Geschichte", 97ZB→181ZB
-5. „Der Engpass" - Statistiken zur menschlichen Bandbreite (250 WpM Lesen, 40 WpM Tippen), Kontrast zu exponentiellem Datenwachstum
-6. „Das Argument für Augmentation" - Zwei Spalten: was auslagern (Gedächtnis, Muster, Entwürfe) vs. was behalten (Urteilsvermögen, Kontext, Ethik)
-7. „Die Systeme, die Sie gebaut haben" - Drei-Stufen-Fortschritt: Unternehmensrecherche ✓ → Second Brain ✓ → Personalisierter Workflow →
-
-Stil: Dunkle professionelle Hintergründe, minimaler Text, Fokus auf Datenvisualisierung, klare serifenlose Typografie. Executive/autoritative Tonalität. Quellenangaben in Fusszeilen wo zutreffend.
-
-Vermeiden: Stockfotos, unruhige Hintergründe, Aufzählungslisten, mehr als 20 Wörter pro Folie.
+Telegram-Nachricht → AI-Klassifikation → Strukturierte Datenbank
 ```
+
+**Kernpunkt:** "Roher Input → AI sortiert → Strukturierter Output. Dasselbe Pattern wie Ihr Second Brain — nur vollautomatisch."
+
+**Sprechernotiz:** Beispiel von einer Kollegin. Kurz halten — das Prinzip zählt, nicht die Details.
+
+---
+
+## Folie 4: Content-Workflow mit AI-Agent
+
+**Titel:** Von der Idee zum fertigen Post
+
+**Layout:** Horizontaler Prozess
+
+```
+Briefing → Agent durchsucht Dateien → Schreibt im eigenen Stil → Generiert Bild → Typefully-Draft → Freigabe → Publiziert
+```
+
+**Kernpunkte:**
+- AI-Agent (Hugo) auf eigenem Server
+- Writing Profile + Dateizugriff + Bildgenerierung (~15 Rp./Bild)
+- Typefully als Produktions-Gateway via MCP
+
+**Sprechernotiz:** Live-Demo — Hugo generiert einen Post über die heutige Vorlesung. Writing Profile + Second Brain + Automation = Content-Maschine.
+
+---
+
+## Folie 5: Personalisierte Zusammenfassung
+
+**Titel:** Einmal bauen, dauerhaft nutzen
+
+**Layout:** Einfaches Diagramm
+
+```
+Rohes Transkript → Benutzerprofil aus Notion → AI-Zusammenfassung → Notion + E-Mail
+```
+
+**Kernpunkt:** "Stellen Sie sich vor: jedes Meeting, jede Konferenz, jede Schulung — automatisch zusammengefasst in Ihrem Format."
+
+**Sprechernotiz:** Screenshot zeigen, nicht live n8n-Demo. Link bereitstellen für Interessierte. Der Business Case: 20 Min./Meeting × 10 Meetings/Woche × 50 Wochen = 160+ Stunden/Jahr.
+
+---
+
+## Folie 6: Jurisdiktion & Datensouveränität
+
+**Titel:** Wer hat Zugriff auf Ihre Daten?
+
+**Layout:** Bedrohungsleiter (vertikal, Stufen von unten nach oben)
+
+| Stufe | Gesetz | Was es bedeutet |
+|-------|--------|-----------------|
+| 1 | CLOUD Act | Zivil/Strafrecht — Server-Standort egal |
+| 2 | Patriot Act | Terrorismusverdacht — weniger Kontrolle |
+| 3 | NSL | Kein Richter, Gag Order |
+| 4 | FISA 702 | Massenüberwachung — alle Nicht-Amerikaner |
+
+**Zusatz-Box:** "Nicht nur USA: China = null Schutz. FR/UK = eigene Gesetze. CH = echte Souveränität."
+
+**Schweizer Anbieter:** Swisscom, Infomaniak, Exoscale, Phoenix Technologies
+
+**Sprechernotiz:** Pragmatischer Realitätscheck: Für 90% ist Big Player > Small Player (Hacker > Regierung). Aber in regulierten Branchen: Schweizer Anbieter ist Pflicht, nicht Paranoia.
+
+---
+
+## Folie 7: Erzähl ChatGPT nicht deine Geheimnisse
+
+**Titel:** Jeder Prompt ist eine Spur
+
+**Layout:** Zwei Spalten
+
+| Persönlich | Corporate |
+|------------|-----------|
+| Mord-Recherche → beschlagnahmt im Prozess | M&A-Due-Diligence → subpoenaable |
+| | HR-Kündigung → digitale Spur |
+| | Insider-Trading-Recherche → Beweisstück |
+
+**Kernzitat:** "Behandeln Sie AI-Chats wie E-Mails an Ihren Anwalt — ohne Anwaltsgeheimnis."
+
+**Sprechernotiz:** Jeder Prompt liegt auf einem Server unter fremder Jurisdiktion. NSL = Anbieter darf Sie nicht einmal informieren. Sensible Themen gehören nicht in einen Chatbot.
+
+---
+
+## Folie 8: Passwort-Hygiene
+
+**Titel:** Das unsexieste Thema, das Sie retten wird
+
+**Layout:** Drei Empfehlungen + Vergleich
+
+**Empfehlungen:**
+1. Starke Passwörter — automatisch generiert, nie wiederverwendet
+2. Immer 2FA — bei jedem Dienst
+3. Passwort-Manager — mit integriertem TOTP
+
+**Vergleich:**
+
+| Option | Bewertung |
+|--------|-----------|
+| 1Password, Dashlane, Nordpass | Empfohlen |
+| Browser-Passwörter | Eingeschränkt (Sync, Sharing, API-Keys) |
+| Apple Passwords | Gut wenn rein Apple-Ökosystem |
+
+**Callout:** "Occidental Petroleum: Angriff über Standard-Passwort auf öffentlichem PC."
+
+**Sprechernotiz:** AI-Tools = Explosion von Credentials. Ohne Architektur ab Tag 1 wird es unmanagebar.
+
+---
+
+## Folie 9: Abschluss
+
+**Titel:** Drei Stunden. Drei Systeme. Drei Warnungen.
+
+**Layout:** Zwei Spalten
+
+| Gebaut | Gelernt |
+|--------|---------|
+| Schreibstil-Profil | Jurisdiktion verstehen |
+| Unternehmensrecherche | Prompts = Spuren |
+| Second Brain | Passwort-Hygiene |
+
+**Schlusssatz:** "Das ist kein Spielzeug. Das ist Infrastruktur. Bauen Sie sie mit Bedacht."
+
+**Sprechernotiz:** Kurz. Wirken lassen. Ende.
+
+---
+
+## GAMMA-Einstellungen
+
+- **Präsentationslänge:** Kompakt (8–10 Folien)
+- **Tonalität:** Professionell, direkt. Teil A: energetisch. Teil B: ernst.
+- **Farbschema:** Dunkler Modus, kontrastreich
+- **Übergänge:** Einfaches Einblenden
+- **Schrift:** Sans-Serif, modern

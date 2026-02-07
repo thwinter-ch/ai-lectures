@@ -18,7 +18,7 @@
 
 ---
 
-## Die Zahlen [1:30–4:00]
+## Die Zahlen [1:30–3:30]
 
 Präsentieren Sie diese Statistiken — lassen Sie sie wirken:
 
@@ -28,38 +28,59 @@ Präsentieren Sie diese Statistiken — lassen Sie sie wirken:
 | Zeit für E-Mails | **28%** der Arbeitswoche | McKinsey, 2023 |
 | Slack-Nachrichten | **200+** ungelesen/Tag (durchschn. Wissensarbeiter) | Slack interne Daten |
 | Meeting-Stunden | **23 Stunden/Woche** (ab Managementebene) | Microsoft Work Trend Index |
-| Entscheidungsmüdigkeit setzt ein | Nach ca. **10'000 Bits** Information | Vohs et al., Entscheidungsforschung |
 
 **Betonung:** "Das sind über 11 Stunden pro Woche allein für E-Mails. Vor Slack. Vor Meetings. Vor der eigentlichen Arbeit."
 
-**Rhetorische Pointe:** "Und hier die entscheidende Frage — hat sich die Qualität Ihrer Entscheidungen proportional verbessert?"
+**Rhetorische Pointe:** "Hat sich die Qualität Ihrer Entscheidungen proportional verbessert?"
 
 ---
 
-## Das Paradox [4:00–6:30]
+## Das biologische Limit [3:30–6:00]
+
+**Kernthese:** Ihr Gehirn hat ein hartes Limit — und es ist kleiner, als Sie denken.
+
+**[7±2 — MILLERS GESETZ]**
+
+"1956 veröffentlichte der Kognitionspsychologe George Miller einen der meistzitierten Aufsätze der Psychologie: ‚The Magical Number Seven, Plus or Minus Two.'
+
+Das Arbeitsgedächtnis hält ungefähr 7 Elemente gleichzeitig. Manche schaffen 9, andere kämpfen mit 5. Niemand entkommt dieser Beschränkung.
+
+Denken Sie an Ihre letzte Vorstandssitzung. Sechs Tagesordnungspunkte tief. Jemand wirft ein neues Problem auf. Ihr Gehirn ist bereits an der Kapazitätsgrenze. Das ist kein persönliches Versagen — es ist biologische Architektur."
+
+**[ENTSCHEIDUNGSMÜDIGKEIT — DIE RICHTER-STUDIE]**
+
+"Es wird schlimmer. Nicht nur ist Ihr Arbeitsgedächtnis begrenzt — es erschöpft sich.
+
+Israelische Bewährungsrichter. 1'100 Entscheidungen analysiert. Der grösste Prädiktor, ob ein Gefangener freigelassen wurde? Nicht das Verbrechen. Die Tageszeit.
+
+- Nach dem Frühstück: **65% Genehmigungsrate**
+- Kurz vor dem Mittagessen: **fast 0%**
+
+Die Richter waren nicht böse — sie waren erschöpft. Wenn kognitive Ressourcen knapp werden, wählt das Gehirn die sichere Option. Bei Bewährung: ‚Nein'. In Ihrem Geschäft: ‚Verschieben wir das' oder ‚Bleiben wir bei dem, was wir kennen'.
+
+Jede Nachmittagsentscheidung ist potenziell beeinträchtigt. Nicht durch fehlende Information — durch Blutzuckerspiegel."
+
+**Quellen:**
+- Miller, G. (1956). „The Magical Number Seven, Plus or Minus Two." *Psychological Review.*
+- Danziger, S. et al. (2011). „Extraneous factors in judicial decisions." *PNAS.*
+
+---
+
+## Das Paradox [6:00–7:30]
 
 **Kernthese:** Mehr Information ≠ bessere Entscheidungen.
 
-Führen Sie durch dieses Framework:
+"7-Elemente-Gehirn. 120 E-Mails. 200 Slack-Nachrichten. 23 Stunden Meetings pro Woche. Das ist die Gleichung, die nicht aufgeht.
 
-```
-Informationsvolumen      Entscheidungsqualität
-    ↑↑↑↑                    ↗ → → ↘
+[Kurve zeigen: Entscheidungsqualität steigt mit Information, erreicht Plateau, dann Absturz]
 
-    (abnehmender Grenznutzen, dann negativ)
-```
+Ab einem Schwellenwert sinkt die Entscheidungsqualität. Nicht weil Sie dumm werden — weil Ihre kognitive Kapazität erschöpft ist. Die gleichen Richter, die gleichen Fälle, andere Tageszeit, andere Urteile.
 
-**Drei Versagensmodi:**
-
-1. **Analyse-Paralyse** — Zu viele Inputs, keine Aktion
-2. **Signal-Überflutung** — Kritische Informationen im Rauschen begraben
-3. **Kontextwechsel-Kosten** — 23 Minuten zur Refokussierung nach einer Unterbrechung (UC Irvine Studie)
-
-**Provokante Formulierung:** "Ihre Konkurrenten sind nicht diejenigen, die mehr lesen. Es sind diejenigen, die *die richtigen Dinge schneller* lesen."
+Ihre Konkurrenten sind nicht diejenigen, die mehr lesen. Es sind diejenigen, die *die richtigen Dinge schneller* lesen."
 
 ---
 
-## Das alte Modell vs. Das neue Modell [6:30–9:00]
+## Das alte Modell vs. Das neue Modell [7:30–9:30]
 
 **Altes mentales Modell (vor AI):**
 
@@ -90,7 +111,7 @@ Informationsvolumen      Entscheidungsqualität
 
 ---
 
-## Was AI verändert [9:00–12:00]
+## Was AI verändert [9:30–12:00]
 
 **Drei Fähigkeiten, die den Überflutungszyklus durchbrechen:**
 
@@ -152,9 +173,10 @@ Führen Sie durch, was sie tun werden:
 | Zeit | Sie sollten bei... sein |
 |------|-------------------------|
 | 1:30 | Eröffnung abgeschlossen |
-| 4:00 | Statistiken abgeschlossen |
-| 6:30 | Paradox abgeschlossen |
-| 9:00 | Alt vs. Neu abgeschlossen |
+| 3:30 | Statistiken abgeschlossen |
+| 6:00 | Biologisches Limit (7±2 + Richter) abgeschlossen |
+| 7:30 | Paradox abgeschlossen |
+| 9:30 | Alt vs. Neu abgeschlossen |
 | 12:00 | AI-Fähigkeiten abgeschlossen |
 | 14:00 | Überleitung/Übungseinführung abgeschlossen |
 | 15:00 | Übergabe zur Übung |
@@ -163,18 +185,28 @@ Führen Sie durch, was sie tun werden:
 
 ## Bei Zeitmangel
 
-- Abschnitt "Drei Versagensmodi" kürzen (spart 1 Min.)
-- Alt/Neu-Vergleich auf eine Folie komprimieren (spart 1,5 Min.)
+- Richter-Studie auf den Kernsatz kürzen: "65% morgens, 0% vor dem Mittagessen" (spart 1 Min.)
+- Alt/Neu-Vergleich auf eine Folie komprimieren (spart 1 Min.)
 
 ## Bei Zeitüberschuss
 
-- UC Irvine-Statistik weglassen
-- Tabellenvergleich überspringen, nur den "Fluchtgeschwindigkeit"-Satz bringen
+- Bei 7±2 die Vorstandssitzungs-Analogie ausbauen
+- UC Irvine-Statistik ergänzen: 23 Minuten Refokussierung nach Unterbrechung
+
+---
+
+## Zentrale Quellen
+
+1. Miller, G.A. (1956). „The Magical Number Seven, Plus or Minus Two." *Psychological Review*, 63(2), 81-97.
+2. Danziger, S., Levav, J., & Avnaim-Pesso, L. (2011). „Extraneous factors in judicial decisions." *PNAS*, 108(17), 6889-6892.
+3. McKinsey Global Institute (2023). The Social Economy.
+4. Microsoft Work Trend Index (2023).
 
 ---
 
 ## Schlüsselphrasen zum Verankern
 
+- "7±2 — das ist Biologie, nicht Disziplin"
 - "Informations-Fluchtgeschwindigkeit"
 - "Kuratierung ist der neue Vorteil"
 - "Pull, nicht Push"

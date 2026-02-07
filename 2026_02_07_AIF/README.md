@@ -22,10 +22,9 @@
 | 04 | [AI as Managerial Skill](https://gamma.app/docs/v5gsyrz3bf5anxo) | Vortrag | Warum 80% die KI-Nutzung abbrechen |
 | 05 | [Company Research](segments-de/05-company-research-exercise/README.md) | Übung | Strukturierte Unternehmensanalyse mit KI |
 | | *Pause* | | |
-| 06 | [Information Overload](https://gamma.app/docs/ldxhtipj5074jgy) | Vortrag | Das Problem, das wir lösen |
+| 06 | [Information Overload](https://gamma.app/docs/e3131dy593gw4ai) | Vortrag | Informationsflut, kognitive Grenzen, Pull statt Push |
 | 07 | [Second Brain](segments-de/07-second-brain-exercise/README.md) | Übung | Claude + Notion einrichten |
-| 08 | [Cognitive Limits](https://gamma.app/docs/memzql9819s9le0) | Vortrag | Warum Mensch-KI-Systeme funktionieren |
-| 09 | [Demo: Personalized Summary](https://gamma.app/docs/rb4i5myl7jbqrw8) | Demo | n8n-Workflow in Aktion |
+| 08 | [Ausblick & Realitätscheck](https://gamma.app/docs/twkfm2mwi1334ud) | Vortrag + Demo | Demos, Datensouveränität, Passwort-Hygiene |
 
 ---
 

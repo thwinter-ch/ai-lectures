@@ -1,6 +1,6 @@
 # GAMMA Prompt — Segment Informationsflut
 
-**Dauer:** 15 Minuten | **Folien:** 8–10
+**Dauer:** 15 Minuten | **Folien:** 10–12
 
 ---
 
@@ -49,7 +49,45 @@
 
 ---
 
-## Folie 3: Das Paradox
+## Folie 3: Das biologische Limit — 7±2
+
+**Titel:** Die 7±2-Beschränkung
+
+**Hauptvisualisierung:** Grosses stilisiertes "7±2" in der Mitte, umgeben von 7 einfachen geometrischen Formen, die Speicherplätze repräsentieren.
+
+**Zentraler Text:**
+- "Das Arbeitsgedächtnis hält ~7 Elemente"
+- "Keine Ausnahmen. Biologie, nicht Disziplin."
+
+**Fusszeilen-Zitat:** Miller, G. (1956). Psychological Review
+
+**Sprechpunkte:**
+- "Denken Sie an Ihre letzte Vorstandssitzung. Sechs Punkte tief. Jemand wirft ein neues Problem auf."
+- "Das ist kein persönliches Versagen — es ist biologische Architektur."
+
+---
+
+## Folie 4: Entscheidungsmüdigkeit
+
+**Titel:** Die Richter-Studie
+
+**Hauptvisualisierung:** Infografik mit abfallender Kurve durch den Tag — hohe Entscheidungsqualität am Morgen, Absturz am Nachmittag.
+
+**Zentrale Statistik:**
+- Morgens: **65%** Bewährungsgenehmigung
+- Vor dem Mittagessen: **~0%**
+
+**Untertext:** "Dieselben Richter. Dieselben Fälle. Andere Tageszeit."
+
+**Fusszeilen-Zitat:** Danziger et al. (2011). PNAS
+
+**Sprechpunkte:**
+- "Der grösste Prädiktor war nicht das Verbrechen — es war die Tageszeit."
+- "Jede Nachmittagsentscheidung ist potenziell beeinträchtigt — durch Blutzuckerspiegel."
+
+---
+
+## Folie 5: Das Paradox
 
 **Titel:** Mehr Information ≠ bessere Entscheidungen
 
@@ -58,32 +96,15 @@
 - Y-Achse: Entscheidungsqualität
 - Linie steigt, erreicht Plateau, dann Abwärtskurve
 
+**Zentraler Text:** "7-Elemente-Gehirn. 120 E-Mails. 200 Slack-Nachrichten. 23 Stunden Meetings."
+
 **Sprechpunkte:**
-- Abnehmender Grenznutzen ist real
-- Ab einem Schwellenwert schadet mehr Information
-- Wir haben diesen Schwellenwert erreicht
+- "Die Gleichung, die nicht aufgeht"
+- "Die gleichen Richter, die gleichen Fälle, andere Tageszeit"
 
 ---
 
-## Folie 4: Drei Versagensmodi
-
-**Titel:** Wie Überflutung die Leistung vernichtet
-
-**Layout:** Drei Spalten mit Icons
-
-| Icon | Versagensmodus | Einzeiler |
-|------|----------------|-----------|
-| Ladekreis | Analyse-Paralyse | Zu viele Inputs, keine Aktion |
-| Wellen über dem Kopf | Signal-Überflutung | Kritische Info im Rauschen begraben |
-| Geteilte Pfeile | Kontextwechsel | 23 Min. zur Refokussierung nach Unterbrechung |
-
-**Sprechpunkte:**
-- Einen auswählen, der im Raum resoniert
-- "Welcher kostet Sie am meisten?"
-
----
-
-## Folie 5: Das alte Modell
+## Folie 6: Das alte Modell
 
 **Titel:** Was früher funktionierte
 
@@ -102,7 +123,7 @@
 
 ---
 
-## Folie 6: Die neue Realität
+## Folie 7: Die neue Realität
 
 **Titel:** Der Wandel
 
@@ -125,7 +146,7 @@
 
 ---
 
-## Folie 7: Was AI verändert
+## Folie 8: Was AI verändert
 
 **Titel:** Drei Fähigkeiten, die den Kreislauf durchbrechen
 
@@ -145,7 +166,7 @@
 
 ---
 
-## Folie 8: Der Mindset-Wandel
+## Folie 9: Der Mindset-Wandel
 
 **Titel:** Von Push zu Pull
 
@@ -164,7 +185,7 @@ NEU: Frage → AI → Relevante Antwort → Aktion
 
 ---
 
-## Folie 9: Von der Theorie zum System
+## Folie 10: Von der Theorie zum System
 
 **Titel:** Sie haben es schon erlebt
 
@@ -181,7 +202,7 @@ NEU: Frage → AI → Relevante Antwort → Aktion
 
 ---
 
-## Folie 10: Die Kernbotschaft
+## Folie 11: Die Kernbotschaft
 
 **Titel:** Eine Frage zum Merken
 
@@ -199,21 +220,8 @@ NEU: Frage → AI → Relevante Antwort → Aktion
 
 ## GAMMA-Einstellungen
 
-- **Präsentationslänge:** Kompakt (8–10 Folien)
+- **Präsentationslänge:** Kompakt (10–12 Folien)
 - **Tonalität:** Professionell, direkt
 - **Farbschema:** Dunkler Modus bevorzugt, oder kontrastreicher Corporate-Look
 - **Übergänge:** Einfaches Einblenden, keine ablenkenden Animationen
 - **Schrift:** Sans-Serif, modern (Inter, Helvetica Neue oder ähnlich)
-
----
-
-## Hinweise für GAMMA-Import
-
-Beim Einfügen in GAMMA:
-
-1. Beginnen Sie mit: "Erstelle eine Präsentation über Informationsflut für Führungskräfte"
-2. Fügen Sie die obige Folien-für-Folien-Struktur ein
-3. Spezifizieren Sie: "Verwende minimalen Text, datenorientiertes Design, dunkles professionelles Thema"
-4. Fordern Sie an: "Keine Stockfotos, verwende einfache Icons und saubere Diagramme"
-
-GAMMA wird Visuals generieren — überprüfen und tauschen Sie alles aus, das generisch wirkt.

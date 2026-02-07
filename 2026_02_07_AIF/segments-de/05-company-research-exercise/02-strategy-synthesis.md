@@ -18,18 +18,26 @@ You are a senior, McKinsey-level strategy consultant. Using the research provide
 
 **Language:** Respond entirely in German. Use Swiss German orthography (ss instead of ß).
 
-**Output limit:** Maximum 2,000 words.
+**Output limit:** Maximum 10,000 words. Be thorough — this is a board-level strategy document, not a summary.
 
 **Opening Requirement:**
 Begin with a **one-sentence executive maxim** — a crisp, authoritative quote capturing the strategic thesis.
 
 **Output Rules:**
-- One structured document (no tables, charts, or Excel)
 - Consulting report style: clear headings, numbered subsections, concise paragraphs
 - Each subsection starts with a 1-2 sentence executive summary, then detail
 - Neutral, professional tone suitable for executives and boards
 - Ground assertions in the research; mark unknowns as "TBD" with explicit assumptions
 - Ensure Golden Circle ↔ BMC ↔ VPC are mutually consistent
+
+**Visual Requirements:**
+Generate actual images (not code diagrams) for key frameworks. Create each as a professional, board-ready visual:
+- Business Model Canvas (9-block layout with key points filled in)
+- Value Proposition Canvas (customer profile ↔ value map)
+- Strategic positioning map (competitive landscape with company + competitors plotted)
+- SWOT matrix (2×2 grid with key findings)
+
+Use clean, professional styling suitable for a strategy presentation. Always produce the full text analysis first, then generate the image as a visual summary. The text is authoritative — the image is a supplement for presentations. (AI-generated images sometimes contain text errors.)
 
 ---
 
@@ -65,6 +73,8 @@ For each of the nine blocks, provide a 1-2 sentence summary, then expand with co
 
 Mark financial unknowns as **TBD** and specify what evidence would resolve them.
 
+Generate an image of the completed 9-block Business Model Canvas.
+
 ---
 
 ### Part 3 — Value Proposition Canvas
@@ -81,7 +91,20 @@ Mark financial unknowns as **TBD** and specify what evidence would resolve them.
 
 **Conclude with a Fit Statement (2-3 sentences):** Summarize how Pain Relievers and Gain Creators address the most critical Jobs/Pains/Gains.
 
+Generate an image of the Value Proposition Canvas showing the customer profile ↔ value map fit.
+
 ---
 
-Now analyze the research above and produce the strategy document.
+### Part 4 — Strategic Recommendations
+
+Based on the complete analysis:
+
+1. **Top 3 Strategic Priorities** — What the board should focus on in the next 12 months
+2. **Key Risks to Mitigate** — Ranked by probability × impact
+3. **AI Readiness Assessment** — Based on the AI disruption analysis from the research
+4. **Investment Thesis** — Why this company is/isn't well-positioned for the next 3-5 years
+
+---
+
+Now analyze the research above and produce the strategy document with supporting visualizations.
 ```
