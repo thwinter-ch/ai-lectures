@@ -84,9 +84,10 @@ HANDOFF.md
 **/temp-gamma-payload.json
 
 # -----------------------------------------------------------------------------
-# English segments (outdated, DE is primary)
+# English content (outdated, DE is primary)
 # -----------------------------------------------------------------------------
 **/segments-en/
+**/README.en.md
 
 # -----------------------------------------------------------------------------
 # Editor/IDE
