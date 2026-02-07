@@ -117,18 +117,6 @@ Bestätigt: Eintrag erfolgreich erstellt.»
 
 ---
 
-## Optionale Erweiterungen (nach dem Kurs)
-
-Du kannst die Projektanweisungen um Modi erweitern:
-
-**Recherche-Modus** — sag «Recherche-Modus» und Claude erfasst alle substantiellen Erkenntnisse mit Quellen-URLs. Beende mit «Recherche abschliessen» für einen konsolidierten Eintrag.
-
-**Meeting-Modus** — sag «Meeting-Modus: [Name]» und Claude fokussiert auf Entscheidungen, Aktionspunkte und offene Fragen.
-
-**Brainstorming-Modus** — sag «Brainstorming-Modus» und Claude erfasst auch spekulative Ideen mit Kill-Kriterien.
-
----
-
 ## Fehlerbehebung
 
 | Problem | Lösung |
@@ -138,3 +126,43 @@ Du kannst die Projektanweisungen um Modi erweitern:
 | Falsche Datenbank | Bestätigen, dass die Datenbank-ID verwendet wird, nicht die Seiten-ID |
 | Fehlende Eigenschaften | Sicherstellen, dass die Notion-Datenbank alle Spalten hat |
 | Übertragung nicht ausgelöst | Sicherstellen, dass du innerhalb des Projekts arbeitest, nicht in einer normalen Konversation |
+
+---
+
+## Optionale Erweiterungen (nach dem Kurs)
+
+Du kannst die Projektanweisungen um Modi erweitern. Öffne dein bestehendes Projekt, gehe zu **Projektanweisungen**, und füge den gewünschten Block am Ende ein.
+
+### Recherche-Modus
+
+Füge diesen Text in deine Projektanweisungen ein:
+
+```
+## Recherche-Modus
+Wenn ich «Recherche-Modus» sage:
+- Erfasse jede substantielle Erkenntnis einzeln mit Quellen-URL
+- Markiere Konfidenz pro Erkenntnis (Hoch/Mittel/Spekulativ)
+- Bei «Recherche abschliessen»: Erstelle einen konsolidierten Eintrag mit allen Erkenntnissen, gruppiert nach Thema
+```
+
+### Meeting-Modus
+
+```
+## Meeting-Modus
+Wenn ich «Meeting-Modus: [Name]» sage:
+- Erfasse nur: Entscheidungen, Aktionspunkte (mit Verantwortlichen), offene Fragen
+- Ignoriere Smalltalk und Hintergrundinfos
+- Titel-Format: «Meeting — [Name] — [Datum]»
+- Bei «Meeting Ende»: Übertrage sofort mit Aktionspunkten als Checkliste
+```
+
+### Brainstorming-Modus
+
+```
+## Brainstorming-Modus
+Wenn ich «Brainstorming-Modus» sage:
+- Erfasse auch spekulative und unfertige Ideen
+- Konfidenz immer «Spekulativ» setzen
+- Für jede Idee ein Kill-Kriterium notieren (was müsste stimmen, damit die Idee funktioniert?)
+- Bei «Brainstorming Ende»: Übertrage alle Ideen als einzelnen Eintrag, sortiert nach Potenzial
+```
