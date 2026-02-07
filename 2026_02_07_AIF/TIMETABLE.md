@@ -33,9 +33,8 @@
 | 15:15 | 15' | 06 | Information Overload | Vortrag |
 | 15:30 | 5' | — | Überleitung + Notion-Check | Puffer |
 | 15:35 | 25' | 07 | Second Brain Setup | Übung |
-| 16:00 | 15' | 08 | Cognitive Limits | Vortrag |
-| 16:15 | 15' | 09 | Demo: Personalized Summary | Demo |
-| 16:30 | 15' | — | Q&A + Wrap-up | Abschluss |
+| 16:00 | 20' | 08 | Ausblick & Realitätscheck | Vortrag + Demo |
+| 16:20 | 15' | — | Q&A + Wrap-up | Abschluss |
 
 ---
 
@@ -48,11 +47,11 @@
 | Übung 03 braucht länger | "Profil erstellen" — Studenten generieren mit dem, was sie haben |
 | Übung 05 braucht länger | Deep Research kürzen, nur Strategy Synthesis |
 | Übung 07 braucht länger | Setup demonstrieren statt alle machen lassen |
-| Insgesamt zu lang | Seg 08 weglassen oder in Seg 06 integrieren |
+| Insgesamt zu lang | Seg 08 Closer kürzen: Sovereignty-Slides straffen oder Password-Slide weglassen |
 
 ## Realistischer Worst Case
 
-Übungen laufen IMMER über. Rechne pro Übung +5 Min. für "wo bin ich", "es funktioniert nicht", "ich hab kein Abo". Das frisst den Puffer. Seg 08 (Cognitive Limits) ist das wahrscheinlichste Streichopfer.
+Übungen laufen IMMER über. Rechne pro Übung +5 Min. für "wo bin ich", "es funktioniert nicht", "ich hab kein Abo". Das frisst den Puffer. Im Closer (Seg 08) kann die Password-Slide wegfallen — Demos + Sovereignty sind wichtiger.
 
 ---
 
@@ -62,6 +61,6 @@
 - [ ] WLAN-Zugangsdaten für Studenten
 - [ ] Claude Pro eingeloggt auf eigenem Laptop
 - [ ] Notion geöffnet mit Demo-Datenbank
-- [ ] n8n-Workflow bereit für Seg 09 Demo
+- [ ] OpenClaw/Hugo bereit für Live-Demo (Seg 08)
 - [ ] Gamma-Decks in Browser-Tabs offen
 - [ ] Segment-Links im Chat/E-Mail an Studenten geschickt

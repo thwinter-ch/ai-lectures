@@ -113,17 +113,16 @@ The lecture brainstorm document (`2026_02_07_AIF/AI Productivity Hacks for Execu
 
 ## 2026-01-31: Lecture Content Build (Sessions 3-4)
 
-**Session goal:** Build all 9 lecture segments (6 lectures + 3 exercises) for Feb 7 session.
+**Session goal:** Build all lecture segments for Feb 7 session.
 
 ### Work Completed
 
-1. **Created 6 lecture segments** with `script.md` + `gamma-prompt.md`:
+1. **Created 5 lecture segments** with `script.md` + `gamma-prompt.md`:
    - 01: How I Built This (system demo)
    - 02: Technology Revolution (2026 agent breakthrough)
    - 04: AI as Managerial Skill (80% abandon AI)
-   - 06: Information Overload (the problem)
-   - 08: Cognitive Limits (human-AI systems)
-   - 09: Demo Personalized Summary (n8n workflow)
+   - 06: Information Overload (cognitive limits + pull vs push)
+   - 08: Ausblick & Realitätscheck (demos, sovereignty, password hygiene)
 
 2. **Created 3 exercise segments** with guides:
    - 03: Writing Profile (Ruben Hassid method)
@@ -267,6 +266,49 @@ The lecture brainstorm document (`2026_02_07_AIF/AI Productivity Hacks for Execu
 - [ ] Validate gamma-prompts in Gamma.app
 - [ ] Generate slide decks
 - [ ] Package materials for HWZ
+
+---
+
+## 2026-02-07: Final Content Pass + Segment Merge
+
+**Session goal:** Final review of segments 05–09, merge 08+09 into combined closer, upgrade exercise prompts.
+
+### Decisions Made
+
+| Decision | Rationale |
+|----------|-----------|
+| Merge 08+09 into single closer | Two separate endings felt disjointed; combined "wow + warning" structure is stronger |
+| Fold cognitive science into 06 | 06 and 08 argued the same thesis; Miller's 7±2 and judges study strengthen 06 |
+| Upgrade 05 prompts to deep research | 3k words was too shallow; 30k + SWOT + Porter's + AI disruption for real value |
+| Real images instead of Mermaid | Finance execs won't have Mermaid renderers; Claude generates actual visuals |
+
+### Work Completed
+
+1. **Merged segments 08+09** into "Ausblick & Realitätscheck":
+   - Part A: Demos (Telegram classifier, OpenClaw live demo, personalized summary)
+   - Part B: Reality check (data sovereignty, prompt privacy, password hygiene)
+
+2. **Upgraded segment 06** — folded in Miller's 7±2 Law and Danziger judges study
+
+3. **Upgraded segment 05 exercise prompts:**
+   - Deep research: 3k → 30k words, added SWOT, Porter's Five Forces, AI Disruption Analysis
+   - Strategy synthesis: 2k → 10k words, real image generation, strategic recommendations
+
+4. **Fixed segment 07** — restructured auto-push-project.md (clear 3-step flow, copy-paste mode extensions)
+
+5. **Regenerated Gamma decks** for 06 and 08
+
+6. **Cleaned up references** — timetable, READMEs, build log updated for 8-segment structure
+
+### Gamma Decks (Final)
+
+| Seg | Title | URL |
+|-----|-------|-----|
+| 01 | How I Built This | https://gamma.app/docs/01-Wie-ich-diese-Vorlesung-erstellt-habe-atjj9amvea35m4a |
+| 02 | Technology Revolution | https://gamma.app/docs/02-Die-Technologie-Revolution-myy1vq3y7d4x16s |
+| 04 | AI as Managerial Skill | https://gamma.app/docs/v5gsyrz3bf5anxo |
+| 06 | Information Overload | https://gamma.app/docs/e3131dy593gw4ai |
+| 08 | Ausblick & Realitätscheck | https://gamma.app/docs/twkfm2mwi1334ud |
 
 ---
 

@@ -4,7 +4,7 @@
 
 This repository treats lectures like software: version-controlled, modular, and built with AI assistance. Just as **Infrastructure as Code** revolutionized DevOps, **Lecture as Code** makes educational content reproducible, auditable, and collaboratively improvable.
 
-Every lecture segment has its own folder with scripts, prompts, and build artifacts. The entire Feb 7 lecture was built in ~4 sessions using Claude Code + GSD workflow. See **[BUILD_LOG.md](BUILD_LOG.md)** for the full build history.
+Every lecture segment has its own folder with scripts, prompts, and build artifacts. The entire Feb 7 lecture was built in ~4 sessions using Claude Code + GSD workflow. See **[BUILD_LOG.md](2026_02_07_AIF/BUILD_LOG.md)** for the full build history.
 
 ---
 
@@ -22,10 +22,10 @@ Every lecture segment has its own folder with scripts, prompts, and build artifa
 ```
 ai-lectures/
 ├── 2026_02_07_AIF/       # Current: Feb 7 AI Productivity Hacks
-│   └── segments/         # 9 segments (6 lectures + 3 exercises)
-├── templates/            # Starter files for participants
-├── BUILD_LOG.md          # How this repo was built
-└── HANDOFF.md            # Current status for session continuity
+│   ├── segments-de/      # 8 segments in German (5 lectures + 3 exercises)
+│   ├── segments-en/      # 8 segments in English
+│   └── BUILD_LOG.md      # How this repo was built
+└── templates/            # Starter files for participants
 ```
 
 ## Lectures
@@ -67,7 +67,7 @@ Educational use. Contact instructors for commercial licensing.
 
 Dieses Repository behandelt Vorlesungen wie Software: versionskontrolliert, modular und mit KI-Unterstützung erstellt. Wie **Infrastructure as Code** DevOps revolutioniert hat, macht **Lecture as Code** Bildungsinhalte reproduzierbar, nachvollziehbar und kollaborativ verbesserbar.
 
-Die gesamte Vorlesung vom 7. Februar wurde in ~4 Sessions mit Claude Code + GSD-Workflow erstellt. Siehe **[BUILD_LOG.md](BUILD_LOG.md)** für die vollständige Build-Historie.
+Die gesamte Vorlesung vom 7. Februar wurde in ~4 Sessions mit Claude Code + GSD-Workflow erstellt. Siehe **[BUILD_LOG.md](2026_02_07_AIF/BUILD_LOG.md)** für die vollständige Build-Historie.
 
 ## Dozenten
 
@@ -79,10 +79,10 @@ Die gesamte Vorlesung vom 7. Februar wurde in ~4 Sessions mit Claude Code + GSD-
 ```
 ai-lectures/
 ├── 2026_02_07_AIF/       # Aktuell: 7. Feb KI-Produktivitäts-Hacks
-│   └── segments/         # 9 Segmente (6 Vorträge + 3 Übungen)
-├── templates/            # Vorlagen für Teilnehmende
-├── BUILD_LOG.md          # Wie dieses Repo erstellt wurde
-└── HANDOFF.md            # Aktueller Status für Session-Kontinuität
+│   ├── segments-de/      # 8 Segmente auf Deutsch (5 Vorträge + 3 Übungen)
+│   ├── segments-en/      # 8 Segmente auf Englisch
+│   └── BUILD_LOG.md      # Wie dieses Repo erstellt wurde
+└── templates/            # Vorlagen für Teilnehmende
 ```
 
 ## Vorlesungen

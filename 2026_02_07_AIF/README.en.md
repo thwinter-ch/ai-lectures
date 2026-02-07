@@ -19,11 +19,9 @@
 
 By the end of this session, you'll have a working personal productivity system:
 
-1. **GitHub repository** — Your version-controlled knowledge base
-2. **Notion database** — Your searchable "second brain"
-3. **Writing style profile** — AI that writes like you
-4. **Company research document** — Structured business analysis
-5. **Working AI integrations** — GitHub + Notion + Claude
+1. **Writing style profile** — AI that writes like you
+2. **Company research document** — Structured business analysis with AI
+3. **Second Brain** — Notion database with AI integration
 
 This isn't theory. You'll leave with a functioning system you can use Monday morning.
 
@@ -68,22 +66,21 @@ If you don't want to invest the $20: No problem — you can follow the exercise 
 
 | # | Segment | Type | Content |
 |---|---------|------|---------|
-| 01 | [How I Built This](segments/01-how-i-built-this-lecture/) | Lecture | See the system in action, understand components |
-| 02 | [Technology Revolution](segments/02-technology-revolution-lecture/) | Lecture | 2026 as breakthrough year for AI agents |
-| 03 | [Writing Profile](segments/03-writing-profile-exercise/) | Exercise | Create your personal writing style profile |
-| 04 | [AI as Managerial Skill](segments/04-ai-managerial-skill-lecture/) | Lecture | Why 80% abandon AI tools |
-| 05 | [Company Research](segments/05-company-research-exercise/) | Exercise | Structured business analysis with AI |
+| 01 | [How I Built This](segments-en/01-how-i-built-this-lecture/) | Lecture | See the system in action, understand components |
+| 02 | [Technology Revolution](segments-en/02-technology-revolution-lecture/) | Lecture | 2026 as breakthrough year for AI agents |
+| 03 | [Writing Profile](segments-en/03-writing-profile-exercise/) | Exercise | Create your personal writing style profile |
+| 04 | [AI as Managerial Skill](segments-en/04-ai-managerial-skill-lecture/) | Lecture | Why 80% abandon AI tools |
+| 05 | [Company Research](segments-en/05-company-research-exercise/) | Exercise | Structured business analysis with AI |
 | | *Break* | | |
-| 06 | [Information Overload](segments/06-information-overload-lecture/) | Lecture | The problem we're solving |
-| 07 | [Second Brain](segments/07-second-brain-exercise/) | Exercise | Set up Claude + Notion integration |
-| 08 | [Cognitive Limits](segments/08-cognitive-limits-lecture/) | Lecture | Why human-AI systems work |
-| 09 | [Demo: Personalized Summary](segments/09-demo-personalized-summary-lecture/) | Demo | n8n workflow in action |
+| 06 | [Information Overload](segments-en/06-information-overload-lecture/) | Lecture | Information overload, cognitive limits, pull vs push |
+| 07 | [Second Brain](segments-en/07-second-brain-exercise/) | Exercise | Set up Claude + Notion integration |
+| 08 | [Outlook & Reality Check](segments-en/08-cognitive-limits-lecture/) | Lecture + Demo | Demos, data sovereignty, password hygiene |
 
 ---
 
 ## Resources
 
-All materials are in the [segments/](segments/) folder:
+All materials are in the [segments-en/](segments-en/) folder:
 - Each segment folder contains `script.md` (speaker notes) and `gamma-prompt.md` (slide generator)
 - Exercises include step-by-step instructions
 
@@ -118,4 +115,4 @@ Contact the instructor or raise issues in this repository.
 
 ---
 
-*Last updated: February 1, 2026*
+*Last updated: February 7, 2026*
