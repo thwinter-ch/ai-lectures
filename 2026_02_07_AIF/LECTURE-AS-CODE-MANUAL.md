@@ -1,504 +1,657 @@
-# Lecture as Code — Instruction Manual
+# Lecture as Code — The Playbook
 
-A step-by-step playbook for building a university lecture using AI tools and version control. Written so you (or Claude Code) can reproduce the entire workflow.
+A Claude Code-executable playbook for building a university lecture from scratch. Every prompt is copy-pasteable. Every decision has a branch. Every template is inline.
 
-This documents the exact process used to build the HWZ "AI Productivity Hacks for Executives" lecture (Feb 7, 2026). Total production: ~2 weeks side-project, ~$15 API costs.
-
----
-
-## Phase 0: Prerequisites
-
-### Tools You Need
-
-| Tool | Role | Cost |
-|------|------|------|
-| **Claude Code** (CLI) | Orchestrator — writes content, manages files, runs agents | API usage (~$5-10/lecture) |
-| **Git + GitHub** | Version control, hosting, transparency | Free |
-| **Gamma.app** | Slide generation from text prompts | Subscription or free tier |
-| **Perplexity Pro** | Deep research with citations | $20/mo |
-| **Notion** | Knowledge capture (exercise output) | Free |
-| **Wispr Flow** | Voice-to-text for brainstorming | Subscription |
-| **Optiverse** | Meeting transcription (Swiss German capable) | ~CHF 30/mo |
-| **Typefully** | LinkedIn post scheduling | Subscription |
-
-### Accounts & API Keys
-
-- GitHub account with `gh` CLI authenticated
-- Gamma API key (store in `.mcp.json`, gitignored)
-- n8n API key if using automation workflows (store in `.mcp.json`, gitignored)
+Built from the actual process behind the HWZ "AI Productivity Hacks for Executives" lecture (Feb 7, 2026). Two weeks of side-project time. ~$15 in API calls. 3.5 hours of delivered content with 5 slide decks, 3 hands-on exercises, bilingual docs, and a post-lecture recap website.
 
 ---
 
-## Phase 1: Repository Setup
+## How to Use This Playbook
 
-### 1.1 Create the repo
+Open Claude Code in your project directory. Paste the prompts from each phase. Fill in the `{{variables}}`. Claude Code will generate the files, and you review/iterate.
 
-```bash
-mkdir ai-lectures && cd ai-lectures
-git init
-gh repo create <username>/ai-lectures --public --source=. --push
-```
-
-### 1.2 Create .gitignore
-
-Critical patterns — add these before your first commit:
-
-```gitignore
-# Per-lecture private folders (PII, speaker notes)
-**/docs.gitignore/
-
-# MCP configuration (contains API keys)
-.mcp.json
-**/.mcp.json
-
-# Google Drive artifacts
-*.gdoc
-*.gsheet
-*.gslides
-
-# Audio/video (often PII in transcripts)
-*.ogg *.mp3 *.mp4 *.m4a *.wav *.webm *.mov
-
-# Sensitive filename patterns
-*participants*
-*teilnehmer*
-*Teilnehmer*
-*Studiengruppenliste*
-*transcript*
-
-# Temp files
-**/temp-gamma-payload.json
-**/temp-gamma-*.json
-
-# OS artifacts
-.DS_Store
-Thumbs.db
-desktop.ini
-```
-
-### 1.3 Create folder structure
+**Variables you'll set once and reuse:**
 
 ```
-ai-lectures/
-├── YYYY_MM_DD_INSTITUTION/    # One folder per lecture
-│   ├── segments-de/           # Content in primary language
-│   │   ├── 01-topic-lecture/
-│   │   │   ├── script.md
-│   │   │   └── gamma-prompt.md
-│   │   ├── 02-topic-lecture/
-│   │   ├── 03-topic-exercise/
-│   │   │   ├── README.md      # Student-facing exercise guide
-│   │   │   └── (supporting files)
-│   │   └── ...
-│   ├── segments-en/           # Translations (optional, can gitignore)
-│   ├── input/                 # Reference materials, research docs
-│   ├── docs.gitignore/        # PII: student lists, grades (gitignored)
-│   ├── recap/                 # Post-lecture deliverables
-│   │   ├── index.html         # Recap web page
-│   │   ├── LECTURE-RECAP.md   # Editorial recap (markdown source)
-│   │   └── linkedin-series/   # LinkedIn post files
-│   ├── summary/               # Transcripts, meeting notes (gitignored)
-│   ├── README.md              # Lecture overview (student-facing)
-│   ├── TIMETABLE.md           # Minute-by-minute schedule (instructor only)
-│   ├── BUILD_LOG.md           # Decision log (public)
-│   └── .env.local             # Local config (gitignored)
-├── templates/                 # Reusable across lectures
-│   ├── prereqs-email-template.md
-│   └── day-of-email-template.md
-├── README.md                  # Repo-level overview
-└── .gitignore
+{{LECTURE_TITLE}}     = e.g., "AI Productivity Hacks for Executives"
+{{INSTITUTION}}       = e.g., "HWZ Zürich"
+{{COURSE}}            = e.g., "CAS AI in Finance"
+{{DATE}}              = e.g., "2026-02-07"
+{{TIME}}              = e.g., "13:00-16:45"
+{{DURATION_HOURS}}    = e.g., "3.5"
+{{LANGUAGE}}          = e.g., "German (Swiss orthography: ss not ß)"
+{{AUDIENCE}}          = e.g., "21 finance executives, mid-career, CAS program"
+{{INSTRUCTOR}}        = e.g., "Thomas Winter"
+{{GITHUB_USER}}       = e.g., "thwinter-ch"
+{{REPO_NAME}}         = e.g., "ai-lectures"
+{{FOLDER}}            = e.g., "2026_02_07_AIF"
 ```
-
-### 1.4 Create BUILD_LOG.md
-
-Start this immediately. Every session gets an entry with:
-- Session goal (one sentence)
-- Decisions made (table: Decision | Rationale)
-- Work completed (numbered list)
-- Outstanding items (checkbox list)
-- Learnings (bullet list)
-
-This becomes the institutional memory of the project. It's public and it's the backbone of the "Lecture as Code" transparency story.
 
 ---
 
-## Phase 2: Brainstorm & Research
+## Phase 0: Bootstrap the Repo
 
-### 2.1 Voice brainstorm
+> Skip this phase if you already have a lecture repo. Jump to Phase 1.
 
-Use Wispr Flow or any voice-to-text tool. Walk and talk. Capture:
-- Target audience and their pain points
-- Key concepts you want to teach
-- Exercises that build real deliverables (not toy exercises)
-- Time constraints and segment structure
+### Prompt 0.1 — Create repo and structure
 
-Save the raw transcript as a markdown file in the lecture folder.
-
-### 2.2 Structure into segments
-
-Design a delivery sequence that alternates lectures and exercises:
+Paste into Claude Code:
 
 ```
-01 - Lecture (context/credibility)
-02 - Lecture (theory)
-03 - Exercise (apply theory from 01+02)
-04 - Lecture (deeper theory)
-05 - Exercise (apply theory from 04)
--- BREAK --
-06 - Lecture (bridge to next exercise)
-07 - Exercise (build something lasting)
-08 - Lecture (demos + reality check + close)
+Create a public GitHub repo called {{REPO_NAME}} for {{GITHUB_USER}}.
+
+Then create this folder structure:
+
+{{FOLDER}}/
+├── segments-de/          # Primary language content
+├── segments-en/          # English translations (optional)
+├── input/                # Research, reference docs
+├── docs.gitignore/       # PII — gitignored
+├── recap/                # Post-lecture deliverables
+│   └── linkedin-series/
+├── summary/              # Transcripts — gitignored
+├── README.md
+├── TIMETABLE.md
+└── BUILD_LOG.md
+templates/
+├── prereqs-email-template.md
+└── day-of-email-template.md
+README.md                 # Repo-level
+
+Create a .gitignore with these patterns:
+- **/docs.gitignore/  (PII folders)
+- .mcp.json and **/.mcp.json  (API keys)
+- *.gdoc *.gsheet *.gslides  (Google Drive artifacts)
+- *.ogg *.mp3 *.mp4 *.m4a *.wav *.webm *.mov  (audio/video)
+- *participants* *teilnehmer* *Studiengruppenliste* *transcript*  (sensitive filenames)
+- **/temp-gamma-*.json  (temp build files)
+- **/summary/  (transcripts)
+- .DS_Store Thumbs.db desktop.ini  (OS artifacts)
+- .env .env.local *.log  (env files)
+- HANDOFF.md  (internal notes)
+
+Initialize BUILD_LOG.md with a template entry for today.
+Commit and push.
 ```
+
+---
+
+## Phase 1: Plan the Lecture
+
+### Prompt 1.1 — Brainstorm to structure
+
+Do this BEFORE opening Claude Code. Walk. Talk. Use Wispr Flow or any voice recorder.
+
+Record yourself answering:
+1. Who is in the room? What do they care about?
+2. What's the one thing they must walk away knowing?
+3. What are 3 things they should be able to DO after the lecture?
+4. What will surprise them? What's contrarian?
+5. What existing tools/frameworks can I teach hands-on?
+
+Save the transcript as `{{FOLDER}}/input/brainstorm-raw.md`.
+
+### Prompt 1.2 — Structure into segments
+
+Paste into Claude Code:
+
+```
+Read {{FOLDER}}/input/brainstorm-raw.md.
+
+Design a segment structure for a {{DURATION_HOURS}}-hour lecture for {{AUDIENCE}}.
 
 Rules:
-- Exercises produce real deliverables the student keeps
-- Each lecture sets up the next exercise
-- No more than 2 lectures in a row without an exercise
-- Last segment is always demos + honest caveats
+- Alternate lecture and exercise segments
+- Never more than 2 lectures in a row without a hands-on exercise
+- Each exercise must produce a REAL deliverable the student keeps and uses after the lecture
+- Include a 15-min break roughly at the midpoint
+- Last segment: demos of advanced capabilities + honest reality check/caveats
+- Budget 5 min buffer between each segment
 
-### 2.3 Research each segment topic
+Output a table:
+| # | Segment Name | Type (lecture/exercise) | Duration | What students get |
 
-For each lecture segment, use Perplexity Pro to research:
-- Key statistics and studies (with citations)
-- Frameworks and models
-- Real-world examples
+Then output a TIMETABLE.md with minute-by-minute schedule including:
+- Exact times for a start time of {{TIME}}
+- Buffer slots between segments
+- A "what to cut" fallback plan for each segment if it runs over
+- An on-site checklist section
+```
 
-Save research notes in `input/` or directly in the segment folder.
+### Decision point: How many segments?
+
+| Duration | Segments | Structure |
+|----------|----------|-----------|
+| 2 hours | 5-6 | 3 lectures + 2 exercises |
+| 3-4 hours | 7-9 | 4-5 lectures + 3 exercises |
+| Full day (6+ hours) | 12-15 | 6-8 lectures + 4-6 exercises |
 
 ---
 
-## Phase 3: Content Production
+## Phase 2: Research & Write Content
 
-### 3.1 Write lecture scripts
+### Prompt 2.1 — Research each lecture segment
 
-For each lecture segment, create `script.md`:
+For each lecture segment, use Perplexity Pro (or paste this into Claude Code if you have web search):
 
-```markdown
-# Segment XX: [Title]
+```
+Research the following topic for a lecture segment:
 
+Topic: {{SEGMENT_TOPIC}}
+Audience: {{AUDIENCE}}
+Duration: {{SEGMENT_DURATION}} minutes
+
+I need:
+1. 3-5 key statistics with sources (studies, not blog posts)
+2. 1-2 frameworks or models that explain the concept
+3. 2-3 real-world examples or case studies
+4. 1 contrarian or surprising angle
+5. Specific numbers I can put on slides (big, visual callouts)
+
+Output as markdown. Cite every claim.
+```
+
+Save each result to `{{FOLDER}}/input/research-segment-NN.md`.
+
+### Prompt 2.2 — Write all lecture scripts
+
+Paste into Claude Code:
+
+```
+Read all files in {{FOLDER}}/input/ (brainstorm + research files).
+Read {{FOLDER}}/TIMETABLE.md for the segment structure.
+
+For each LECTURE segment, create {{FOLDER}}/segments-de/NN-name-lecture/script.md.
+
+Script format:
+# Segment NN: [Title]
 **Type:** Lecture | **Duration:** XX Min
 
 ## Key Data Points
-- [Statistic 1 with source]
-- [Statistic 2 with source]
+- [Stat with source — these go on slides as big callouts]
 
 ## Core Concepts
 ### [Concept Name]
-[Explanation. Keep it conversational. Write how you'd actually say it.]
+[Write this as spoken text. How I'd actually say it in front of the room.
+Use {{LANGUAGE}}. Keep it conversational. No academic language.
+Include the actual phrases and analogies I'd use.]
 
 ### [Concept Name]
-[...]
+[Same approach]
 
-## Speaker Notes
-- [Timing cues, audience interaction prompts, transition lines]
+## Audience Interaction
+- [Where to ask a question]
+- [Where to pause for reaction]
+- [Where to take a poll]
 
-## Transition
-[How this connects to the next segment]
-```
-
-Guidelines:
-- Write how you speak, not how you write papers
-- Include the actual quotes you'll say
-- Mark audience interaction points explicitly
-- Keep each concept to 2-3 minutes max
-
-### 3.2 Write exercise guides
-
-For each exercise, create `README.md` (student-facing):
-
-```markdown
-# [Exercise Name]
-
-## What You'll Build
-[One sentence: the deliverable they walk away with]
-
-## Prerequisites
-- [Tool 1]
-- [Tool 2]
-
-## Steps
-
-### Step 1: [Action]
-[Instructions. Include the exact prompt to copy-paste.]
-
-### Step 2: [Action]
-[...]
-
-## Expected Output
-[What a good result looks like]
-
-## Troubleshooting
-[Common issues and fixes]
-```
+## Transition to Next Segment
+[The exact bridge sentence to the next segment]
 
 Rules:
-- Every prompt must be copy-pasteable
-- Include expected output descriptions
-- Add troubleshooting for the 3 most common failures
-- Time-box each step
+- Write how a speaker talks, not how a paper reads
+- Each concept = 2-3 minutes max
+- Include at least one moment of honest admission ("here's what doesn't work yet")
+- Every slide-worthy stat gets its own callout
+- The transition must connect logically to whatever comes next
+```
 
-### 3.3 Write Gamma prompts
+### Prompt 2.3 — Write all exercise guides
 
-For each lecture segment, create `gamma-prompt.md` — a structured slide description:
+Paste into Claude Code:
 
-```markdown
+```
+Read all files in {{FOLDER}}/input/.
+Read {{FOLDER}}/TIMETABLE.md for segment structure.
+
+For each EXERCISE segment, create {{FOLDER}}/segments-de/NN-name-exercise/README.md.
+
+Exercise guide format:
+# [Exercise Name]
+
+## Was Sie erstellen
+[One sentence: the deliverable. Not what they'll "learn" — what they'll HAVE.]
+
+## Voraussetzungen
+- [Tool 1 + link]
+- [Tool 2 + link]
+
+## Schritt 1: [Action Verb]
+[Clear instruction. Then the exact prompt to copy-paste in a code block.]
+
+```
+[THE ACTUAL PROMPT — complete, ready to paste into the AI tool.
+No placeholders except for personal details like company name.
+Must produce useful output on first try.]
+```
+
+**Erwartetes Ergebnis:** [What good output looks like. Length, format, content.]
+
+## Schritt 2: [Action Verb]
+[Same structure]
+
+## Schritt 3: [Action Verb]
+[Same structure]
+
+## Fehlerbehebung
+| Problem | Lösung |
+|---------|--------|
+| [Common issue 1] | [Fix] |
+| [Common issue 2] | [Fix] |
+| [Common issue 3] | [Fix] |
+
+Rules:
+- Every prompt must work on first paste. Test it mentally.
+- Students should produce a real deliverable in {{SEGMENT_DURATION}} minutes
+- Include expected output descriptions so students know if theirs is good
+- Troubleshooting section: the 3 things that WILL go wrong
+- Write in {{LANGUAGE}}
+```
+
+### Prompt 2.4 — Write Gamma slide prompts
+
+Paste into Claude Code:
+
+```
+Read each script.md in {{FOLDER}}/segments-de/*/
+
+For each LECTURE segment, create a gamma-prompt.md in the same folder.
+
+Format — one section per slide, separated by ---:
+
 ## Slide 1: Title Slide
-**Title:** [...]
-**Subtitle:** [...]
-**Visual:** [Describe the visual element]
-**Speaker Note:** [What you'll say]
+**Title:** [Max 8 words]
+**Subtitle:** [Max 12 words]
+**Visual:** [Describe the image/icon/diagram you want]
+**Speaker Note:** [What I'll say while this slide is up — 2-3 sentences]
 
 ---
 
 ## Slide 2: [Topic]
-**Title:** [...]
-**Layout:** [e.g., two-column comparison, stat cards, single quote]
-**Key Text:** [The actual words on the slide — max 25 words]
-**Visual:** [Describe the visual]
-**Speaker Note:** [What you'll say]
-```
+**Title:** [Max 8 words]
+**Layout:** [Choose: stat-cards | two-column-comparison | single-quote | diagram | numbered-list | image-left-text-right]
+**Key Text:** [The actual words on the slide — MAX 25 WORDS. Less is better.]
+**Data Callout:** [If applicable: the big number, e.g., "80%" or "+40%"]
+**Visual:** [Describe what you want]
+**Speaker Note:** [2-3 sentences]
 
 Rules:
-- Max 25 words per slide
-- Data callouts large and high-contrast
-- Describe the visual you want (Gamma will generate or suggest)
-- Every slide has a speaker note
+- Max 25 words of text per slide. Slides are visual, not documents.
+- Data callouts: huge font, high contrast
+- 6-10 slides per segment (roughly 1 slide per 1.5-2 minutes)
+- Every stat from script.md gets its own slide or callout
+- Speaker notes contain what I'll actually SAY — not a repeat of slide text
+- Last slide: transition/teaser for next segment
+```
 
-### 3.4 Generate Gamma decks
+### Prompt 2.5 — Generate Gamma JSON payloads
 
-Create a JSON payload per segment:
+Paste into Claude Code:
 
-```json
+```
+For each gamma-prompt.md in {{FOLDER}}/segments-de/*/,
+create a temp-gamma-NN.json file in {{FOLDER}}/ with this structure:
+
 {
   "textMode": "preserve",
   "cardSplit": "inputTextBreaks",
-  "themeId": "[your-theme-id]",
+  "themeId": "7tjaturvprr6xac",
   "sharingOptions": { "externalAccess": "view" },
   "imageOptions": { "source": "aiGenerated" },
   "cardOptions": { "dimensions": "16x9" },
   "textOptions": { "language": "de" },
-  "additionalInstructions": "Swiss German: never use ß, always ss. Dark professional design. Minimal text per slide, max 25 words. Executive aesthetic.",
-  "inputText": "[paste gamma-prompt.md content here]"
+  "additionalInstructions": "Swiss German: NEVER use ß, always ss. Umlauts (ä, ö, ü) are correct. Dark professional design. Monoline icons, blueprint style. Deck title starts with 'NN - '. Minimal text per slide, max 25 words. Data callouts large and high-contrast. Executive aesthetic.",
+  "inputText": "[PASTE THE FULL gamma-prompt.md CONTENT HERE, escaped for JSON]"
 }
+
+These files are gitignored (temp-gamma-*.json pattern).
+I'll submit them to Gamma manually or via API.
 ```
 
-Submit via Gamma API or paste into Gamma.app. Save the resulting deck URL in the BUILD_LOG and README.
+Then submit each JSON to Gamma. Save the resulting deck URLs in BUILD_LOG.md and README.md.
 
-### 3.5 Translation (if bilingual)
+---
 
-If you need a second language version:
-- Translate all `script.md` and `README.md` files
-- For Swiss German: never use ß (always ss), keep Umlauts
-- Exercise prompts: translate the full prompt text, not just instructions
-- Gamma prompts: create separate payloads per language
+## Phase 3: Translation (If Bilingual)
+
+### Prompt 3.1 — Translate all content
+
+Paste into Claude Code:
+
+```
+For each file in {{FOLDER}}/segments-de/*/,
+create a translated version in {{FOLDER}}/segments-en/*/ (same folder structure).
+
+Translation rules:
+- Translate script.md, README.md, gamma-prompt.md
+- Keep technical terms in English (they're usually better known)
+- Exercise prompts: translate the FULL prompt text, not just the instructions around it
+- Maintain the same conversational tone — don't make it more formal
+- Keep all formatting, headers, code blocks identical
+
+DO NOT translate: BUILD_LOG.md, TIMETABLE.md (these stay in primary language)
+```
 
 ---
 
 ## Phase 4: Pre-Lecture Admin
 
-### 4.1 Extract student data
+### Prompt 4.1 — Extract student data from PDF
 
-If you receive a participant list (PDF/Excel):
-- Parse into `docs.gitignore/students.csv` (fields: first_name, last_name, company, function, email)
-- This file is gitignored — never commit PII
+Paste into Claude Code:
 
-### 4.2 Send intro email (1 week before)
+```
+Read the file {{FOLDER}}/docs.gitignore/[participant-list-file].
 
-Template in `templates/prereqs-email-template.md`. Include:
-- Date, time, location
-- Tool prerequisites (accounts to create, subscriptions to buy)
-- Link to the GitHub repo (why not — build in public)
-- Your contact info
+Extract a CSV with columns: first_name, last_name, company, function, email
+Save to {{FOLDER}}/docs.gitignore/students.csv
 
-### 4.3 Send day-of email (morning of)
+This file is gitignored. Never commit it.
+Count the students and tell me the total.
+```
 
-Template in `templates/day-of-email-template.md`. Include:
-- Quick links to materials
-- Prereq reminder
-- "See you at [time]"
+### Prompt 4.2 — Draft intro email
 
-### 4.4 Create timetable
+Paste into Claude Code:
 
-`TIMETABLE.md` — minute-by-minute schedule with:
-- Buffer time between segments (5 min each)
-- Explicit fallback plan: what to cut if a segment runs over
-- On-site checklist (projector, WiFi, accounts logged in, tabs open)
+```
+Draft an intro email for the lecture.
+
+Details:
+- Lecture: {{LECTURE_TITLE}}
+- Date/Time: {{DATE}}, {{TIME}}
+- Location: {{INSTITUTION}}
+- Audience: {{AUDIENCE}}
+- Prerequisites: [list the tools students need — accounts, subscriptions]
+- Materials link: https://github.com/{{GITHUB_USER}}/{{REPO_NAME}}/tree/master/{{FOLDER}}
+
+Tone: informal du-Form (German), friendly but direct.
+Include: why they need the paid subscription (be specific about what it enables).
+Include: your contact info (phone, LinkedIn).
+Save to {{FOLDER}}/{{DATE}}-intro-email.md
+
+Format it so I can copy everything below a --- line directly into Outlook.
+```
+
+### Prompt 4.3 — Write README.md
+
+Paste into Claude Code:
+
+```
+Create {{FOLDER}}/README.md — the student-facing lecture overview.
+
+Include:
+1. Title, course, institution, date, time, instructor
+2. Segment table (linked to Gamma decks for lectures, linked to README.md for exercises)
+3. "What you'll build" section — list the deliverables from exercises
+4. Prerequisites table (tool, cost, purpose, signup link)
+5. "After the lecture" section — link to recap page (will be created later)
+
+Write in {{LANGUAGE}}.
+Keep it clean. This is what students see when they open the repo.
+```
 
 ---
 
 ## Phase 5: Deliver the Lecture
 
-### 5.1 Recording setup
+No Claude Code prompts here. This is you in the room.
 
-Run simultaneously:
-- **Optiverse** for meeting transcription + summary PDF
-- **Gemini (Google Meet)** for timestamped raw transcript
+### Checklist
 
-Both are automatic. No manual work during delivery.
+- [ ] Gamma decks in browser tabs (one per lecture segment)
+- [ ] Claude Code open on laptop for live demo / bug fixes
+- [ ] Exercise links ready to share via screen / chat
+- [ ] Optiverse running for transcription
+- [ ] Gemini auto-transcription running (Google Meet)
+- [ ] WiFi credentials for students
+- [ ] Your accounts logged in: Claude, Notion, Perplexity, Gamma
 
-### 5.2 During the lecture
+### During delivery
 
-- Present Gamma decks in fullscreen (or download as PDF)
-- Share exercise links via chat/screen
-- If a bug is found, fix it live with Claude Code and push — this IS the demo
-
----
-
-## Phase 6: Post-Lecture Recap (Same Day or Next Day)
-
-This is where the "student experience" differentiator lives. Total time: ~4-5 hours. Cost: ~$8 API.
-
-### 6.1 Gather inputs
-
-Collect into `summary/` (gitignored):
-- Gemini transcript (timestamped markdown)
-- Optiverse summary PDF
-- Your own notes from delivery
-
-### 6.2 Write LECTURE-RECAP.md
-
-Read all source materials into Claude Code context:
-- All scripts from `segments-de/*/script.md`
-- All exercise guides from `segments-de/*/README.md`
-- The transcript (what was actually said)
-- Timetable, tech stack, build log
-
-Cross-reference transcript with scripts. The transcript captures:
-- Q&A highlights
-- Tangents that became the best discussions
-- Honest admissions and live anecdotes
-- Things that went wrong
-
-Produce a single markdown file:
-- Session overview with key thesis
-- Segment-by-segment recap (enriched with live delivery)
-- Q&A highlights (anonymized — no student names)
-- Exercise quick-reference table with links
-- Tools & resources table
-- Practical tips / "what I wish I'd known"
-- Key quotes from the session
-
-### 6.3 Build recap web page
-
-Transform LECTURE-RECAP.md into `recap/index.html`:
-- Self-contained HTML (all CSS inline, vanilla JS only)
-- No framework, no build step, no dependencies
-- Mobile-responsive, smooth scroll navigation
-- Fixed nav bar with section links
-- SVG diagrams for key concepts (inline, not external files)
-- Cards for each segment with Gamma deck links
-- Exercise quick-reference section
-- Footer with repo link (pointing to lecture folder, not repo root)
-
-Test in browser: desktop + mobile viewport.
-
-### 6.4 Write LinkedIn series
-
-From LECTURE-RECAP.md + scripts, extract standalone insights:
-
-- Each post must work for someone who wasn't at the lecture
-- Format: hook (1-2 lines) → insight → evidence → takeaway → CTA
-- Series branding: "AI x Leadership | X/N"
-- Write AFTER the recap (the recap crystallizes the insights)
-
-Save as numbered markdown files in `recap/linkedin-series/`.
-
-### 6.5 Send recap email
-
-Draft in lecture folder as `YYYY-MM-DD-recap-email.md`. Include:
-- Link to recap web page
-- Quick links to all 3 exercises
-- Recommended next steps (this week / this month / ongoing)
-- Your contact info
-
-### 6.6 Enable GitHub Pages
-
-```bash
-gh api repos/<username>/<repo>/pages -X POST --input - << 'EOF'
-{"source":{"branch":"master","path":"/"}}
-EOF
-```
-
-The recap page URL will be:
-`https://<username>.github.io/<repo>/<lecture-folder>/recap/index.html`
-
-### 6.7 Commit and push everything
-
-```bash
-git add recap/ BUILD_LOG.md README.md
-git commit -m "feat: add post-lecture recap page and LinkedIn series"
-git push
-```
-
-### 6.8 Schedule LinkedIn posts
-
-Use Typefully or your preferred scheduler. Suggested cadence:
-- Day 1: Opener post (student experience / value story)
-- Days 2-6: 2 knowledge posts per day
-- Day 7: Closer (meta-story — how the lecture was built)
+- If something breaks, fix it live with Claude Code. Push to repo. This IS the demo.
+- Watch for the best Q&A moments — they'll go in the recap.
+- Note which exercises students struggled with — that's troubleshooting content.
 
 ---
 
-## Phase 7: Iterate for Next Lecture
+## Phase 6: Post-Lecture Recap
 
-### 7.1 What carries forward
+This phase turns a delivered lecture into a student resource and a content series. Total time: ~4-5 hours. Cost: ~$8 in API calls.
 
-- `.gitignore` patterns
-- `templates/` email templates
-- Repo structure and conventions
-- The BUILD_LOG methodology
-- The recap production pipeline (Phase 6)
+### Prompt 6.1 — Gather and synthesize
 
-### 7.2 What's lecture-specific
+Place your transcript files in `{{FOLDER}}/summary/` (gitignored), then paste into Claude Code:
 
-- All content in `segments-*/`
-- Gamma decks (new theme or reuse)
-- Student data
-- Timetable
-- Recap
+```
+Read ALL of the following files:
 
-### 7.3 Starting a new lecture
+Source materials:
+- All scripts: {{FOLDER}}/segments-de/*/script.md
+- All exercise guides: {{FOLDER}}/segments-de/*/README.md
+- {{FOLDER}}/TIMETABLE.md
+- {{FOLDER}}/BUILD_LOG.md
 
-```bash
-mkdir YYYY_MM_DD_INSTITUTION
-# Copy structure from previous lecture
-# Update README.md with new lecture details
-# Start a new BUILD_LOG entry
-# Begin at Phase 2
+Transcript/summary (in {{FOLDER}}/summary/):
+- [Gemini transcript filename]
+- [Optiverse summary filename]
+
+Cross-reference what was PLANNED (scripts) with what was ACTUALLY SAID (transcript).
+The transcript is messy voice-to-text — that's fine. It contains the gold: Q&A, tangents, honest admissions, anecdotes, live demonstrations not in scripts.
+
+Create {{FOLDER}}/recap/LECTURE-RECAP.md with these sections:
+
+1. **Session Overview** (3-4 sentences, key thesis)
+2. **Segment-by-Segment Recap** — for each segment:
+   - Type badge (Lecture/Exercise), duration, link to Gamma deck or exercise guide
+   - What happened (enriched with transcript — not just the script)
+   - "Highlights from the live session" — quotes, anecdotes, extended discussions
+   - Key concepts with one-line explanations
+3. **Q&A Highlights** — the best discussions, anonymized (NO student names)
+4. **Exercise Quick Reference** — table with links
+5. **Slide Decks** — table with Gamma links
+6. **Tools & Resources** — table: tool, role, link
+7. **Recommended Next Steps** — this week / this month / ongoing
+8. **Practical Tips** — "What I wish I'd known" section from delivery experience
+9. **Key Quotes** — the best lines from the session (blockquotes)
+
+Write in {{LANGUAGE}}.
+Verify every link works before outputting.
+```
+
+### Prompt 6.2 — Build recap web page
+
+Paste into Claude Code:
+
+```
+Read {{FOLDER}}/recap/LECTURE-RECAP.md.
+
+Create {{FOLDER}}/recap/index.html — a self-contained web page.
+
+Requirements:
+- ALL CSS inline in a <style> block. No external stylesheets except Google Fonts (Inter).
+- Vanilla JS only. No frameworks, no build step, no dependencies.
+- Mobile-responsive. Test at 375px and 1200px widths.
+- Fixed nav bar at top with section links. Include a "GitHub Repo" link pointing to:
+  https://github.com/{{GITHUB_USER}}/{{REPO_NAME}}/tree/master/{{FOLDER}}
+
+Design:
+- Hero section: dark gradient (deep blue/navy), lecture title, date, instructor
+- Cards for each segment: number badge, type label (Vortrag/Übung), duration, "Open slides" button
+- Blockquotes styled with left border accent
+- Stat callouts: large numbers in cards (e.g., "80%", "+40%", "-19 Pp.")
+- SVG diagrams for 2-3 key concepts (inline SVG, not external files)
+- Smooth scroll navigation
+- Fade-in animations on scroll (IntersectionObserver)
+- Footer: institution, date, repo link
+
+Color palette: navy/deep blue professional. Not startup-bright. Executive financial services aesthetic.
+
+The page must open in any browser. No build step. Students click the link and it works.
+```
+
+### Prompt 6.3 — Write LinkedIn series
+
+Paste into Claude Code:
+
+```
+Read {{FOLDER}}/recap/LECTURE-RECAP.md.
+Read the brand voice file at ~/.claude/skills/_shared/brand-narrative.md
+Read the LinkedIn formatting rules at ~/.claude/skills/linkedin-post/skill.md
+
+Extract 10-12 standalone insights from the lecture content.
+
+For each, write a LinkedIn post following these rules:
+- Hook: first 1-2 lines must earn the "see more" click (under 210 chars)
+- Voice: direct, operator-grade, first-person, present tense. No fluff.
+- Never preachy, never motivational, never "thought leader"
+- 800-1,300 characters per post
+- Short paragraphs (1-3 lines), white space between
+- Every post must work for someone who WASN'T at the lecture
+- Concrete artifact or system behind every insight
+- End with series tag: "AI x Leadership | N/12"
+- Hashtags: use #FieldAI #BoardToBot #AIinProduction #BuildInPublic
+- NEVER use: #AI #Leadership #Innovation #Motivation
+
+Post 1: Link to the recap page (the "student experience" story)
+Post 2: Link to this manual and the repo (the "lecture as code" story)
+Posts 3-10: Knowledge posts (research findings, frameworks, exercises)
+Posts 11-12: Meta posts (workflow, methodology)
+
+Save each as {{FOLDER}}/recap/linkedin-series/NN-kebab-title.md
+Include scheduling metadata in HTML comments at top:
+<!-- Post N/12 | Schedule: Day X, AM/PM | Topic: ... | Pillar: ... -->
+```
+
+### Prompt 6.4 — Draft student recap email
+
+Paste into Claude Code:
+
+```
+Draft a recap email for students.
+
+Details:
+- Lecture: {{LECTURE_TITLE}}
+- Recap page: https://{{GITHUB_USER}}.github.io/{{REPO_NAME}}/{{FOLDER}}/recap/index.html
+- Repo: https://github.com/{{GITHUB_USER}}/{{REPO_NAME}}/tree/master/{{FOLDER}}
+- Exercise links: [list the GitHub URLs for each exercise README.md]
+
+Include:
+1. Link to recap page (primary CTA)
+2. Quick links table for each exercise
+3. Recommended next steps (this week / this month / ongoing)
+4. Contact info
+
+Tone: same as intro email. Informal, {{LANGUAGE}}, du-Form.
+Save to {{FOLDER}}/{{DATE}}-recap-email.md
+Format for direct copy into Outlook.
+```
+
+### Prompt 6.5 — Enable GitHub Pages and push
+
+Paste into Claude Code:
+
+```
+Enable GitHub Pages for {{GITHUB_USER}}/{{REPO_NAME}} serving from master branch root.
+Then commit all recap content and push.
+Verify the recap page is accessible at:
+https://{{GITHUB_USER}}.github.io/{{REPO_NAME}}/{{FOLDER}}/recap/index.html
 ```
 
 ---
 
-## Appendix: File Naming Conventions
+## Phase 7: Next Lecture
+
+### Prompt 7.1 — Start a new lecture
+
+Paste into Claude Code:
+
+```
+I'm building a new lecture in the same repo.
+
+Details:
+- Title: {{NEW_LECTURE_TITLE}}
+- Institution: {{NEW_INSTITUTION}}
+- Date: {{NEW_DATE}}
+- Time: {{NEW_TIME}}
+- Duration: {{NEW_DURATION}} hours
+- Audience: {{NEW_AUDIENCE}}
+- Language: {{NEW_LANGUAGE}}
+
+Create the folder structure under {{NEW_FOLDER}}/ (same pattern as {{FOLDER}}/).
+Start a BUILD_LOG.md entry for today.
+Update the repo-level README.md to add this lecture to the lectures table.
+
+I'll start with a voice brainstorm. Read LECTURE-AS-CODE-MANUAL.md and
+walk me through Phase 1 when I'm ready.
+```
+
+---
+
+## Appendix A: File Naming Conventions
 
 | Pattern | Example | Rule |
 |---------|---------|------|
 | Lecture folder | `2026_02_07_AIF` | `YYYY_MM_DD_INSTITUTION` |
-| Segment folder | `04-ai-managerial-skill-lecture` | `NN-kebab-case-type` where type = `lecture` or `exercise` |
-| Scripts | `script.md` | Always this name |
-| Gamma prompts | `gamma-prompt.md` | Always this name |
-| Exercise guides | `README.md` | Student-facing, always this name |
-| Emails | `2026-02-05-intro-email.md` | Date-prefixed |
+| Lecture segment | `04-ai-managerial-skill-lecture/` | `NN-kebab-case-lecture` |
+| Exercise segment | `03-writing-profile-exercise/` | `NN-kebab-case-exercise` |
+| Script | `script.md` | Always this name, inside segment folder |
+| Gamma prompt | `gamma-prompt.md` | Always this name, inside segment folder |
+| Exercise guide | `README.md` | Always this name, student-facing |
+| Email | `2026-02-05-intro-email.md` | `YYYY-MM-DD-purpose-email.md` |
 | Build log | `BUILD_LOG.md` | One per lecture folder |
+| Timetable | `TIMETABLE.md` | One per lecture folder |
 
-## Appendix: Cost Breakdown (Per Lecture)
+## Appendix B: Cost Breakdown
 
 | Item | Cost | Notes |
 |------|------|-------|
-| Claude Code API | $5-10 | Content production + recap |
-| Optiverse | Included | Meeting transcription |
-| Gemini transcript | Included | Google Meet feature |
-| Gamma decks | Included | Subscription |
-| GitHub Pages | Free | Static hosting |
-| Typefully | Included | LinkedIn scheduling |
-| **Total incremental** | **$5-10** | Per lecture cycle |
+| Claude Code API (content production) | ~$5-8 | Scripts, exercises, gamma prompts |
+| Claude Code API (recap production) | ~$5-8 | Recap, web page, LinkedIn posts |
+| Optiverse transcription | Included | Subscription ~CHF 30/mo |
+| Gemini transcript | Included | Google Meet auto-transcription |
+| Gamma slide decks | Included | Subscription |
+| GitHub + GitHub Pages | Free | Hosting and version control |
+| Typefully | Included | LinkedIn scheduling subscription |
+| **Total per lecture** | **~$10-15** | Incremental cost |
 
-## Appendix: Common Pitfalls
+## Appendix C: The Gamma JSON Template
 
-1. **Committing API keys.** Always gitignore `.mcp.json` from the start. If leaked, rotate immediately and use `git filter-repo` to purge history.
-2. **Exercise links pointing to wrong language.** Double-check `segments-de` vs `segments-en` in all HTML and markdown files.
-3. **Exercises running over.** Budget +5 min per exercise for setup issues. Have a fallback plan for each.
-4. **Gamma fullscreen issues.** Test presentation mode before the lecture. Download as PDF as backup.
-5. **Notion connector fragility.** Budget extra time for Claude-to-Notion setup. The MCP authorization flow trips people up.
-6. **ChatGPT can't write to Notion.** Only Claude Pro and Perplexity Pro have native write connectors. Communicate this clearly in prereqs.
-7. **Root-level GitHub Pages URL.** Not a problem — nobody types the root URL. Students get the direct recap link.
+```json
+{
+  "textMode": "preserve",
+  "cardSplit": "inputTextBreaks",
+  "themeId": "{{GAMMA_THEME_ID}}",
+  "sharingOptions": {
+    "externalAccess": "view"
+  },
+  "imageOptions": {
+    "source": "aiGenerated"
+  },
+  "cardOptions": {
+    "dimensions": "16x9"
+  },
+  "textOptions": {
+    "language": "{{LANGUAGE_CODE}}"
+  },
+  "additionalInstructions": "{{LANGUAGE_RULES}}. Dark professional design. Monoline icons, blueprint style. Deck title starts with 'NN - '. Minimal text per slide, max 25 words. Data callouts large and high-contrast. Executive aesthetic.",
+  "inputText": "{{PASTE_GAMMA_PROMPT_CONTENT}}"
+}
+```
+
+## Appendix D: Common Pitfalls
+
+| Pitfall | Prevention |
+|---------|------------|
+| Committing API keys | Gitignore `.mcp.json` BEFORE first commit. If leaked: rotate key, `git filter-repo`, force push. |
+| Exercise links → wrong language | Always verify `segments-de` vs `segments-en` in HTML and markdown |
+| Exercises run over time | Budget +5 min per exercise. Have a "demo instead of do" fallback for each. |
+| Gamma fullscreen issues | Test presentation mode before lecture. Download PDF as backup. |
+| Notion connector fragile | Budget +10 min for setup. MCP auth flow trips people up. Have mobile app as fallback. |
+| ChatGPT can't write to Notion | Only Claude Pro and Perplexity Pro have native write. Say this in prereqs email. |
+| Recap links point to repo root | Always link to lecture folder: `/tree/master/{{FOLDER}}` |
+| Posts in wrong voice | Load brand-narrative.md and linkedin-post skill BEFORE writing any posts |
+
+---
+
+*This playbook is open source. Fork the repo, swap your content, build your lecture.*
+*Repository: https://github.com/thwinter-ch/ai-lectures*

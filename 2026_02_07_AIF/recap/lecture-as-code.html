@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture as Code — The Playbook</title>
+  <meta name="description" content="A Claude Code-executable playbook for building a university lecture from scratch. Every prompt is copy-pasteable. Every decision has a branch.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #1a1a2e;
+      background: #ffffff;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: #002FA8; text-decoration: none; transition: color 0.2s ease; }
+    a:hover { color: #001E6E; text-decoration: underline; }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4, h5 { font-family: 'Inter', sans-serif; color: #001447; line-height: 1.25; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -0.03em; }
+    h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; margin-bottom: 0.75rem; }
+    h4 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; }
+    p { margin-bottom: 1rem; font-size: 1rem; }
+    strong { font-weight: 600; }
+    ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.35rem; font-size: 0.95rem; }
+    li::marker { color: #002FA8; }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(0, 20, 71, 0.97);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 47, 168, 0.15);
+    }
+    .nav-inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 56px;
+    }
+    .nav-brand { font-weight: 700; font-size: 1rem; color: #ffffff; white-space: nowrap; }
+    .nav-links { display: flex; gap: 0.1rem; align-items: center; flex-wrap: nowrap; overflow-x: auto; }
+    .nav-links a {
+      color: rgba(255,255,255,0.7); font-size: 0.75rem; font-weight: 500;
+      padding: 0.35rem 0.55rem; border-radius: 6px;
+      transition: all 0.2s ease; white-space: nowrap;
+    }
+    .nav-links a:hover { color: #ffffff; background: rgba(255,255,255,0.1); text-decoration: none; }
+    .nav-toggle {
+      display: none; background: none; border: none; cursor: pointer;
+      width: 28px; height: 20px; position: relative;
+    }
+    .nav-toggle span {
+      display: block; width: 100%; height: 2px; background: #ffffff;
+      position: absolute; left: 0; transition: all 0.3s ease;
+    }
+    .nav-toggle span:nth-child(1) { top: 0; }
+    .nav-toggle span:nth-child(2) { top: 9px; }
+    .nav-toggle span:nth-child(3) { top: 18px; }
+    .nav-toggle.open span:nth-child(1) { transform: rotate(45deg); top: 9px; }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg); top: 9px; }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #001447 0%, #001E6E 40%, #002FA8 100%);
+      padding: 9rem 2rem 4.5rem; text-align: center; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(0, 47, 168, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(0, 47, 168, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+    .hero-label {
+      display: inline-block; font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(255,255,255,0.85); margin-bottom: 1.5rem;
+      padding: 0.35rem 1rem; border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 100px;
+    }
+    .hero h1 { color: #ffffff; margin-bottom: 1.25rem; }
+    .hero-subtitle {
+      color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.7;
+      max-width: 580px; margin: 0 auto;
+    }
+    .hero-subtitle strong { color: rgba(255,255,255,0.9); }
+    .hero-stats {
+      display: flex; gap: 2rem; justify-content: center; margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat .val {
+      display: block; font-size: 1.8rem; font-weight: 800; color: #ffffff;
+      letter-spacing: -0.02em;
+    }
+    .hero-stat .lbl {
+      font-size: 0.72rem; color: rgba(255,255,255,0.5);
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .hero-divider {
+      width: 50px; height: 3px; background: rgba(255,255,255,0.4);
+      margin: 2.5rem auto 0; border-radius: 2px;
+    }
+
+    /* ===== MAIN LAYOUT ===== */
+    .container { max-width: 820px; margin: 0 auto; padding: 0 2rem; }
+    main { padding-top: 3rem; padding-bottom: 4rem; }
+
+    /* ===== PHASE HEADER ===== */
+    .phase {
+      margin-bottom: 3.5rem;
+      padding-top: 2rem;
+    }
+    .phase-header {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #eef2ff;
+    }
+    .phase-number {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 48px; height: 48px; min-width: 48px;
+      background: linear-gradient(135deg, #001447, #002FA8);
+      color: #ffffff; font-weight: 800; font-size: 1.1rem;
+      border-radius: 12px;
+    }
+    .phase-title { flex: 1; }
+    .phase-title h2 { margin-bottom: 0.15rem; }
+    .phase-title .phase-desc {
+      font-size: 0.85rem; color: #6b7280; font-weight: 400;
+    }
+
+    /* ===== PROMPT BLOCKS ===== */
+    .prompt-block {
+      background: #0f172a;
+      border-radius: 10px;
+      margin: 1.5rem 0;
+      overflow: hidden;
+    }
+    .prompt-label {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.65rem 1.25rem;
+      background: rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .prompt-label span {
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+      font-size: 0.72rem; font-weight: 500; color: #94a3b8;
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .prompt-label .copy-hint {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem; color: #475569;
+      text-transform: none; letter-spacing: 0;
+    }
+    .prompt-code {
+      padding: 1.25rem;
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+      font-size: 0.82rem; line-height: 1.65;
+      color: #e2e8f0; white-space: pre-wrap; word-break: break-word;
+      overflow-x: auto;
+    }
+    .prompt-code .var {
+      color: #7dd3fc; font-weight: 500;
+    }
+    .prompt-code .comment {
+      color: #475569; font-style: italic;
+    }
+
+    /* ===== INLINE CODE ===== */
+    code {
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+      font-size: 0.85em; background: #f1f5f9; color: #0f172a;
+      padding: 0.15em 0.4em; border-radius: 4px;
+    }
+
+    /* ===== INFO BOXES ===== */
+    .info-box {
+      background: linear-gradient(135deg, #f0f4ff, #eef2ff);
+      border: 1px solid #d5dced;
+      border-radius: 10px; padding: 1.5rem 1.75rem;
+      margin: 1.5rem 0;
+    }
+    .info-box h4 { color: #001447; margin-bottom: 0.5rem; }
+    .info-box p:last-child { margin-bottom: 0; }
+
+    .tip-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-left: 4px solid #22c55e;
+      border-radius: 0 10px 10px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .tip-box p:last-child { margin-bottom: 0; }
+
+    .warn-box {
+      background: #fefce8;
+      border: 1px solid #fef08a;
+      border-left: 4px solid #eab308;
+      border-radius: 0 10px 10px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .warn-box p:last-child { margin-bottom: 0; }
+
+    /* ===== VARIABLE TABLE ===== */
+    .var-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+    .var-table th {
+      text-align: left; padding: 0.7rem 1rem;
+      background: #f8fafc; font-weight: 600;
+      border-bottom: 2px solid #e2e8f0;
+      font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em;
+      color: #64748b;
+    }
+    .var-table td {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: top;
+    }
+    .var-table tr:last-child td { border-bottom: none; }
+    .var-table code {
+      font-size: 0.82rem; background: #eef2ff; color: #002FA8;
+    }
+
+    /* ===== DECISION TABLE ===== */
+    .decision-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+    .decision-table th {
+      text-align: left; padding: 0.7rem 1rem;
+      background: linear-gradient(135deg, #001447, #001E6E);
+      color: #ffffff; font-weight: 600;
+      font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .decision-table th:first-child { border-radius: 8px 0 0 0; }
+    .decision-table th:last-child { border-radius: 0 8px 0 0; }
+    .decision-table td {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .decision-table tr:nth-child(even) td { background: #f8fafc; }
+    .decision-table tr:last-child td:first-child { border-radius: 0 0 0 8px; }
+    .decision-table tr:last-child td:last-child { border-radius: 0 0 8px 0; }
+
+    /* ===== CHECKLIST ===== */
+    .checklist {
+      list-style: none; padding-left: 0;
+      margin: 1rem 0;
+    }
+    .checklist li {
+      position: relative; padding-left: 2rem; margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .checklist li::before {
+      content: '';
+      position: absolute; left: 0; top: 0.35rem;
+      width: 18px; height: 18px;
+      border: 2px solid #cbd5e1; border-radius: 4px;
+    }
+
+    /* ===== PIPELINE FLOW ===== */
+    .pipeline {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 0.5rem;
+      margin: 2rem 0; padding: 1.5rem;
+      background: #f8fafc; border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+    .pipeline-step {
+      background: linear-gradient(135deg, #001447, #001E6E);
+      color: #ffffff; font-size: 0.78rem; font-weight: 600;
+      padding: 0.5rem 1rem; border-radius: 8px;
+      white-space: nowrap;
+    }
+    .pipeline-arrow {
+      color: #94a3b8; font-size: 1.2rem; font-weight: 300;
+    }
+
+    /* ===== SECTION DIVIDER ===== */
+    .divider {
+      width: 100%; height: 1px;
+      background: linear-gradient(to right, transparent, #c8d0e5, transparent);
+      margin: 2.5rem 0;
+    }
+
+    /* ===== COST TABLE ===== */
+    .cost-row-total td {
+      font-weight: 700 !important;
+      border-top: 2px solid #001447 !important;
+      color: #001447;
+    }
+
+    /* ===== PITFALL CARDS ===== */
+    .pitfall-grid {
+      display: grid; grid-template-columns: 1fr; gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .pitfall-card {
+      display: flex; gap: 1rem;
+      background: #fff; border: 1px solid #e2e8f0;
+      border-radius: 10px; padding: 1.25rem;
+    }
+    .pitfall-icon {
+      display: flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; min-width: 36px;
+      background: #fef2f2; color: #dc2626;
+      border-radius: 8px; font-size: 1.1rem; font-weight: 700;
+    }
+    .pitfall-content h4 { font-size: 0.92rem; margin-bottom: 0.25rem; }
+    .pitfall-content p { font-size: 0.88rem; color: #64748b; margin-bottom: 0; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: linear-gradient(135deg, #001447, #001E6E);
+      color: rgba(255,255,255,0.6);
+      padding: 3rem 2rem; text-align: center;
+    }
+    footer a { color: #ffffff; }
+    footer a:hover { color: rgba(255,255,255,0.8); }
+    footer p { font-size: 0.88rem; margin-bottom: 0.5rem; }
+    .footer-divider {
+      width: 40px; height: 2px; background: rgba(255,255,255,0.2);
+      margin: 1.25rem auto;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 56px; left: 0; right: 0;
+        background: rgba(0, 20, 71, 0.98);
+        padding: 1rem; gap: 0;
+        border-bottom: 1px solid rgba(0, 47, 168, 0.15);
+      }
+      .nav-links.open a { padding: 0.7rem 1rem; font-size: 0.85rem; }
+      .nav-toggle { display: block; }
+      .hero { padding: 7rem 1.5rem 3rem; }
+      .hero-stats { gap: 1.5rem; }
+      .phase-header { flex-direction: column; gap: 0.5rem; }
+      .pipeline { flex-direction: column; align-items: stretch; }
+      .pipeline-arrow { transform: rotate(90deg); text-align: center; }
+      .pipeline-step { text-align: center; }
+    }
+
+    /* ===== PRINT — OPTIMIZED FOR PDF EXPORT ===== */
+    @media print {
+      @page {
+        size: A4;
+        margin: 1.8cm 2cm;
+      }
+
+      body { font-size: 9.5pt; color: #1a1a2e; line-height: 1.55; }
+
+      /* Hide screen-only elements */
+      .nav, .nav-toggle { display: none !important; }
+
+      /* Hero → compact print header */
+      .hero {
+        background: #ffffff !important;
+        padding: 0 !important;
+        text-align: left;
+        margin-bottom: 1.5rem;
+        page-break-after: avoid;
+      }
+      .hero::before { display: none; }
+      .hero-content { max-width: 100%; }
+      .hero-label {
+        color: #002FA8 !important; border-color: #002FA8 !important;
+        font-size: 7pt; padding: 0.2rem 0.6rem;
+      }
+      .hero h1 { color: #001447 !important; font-size: 22pt; margin-bottom: 0.5rem; }
+      .hero-subtitle { color: #555 !important; font-size: 10pt; }
+      .hero-subtitle strong { color: #333 !important; }
+      .hero-stats { justify-content: flex-start; margin-top: 1rem; gap: 2rem; }
+      .hero-stat .val { color: #002FA8 !important; font-size: 16pt; }
+      .hero-stat .lbl { color: #666 !important; font-size: 7pt; }
+      .hero-divider { display: none; }
+
+      /* Phases */
+      .phase { page-break-inside: avoid; margin-bottom: 1.5rem; padding-top: 0.5rem; }
+      .phase-header { margin-bottom: 1rem; padding-bottom: 0.5rem; }
+      .phase-number {
+        background: #001447 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact;
+        color: #fff !important; width: 32px; height: 32px; min-width: 32px; font-size: 0.85rem;
+        border-radius: 8px;
+      }
+
+      /* Prompt blocks → light background for print */
+      .prompt-block {
+        background: #f8f9fb !important;
+        border: 1px solid #d0d5dd;
+        page-break-inside: avoid;
+      }
+      .prompt-label {
+        background: #eef0f4 !important;
+        border-bottom: 1px solid #d0d5dd;
+      }
+      .prompt-label span { color: #555 !important; }
+      .prompt-label .copy-hint { display: none; }
+      .prompt-code {
+        color: #1a1a2e !important;
+        font-size: 7.5pt; line-height: 1.5;
+        padding: 0.8rem 1rem;
+      }
+      .prompt-code .var { color: #002FA8 !important; }
+      .prompt-code .comment { color: #888 !important; }
+
+      /* Tables */
+      .var-table, .decision-table {
+        page-break-inside: avoid;
+        font-size: 8.5pt;
+      }
+      .decision-table th {
+        background: #001447 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact;
+        color: #fff !important;
+      }
+
+      /* Info boxes */
+      .info-box, .tip-box, .warn-box {
+        page-break-inside: avoid;
+        padding: 0.8rem 1rem;
+      }
+      .info-box { background: #f5f7ff !important; border-color: #d5dced; }
+      .tip-box { background: #f0fdf4 !important; }
+      .warn-box { background: #fffbeb !important; }
+
+      /* Pipeline */
+      .pipeline {
+        background: #f8f9fb !important;
+        border-color: #d0d5dd;
+        page-break-inside: avoid;
+      }
+      .pipeline-step {
+        background: #001447 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact;
+        color: #fff !important;
+      }
+
+      /* Pitfall cards */
+      .pitfall-card { page-break-inside: avoid; }
+      .pitfall-icon { background: #fef2f2 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+      /* Animations off */
+      .fade-in { opacity: 1 !important; transform: none !important; }
+
+      /* Links: show URL */
+      a[href^="http"]::after {
+        content: none; /* Don't pollute the print with URLs inline */
+      }
+
+      /* Footer */
+      footer {
+        background: #ffffff !important;
+        color: #555 !important;
+        border-top: 2px solid #001447;
+        padding: 1rem 0;
+      }
+      footer a { color: #002FA8 !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="navbar">
+  <div class="nav-inner">
+    <span class="nav-brand">Lecture as Code</span>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#variables">Variables</a>
+      <a href="#phase0">Ph 0</a>
+      <a href="#phase1">Ph 1</a>
+      <a href="#phase2">Ph 2</a>
+      <a href="#phase3">Ph 3</a>
+      <a href="#phase4">Ph 4</a>
+      <a href="#phase5">Ph 5</a>
+      <a href="#phase6">Ph 6</a>
+      <a href="#phase7">Ph 7</a>
+      <a href="#appendix">Appendix</a>
+      <a href="https://github.com/thwinter-ch/ai-lectures/tree/master/2026_02_07_AIF" target="_blank" rel="noopener" style="border-left:1px solid rgba(255,255,255,0.2); margin-left:0.2rem; padding-left:0.7rem;">GitHub</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero-content">
+    <span class="hero-label">Open Source Playbook</span>
+    <h1>Lecture as Code</h1>
+    <p class="hero-subtitle">
+      A <strong>Claude Code-executable playbook</strong> for building a university lecture from scratch.
+      Every prompt is copy-pasteable. Every decision has a branch. Every template is inline.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="val">7</span>
+        <span class="lbl">Phases</span>
+      </div>
+      <div class="hero-stat">
+        <span class="val">~$15</span>
+        <span class="lbl">Total Cost</span>
+      </div>
+      <div class="hero-stat">
+        <span class="val">2 wks</span>
+        <span class="lbl">Side Project</span>
+      </div>
+      <div class="hero-stat">
+        <span class="val">3.5 h</span>
+        <span class="lbl">Delivered</span>
+      </div>
+    </div>
+    <div class="hero-divider"></div>
+  </div>
+</header>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main>
+<div class="container">
+
+  <!-- ===== INTRO ===== -->
+  <section class="fade-in" style="margin-bottom: 3rem;">
+    <p style="font-size: 1.05rem; color: #475569;">
+      Built from the actual process behind the HWZ Zurich <strong>"AI Productivity Hacks for Executives"</strong> lecture
+      (Feb 7, 2026). Two weeks of evening work. 5 slide decks, 3 hands-on exercises, bilingual docs, and a
+      post-lecture recap website &mdash; all version-controlled on GitHub.
+    </p>
+
+    <div class="pipeline">
+      <div class="pipeline-step">Voice brainstorm</div>
+      <span class="pipeline-arrow">&rarr;</span>
+      <div class="pipeline-step">AI research</div>
+      <span class="pipeline-arrow">&rarr;</span>
+      <div class="pipeline-step">Claude Code</div>
+      <span class="pipeline-arrow">&rarr;</span>
+      <div class="pipeline-step">Gamma slides</div>
+      <span class="pipeline-arrow">&rarr;</span>
+      <div class="pipeline-step">GitHub</div>
+      <span class="pipeline-arrow">&rarr;</span>
+      <div class="pipeline-step">Deliver</div>
+      <span class="pipeline-arrow">&rarr;</span>
+      <div class="pipeline-step">Recap + Posts</div>
+    </div>
+
+    <div class="info-box">
+      <h4>How to use this playbook</h4>
+      <p>Open Claude Code in your project directory. Paste the prompts from each phase. Fill in the <code>{{variables}}</code>. Claude Code generates the files. You review and iterate.</p>
+    </div>
+  </section>
+
+  <!-- ===== VARIABLES ===== -->
+  <section id="variables" class="phase fade-in">
+    <div class="phase-header">
+      <div class="phase-number" style="background: linear-gradient(135deg, #475569, #64748b);">{ }</div>
+      <div class="phase-title">
+        <h2>Variables</h2>
+        <span class="phase-desc">Set once, reuse everywhere</span>
+      </div>
+    </div>
+
+    <table class="var-table">
+      <thead>
+        <tr><th>Variable</th><th>Example</th><th>Used in</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>{{LECTURE_TITLE}}</code></td><td>AI Productivity Hacks for Executives</td><td>All phases</td></tr>
+        <tr><td><code>{{INSTITUTION}}</code></td><td>HWZ Z&uuml;rich</td><td>Ph 0, 4, 6</td></tr>
+        <tr><td><code>{{COURSE}}</code></td><td>CAS AI in Finance</td><td>Ph 4, 6</td></tr>
+        <tr><td><code>{{DATE}}</code></td><td>2026-02-07</td><td>All phases</td></tr>
+        <tr><td><code>{{TIME}}</code></td><td>13:00&ndash;16:45</td><td>Ph 1, 4</td></tr>
+        <tr><td><code>{{DURATION_HOURS}}</code></td><td>3.5</td><td>Ph 1</td></tr>
+        <tr><td><code>{{LANGUAGE}}</code></td><td>German (Swiss: ss not &szlig;)</td><td>Ph 2, 3</td></tr>
+        <tr><td><code>{{AUDIENCE}}</code></td><td>21 finance executives, mid-career</td><td>Ph 1, 2</td></tr>
+        <tr><td><code>{{INSTRUCTOR}}</code></td><td>Thomas Winter</td><td>Ph 4, 6</td></tr>
+        <tr><td><code>{{GITHUB_USER}}</code></td><td>thwinter-ch</td><td>Ph 0, 6</td></tr>
+        <tr><td><code>{{REPO_NAME}}</code></td><td>ai-lectures</td><td>Ph 0, 6</td></tr>
+        <tr><td><code>{{FOLDER}}</code></td><td>2026_02_07_AIF</td><td>All phases</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== PHASE 0 ===== -->
+  <section id="phase0" class="phase fade-in">
+    <div class="phase-header">
+      <div class="phase-number">0</div>
+      <div class="phase-title">
+        <h2>Bootstrap the Repo</h2>
+        <span class="phase-desc">Skip if you already have a lecture repo</span>
+      </div>
+    </div>
+
+    <h3>Prompt 0.1 &mdash; Create repo and structure</h3>
+    <div class="prompt-block">
+      <div class="prompt-label">
+        <span>Paste into Claude Code</span>
+        <span class="copy-hint">Copy &amp; paste</span>
+      </div>
+      <div class="prompt-code">Create a public GitHub repo called <span class="var">{{REPO_NAME}}</span> for <span class="var">{{GITHUB_USER}}</span>.
+
+Then create this folder structure:
+
+<span class="var">{{FOLDER}}</span>/
+&#9500;&#9472;&#9472; segments-de/          <span class="comment"># Primary language content</span>
+&#9500;&#9472;&#9472; segments-en/          <span class="comment"># English translations (optional)</span>
+&#9500;&#9472;&#9472; input/                <span class="comment"># Research, reference docs</span>
+&#9500;&#9472;&#9472; docs.gitignore/       <span class="comment"># PII &mdash; gitignored</span>
+&#9500;&#9472;&#9472; recap/                <span class="comment"># Post-lecture deliverables</span>
+&#9474;   &#9492;&#9472;&#9472; linkedin-series/
+&#9500;&#9472;&#9472; summary/              <span class="comment"># Transcripts &mdash; gitignored</span>
+&#9500;&#9472;&#9472; README.md
+&#9500;&#9472;&#9472; TIMETABLE.md
+&#9492;&#9472;&#9472; BUILD_LOG.md
+templates/
+&#9500;&#9472;&#9472; prereqs-email-template.md
+&#9492;&#9472;&#9472; day-of-email-template.md
+README.md                 <span class="comment"># Repo-level</span>
+
+Create a .gitignore with these patterns:
+- **/docs.gitignore/  (PII folders)
+- .mcp.json and **/.mcp.json  (API keys)
+- *.gdoc *.gsheet *.gslides  (Google Drive artifacts)
+- *.ogg *.mp3 *.mp4 *.m4a *.wav *.webm *.mov  (audio/video)
+- *participants* *teilnehmer* *Studiengruppenliste* *transcript*
+- **/temp-gamma-*.json  (temp build files)
+- **/summary/  (transcripts)
+- .DS_Store Thumbs.db desktop.ini  (OS artifacts)
+- .env .env.local *.log  (env files)
+
+Initialize BUILD_LOG.md with a template entry for today.
+Commit and push.</div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== PHASE 1 ===== -->
+  <section id="phase1" class="phase fade-in">
+    <div class="phase-header">
+      <div class="phase-number">1</div>
+      <div class="phase-title">
+        <h2>Plan the Lecture</h2>
+        <span class="phase-desc">Brainstorm, then let AI structure it</span>
+      </div>
+    </div>
+
+    <h3>Prompt 1.1 &mdash; Brainstorm to structure</h3>
+    <div class="tip-box">
+      <p><strong>Do this BEFORE opening Claude Code.</strong> Walk. Talk. Use Wispr Flow or any voice recorder.
+      Record yourself answering: Who is in the room? What must they walk away knowing? What 3 things should they be able to DO? What will surprise them? What existing tools can I teach hands-on?</p>
+    </div>
+    <p>Save the transcript as <code>{{FOLDER}}/input/brainstorm-raw.md</code>.</p>
+
+    <h3>Prompt 1.2 &mdash; Structure into segments</h3>
+    <div class="prompt-block">
+      <div class="prompt-label">
+        <span>Paste into Claude Code</span>
+        <span class="copy-hint">Copy &amp; paste</span>
+      </div>
+      <div class="prompt-code">Read <span class="var">{{FOLDER}}</span>/input/brainstorm-raw.md.
+
+Design a segment structure for a <span class="var">{{DURATION_HOURS}}</span>-hour lecture for <span class="var">{{AUDIENCE}}</span>.
+
+Rules:
+- Alternate lecture and exercise segments
+- Never more than 2 lectures in a row without a hands-on exercise
+- Each exercise must produce a REAL deliverable the student keeps
+- Include a 15-min break roughly at the midpoint
+- Last segment: demos of advanced capabilities + honest reality check
+- Budget 5 min buffer between each segment
+
+Output a table:
+| # | Segment Name | Type (lecture/exercise) | Duration | What students get |
+
+Then output a TIMETABLE.md with minute-by-minute schedule including:
+- Exact times for a start time of <span class="var">{{TIME}}</span>
+- Buffer slots between segments
+- A "what to cut" fallback plan for each segment if it runs over
+- An on-site checklist section</div>
+    </div>
+
+    <h3>Decision point: How many segments?</h3>
+    <table class="decision-table">
+      <thead>
+        <tr><th>Duration</th><th>Segments</th><th>Structure</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>2 hours</td><td>5&ndash;6</td><td>3 lectures + 2 exercises</td></tr>
+        <tr><td>3&ndash;4 hours</td><td>7&ndash;9</td><td>4&ndash;5 lectures + 3 exercises</td></tr>
+        <tr><td>Full day (6+ h)</td><td>12&ndash;15</td><td>6&ndash;8 lectures + 4&ndash;6 exercises</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== PHASE 2 ===== -->
+  <section id="phase2" class="phase fade-in">
+    <div class="phase-header">
+      <div class="phase-number">2</div>
+      <div class="phase-title">
+        <h2>Research &amp; Write Content</h2>
+        <span class="phase-desc">5 prompts: research, scripts, exercises, slide prompts, Gamma JSON</span>
+      </div>
+    </div>
+
+    <h3>Prompt 2.1 &mdash; Research each lecture segment</h3>
+    <p>Use Perplexity Pro or Claude Code with web search. Run once per lecture segment.</p>
+    <div class="prompt-block">
+      <div class="prompt-label">
+        <span>Per segment &mdash; Perplexity or Claude Code</span>
+        <span class="copy-hint">Copy &amp; paste</span>
+      </div>
+      <div class="prompt-code">Research the following topic for a lecture segment:
+
+Topic: <span class="var">{{SEGMENT_TOPIC}}</span>
+Audience: <span class="var">{{AUDIENCE}}</span>
+Duration: <span class="var">{{SEGMENT_DURATION}}</span> minutes
+
+I need:
+1. 3-5 key statistics with sources (studies, not blog posts)
+2. 1-2 frameworks or models that explain the concept
+3. 2-3 real-world examples or case studies
+4. 1 contrarian or surprising angle
+5. Specific numbers I can put on slides (big, visual callouts)
+
+Output as markdown. Cite every claim.</div>
+    </div>
+    <p>Save each result to <code>{{FOLDER}}/input/research-segment-NN.md</code>.</p>
+
+    <h3>Prompt 2.2 &mdash; Write all lecture scripts</h3>
+    <div class="prompt-block">
+      <div class="prompt-label">
+        <span>Paste into Claude Code</span>
+        <span class="copy-hint">Copy &amp; paste</span>
+      </div>
+      <div class="prompt-code">Read all files in <span class="var">{{FOLDER}}</span>/input/ (brainstorm + research files).
+Read <span class="var">{{FOLDER}}</span>/TIMETABLE.md for the segment structure.
+
+For each LECTURE segment, create <span class="var">{{FOLDER}}</span>/segments-de/NN-name-lecture/script.md.
+
+Script format:
+# Segment NN: [Title]
+**Type:** Lecture | **Duration:** XX Min
+
+## Key Data Points
+- [Stat with source &mdash; these go on slides as big callouts]
+
+## Core Concepts
+### [Concept Name]
+[Write this as spoken text. How I'd actually say it in front of the room.
+Use <span class="var">{{LANGUAGE}}</span>. Keep it conversational. No academic language.
+Include the actual phrases and analogies I'd use.]
+
+## Audience Interaction
+- [Where to ask a question / pause / take a poll]
+
+## Transition to Next Segment
+[The exact bridge sentence to the next segment]
+
+Rules:
+- Write how a speaker talks, not how a paper reads
+- Each concept = 2-3 minutes max
+- Include at least one moment of honest admission
+- Every slide-worthy stat gets its own callout</div>
+    </div>
+
+    <h3>Prompt 2.3 &mdash; Write all exercise guides</h3>
+    <div class="prompt-block">
+      <div class="prompt-label">
+        <span>Paste into Claude Code</span>
+        <span class="copy-hint">Copy &amp; paste</span>
+      </div>
+      <div class="prompt-code">Read all files in <span class="var">{{FOLDER}}</span>/input/.
+Read <span class="var">{{FOLDER}}</span>/TIMETABLE.md for segment structure.
+
+For each EXERCISE segment, create <span class="var">{{FOLDER}}</span>/segments-de/NN-name-exercise/README.md.
+
+Exercise guide format:
+# [Exercise Name]
+
+## Was Sie erstellen
+[One sentence: the deliverable. Not what they'll "learn" &mdash; what they'll HAVE.]
+
+## Voraussetzungen
+- [Tool 1 + link]
+
+## Schritt 1: [Action Verb]
+[Clear instruction. Then the exact prompt to copy-paste.]
+
+```
+[THE ACTUAL PROMPT &mdash; complete, ready to paste.
+No placeholders except for personal details.
+Must produce useful output on first try.]
+```
+
+**Erwartetes Ergebnis:** [What good output looks like.]
+
+## Fehlerbehebung
+| Problem | L&ouml;sung |
+|---------|--------|
+| [Common issue] | [Fix] |
+
+Rules:
+- Every prompt must work on first paste
+- Students produce a real deliverable in <span class="var">{{SEGMENT_DURATION}}</span> minutes
+- Include expected output descriptions
+- Troubleshooting section: the 3 things that WILL go wrong
+- Write in <span class="var">{{LANGUAGE}}</span></div>
+    </div>
+
+    <h3>Prompt 2.4 &mdash; Write Gamma slide prompts</h3>
+    <div class="prompt-block">
+      <div class="prompt-label">
+        <span>Paste into Claude Code</span>
+        <span class="copy-hint">Copy &amp; paste</span>
+      </div>
+      <div class="prompt-code">Read each script.md in <span class="var">{{FOLDER}}</span>/segments-de/*/
+
+For each LECTURE segment, create a gamma-prompt.md in the same folder.
+
+Format &mdash; one section per slide, separated by ---:
+
+## Slide 1: Title Slide
+**Title:** [Max 8 words]
+**Subtitle:** [Max 12 words]
+**Visual:** [Describe the image/icon/diagram you want]
+**Speaker Note:** [What I'll say while this slide is up]
+
+---
+
+## Slide 2: [Topic]
+**Title:** [Max 8 words]
+**Layout:** [stat-cards | two-column | single-quote | diagram | numbered-list]
+**Key Text:** [MAX 25 WORDS per slide]
+**Data Callout:** [Big number, e.g., "80%" or "+40%"]
+**Visual:** [Describe what you want]
+**Speaker Note:** [2-3 sentences]
+
+Rules:
+- Max 25 words of text per slide
+- 6-10 slides per segment (~1 slide per 1.5-2 minutes)
+- Every stat from script.md gets its own slide or callout
+- Speaker notes = what I'll SAY, not a repeat of slide text
+- Last slide: transition/teaser for next segment</div>
+    </div>
+
+    <h3>Prompt 2.5 &mdash; Generate Gamma JSON payloads</h3>
+    <div class="prompt-block">
+      <div class="prompt-label">
+        <span>Paste into Claude Code</span>
+        <span class="copy-hint">Copy &amp; paste</span>
+      </div>
+      <div class="prompt-code">For each gamma-prompt.md in <span class="var">{{FOLDER}}</span>/segments-de/*/,
+create a temp-gamma-NN.json file in <span class="var">{{FOLDER}}</span>/ with this structure:
+
+{
+  "textMode": "preserve",
+  "cardSplit": "inputTextBreaks",
+  "themeId": "<span class="var">{{GAMMA_THEME_ID}}</span>",
+  "sharingOptions": { "externalAccess": "view" },
+  "imageOptions": { "source": "aiGenerated" },
+  "cardOptions": { "dimensions": "16x9" },
+  "textOptions": { "language": "de" },
+  "additionalInstructions": "Swiss German: NEVER use &szlig;, always ss.
+    Umlauts (&auml;, &ouml;, &uuml;) are correct.
+    Dark professional design. Monoline icons, blueprint style.
+    Deck title starts with 'NN - '.
+    Minimal text per slide, max 25 words.
+    Data callouts large and high-contrast. Executive aesthetic.",
+  "inputText": "[FULL gamma-prompt.md CONTENT, escaped for JSON]"
+}
+
+These files are gitignored (temp-gamma-*.json pattern).
+Submit each JSON to Gamma manually or via API.
+Save deck URLs in BUILD_LOG.md and README.md.</div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== PHASE 3 ===== -->
+  <section id="phase3" class="phase fade-in">
+    <div class="phase-header">
+      <div class="phase-number">3</div>
+      <div class="phase-title">
+        <h2>Translation</h2>
+        <span class="phase-desc">Skip if single-language. Otherwise: one prompt.</span>
+      </div>
+    </div>
+
+    <h3>Prompt 3.1 &mdash; Translate all content</h3>
+    <div class="prompt-block">
+      <div class="prompt-label">
+        <span>Paste into Claude Code</span>
+        <span class="copy-hint">Copy &amp; paste</span>
+      </div>
+      <div class="prompt-code">For each file in <span class="var">{{FOLDER}}</span>/segments-de/*/,
+create a translated version in <span class="var">{{FOLDER}}</span>/segments-en/*/ (same folder structure).
+
+Translation rules:
+- Translate script.md, README.md, gamma-prompt.md
+- Keep technical terms in English (they're usually better known)
+- Exercise prompts: translate the FULL prompt text, not just instructions
+- Maintain the same conversational tone &mdash; don't make it more formal
+- Keep all formatting, headers, code blocks identical
+
+DO NOT translate: BUILD_LOG.md, TIMETABLE.md (stay in primary language)</div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== PHASE 4 ===== -->
+  <section id="phase4" class="phase fade-in">
+    <div class="phase-header">
+      <div class="phase-number">4</div>
+      <div class="phase-title">
+        <h2>Pre-Lecture Admin</h2>
+        <span class="phase-desc">Student data, intro email, README</span>
+      </div>
+    </div>
+
+    <h3>Prompt 4.1 &mdash; Extract student data from PDF</h3>
+    <div class="prompt-block">
+      <div class="prompt-label">
+        <span>Paste into Claude Code</span>
+        <span class="copy-hint">Copy &amp; paste</span>
+      </div>
+      <div class="prompt-code">Read the file <span class="var">{{FOLDER}}</span>/docs.gitignore/[participant-list-file].
+
+Extract a CSV with columns: first_name, last_name, company, function, email
+Save to <span class="var">{{FOLDER}}</span>/docs.gitignore/students.csv
+
+This file is gitignored. Never commit it.
+Count the students and tell me the total.</div>
+    </div>
+
+    <h3>Prompt 4.2 &mdash; Draft intro email</h3>
+    <div class="prompt-block">
+      <div class="prompt-label">
+        <span>Paste into Claude Code</span>
+        <span class="copy-hint">Copy &amp; paste</span>
+      </div>
+      <div class="prompt-code">Draft an intro email for the lecture.
+
+Details:
+- Lecture: <span class="var">{{LECTURE_TITLE}}</span>
+- Date/Time: <span class="var">{{DATE}}</span>, <span class="var">{{TIME}}</span>
+- Location: <span class="var">{{INSTITUTION}}</span>
+- Audience: <span class="var">{{AUDIENCE}}</span>
+- Prerequisites: [list the tools students need]
+- Materials: https://github.com/<span class="var">{{GITHUB_USER}}</span>/<span class="var">{{REPO_NAME}}</span>/tree/master/<span class="var">{{FOLDER}}</span>
+
+Tone: informal du-Form (German), friendly but direct.
+Include: why they need the paid subscription.
+Include: your contact info (phone, LinkedIn).
+Save to <span class="var">{{FOLDER}}</span>/<span class="var">{{DATE}}</span>-intro-email.md
+Format for direct copy into Outlook.</div>
+    </div>
+
+    <h3>Prompt 4.3 &mdash; Write README.md</h3>
+    <div class="prompt-block">
+      <div class="prompt-label">
+        <span>Paste into Claude Code</span>
+        <span class="copy-hint">Copy &amp; paste</span>
+      </div>
+      <div class="prompt-code">Create <span class="var">{{FOLDER}}</span>/README.md &mdash; the student-facing lecture overview.
+
+Include:
+1. Title, course, institution, date, time, instructor
+2. Segment table (linked to Gamma decks for lectures,
+   linked to README.md for exercises)
+3. "What you'll build" section &mdash; list the deliverables
+4. Prerequisites table (tool, cost, purpose, signup link)
+5. "After the lecture" section &mdash; link to recap page
+
+Write in <span class="var">{{LANGUAGE}}</span>.
+Keep it clean. This is what students see when they open the repo.</div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== PHASE 5 ===== -->
+  <section id="phase5" class="phase fade-in">
+    <div class="phase-header">
+      <div class="phase-number">5</div>
+      <div class="phase-title">
+        <h2>Deliver the Lecture</h2>
+        <span class="phase-desc">No Claude Code prompts here. This is you in the room.</span>
+      </div>
+    </div>
+
+    <h3>On-site checklist</h3>
+    <ul class="checklist">
+      <li>Gamma decks open in browser tabs (one per lecture segment)</li>
+      <li>Claude Code open on laptop for live demo / bug fixes</li>
+      <li>Exercise links ready to share via screen / chat</li>
+      <li>Optiverse running for transcription</li>
+      <li>Gemini auto-transcription running (Google Meet)</li>
+      <li>WiFi credentials for students</li>
+      <li>Your accounts logged in: Claude, Notion, Perplexity, Gamma</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>During delivery:</strong> If something breaks, fix it live with Claude Code. Push to repo. This IS the demo. Watch for the best Q&amp;A moments &mdash; they'll go in the recap. Note which exercises students struggled with &mdash; that's troubleshooting content.</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== PHASE 6 ===== -->
+  <section id="phase6" class="phase fade-in">
+    <div class="phase-header">
+      <div class="phase-number">6</div>
+      <div class="phase-title">
+        <h2>Post-Lecture Recap</h2>
+        <span class="phase-desc">Recap page, LinkedIn series, student email, GitHub Pages. ~4&ndash;5 hours, ~$8 in API calls.</span>
+      </div>
+    </div>
+
+    <h3>Prompt 6.1 &mdash; Gather and synthesize</h3>
+    <p>Place transcript files in <code>{{FOLDER}}/summary/</code> (gitignored), then:</p>
+    <div class="prompt-block">
+      <div class="prompt-label">
+        <span>Paste into Claude Code</span>
+        <span class="copy-hint">Copy &amp; paste</span>
+      </div>
+      <div class="prompt-code">Read ALL of the following files:
+
+Source materials:
+- All scripts: <span class="var">{{FOLDER}}</span>/segments-de/*/script.md
+- All exercise guides: <span class="var">{{FOLDER}}</span>/segments-de/*/README.md
+- <span class="var">{{FOLDER}}</span>/TIMETABLE.md
+- <span class="var">{{FOLDER}}</span>/BUILD_LOG.md
+
+Transcript/summary (in <span class="var">{{FOLDER}}</span>/summary/):
+- [Gemini transcript filename]
+- [Optiverse summary filename]
+
+Cross-reference what was PLANNED (scripts) with what was ACTUALLY SAID
+(transcript). The transcript is messy voice-to-text &mdash; that's fine.
+It contains the gold: Q&amp;A, tangents, honest admissions, anecdotes.
+
+Create <span class="var">{{FOLDER}}</span>/recap/LECTURE-RECAP.md with these sections:
+
+1. **Session Overview** (3-4 sentences, key thesis)
+2. **Segment-by-Segment Recap** &mdash; enriched with transcript
+3. **Q&amp;A Highlights** &mdash; anonymized (NO student names)
+4. **Exercise Quick Reference** &mdash; table with links
+5. **Slide Decks** &mdash; table with Gamma links
+6. **Tools &amp; Resources** &mdash; table: tool, role, link
+7. **Recommended Next Steps** &mdash; this week / this month / ongoing
+8. **Practical Tips** &mdash; "What I wish I'd known" section
+9. **Key Quotes** &mdash; the best lines (blockquotes)
+
+Write in <span class="var">{{LANGUAGE}}</span>.
+Verify every link works before outputting.</div>
+    </div>
+
+    <h3>Prompt 6.2 &mdash; Build recap web page</h3>
+    <div class="prompt-block">
+      <div class="prompt-label">
+        <span>Paste into Claude Code</span>
+        <span class="copy-hint">Copy &amp; paste</span>
+      </div>
+      <div class="prompt-code">Read <span class="var">{{FOLDER}}</span>/recap/LECTURE-RECAP.md.
+
+Create <span class="var">{{FOLDER}}</span>/recap/index.html &mdash; a self-contained web page.
+
+Requirements:
+- ALL CSS inline in a &lt;style&gt; block. No external stylesheets except
+  Google Fonts (Inter).
+- Vanilla JS only. No frameworks, no build step, no dependencies.
+- Mobile-responsive. Test at 375px and 1200px widths.
+- Fixed nav bar with section links. Include a "GitHub Repo" link to:
+  https://github.com/<span class="var">{{GITHUB_USER}}</span>/<span class="var">{{REPO_NAME}}</span>/tree/master/<span class="var">{{FOLDER}}</span>
+
+Design:
+- Hero section: dark gradient (deep blue/navy), lecture title, date
+- Cards for each segment: number badge, type label, duration, slide link
+- Blockquotes styled with left border accent
+- Stat callouts: large numbers in cards
+- SVG diagrams for 2-3 key concepts (inline SVG, not external files)
+- Smooth scroll navigation
+- Fade-in animations on scroll (IntersectionObserver)
+- Footer: institution, date, repo link
+
+Color palette: navy/deep blue professional. Executive aesthetic.
+The page must open in any browser. No build step.</div>
+    </div>
+
+    <h3>Prompt 6.3 &mdash; Write LinkedIn series</h3>
+    <div class="prompt-block">
+      <div class="prompt-label">
+        <span>Paste into Claude Code</span>
+        <span class="copy-hint">Copy &amp; paste</span>
+      </div>
+      <div class="prompt-code">Read <span class="var">{{FOLDER}}</span>/recap/LECTURE-RECAP.md.
+Read the brand voice file at ~/.claude/skills/_shared/brand-narrative.md
+Read the LinkedIn formatting rules at ~/.claude/skills/linkedin-post/skill.md
+
+Extract 10-12 standalone insights from the lecture content.
+
+For each, write a LinkedIn post following these rules:
+- Hook: first 1-2 lines must earn the "see more" click (&lt;210 chars)
+- Voice: direct, operator-grade, first-person, present tense. No fluff.
+- Never preachy, never motivational, never "thought leader"
+- 800-1,300 characters per post
+- Short paragraphs (1-3 lines), white space between
+- Every post must work for someone who WASN'T at the lecture
+- Concrete artifact or system behind every insight
+- End with series tag: "AI x Leadership | N/12"
+- Hashtags: #FieldAI #BoardToBot #AIinProduction #BuildInPublic
+- NEVER use: #AI #Leadership #Innovation #Motivation
+
+Post 1: Link to recap page (the "student experience" story)
+Post 2: Link to this manual and the repo (the "lecture as code" story)
+Posts 3-10: Knowledge posts (research findings, frameworks, exercises)
+Posts 11-12: Meta posts (workflow, methodology)
+
+Save each as <span class="var">{{FOLDER}}</span>/recap/linkedin-series/NN-kebab-title.md
+Include scheduling metadata in HTML comments at top.</div>
+    </div>
+
+    <h3>Prompt 6.4 &mdash; Draft student recap email</h3>
+    <div class="prompt-block">
+      <div class="prompt-label">
+        <span>Paste into Claude Code</span>
+        <span class="copy-hint">Copy &amp; paste</span>
+      </div>
+      <div class="prompt-code">Draft a recap email for students.
+
+Details:
+- Lecture: <span class="var">{{LECTURE_TITLE}}</span>
+- Recap page: https://<span class="var">{{GITHUB_USER}}</span>.github.io/<span class="var">{{REPO_NAME}}</span>/<span class="var">{{FOLDER}}</span>/recap/index.html
+- Repo: https://github.com/<span class="var">{{GITHUB_USER}}</span>/<span class="var">{{REPO_NAME}}</span>/tree/master/<span class="var">{{FOLDER}}</span>
+
+Include:
+1. Link to recap page (primary CTA)
+2. Quick links table for each exercise
+3. Recommended next steps (this week / this month / ongoing)
+4. Contact info
+
+Tone: informal, <span class="var">{{LANGUAGE}}</span>, du-Form.
+Save to <span class="var">{{FOLDER}}</span>/<span class="var">{{DATE}}</span>-recap-email.md
+Format for direct copy into Outlook.</div>
+    </div>
+
+    <h3>Prompt 6.5 &mdash; Enable GitHub Pages and push</h3>
+    <div class="prompt-block">
+      <div class="prompt-label">
+        <span>Paste into Claude Code</span>
+        <span class="copy-hint">Copy &amp; paste</span>
+      </div>
+      <div class="prompt-code">Enable GitHub Pages for <span class="var">{{GITHUB_USER}}</span>/<span class="var">{{REPO_NAME}}</span> serving from master branch root.
+Then commit all recap content and push.
+Verify the recap page is accessible at:
+https://<span class="var">{{GITHUB_USER}}</span>.github.io/<span class="var">{{REPO_NAME}}</span>/<span class="var">{{FOLDER}}</span>/recap/index.html</div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== PHASE 7 ===== -->
+  <section id="phase7" class="phase fade-in">
+    <div class="phase-header">
+      <div class="phase-number">7</div>
+      <div class="phase-title">
+        <h2>Next Lecture</h2>
+        <span class="phase-desc">Fork the structure, swap the content</span>
+      </div>
+    </div>
+
+    <h3>Prompt 7.1 &mdash; Start a new lecture</h3>
+    <div class="prompt-block">
+      <div class="prompt-label">
+        <span>Paste into Claude Code</span>
+        <span class="copy-hint">Copy &amp; paste</span>
+      </div>
+      <div class="prompt-code">I'm building a new lecture in the same repo.
+
+Details:
+- Title: <span class="var">{{NEW_LECTURE_TITLE}}</span>
+- Institution: <span class="var">{{NEW_INSTITUTION}}</span>
+- Date: <span class="var">{{NEW_DATE}}</span>
+- Time: <span class="var">{{NEW_TIME}}</span>
+- Duration: <span class="var">{{NEW_DURATION}}</span> hours
+- Audience: <span class="var">{{NEW_AUDIENCE}}</span>
+- Language: <span class="var">{{NEW_LANGUAGE}}</span>
+
+Create the folder structure under <span class="var">{{NEW_FOLDER}}</span>/ (same pattern as <span class="var">{{FOLDER}}</span>/).
+Start a BUILD_LOG.md entry for today.
+Update the repo-level README.md to add this lecture to the lectures table.
+
+I'll start with a voice brainstorm. Read LECTURE-AS-CODE-MANUAL.md and
+walk me through Phase 1 when I'm ready.</div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== APPENDIX ===== -->
+  <section id="appendix" class="fade-in" style="margin-bottom: 3.5rem;">
+    <h2 style="margin-bottom: 2rem;">Appendix</h2>
+
+    <!-- File Naming Conventions -->
+    <h3>A &mdash; File Naming Conventions</h3>
+    <table class="decision-table" style="margin-bottom: 2.5rem;">
+      <thead>
+        <tr><th>Pattern</th><th>Example</th><th>Rule</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Lecture folder</td><td><code>2026_02_07_AIF</code></td><td><code>YYYY_MM_DD_INSTITUTION</code></td></tr>
+        <tr><td>Lecture segment</td><td><code>04-ai-managerial-skill-lecture/</code></td><td><code>NN-kebab-case-lecture</code></td></tr>
+        <tr><td>Exercise segment</td><td><code>03-writing-profile-exercise/</code></td><td><code>NN-kebab-case-exercise</code></td></tr>
+        <tr><td>Script</td><td><code>script.md</code></td><td>Always this name, inside segment folder</td></tr>
+        <tr><td>Gamma prompt</td><td><code>gamma-prompt.md</code></td><td>Always this name, inside segment folder</td></tr>
+        <tr><td>Exercise guide</td><td><code>README.md</code></td><td>Always this name, student-facing</td></tr>
+        <tr><td>Email</td><td><code>2026-02-05-intro-email.md</code></td><td><code>YYYY-MM-DD-purpose-email.md</code></td></tr>
+        <tr><td>Build log</td><td><code>BUILD_LOG.md</code></td><td>One per lecture folder</td></tr>
+        <tr><td>Timetable</td><td><code>TIMETABLE.md</code></td><td>One per lecture folder</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Cost Breakdown -->
+    <h3>B &mdash; Cost Breakdown</h3>
+    <table class="var-table" style="margin-bottom: 2.5rem;">
+      <thead>
+        <tr><th>Item</th><th>Cost</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Claude Code API (content production)</td><td>~$5&ndash;8</td><td>Scripts, exercises, gamma prompts</td></tr>
+        <tr><td>Claude Code API (recap production)</td><td>~$5&ndash;8</td><td>Recap, web page, LinkedIn posts</td></tr>
+        <tr><td>Optiverse transcription</td><td>Included</td><td>Subscription ~CHF 30/mo</td></tr>
+        <tr><td>Gemini transcript</td><td>Included</td><td>Google Meet auto-transcription</td></tr>
+        <tr><td>Gamma slide decks</td><td>Included</td><td>Subscription</td></tr>
+        <tr><td>GitHub + GitHub Pages</td><td>Free</td><td>Hosting and version control</td></tr>
+        <tr><td>Typefully</td><td>Included</td><td>LinkedIn scheduling subscription</td></tr>
+        <tr class="cost-row-total"><td><strong>Total per lecture</strong></td><td><strong>~$10&ndash;15</strong></td><td>Incremental cost</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Gamma JSON Template -->
+    <h3>C &mdash; Gamma JSON Template</h3>
+    <div class="prompt-block">
+      <div class="prompt-label">
+        <span>JSON Template</span>
+        <span class="copy-hint">Adapt per deck</span>
+      </div>
+      <div class="prompt-code">{
+  "textMode": "preserve",
+  "cardSplit": "inputTextBreaks",
+  "themeId": "<span class="var">{{GAMMA_THEME_ID}}</span>",
+  "sharingOptions": {
+    "externalAccess": "view"
+  },
+  "imageOptions": {
+    "source": "aiGenerated"
+  },
+  "cardOptions": {
+    "dimensions": "16x9"
+  },
+  "textOptions": {
+    "language": "<span class="var">{{LANGUAGE_CODE}}</span>"
+  },
+  "additionalInstructions": "<span class="var">{{LANGUAGE_RULES}}</span>.
+    Dark professional design. Monoline icons, blueprint style.
+    Deck title starts with 'NN - '.
+    Minimal text per slide, max 25 words.
+    Data callouts large and high-contrast.
+    Executive aesthetic.",
+  "inputText": "<span class="var">{{PASTE_GAMMA_PROMPT_CONTENT}}</span>"
+}</div>
+    </div>
+
+    <!-- Common Pitfalls -->
+    <h3 style="margin-top: 2.5rem;">D &mdash; Common Pitfalls</h3>
+    <div class="pitfall-grid">
+      <div class="pitfall-card">
+        <div class="pitfall-icon">!</div>
+        <div class="pitfall-content">
+          <h4>Committing API keys</h4>
+          <p>Gitignore <code>.mcp.json</code> BEFORE first commit. If leaked: rotate key, <code>git filter-repo</code>, force push.</p>
+        </div>
+      </div>
+      <div class="pitfall-card">
+        <div class="pitfall-icon">!</div>
+        <div class="pitfall-content">
+          <h4>Exercise links &rarr; wrong language</h4>
+          <p>Always verify <code>segments-de</code> vs <code>segments-en</code> in HTML and markdown before publishing.</p>
+        </div>
+      </div>
+      <div class="pitfall-card">
+        <div class="pitfall-icon">!</div>
+        <div class="pitfall-content">
+          <h4>Exercises run over time</h4>
+          <p>Budget +5 min per exercise. Have a "demo instead of do" fallback for each.</p>
+        </div>
+      </div>
+      <div class="pitfall-card">
+        <div class="pitfall-icon">!</div>
+        <div class="pitfall-content">
+          <h4>Gamma fullscreen issues</h4>
+          <p>Test presentation mode before lecture. Download PDF as backup.</p>
+        </div>
+      </div>
+      <div class="pitfall-card">
+        <div class="pitfall-icon">!</div>
+        <div class="pitfall-content">
+          <h4>Notion connector fragile</h4>
+          <p>Budget +10 min for setup. MCP auth flow trips people up. Have mobile app as fallback.</p>
+        </div>
+      </div>
+      <div class="pitfall-card">
+        <div class="pitfall-icon">!</div>
+        <div class="pitfall-content">
+          <h4>ChatGPT can't write to Notion</h4>
+          <p>Only Claude Pro and Perplexity Pro have native write. Say this in prereqs email.</p>
+        </div>
+      </div>
+      <div class="pitfall-card">
+        <div class="pitfall-icon">!</div>
+        <div class="pitfall-content">
+          <h4>Recap links point to repo root</h4>
+          <p>Always link to lecture folder: <code>/tree/master/{{FOLDER}}</code></p>
+        </div>
+      </div>
+      <div class="pitfall-card">
+        <div class="pitfall-icon">!</div>
+        <div class="pitfall-content">
+          <h4>Posts in wrong voice</h4>
+          <p>Load <code>brand-narrative.md</code> and <code>linkedin-post</code> skill BEFORE writing any posts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <p><strong>Lecture as Code &mdash; The Playbook</strong></p>
+    <p>Thomas Winter &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/thwinter/" target="_blank" rel="noopener">LinkedIn</a></p>
+    <div class="footer-divider"></div>
+    <p style="font-size: 0.8rem;">
+      Open source. Fork the repo, swap your content, build your lecture.<br>
+      <a href="https://github.com/thwinter-ch/ai-lectures/tree/master/2026_02_07_AIF">github.com/thwinter-ch/ai-lectures</a>
+    </p>
+  </div>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+  // Fade-in on scroll
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  // Nav scroll shadow
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    links.classList.toggle('open');
+  });
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      links.classList.remove('open');
+    });
+  });
+</script>
+</body>
+</html>
