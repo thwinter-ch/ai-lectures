@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recap Email — Copy into Outlook</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1a1a1a;
+      background: #f0f0f0;
+      margin: 0; padding: 2rem;
+      line-height: 1.6;
+    }
+    .instructions {
+      max-width: 680px; margin: 0 auto 1.5rem;
+      background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px;
+      padding: 1rem 1.5rem; font-size: 0.9rem; color: #664d03;
+    }
+    .instructions strong { color: #664d03; }
+    .email-container {
+      max-width: 680px; margin: 0 auto;
+      background: #ffffff; border: 1px solid #ddd; border-radius: 8px;
+      padding: 2.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    h3 {
+      font-size: 1.05rem; font-weight: 600; color: #1a1a1a;
+      margin: 1.75rem 0 0.75rem; padding-bottom: 0.3rem;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    p { margin: 0 0 0.85rem; font-size: 0.95rem; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .subject-line {
+      background: #f5f5f5; border: 1px solid #ddd; border-radius: 6px;
+      padding: 0.75rem 1rem; margin-bottom: 1.5rem; font-size: 0.9rem;
+    }
+    .subject-line strong { color: #333; }
+    .recap-cta {
+      display: inline-block; background: #0066cc; color: #ffffff !important;
+      padding: 0.65rem 1.5rem; border-radius: 6px; font-weight: 600;
+      font-size: 0.95rem; text-decoration: none; margin: 0.5rem 0 0.5rem;
+    }
+    .recap-cta:hover { background: #0052a3; text-decoration: none; }
+    table {
+      width: 100%; border-collapse: collapse; margin: 0.75rem 0 1.25rem;
+      font-size: 0.9rem;
+    }
+    th {
+      text-align: left; padding: 0.55rem 0.75rem;
+      background: #f8f8f8; font-weight: 600; color: #333;
+      border-bottom: 2px solid #ddd;
+    }
+    td {
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid #eee;
+    }
+    tr:last-child td { border-bottom: none; }
+    ol { padding-left: 1.25rem; margin: 0.5rem 0 1rem; }
+    ol li { margin-bottom: 0.5rem; font-size: 0.95rem; }
+    ol li strong { color: #1a1a1a; }
+    hr {
+      border: none; height: 1px; background: #e0e0e0; margin: 1.5rem 0;
+    }
+    .linkedin-cta {
+      display: inline-block; background: #0a66c2; color: #ffffff !important;
+      padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600;
+      font-size: 0.9rem; text-decoration: none; margin: 0.5rem 0;
+    }
+    .linkedin-cta:hover { background: #004182; text-decoration: none; }
+    .signature { color: #555; margin-top: 0.5rem; }
+    .signature a { color: #0066cc; }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .instructions { display: none; }
+      .email-container { border: none; box-shadow: none; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="instructions">
+  <strong>Anleitung:</strong> Alles im weissen Kasten unten markieren (Ctrl+A funktioniert nicht — manuell von &laquo;Hallo zusammen&raquo; bis &laquo;Thomas&raquo; markieren), dann Ctrl+C, und in Outlook mit Ctrl+V einf&uuml;gen. Die Tabellen, Links und Formatierung werden sauber &uuml;bernommen.
+</div>
+
+<div class="email-container">
+
+  <div class="subject-line">
+    <strong>Subject:</strong> Euer Recap &amp; alle Materialien &mdash; KI-Produktivit&auml;ts-Hacks, 7. Februar
+  </div>
+
+  <p>Hallo zusammen,</p>
+
+  <p>Danke f&uuml;r den intensiven Nachmittag gestern. Hier ist euer Recap-Paket:</p>
+
+  <h3>Recap-Seite</h3>
+
+  <p>Alles an einem Ort &mdash; Zusammenfassung jedes Segments, Schl&uuml;sselzitate, alle Slide-Decks, &Uuml;bungsanleitungen und die Tool-Liste:</p>
+
+  <p><a class="recap-cta" href="https://thwinter-ch.github.io/ai-lectures/2026_02_07_AIF/recap/index.html">Recap: KI-Produktivit&auml;ts-Hacks f&uuml;r F&uuml;hrungskr&auml;fte</a></p>
+
+  <h3>Quick Links</h3>
+
+  <table>
+    <thead>
+      <tr><th>Was</th><th>Link</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>&Uuml;bung: Writing Profile</td><td><a href="https://github.com/thwinter-ch/ai-lectures/blob/master/2026_02_07_AIF/segments-de/03-writing-profile-exercise/README.md">Anleitung</a></td></tr>
+      <tr><td>&Uuml;bung: Unternehmensrecherche</td><td><a href="https://github.com/thwinter-ch/ai-lectures/blob/master/2026_02_07_AIF/segments-de/05-company-research-exercise/README.md">Anleitung</a></td></tr>
+      <tr><td>&Uuml;bung: Second Brain</td><td><a href="https://github.com/thwinter-ch/ai-lectures/blob/master/2026_02_07_AIF/segments-de/07-second-brain-exercise/README.md">Anleitung</a></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Slide Decks</h3>
+
+  <table>
+    <thead>
+      <tr><th>Segment</th><th>Deck</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>01 &mdash; How I Built This</td><td><a href="https://gamma.app/docs/01-Wie-ich-diese-Vorlesung-erstellt-habe-atjj9amvea35m4a">Slides</a></td></tr>
+      <tr><td>02 &mdash; Technology Revolution</td><td><a href="https://gamma.app/docs/02-Die-Technologie-Revolution-myy1vq3y7d4x16s">Slides</a></td></tr>
+      <tr><td>04 &mdash; AI as Managerial Skill</td><td><a href="https://gamma.app/docs/v5gsyrz3bf5anxo">Slides</a></td></tr>
+      <tr><td>06 &mdash; Information Overload</td><td><a href="https://gamma.app/docs/e3131dy593gw4ai">Slides</a></td></tr>
+      <tr><td>08 &mdash; Ausblick &amp; Realit&auml;tscheck</td><td><a href="https://gamma.app/docs/twkfm2mwi1334ud">Slides</a></td></tr>
+    </tbody>
+  </table>
+
+  <table>
+    <tbody>
+      <tr><td><strong>Alle Materialien (GitHub)</strong></td><td><a href="https://github.com/thwinter-ch/ai-lectures/tree/master/2026_02_07_AIF">Repository</a></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Empfohlene n&auml;chste Schritte</h3>
+
+  <ol>
+    <li><strong>Diese Woche:</strong> Writing Profile in 2-3 Claude-Konversationen verwenden. Wo klingt es noch nicht nach euch? Erg&auml;nzen.</li>
+    <li><strong>Diesen Monat:</strong> Die Unternehmensrecherche auf einen echten Kunden oder Wettbewerber anwenden &mdash; vor dem n&auml;chsten wichtigen Meeting.</li>
+    <li><strong>Laufend:</strong> Second Brain t&auml;glich f&uuml;ttern. Nach einer Woche Claude fragen: &laquo;Mit welchen Themen habe ich mich diese Woche befasst?&raquo;</li>
+  </ol>
+
+  <hr>
+
+  <p>Ich werde in den n&auml;chsten Tagen eine Serie von LinkedIn-Posts ver&ouml;ffentlichen &mdash; Kernideen aus der Vorlesung, einzeln aufbereitet. Wenn euch etwas anspricht: kommentiert, repostet, oder schreibt euren eigenen Post dazu. Das hilft uns allen, das Thema sichtbar zu machen &mdash; und euren Kolleginnen und Kollegen, die nicht dabei waren.</p>
+
+  <p><a class="linkedin-cta" href="https://www.linkedin.com/in/thwinter/">Mein LinkedIn-Profil</a></p>
+
+  <hr>
+
+  <p>Falls ihr Fragen habt oder bei etwas nicht weiterkommt &mdash; meldet euch. Ich helfe gerne.</p>
+
+  <p class="signature">
+    Telefon: 079 248 20 76<br>
+    LinkedIn: <a href="https://www.linkedin.com/in/thwinter/">linkedin.com/in/thwinter</a>
+  </p>
+
+  <p>Liebe Gr&uuml;sse,<br>Thomas</p>
+
+</div>
+
+</body>
+</html>
