@@ -48,6 +48,12 @@ Alles an einem Ort — Zusammenfassung jedes Segments, Schlüsselzitate, alle Sl
 
 ---
 
+Ich werde in den nächsten Tagen eine Serie von LinkedIn-Posts veröffentlichen — Kernideen aus der Vorlesung, einzeln aufbereitet. Wenn euch etwas anspricht: kommentiert, repostet, oder schreibt euren eigenen Post dazu. Das hilft uns allen, das Thema sichtbar zu machen — und euren Kolleginnen und Kollegen, die nicht dabei waren.
+
+→ **[Mein LinkedIn-Profil](https://www.linkedin.com/in/thwinter/)** — folgen, damit ihr die Posts seht.
+
+---
+
 Falls ihr Fragen habt oder bei etwas nicht weiterkommt — meldet euch. Ich helfe gerne.
 
 - **Telefon:** 079 248 20 76
