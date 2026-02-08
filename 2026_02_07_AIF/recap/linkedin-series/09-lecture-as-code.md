@@ -1,4 +1,4 @@
-<!-- Post 9/10 | Schedule: Day 5, AM | Topic: Lecture as Code -->
+<!-- Post 11/12 | Schedule: Day 6, AM | Topic: Lecture as Code -->
 
 I built a 3.5-hour university lecture in 2 weeks.
 
@@ -28,6 +28,6 @@ If you produce anything repeatable — reports, training, documentation, analysi
 
 The answer might free up more time than any productivity hack you've tried.
 
-AI x Leadership | 9/10
+AI x Leadership | 11/12
 
 #ContentCreation #AIProductivity #Education #FutureOfWork #Leadership

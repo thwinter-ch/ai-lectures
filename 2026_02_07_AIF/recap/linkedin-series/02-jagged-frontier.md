@@ -1,4 +1,4 @@
-<!-- Post 2/10 | Schedule: Day 1, PM | Topic: The Jagged Frontier -->
+<!-- Post 4/12 | Schedule: Day 2, PM | Topic: The Jagged Frontier -->
 
 AI made BCG consultants 40% better at their jobs.
 
@@ -30,6 +30,6 @@ Three things that help:
 
 The goal isn't to use AI less. It's to use it with your eyes open.
 
-AI x Leadership | 2/10
+AI x Leadership | 4/12
 
 #AIStrategy #Leadership #BCG #HarvardBusinessSchool #DecisionMaking

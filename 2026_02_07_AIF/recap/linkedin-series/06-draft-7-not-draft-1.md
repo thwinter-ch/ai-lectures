@@ -1,4 +1,4 @@
-<!-- Post 6/10 | Schedule: Day 3, PM | Topic: Draft 7, Not Draft 1 -->
+<!-- Post 8/12 | Schedule: Day 4, PM | Topic: Draft 7, Not Draft 1 -->
 
 AI doesn't give you a first draft.
 
@@ -26,6 +26,6 @@ Next time you get an AI output, try this: before you accept anything, ask yourse
 
 That's your draft 8. Now keep going.
 
-AI x Leadership | 6/10
+AI x Leadership | 8/12
 
 #AIProductivity #ContentCreation #Writing #Leadership #CreativeProcess

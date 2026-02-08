@@ -1,4 +1,4 @@
-<!-- Post 1/10 | Schedule: Day 1, AM | Topic: The 80% Drop-Off -->
+<!-- Post 3/12 | Schedule: Day 2, AM | Topic: The 80% Drop-Off -->
 
 Microsoft tracked 300,000 Copilot users.
 
@@ -28,6 +28,6 @@ Start investing in the 201 skills: task decomposition, quality judgment, iterati
 
 That's where the 80% get stuck. That's where you can actually move the needle.
 
-AI x Leadership | 1/10
+AI x Leadership | 3/12
 
 #AIAdoption #Leadership #DigitalTransformation #AIStrategy #Productivity

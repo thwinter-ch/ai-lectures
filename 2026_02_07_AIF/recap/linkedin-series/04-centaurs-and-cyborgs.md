@@ -1,4 +1,4 @@
-<!-- Post 4/10 | Schedule: Day 2, PM | Topic: Centaurs and Cyborgs -->
+<!-- Post 6/12 | Schedule: Day 3, PM | Topic: Centaurs and Cyborgs -->
 
 The 20% who actually succeed with AI don't use it one way.
 
@@ -28,6 +28,6 @@ Here's a practical test for your next project: before you open an AI chat, ask y
 
 That one question will improve your output more than any prompt engineering course.
 
-AI x Leadership | 4/10
+AI x Leadership | 6/12
 
 #AIProductivity #FutureOfWork #WorkPatterns #Leadership #HumanAICollaboration

@@ -1,4 +1,4 @@
-<!-- Post 5/10 | Schedule: Day 3, AM | Topic: The Permission Gap -->
+<!-- Post 7/12 | Schedule: Day 4, AM | Topic: The Permission Gap -->
 
 Your best employees quit AI first.
 
@@ -32,6 +32,6 @@ Three things leaders need to do:
 
 The Permission Gap isn't a technology problem. It's a leadership problem. And it's yours to close.
 
-AI x Leadership | 5/10
+AI x Leadership | 7/12
 
 #Leadership #ChangeManagement #AIAdoption #OrganizationalCulture #Transformation

@@ -1,4 +1,4 @@
-<!-- Post 10/10 | Schedule: Day 5, PM | Topic: The Cloud Act Isn't Your Enemy -->
+<!-- Post 12/12 | Schedule: Day 6, PM | Topic: The Cloud Act Isn't Your Enemy -->
 
 "We can't use cloud AI because of the Cloud Act."
 
@@ -28,6 +28,6 @@ Here's what I'd actually do:
 
 The Cloud Act is a real consideration. It's not a conversation-ender. And treating it like one is costing you more than you think.
 
-AI x Leadership | 10/10
+AI x Leadership | 12/12
 
 #CloudAct #DataSovereignty #SwissFinance #Cybersecurity #Leadership

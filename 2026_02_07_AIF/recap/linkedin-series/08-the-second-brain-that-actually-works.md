@@ -1,4 +1,4 @@
-<!-- Post 8/10 | Schedule: Day 4, PM | Topic: The Second Brain That Actually Works -->
+<!-- Post 10/12 | Schedule: Day 5, PM | Topic: The Second Brain That Actually Works -->
 
 I tried Evernote. OneNote. Capacities. Apple Notes. Notion (the first time).
 
@@ -30,6 +30,6 @@ If you want to try this, the minimum viable setup is simpler than you think:
 
 The tool doesn't matter. The habit does. But removing friction is what makes the habit stick.
 
-AI x Leadership | 8/10
+AI x Leadership | 10/12
 
 #KnowledgeManagement #SecondBrain #Productivity #Notion #PersonalDevelopment

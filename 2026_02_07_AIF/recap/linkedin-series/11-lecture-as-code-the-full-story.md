@@ -1,4 +1,4 @@
-<!-- Post 11/12 | Bonus | Topic: Lecture as Code — The Full Story -->
+<!-- Post 2/12 | Schedule: Day 1, PM | Topic: Lecture as Code — The Full Story -->
 
 My university lecture has a BUILD_LOG.md.
 
@@ -30,6 +30,6 @@ The total production cost for a 3.5-hour university lecture with 5 slide decks, 
 
 The repo is public. The methodology is documented. Fork it if you want.
 
-AI x Leadership | 11/12
+AI x Leadership | 2/12
 
 #LectureAsCode #Education #AIProductivity #OpenSource #InfrastructureAsCode

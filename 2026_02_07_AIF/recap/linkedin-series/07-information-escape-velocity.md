@@ -1,4 +1,4 @@
-<!-- Post 7/10 | Schedule: Day 4, AM | Topic: Information Escape Velocity -->
+<!-- Post 9/12 | Schedule: Day 5, AM | Topic: Information Escape Velocity -->
 
 The executive advantage used to be access to information.
 
@@ -33,6 +33,6 @@ Start here: pick one information stream you consume out of habit (a newsletter, 
 
 I bet it's less than you think.
 
-AI x Leadership | 7/10
+AI x Leadership | 9/12
 
 #InformationOverload #Productivity #Leadership #CognitiveScience #DecisionMaking

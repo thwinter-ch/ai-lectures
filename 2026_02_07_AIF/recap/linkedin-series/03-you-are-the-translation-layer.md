@@ -1,4 +1,4 @@
-<!-- Post 3/10 | Schedule: Day 2, AM | Topic: You Are The Translation Layer -->
+<!-- Post 5/12 | Schedule: Day 3, AM | Topic: You Are The Translation Layer -->
 
 The bottleneck moved.
 
@@ -25,6 +25,6 @@ One thing you can do today: take your next AI interaction and pretend you're bri
 
 Watch how much better the result gets.
 
-AI x Leadership | 3/10
+AI x Leadership | 5/12
 
 #AIProductivity #Leadership #Management #FutureOfWork #Delegation

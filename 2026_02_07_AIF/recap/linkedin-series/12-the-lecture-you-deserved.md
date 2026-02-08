@@ -1,4 +1,4 @@
-<!-- Post 12/12 | Bonus | Topic: The Lecture You Deserved -->
+<!-- Post 1/12 | Schedule: Day 1, AM | Topic: The Lecture You Deserved -->
 
 We've all sat through that lecture.
 
@@ -40,6 +40,6 @@ I'm not saying every lecturer needs to build a GitHub repo. I'm saying: if you c
 
 Your students sat through enough boring lectures. Give them something worth bookmarking.
 
-AI x Leadership | 12/12
+AI x Leadership | 1/12
 
 #Education #Teaching #AIinEducation #StudentExperience #Leadership
