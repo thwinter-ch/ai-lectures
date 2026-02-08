@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Productivity Hacks for Leaders — Lecture Recap</title>
+  <meta name="description" content="Recap of the CAS AI in Finance lecture at HWZ Zürich, February 7, 2026. AI productivity, Writing Profiles, company research workflows, and building a Second Brain.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #001447;
+      background: #ffffff;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: #001E6E; text-decoration: none; transition: color 0.2s ease; }
+    a:hover { color: #002FA8; }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4 { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #001447; line-height: 1.25; }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; }
+    h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 600; margin-bottom: 1rem; }
+    h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 600; margin-bottom: 0.75rem; }
+    h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    p { margin-bottom: 1rem; font-size: 1.05rem; }
+    strong { font-weight: 600; }
+    ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.4rem; font-size: 1.05rem; }
+    li::marker { color: #002FA8; }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(0, 20, 71, 0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 47, 168, 0.15);
+      transition: box-shadow 0.3s ease;
+    }
+    .nav.scrolled { box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15); }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 60px;
+    }
+    .nav-brand {
+      font-family: 'Inter', sans-serif; font-weight: 700;
+      font-size: 1.1rem; color: #ffffff; white-space: nowrap;
+    }
+    .nav-links { display: flex; gap: 0.15rem; align-items: center; }
+    .nav-links > a {
+      color: rgba(255,255,255,0.7); font-size: 0.8rem; font-weight: 500;
+      padding: 0.4rem 0.7rem; border-radius: 6px;
+      transition: all 0.2s ease; white-space: nowrap;
+    }
+    .nav-links > a:hover { color: #ffffff; background: rgba(255,255,255,0.1); }
+    /* Segments dropdown */
+    .nav-dropdown {
+      position: relative;
+    }
+    .nav-dropdown-trigger {
+      color: rgba(255,255,255,0.7); font-size: 0.8rem; font-weight: 500;
+      padding: 0.4rem 0.7rem; border-radius: 6px;
+      transition: all 0.2s ease; white-space: nowrap;
+      cursor: pointer; background: none; border: none; font-family: inherit;
+      display: flex; align-items: center; gap: 0.3rem;
+    }
+    .nav-dropdown-trigger:hover { color: #ffffff; background: rgba(255,255,255,0.1); }
+    .nav-dropdown-trigger svg { width: 10px; height: 10px; transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu {
+      display: none; position: absolute; top: calc(100% + 0.5rem); left: 50%; transform: translateX(-50%);
+      background: rgba(0, 20, 71, 0.98); border: 1px solid rgba(0, 47, 168, 0.2);
+      border-radius: 10px; padding: 0.5rem; min-width: 220px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a {
+      display: block; color: rgba(255,255,255,0.7); font-size: 0.8rem; font-weight: 500;
+      padding: 0.45rem 0.75rem; border-radius: 6px;
+      transition: all 0.2s ease; white-space: nowrap;
+    }
+    .nav-dropdown-menu a:hover { color: #ffffff; background: rgba(255,255,255,0.1); }
+    .nav-toggle {
+      display: none; background: none; border: none; cursor: pointer;
+      width: 28px; height: 20px; position: relative; z-index: 1001;
+    }
+    .nav-toggle span {
+      display: block; width: 100%; height: 2px; background: #ffffff;
+      position: absolute; left: 0; transition: all 0.3s ease;
+    }
+    .nav-toggle span:nth-child(1) { top: 0; }
+    .nav-toggle span:nth-child(2) { top: 9px; }
+    .nav-toggle span:nth-child(3) { top: 18px; }
+    .nav-toggle.open span:nth-child(1) { transform: rotate(45deg); top: 9px; }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg); top: 9px; }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #001447 0%, #001E6E 40%, #002FA8 100%);
+      padding: 10rem 2rem 5rem;
+      text-align: center; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(0, 47, 168, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(0, 47, 168, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+    .hero-label {
+      display: inline-block; font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(255,255,255,0.85); margin-bottom: 1.5rem;
+      padding: 0.4rem 1.2rem; border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 100px;
+    }
+    .hero h1 { color: #ffffff; margin-bottom: 1.5rem; }
+    .hero-meta {
+      color: rgba(255,255,255,0.6); font-size: 1.05rem; line-height: 1.8;
+    }
+    .hero-meta strong { color: rgba(255,255,255,0.85); }
+    .hero-divider {
+      width: 60px; height: 3px; background: #ffffff;
+      margin: 2rem auto 0; border-radius: 2px;
+    }
+
+    /* ===== MAIN LAYOUT ===== */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+    main { padding-top: 3rem; padding-bottom: 4rem; }
+
+    /* ===== SECTIONS ===== */
+    .section { margin-bottom: 4rem; }
+    .section.fade-in {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .section.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== SECTION DIVIDER ===== */
+    .section-divider {
+      width: 100%; height: 1px;
+      background: linear-gradient(to right, transparent, #c8d0e5, transparent);
+      margin: 3rem 0;
+    }
+
+    /* ===== CARDS ===== */
+    .card {
+      background: #ffffff;
+      border: 1px solid #dde3f0;
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .card:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+      transform: translateY(-2px);
+    }
+    .card-header {
+      display: flex; align-items: flex-start; gap: 1rem;
+      margin-bottom: 1.5rem; flex-wrap: wrap;
+    }
+    .segment-number {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px; min-width: 44px;
+      background: linear-gradient(135deg, #001447, #001E6E);
+      color: #ffffff; font-weight: 700; font-size: 0.9rem;
+      border-radius: 10px; font-family: 'Inter', sans-serif;
+    }
+    .card-header-text { flex: 1; }
+    .card-badges { display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap; }
+    .badge {
+      display: inline-block; font-size: 0.72rem; font-weight: 600;
+      padding: 0.25rem 0.7rem; border-radius: 100px;
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .badge-lecture { background: #eef2ff; color: #4338ca; }
+    .badge-exercise { background: #fef3e2; color: #b45309; }
+    .badge-demo { background: #ecfdf5; color: #059669; }
+    .badge-duration { background: #f3f4f6; color: #6b7280; }
+
+    .slide-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.82rem; font-weight: 600; color: #002FA8;
+      padding: 0.4rem 1rem; border: 1px solid rgba(0, 47, 168, 0.3);
+      border-radius: 8px; transition: all 0.2s ease; margin-top: 0.5rem;
+    }
+    .slide-btn:hover {
+      background: rgba(0, 47, 168, 0.08); color: #001E6E;
+      border-color: rgba(0, 47, 168, 0.5);
+    }
+    .slide-btn svg { width: 14px; height: 14px; }
+
+    /* ===== PULL QUOTES ===== */
+    .pull-quote {
+      border-left: 4px solid #002FA8;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      background: linear-gradient(135deg, #f5f7ff, #eef2ff);
+      border-radius: 0 8px 8px 0;
+    }
+    .pull-quote p {
+      font-family: 'Inter', sans-serif;
+      font-style: italic; font-size: 1.15rem;
+      color: #001447; line-height: 1.6; margin-bottom: 0;
+    }
+
+    /* ===== KEY QUOTES SECTION ===== */
+    .key-quote-block {
+      text-align: center; padding: 2.5rem 2rem; margin-bottom: 2rem;
+      position: relative;
+    }
+    .key-quote-block::before {
+      content: '\201C';
+      font-family: 'Inter', sans-serif;
+      font-size: 5rem; color: rgba(0, 47, 168, 0.2);
+      position: absolute; top: -0.5rem; left: 50%; transform: translateX(-50%);
+      line-height: 1;
+    }
+    .key-quote-block p {
+      font-family: 'Inter', sans-serif;
+      font-style: italic; font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      color: #001447; line-height: 1.5;
+      max-width: 680px; margin: 0 auto;
+    }
+
+    /* ===== CONCEPT LIST ===== */
+    .concept-item { margin-bottom: 0.8rem; }
+    .concept-item strong { color: #001447; }
+
+    /* ===== DATA CALLOUT ===== */
+    .data-callout {
+      display: flex; gap: 1.5rem; flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+    .data-point {
+      flex: 1; min-width: 180px;
+      background: #f0f3fa; border-radius: 10px;
+      padding: 1.25rem; text-align: center;
+    }
+    .data-point .number {
+      font-family: 'Inter', sans-serif;
+      font-size: 2rem; font-weight: 700;
+      color: #002FA8; display: block;
+    }
+    .data-point .label {
+      font-size: 0.85rem; color: #6b7280; margin-top: 0.25rem;
+    }
+
+    /* ===== EXERCISE TABLE ===== */
+    .exercise-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+    .exercise-card {
+      background: #ffffff; border: 1px solid #dde3f0;
+      border-radius: 12px; padding: 1.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex; flex-direction: column;
+    }
+    .exercise-card h4 { color: #001447; margin-bottom: 0.5rem; }
+    .exercise-card p { font-size: 0.95rem; color: #555; flex: 1; }
+    .exercise-card .time-badge {
+      display: inline-block; font-size: 0.75rem; font-weight: 600;
+      color: #002FA8; margin-bottom: 0.75rem;
+    }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: linear-gradient(135deg, #001447, #001E6E);
+      color: #ffffff; font-weight: 600; font-size: 0.85rem;
+      padding: 0.65rem 1.25rem; border-radius: 8px;
+      transition: all 0.25s ease; margin-top: 1rem; align-self: flex-start;
+    }
+    .cta-btn:hover {
+      color: #ffffff; transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 20, 71, 0.3);
+    }
+    .cta-btn svg { width: 14px; height: 14px; }
+
+    /* ===== SLIDE DECK GRID ===== */
+    .deck-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .deck-card {
+      background: linear-gradient(135deg, #001447, #001E6E);
+      border-radius: 10px; padding: 1.5rem;
+      color: #ffffff; transition: all 0.25s ease;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .deck-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0, 20, 71, 0.3); }
+    .deck-card .deck-label {
+      font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.7);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;
+    }
+    .deck-card .deck-title {
+      font-family: 'Inter', sans-serif; font-size: 1rem;
+      font-weight: 600; margin-bottom: 1rem; line-height: 1.3;
+    }
+    .deck-card .deck-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: #ffffff; font-size: 0.8rem; font-weight: 600;
+      transition: color 0.2s ease;
+    }
+    .deck-card .deck-btn:hover { color: rgba(255,255,255,0.8); }
+    .deck-card .deck-btn svg { width: 14px; height: 14px; }
+
+    /* ===== TOOL GRID ===== */
+    .tool-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .tool-card {
+      background: #f5f7fc; border: 1px solid #dde3f0;
+      border-radius: 10px; padding: 1.25rem;
+      transition: all 0.25s ease;
+    }
+    .tool-card:hover { border-color: #002FA8; box-shadow: 0 4px 12px rgba(0, 47, 168, 0.1); }
+    .tool-card h4 { font-family: 'Inter', sans-serif; font-size: 0.95rem; margin-bottom: 0.35rem; }
+    .tool-card p { font-size: 0.85rem; color: #6b7280; margin-bottom: 0.5rem; }
+    .tool-card a { font-size: 0.8rem; font-weight: 600; }
+
+    /* ===== NEXT STEPS ===== */
+    .steps-list { counter-reset: step-counter; list-style: none; padding-left: 0; }
+    .steps-list li {
+      counter-increment: step-counter;
+      position: relative; padding-left: 3rem; margin-bottom: 1.25rem;
+    }
+    .steps-list li::before {
+      content: counter(step-counter);
+      position: absolute; left: 0; top: 0;
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, #002FA8, #0035C0);
+      color: #ffffff; font-weight: 700; font-size: 0.85rem;
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-family: 'Inter', sans-serif;
+    }
+
+    /* ===== TIPS GRID ===== */
+    .tips-grid {
+      display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1.5rem 0;
+    }
+    .tip-card {
+      background: #f5f7ff; border: 1px solid #d5dced;
+      border-radius: 10px; padding: 1.25rem 1.5rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .tip-number {
+      display: flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; min-width: 28px;
+      background: #002FA8; color: #ffffff; font-weight: 700;
+      font-size: 0.75rem; border-radius: 50%;
+    }
+    .tip-card p { margin-bottom: 0; font-size: 0.95rem; }
+
+    /* ===== SVG DIAGRAMS ===== */
+    .diagram-container {
+      margin: 2rem 0; background: #f5f7fc;
+      border: 1px solid #dde3f0; border-radius: 12px;
+      padding: 2rem; text-align: center;
+    }
+    .diagram-container svg { max-width: 100%; height: auto; margin: 0 auto; display: block; }
+    .diagram-caption {
+      font-size: 0.85rem; color: #6b7280; margin-top: 1rem;
+      font-style: italic;
+    }
+
+    /* ===== OVERVIEW BOX ===== */
+    .overview-box {
+      background: linear-gradient(135deg, #f5f7fc, #e8edf8);
+      border: 1px solid #dde3f0;
+      border-radius: 12px;
+      padding: 2rem 2.5rem;
+      margin: 2rem 0;
+    }
+    .overview-box h3 { margin-bottom: 1rem; }
+    .overview-box ol { padding-left: 1.25rem; }
+
+    .thesis-box {
+      background: linear-gradient(135deg, #001447, #001E6E);
+      color: #ffffff; border-radius: 12px;
+      padding: 2rem 2.5rem; margin: 2rem 0;
+    }
+    .thesis-box strong { color: #ffffff; }
+    .thesis-box p { color: rgba(255,255,255,0.9); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #002FA8; color: rgba(255,255,255,0.6);
+      padding: 3rem 2rem; text-align: center;
+    }
+    footer a { color: #ffffff; }
+    footer a:hover { color: rgba(255,255,255,0.8); }
+    footer p { font-size: 0.9rem; margin-bottom: 0.5rem; }
+    .footer-divider {
+      width: 40px; height: 2px; background: rgba(255, 255, 255, 0.3);
+      margin: 1.5rem auto;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 60px; left: 0; right: 0;
+        background: rgba(0, 20, 71, 0.98);
+        padding: 1rem; gap: 0;
+        border-bottom: 1px solid rgba(0, 47, 168, 0.15);
+        max-height: calc(100vh - 60px); overflow-y: auto;
+      }
+      .nav-links.open > a, .nav-links.open .nav-dropdown-trigger { padding: 0.75rem 1rem; font-size: 0.9rem; width: 100%; }
+      .nav-links.open .nav-dropdown-menu {
+        display: block; position: static; transform: none;
+        background: rgba(0, 47, 168, 0.1); border: none; box-shadow: none;
+        padding: 0 0 0 1rem; min-width: 0;
+      }
+      .nav-links.open .nav-dropdown-menu a { padding: 0.6rem 1rem; font-size: 0.85rem; }
+      .nav-toggle { display: block; }
+      .hero { padding: 8rem 1.5rem 3.5rem; }
+      .card { padding: 1.5rem; }
+      .data-callout { flex-direction: column; }
+      .deck-grid { grid-template-columns: 1fr 1fr; }
+      .tool-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .deck-grid { grid-template-columns: 1fr; }
+      .nav-brand { font-size: 0.95rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print {
+      .nav, .nav-toggle { display: none !important; }
+      .hero { padding: 2rem; background: #f5f5f5 !important; }
+      .hero h1, .hero-meta, .hero-label { color: #001447 !important; }
+      .card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+      .deck-card { background: #f5f5f5 !important; color: #001447 !important; }
+      .thesis-box { background: #f5f5f5 !important; color: #001447 !important; }
+      body { font-size: 11pt; }
+      .section.fade-in { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="navbar">
+  <div class="nav-inner">
+    <span class="nav-brand">AI Productivity Hacks</span>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#overview">Overview</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger">Segments <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a href="#seg01">01 — How I Built This</a>
+          <a href="#seg02">02 — The Tech Revolution</a>
+          <a href="#seg03">03 — Writing Profile</a>
+          <a href="#seg04">04 — AI as a Leadership Skill</a>
+          <a href="#seg05">05 — Company Research</a>
+          <a href="#seg06">06 — Cognitive Limits</a>
+          <a href="#seg07">07 — Second Brain</a>
+          <a href="#seg08">08 — Outlook &amp; Reality Check</a>
+        </div>
+      </div>
+      <a href="#qa">Q&amp;A</a>
+      <a href="#exercises">Exercises</a>
+      <a href="#tools">Tools</a>
+      <a href="#quotes">Quotes</a>
+      <a href="https://github.com/thwinter-ch/ai-lectures/tree/master/2026_02_07_AIF" target="_blank" rel="noopener" style="border-left:1px solid rgba(255,255,255,0.2); margin-left:0.3rem; padding-left:1rem;">GitHub Repo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero-content">
+    <span class="hero-label">CAS AI in Finance &mdash; Lecture Recap</span>
+    <h1>AI Productivity Hacks for Leaders</h1>
+    <p class="hero-meta">
+      <strong>HWZ Z&uuml;rich</strong> &nbsp;|&nbsp; February 7, 2026, 13:00&ndash;16:45<br>
+      Lecturer: <a href="https://www.linkedin.com/in/thwinter/" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.85); text-decoration: underline; text-underline-offset: 2px;"><strong>Thomas Winter</strong></a> &nbsp;|&nbsp; Programme Director: <a href="https://www.linkedin.com/in/comboeuf/" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.85); text-decoration: underline; text-underline-offset: 2px;"><strong>Patrick Comboeuf</strong></a>
+    </p>
+    <div class="hero-divider"></div>
+  </div>
+</header>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main>
+<div class="container">
+
+  <!-- ===== SESSION OVERVIEW ===== -->
+  <section class="section fade-in" id="overview">
+    <h2>Session Overview</h2>
+    <p>In a 3.5-hour hands-on session, 21 finance professionals built three working AI systems from scratch: a personal Writing Profile, a structured company research workflow, and a Claude-to-Notion "Second Brain." The lecture itself was created using the same tools being taught &mdash; a deliberate meta-demonstration of AI-powered content production.</p>
+
+    <div class="overview-box">
+      <h3>What Participants Took Home</h3>
+      <ol>
+        <li><strong>Writing Style Profile</strong> &mdash; A personal voice profile document that teaches AI how you write &mdash; not like generic boilerplate</li>
+        <li><strong>Company Research Workflow</strong> &mdash; A two-stage prompt chain (Deep Research &rarr; Strategy Synthesis) that produces board-ready briefings</li>
+        <li><strong>Second Brain</strong> &mdash; A Notion database connected to Claude for automatic knowledge capture</li>
+      </ol>
+    </div>
+
+    <div class="thesis-box">
+      <p><strong>Core thesis:</strong> AI success is not a technology skill &mdash; it is a leadership skill. The same abilities that make someone a good leader (clear delegation, quality judgment, iterative feedback) determine who succeeds with AI.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== SEGMENT 01 ===== -->
+  <section class="section fade-in" id="seg01">
+    <h2>Segment-by-Segment Recap</h2>
+    <article class="card">
+      <div class="card-header">
+        <span class="segment-number">01</span>
+        <div class="card-header-text">
+          <h3>How I Built This Lecture</h3>
+          <div class="card-badges">
+            <span class="badge badge-lecture">Lecture</span>
+            <span class="badge badge-duration">15 Min</span>
+          </div>
+          <a href="https://gamma.app/docs/01-Wie-ich-diese-Vorlesung-erstellt-habe-atjj9amvea35m4a" target="_blank" rel="noopener" class="slide-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            Open Slides
+          </a>
+        </div>
+      </div>
+      <p>The opening segment served as a credibility proof: the entire lecture was built using the AI tools being taught. Thomas showed the production chain &mdash; from a voice brainstorm while walking (Wispr Flow) to research (Perplexity), parallel agent execution (Claude Code), slide creation (Gamma), and knowledge capture (Notion).</p>
+
+      <h4>Key Moments from the Live Session</h4>
+      <div class="pull-quote">
+        <p>"This isn't theory. This is me eating my own cooking."</p>
+      </div>
+      <ul>
+        <li>The timeline from voice note to finished lecture: under two weeks, as a side project</li>
+        <li>Honest limitation: "AI gives you draft 7 instead of draft 1. You still need to get to draft 10."</li>
+      </ul>
+
+      <h4>Key Concepts</h4>
+      <ul>
+        <li class="concept-item"><strong>Dogfooding principle</strong> &mdash; If you teach AI workflows, those workflows should have built what you are teaching</li>
+        <li class="concept-item"><strong>Directing production, not creating content</strong> &mdash; The role shifts from doing to orchestrating</li>
+        <li class="concept-item"><strong>Infrastructure, not tools</strong> &mdash; "You're not learning tools. You're building infrastructure. The return doesn't come today &mdash; it comes every day after."</li>
+      </ul>
+    </article>
+
+    <!-- ===== SEGMENT 02 ===== -->
+    <article class="card fade-in" id="seg02">
+      <div class="card-header">
+        <span class="segment-number">02</span>
+        <div class="card-header-text">
+          <h3>The Technology Revolution</h3>
+          <div class="card-badges">
+            <span class="badge badge-lecture">Lecture</span>
+            <span class="badge badge-duration">15 Min</span>
+          </div>
+          <a href="https://gamma.app/docs/02-Die-Technologie-Revolution-myy1vq3y7d4x16s" target="_blank" rel="noopener" class="slide-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            Open Slides
+          </a>
+        </div>
+      </div>
+      <p>2026 is the year every technical barrier has fallen. The new bottleneck is not what AI can do &mdash; but whether humans can articulate clearly enough to delegate.</p>
+
+      <h4>Key Concepts</h4>
+      <ul>
+        <li class="concept-item"><strong>The 2026 Breakthrough Stack:</strong> Consumer-grade hardware, sustained attention (agents stay focused for hours), persistent memory across sessions, MCP + Skills standardize tool use, autonomous browser/file interaction</li>
+        <li class="concept-item"><strong>You are the translation layer</strong> &mdash; "The bottleneck has shifted. The question used to be: 'Can AI do this?' Now it's: 'Can YOU define clearly enough what needs to be done to delegate it?'"</li>
+        <li class="concept-item"><strong>The Mini-Me race</strong> &mdash; Who builds your AI double first? You, your competitor, or nobody? Compound effects mean early movers widen the gap monthly</li>
+        <li class="concept-item"><strong>Two-layer architecture</strong> &mdash; Translation layer (where humans interact, handle ambiguity) + Task execution layer (where agents shine, reliably execute)</li>
+      </ul>
+
+      <h4>Live Discussion Highlights</h4>
+      <ul>
+        <li>Thomas showed how Claude Code fixed a broken link in the repository during the lecture in real time &mdash; the "Lecture as Code" concept in action</li>
+        <li>Several participants asked about tool selection; Thomas emphasized: "The question isn't which tool &mdash; the 201 skills are tool-agnostic"</li>
+      </ul>
+    </article>
+
+    <!-- ===== SEGMENT 03 ===== -->
+    <article class="card fade-in" id="seg03">
+      <div class="card-header">
+        <span class="segment-number">03</span>
+        <div class="card-header-text">
+          <h3>Writing Profile Exercise</h3>
+          <div class="card-badges">
+            <span class="badge badge-exercise">Exercise</span>
+            <span class="badge badge-duration">25 Min</span>
+          </div>
+          <a href="https://github.com/thwinter-ch/ai-lectures/blob/master/2026_02_07_AIF/segments-de/03-writing-profile-exercise/README.md" target="_blank" rel="noopener" class="cta-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View Exercise Guide
+          </a>
+        </div>
+      </div>
+      <p>Participants created personal voice profiles using the Ruben Hassid method &mdash; a structured self-interview that extracts your "writing DNA": beliefs, constraints, style preferences, and patterns.</p>
+
+      <h4>What It Does</h4>
+      <ul>
+        <li>10 questions in the "lite interview" covering 7 categories of communication preferences</li>
+        <li>Generates a Markdown voice profile with banned words, signature phrases, and tonal markers</li>
+        <li>The profile attaches to every AI conversation so outputs sound like you &mdash; not like everyone else</li>
+      </ul>
+
+      <h4>Observations from the Live Session</h4>
+      <ul>
+        <li>Thomas noted that the exercise "sometimes turns into a psychology session &mdash; it tells you something about yourself, where you're precise and where you're not"</li>
+        <li>Participants found it surprisingly revealing: the framework pushes past vague answers like "I like to keep things simple" and surfaces concrete preferences and instinctive reactions</li>
+        <li>The exercise directly builds the first "201 skill" &mdash; context quality</li>
+      </ul>
+    </article>
+
+    <!-- ===== SEGMENT 04 ===== -->
+    <article class="card fade-in" id="seg04">
+      <div class="card-header">
+        <span class="segment-number">04</span>
+        <div class="card-header-text">
+          <h3>AI as a Leadership Skill</h3>
+          <div class="card-badges">
+            <span class="badge badge-lecture">Lecture</span>
+            <span class="badge badge-duration">15 Min</span>
+          </div>
+          <a href="https://gamma.app/docs/v5gsyrz3bf5anxo" target="_blank" rel="noopener" class="slide-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            Open Slides
+          </a>
+        </div>
+      </div>
+      <p>The most data-rich segment. Thomas presented studies showing why 80% of people abandon AI tools after 3 weeks &mdash; and what the successful 20% do differently.</p>
+
+      <h4>Key Data Points</h4>
+      <div class="data-callout">
+        <div class="data-point">
+          <span class="number">80%</span>
+          <span class="label">Abandoned AI tools<br>after 3 weeks</span>
+        </div>
+        <div class="data-point">
+          <span class="number">+40%</span>
+          <span class="label">Higher quality<br>within the competence zone</span>
+        </div>
+        <div class="data-point">
+          <span class="number">-19 pp</span>
+          <span class="label">Worse performance<br>outside the frontier</span>
+        </div>
+      </div>
+
+      <ul>
+        <li><strong>Microsoft Copilot study:</strong> 300,000 employees tracked. 80% abandoned AI tools after three weeks. Not 80% of low performers &mdash; 80% of everyone.</li>
+        <li><strong>BCG-Harvard study (758 consultants):</strong> Within the AI competence zone: +12% more tasks, 25% faster, 40% higher quality. Outside: 19 percentage points <em>worse</em> than without AI.</li>
+        <li><strong>The Jagged Frontier:</strong> AI capabilities don't form a clean line. They're jagged, uneven, and often invisible. "If you don't know where the frontier lies, AI doesn't just fail to help &mdash; it actively degrades your performance."</li>
+      </ul>
+
+      <!-- SVG DIAGRAM: Jagged Frontier -->
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Jagged Frontier diagram shows the irregular boundary between areas where AI excels and where AI struggles">
+          <defs>
+            <linearGradient id="greenZone" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#22c55e" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#22c55e" stop-opacity="0.05"/>
+            </linearGradient>
+            <linearGradient id="redZone" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#ef4444" stop-opacity="0.05"/>
+              <stop offset="100%" stop-color="#ef4444" stop-opacity="0.15"/>
+            </linearGradient>
+          </defs>
+          <!-- Background zones -->
+          <path d="M40,140 Q90,60 140,120 T240,80 T340,130 T440,70 T540,110 T640,90 L660,90 L660,30 L40,30 Z" fill="url(#greenZone)"/>
+          <path d="M40,140 Q90,60 140,120 T240,80 T340,130 T440,70 T540,110 T640,90 L660,90 L660,250 L40,250 Z" fill="url(#redZone)"/>
+          <!-- Jagged frontier line -->
+          <path d="M40,140 Q90,60 140,120 T240,80 T340,130 T440,70 T540,110 T640,90" fill="none" stroke="#001447" stroke-width="3" stroke-dasharray="8,4"/>
+          <!-- Zone labels -->
+          <text x="120" y="52" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#16a34a">AI EXCELS</text>
+          <text x="460" y="235" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#dc2626">AI STRUGGLES</text>
+          <!-- Task dots in the green zone -->
+          <circle cx="100" cy="80" r="8" fill="#22c55e" opacity="0.7"/><text x="100" y="84" font-family="Inter" font-size="7" fill="#fff" text-anchor="middle">Draft</text>
+          <circle cx="200" cy="55" r="8" fill="#22c55e" opacity="0.7"/><text x="200" y="59" font-family="Inter" font-size="7" fill="#fff" text-anchor="middle">Sum.</text>
+          <circle cx="350" cy="95" r="8" fill="#22c55e" opacity="0.7"/><text x="350" y="99" font-family="Inter" font-size="7" fill="#fff" text-anchor="middle">Code</text>
+          <circle cx="500" cy="60" r="8" fill="#22c55e" opacity="0.7"/><text x="500" y="64" font-family="Inter" font-size="7" fill="#fff" text-anchor="middle">Data</text>
+          <circle cx="580" cy="75" r="8" fill="#22c55e" opacity="0.7"/><text x="580" y="79" font-family="Inter" font-size="7" fill="#fff" text-anchor="middle">Transl.</text>
+          <!-- Task dots in the red zone -->
+          <circle cx="160" cy="170" r="8" fill="#ef4444" opacity="0.7"/><text x="160" y="174" font-family="Inter" font-size="6.5" fill="#fff" text-anchor="middle">Ethics</text>
+          <circle cx="300" cy="190" r="8" fill="#ef4444" opacity="0.7"/><text x="300" y="194" font-family="Inter" font-size="6.5" fill="#fff" text-anchor="middle">Novelty</text>
+          <circle cx="430" cy="160" r="8" fill="#ef4444" opacity="0.7"/><text x="430" y="164" font-family="Inter" font-size="6" fill="#fff" text-anchor="middle">Strategy</text>
+          <circle cx="560" cy="185" r="8" fill="#ef4444" opacity="0.7"/><text x="560" y="189" font-family="Inter" font-size="6.5" fill="#fff" text-anchor="middle">Judg.</text>
+          <!-- Ambiguous dots near the line -->
+          <circle cx="260" cy="85" r="6" fill="#f59e0b" opacity="0.8"/><text x="260" y="88" font-family="Inter" font-size="6" fill="#fff" text-anchor="middle">?</text>
+          <circle cx="470" cy="78" r="6" fill="#f59e0b" opacity="0.8"/><text x="470" y="81" font-family="Inter" font-size="6" fill="#fff" text-anchor="middle">?</text>
+          <!-- Legend -->
+          <circle cx="55" cy="268" r="5" fill="#22c55e" opacity="0.7"/>
+          <text x="66" y="272" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">AI excels</text>
+          <circle cx="145" cy="268" r="5" fill="#ef4444" opacity="0.7"/>
+          <text x="156" y="272" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">AI struggles</text>
+          <circle cx="245" cy="268" r="5" fill="#f59e0b" opacity="0.8"/>
+          <text x="256" y="272" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">Unpredictable</text>
+        </svg>
+        <p class="diagram-caption">The Jagged Frontier: AI capabilities form an irregular, unpredictable boundary &mdash; not a clean line.</p>
+      </div>
+
+      <h4>Key Concepts</h4>
+
+      <!-- SVG DIAGRAM: Centaur vs Cyborg -->
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Centaur vs. Cyborg work models">
+          <!-- Panel 1: Centaur -->
+          <rect x="20" y="20" width="310" height="200" rx="12" fill="#f0f3fa" stroke="#c8d0e5" stroke-width="1.5"/>
+          <text x="175" y="50" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#001447" text-anchor="middle">Centaur Work</text>
+          <!-- Human zone -->
+          <rect x="55" y="68" width="240" height="55" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1"/>
+          <text x="175" y="88" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#1e40af" text-anchor="middle">HUMAN</text>
+          <text x="175" y="105" font-family="Inter, sans-serif" font-size="9" fill="#3b82f6" text-anchor="middle">Strategy &middot; Judgment &middot; Direction</text>
+          <!-- Divider line -->
+          <line x1="55" y1="133" x2="295" y2="133" stroke="#001447" stroke-width="2" stroke-dasharray="6,3"/>
+          <text x="175" y="143" font-family="Inter, sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">Clean handoff</text>
+          <!-- AI zone -->
+          <rect x="55" y="150" width="240" height="55" rx="8" fill="#fef3e2" stroke="#fbbf24" stroke-width="1"/>
+          <text x="175" y="170" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#b45309" text-anchor="middle">AI</text>
+          <text x="175" y="187" font-family="Inter, sans-serif" font-size="9" fill="#d97706" text-anchor="middle">Drafting &middot; Research &middot; Execution</text>
+
+          <!-- Panel 2: Cyborg -->
+          <rect x="370" y="20" width="310" height="200" rx="12" fill="#f0f3fa" stroke="#c8d0e5" stroke-width="1.5"/>
+          <text x="525" y="50" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#001447" text-anchor="middle">Cyborg Work</text>
+          <!-- Intertwined stripes -->
+          <rect x="405" y="68" width="240" height="17" rx="4" fill="#dbeafe" stroke="none"/>
+          <rect x="405" y="88" width="240" height="17" rx="4" fill="#fef3e2" stroke="none"/>
+          <rect x="405" y="108" width="240" height="17" rx="4" fill="#dbeafe" stroke="none"/>
+          <rect x="405" y="128" width="240" height="17" rx="4" fill="#fef3e2" stroke="none"/>
+          <rect x="405" y="148" width="240" height="17" rx="4" fill="#dbeafe" stroke="none"/>
+          <rect x="405" y="168" width="240" height="17" rx="4" fill="#fef3e2" stroke="none"/>
+          <!-- Labels on stripes -->
+          <text x="525" y="80" font-family="Inter" font-size="8" fill="#1e40af" text-anchor="middle">Human starts the sentence...</text>
+          <text x="525" y="100" font-family="Inter" font-size="8" fill="#b45309" text-anchor="middle">...AI completes the thought</text>
+          <text x="525" y="120" font-family="Inter" font-size="8" fill="#1e40af" text-anchor="middle">Human refines direction</text>
+          <text x="525" y="140" font-family="Inter" font-size="8" fill="#b45309" text-anchor="middle">AI generates alternatives</text>
+          <text x="525" y="160" font-family="Inter" font-size="8" fill="#1e40af" text-anchor="middle">Human selects &amp; edits</text>
+          <text x="525" y="180" font-family="Inter" font-size="8" fill="#b45309" text-anchor="middle">AI polishes final version</text>
+          <!-- Subtitle -->
+          <text x="525" y="202" font-family="Inter, sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">Fluid, continuous integration</text>
+        </svg>
+        <p class="diagram-caption">Centaur work: clear division of labor with clean handoffs. Cyborg work: continuous human-AI interplay.</p>
+      </div>
+
+      <ul>
+        <li class="concept-item"><strong>Centaur work</strong> &mdash; Clear division of labor. Humans do strategy, AI does drafting. Clean handoffs. Works best for well-defined tasks.</li>
+        <li class="concept-item"><strong>Cyborg work</strong> &mdash; Continuous integration. AI starts a sentence, you finish it. Back and forth, fluid. Works for creative, exploratory work.</li>
+        <li class="concept-item"><strong>The six 201 skills:</strong> Context quality, quality judgment, task decomposition, iterative refinement, workflow integration, frontier awareness &mdash; "These are the same skills that make someone a good leader."</li>
+        <li class="concept-item"><strong>The permission gap</strong> &mdash; Your most conscientious employees drop out first if you don't explicitly create permission to learn, temporarily fail, and experiment.</li>
+      </ul>
+
+      <h4>Live Discussion &mdash; Change Management (Extended Q&amp;A)</h4>
+      <p>This segment sparked the longest discussion of the event. Key threads:</p>
+
+      <div class="pull-quote">
+        <p>"Let the enthusiasts take the others by the hand &mdash; but tell them it requires empathy. Not everyone gets it on the third try. Think of it like teaching a child to walk."</p>
+      </div>
+
+      <ul>
+        <li><strong>On organizational reality:</strong> "If you introduce AI without change management, the result is chaos, not collaboration. 20% will become experts, 20% will coast along, and the majority will say: 'This is nonsense.'"</li>
+        <li><strong>On the performance dip:</strong> "Your best auditor is suddenly no longer the best for three months. If you don't give them permission for that dip, they'll either quit AI or quit their job."</li>
+        <li><strong>On employer boundaries:</strong> "You don't have unlimited responsibility to carry along everyone who refuses. At some point, if someone can't deliver results by any path, that's also a reality."</li>
+      </ul>
+    </article>
+
+    <!-- ===== SEGMENT 05 ===== -->
+    <article class="card fade-in" id="seg05">
+      <div class="card-header">
+        <span class="segment-number">05</span>
+        <div class="card-header-text">
+          <h3>Company Research Exercise</h3>
+          <div class="card-badges">
+            <span class="badge badge-exercise">Exercise</span>
+            <span class="badge badge-duration">30 Min</span>
+          </div>
+          <a href="https://github.com/thwinter-ch/ai-lectures/blob/master/2026_02_07_AIF/segments-de/05-company-research-exercise/README.md" target="_blank" rel="noopener" class="cta-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View Exercise Guide
+          </a>
+        </div>
+      </div>
+      <p>A two-stage AI research workflow that produces board-ready company briefings.</p>
+
+      <h4>Stage 1 &mdash; Deep Research (Perplexity Pro)</h4>
+      <ul>
+        <li>Structured research prompt that generates 30,000+ words of analysis</li>
+        <li>Executive summary, product table, competitor matrix, risk flags with citations</li>
+        <li>Participants researched their own company, clients, or competitors</li>
+      </ul>
+
+      <h4>Stage 2 &mdash; Strategy Synthesis (Claude)</h4>
+      <ul>
+        <li>Feeds Stage 1 output into framework synthesis</li>
+        <li>Produces: Golden Circle (Why/How/What), Business Model Canvas (9 blocks), Value Proposition Canvas (Jobs/Pains/Gains)</li>
+        <li>Output: 10,000-word strategy document with visual aids</li>
+      </ul>
+
+      <h4>Observations from the Live Session</h4>
+      <div class="pull-quote">
+        <p>"If you walk into a first meeting with a complete research brief plus Golden Circle plus BMC plus VPC, you're instantly the hero &mdash; because the client feels you genuinely care about their business."</p>
+      </div>
+      <ul>
+        <li>One participant's research pulled 7,800 sources &mdash; demonstrating both the power and the challenge of "how do you find the signal in the noise?"</li>
+        <li>Discussion about using these as living documents: run monthly, save as Markdown, let AI identify trend shifts quarterly</li>
+      </ul>
+    </article>
+
+    <!-- ===== BREAK ===== -->
+    <div style="text-align:center; padding: 1.5rem 0; color: #9ca3af; font-size: 0.9rem; font-style: italic;">
+      &mdash; Break (15 minutes) &mdash;
+    </div>
+
+    <!-- ===== SEGMENT 06 ===== -->
+    <article class="card fade-in" id="seg06">
+      <div class="card-header">
+        <span class="segment-number">06</span>
+        <div class="card-header-text">
+          <h3>Information Overload + Cognitive Limits</h3>
+          <div class="card-badges">
+            <span class="badge badge-lecture">Lecture</span>
+            <span class="badge badge-duration">15 Min</span>
+          </div>
+          <a href="https://gamma.app/docs/e3131dy593gw4ai" target="_blank" rel="noopener" class="slide-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            Open Slides
+          </a>
+        </div>
+      </div>
+      <p>This segment combined original information overload material with cognitive science research, building the theoretical foundation for the Second Brain exercise.</p>
+
+      <h4>Key Data</h4>
+      <div class="data-callout">
+        <div class="data-point">
+          <span class="number">120+</span>
+          <span class="label">Emails per day<br>for executives</span>
+        </div>
+        <div class="data-point">
+          <span class="number">28%</span>
+          <span class="label">Of the work week<br>spent on email alone</span>
+        </div>
+        <div class="data-point">
+          <span class="number">23 Min</span>
+          <span class="label">To regain focus<br>after an interruption</span>
+        </div>
+      </div>
+
+      <h4>Key Concepts</h4>
+
+      <!-- SVG DIAGRAM: Miller's 7±2 -->
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Miller's Law 7 plus/minus 2: Working memory holds 5 to 9 items">
+          <!-- Title -->
+          <text x="350" y="25" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#001447" text-anchor="middle">Miller's 7&#xB1;2 &mdash; Working Memory Capacity</text>
+          <!-- The 5 dotted circles (lower range) -->
+          <circle cx="130" cy="70" r="22" fill="none" stroke="#002FA8" stroke-width="2" stroke-dasharray="5,3" opacity="0.5"/>
+          <text x="130" y="75" font-family="Inter" font-size="10" fill="#002FA8" text-anchor="middle" opacity="0.6">5</text>
+          <circle cx="190" cy="70" r="22" fill="none" stroke="#002FA8" stroke-width="2" stroke-dasharray="5,3" opacity="0.5"/>
+          <text x="190" y="75" font-family="Inter" font-size="10" fill="#002FA8" text-anchor="middle" opacity="0.6">6</text>
+          <!-- The core 7 circles -->
+          <circle cx="250" cy="70" r="22" fill="#001447" stroke="none"/>
+          <circle cx="310" cy="70" r="22" fill="#001447" stroke="none"/>
+          <circle cx="370" cy="70" r="22" fill="#001447" stroke="none"/>
+          <circle cx="430" cy="70" r="22" fill="#001447" stroke="none"/>
+          <circle cx="490" cy="70" r="22" fill="#001447" stroke="none"/>
+          <!-- Labels inside core circles -->
+          <text x="250" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">1</text>
+          <text x="310" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">2</text>
+          <text x="370" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">3</text>
+          <text x="430" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">4</text>
+          <text x="490" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">5</text>
+          <!-- Additional 2 solid for "7" -->
+          <circle cx="250" cy="70" r="22" fill="#001447"/><text x="250" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">1</text>
+          <circle cx="310" cy="70" r="22" fill="#001447"/><text x="310" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">2</text>
+          <circle cx="370" cy="70" r="22" fill="#001447"/><text x="370" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">3</text>
+          <circle cx="430" cy="70" r="22" fill="#001447"/><text x="430" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">4</text>
+          <circle cx="490" cy="70" r="22" fill="#001447"/><text x="490" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">5</text>
+          <!-- Extra two at edges (solid for 7) -->
+          <circle cx="190" cy="70" r="22" fill="#001E6E" opacity="0.7"/><text x="190" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle">6</text>
+          <circle cx="550" cy="70" r="22" fill="#001E6E" opacity="0.7"/><text x="550" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle">7</text>
+          <!-- Dotted extension circles (+2) -->
+          <circle cx="130" cy="70" r="22" fill="none" stroke="#002FA8" stroke-width="2" stroke-dasharray="5,3" opacity="0.45"/>
+          <text x="130" y="75" font-family="Inter" font-size="10" fill="#002FA8" text-anchor="middle" opacity="0.5">&minus;2</text>
+          <circle cx="610" cy="70" r="22" fill="none" stroke="#002FA8" stroke-width="2" stroke-dasharray="5,3" opacity="0.45"/>
+          <text x="610" y="75" font-family="Inter" font-size="10" fill="#002FA8" text-anchor="middle" opacity="0.5">+2</text>
+          <!-- Range bracket -->
+          <text x="370" y="120" font-family="Inter, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Working memory: 5 to 9 items &mdash; same for everyone</text>
+        </svg>
+        <p class="diagram-caption">Miller's Law: Working memory holds roughly 7 items (&plusmn;2). Even CEOs and geniuses are subject to this constraint.</p>
+      </div>
+
+      <ul>
+        <li class="concept-item"><strong>Miller's 7&plusmn;2 Law</strong> &mdash; Working memory holds roughly 7 items. "Every executive in this room operates in the same 7&plusmn;2 prison. So do Mark Zuckerberg and Einstein."</li>
+        <li class="concept-item"><strong>The Israeli judges study</strong> &mdash; Parole approval rates dropped from 65% after breakfast to nearly 0% before lunch. "Every decision you make in the afternoon is potentially impaired. Not by information asymmetry &mdash; by blood sugar."</li>
+        <li class="concept-item"><strong>Information escape velocity</strong> &mdash; "The leadership advantage used to be access to information. Now it's the escape velocity from information."</li>
+        <li class="concept-item"><strong>Pull instead of push</strong> &mdash; The old model (subscribe to everything, read broadly) broke down when information became infinite. The new model: define the question, let AI do the heavy lifting.</li>
+        <li class="concept-item"><strong>AI as cognitive augmentation</strong> &mdash; Not replacement. The same evolution as writing extending memory, calculators extending arithmetic, search engines extending retrieval.</li>
+      </ul>
+
+      <h4>Insights from the Live Delivery</h4>
+      <ul>
+        <li>Thomas traced the data explosion: from kilobytes (pre-1500) to petabytes (1980s), exabytes (2000s), and zettabytes (today)</li>
+        <li>Link to the previous exercise: "You just produced 80,000 words of research. Who reads that? That is precisely the information management problem."</li>
+        <li>Honest admission: "I told a board seminar in December that personal information management is the one problem I haven't solved. I tried Evernote, OneNote, Capacities &mdash; same results, different logo."</li>
+      </ul>
+    </article>
+
+    <!-- ===== SEGMENT 07 ===== -->
+    <article class="card fade-in" id="seg07">
+      <div class="card-header">
+        <span class="segment-number">07</span>
+        <div class="card-header-text">
+          <h3>Second Brain Exercise</h3>
+          <div class="card-badges">
+            <span class="badge badge-exercise">Exercise</span>
+            <span class="badge badge-duration">25 Min</span>
+          </div>
+          <a href="https://github.com/thwinter-ch/ai-lectures/blob/master/2026_02_07_AIF/segments-de/07-second-brain-exercise/README.md" target="_blank" rel="noopener" class="cta-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View Exercise Guide
+          </a>
+        </div>
+      </div>
+      <p>Participants connected Claude to Notion and built a knowledge capture system.</p>
+
+      <h4>What They Built</h4>
+      <ol>
+        <li>Claude-to-Notion connection (one-click MCP integration)</li>
+        <li>A Notion database with structured fields (topic, tags, source, action items)</li>
+        <li>Auto-push instructions: say "save this" at the end of any Claude conversation and it gets summarized + written to the database</li>
+      </ol>
+
+      <h4>Why This Matters</h4>
+      <div class="pull-quote">
+        <p>"Most knowledge management systems die from friction. This system eliminates the friction."</p>
+      </div>
+      <div class="pull-quote">
+        <p>"If you feed it regularly, patterns emerge. The AI can tell you what topics have been on your mind &mdash; it becomes a mirror of your own thinking."</p>
+      </div>
+
+      <!-- SVG DIAGRAM: Second Brain Flow -->
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Second Brain flow diagram: Input to Classification to Storage to Retrieval">
+          <!-- Step 1: Input -->
+          <rect x="20" y="40" width="130" height="80" rx="10" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+          <text x="85" y="68" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#1e40af" text-anchor="middle">Input</text>
+          <text x="85" y="86" font-family="Inter" font-size="9" fill="#3b82f6" text-anchor="middle">Voice</text>
+          <text x="85" y="99" font-family="Inter" font-size="9" fill="#3b82f6" text-anchor="middle">Text</text>
+          <text x="85" y="112" font-family="Inter" font-size="9" fill="#3b82f6" text-anchor="middle">Photo</text>
+          <!-- Arrow 1 -->
+          <path d="M155,80 L190,80" stroke="#001447" stroke-width="2" marker-end="url(#arrowhead)"/>
+          <!-- Step 2: Classification Agent -->
+          <rect x="195" y="40" width="150" height="80" rx="10" fill="#fef3e2" stroke="#fbbf24" stroke-width="1.5"/>
+          <text x="270" y="68" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#b45309" text-anchor="middle">Classification</text>
+          <text x="270" y="86" font-family="Inter" font-size="9" fill="#d97706" text-anchor="middle">AI Agent</text>
+          <text x="270" y="102" font-family="Inter" font-size="8" fill="#d97706" text-anchor="middle">(auto tagging &amp; summarizing)</text>
+          <!-- Arrow 2 -->
+          <path d="M350,80 L385,80" stroke="#001447" stroke-width="2" marker-end="url(#arrowhead)"/>
+          <!-- Step 3: Notion Database -->
+          <rect x="390" y="40" width="140" height="80" rx="10" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+          <text x="460" y="68" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#059669" text-anchor="middle">Notion DB</text>
+          <text x="460" y="86" font-family="Inter" font-size="9" fill="#10b981" text-anchor="middle">Tagged &amp;</text>
+          <text x="460" y="99" font-family="Inter" font-size="9" fill="#10b981" text-anchor="middle">structured</text>
+          <!-- Arrow 3 -->
+          <path d="M535,80 L570,80" stroke="#001447" stroke-width="2" marker-end="url(#arrowhead)"/>
+          <!-- Step 4: AI Retrieval -->
+          <rect x="575" y="40" width="110" height="80" rx="10" fill="#f3e8ff" stroke="#c084fc" stroke-width="1.5"/>
+          <text x="630" y="68" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#7c3aed" text-anchor="middle">AI-Powered</text>
+          <text x="630" y="86" font-family="Inter" font-size="9" fill="#8b5cf6" text-anchor="middle">Retrieval</text>
+          <text x="630" y="102" font-family="Inter" font-size="8" fill="#8b5cf6" text-anchor="middle">&amp; Insights</text>
+          <!-- Arrowhead marker -->
+          <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#001447"/>
+            </marker>
+          </defs>
+          <!-- Bottom label -->
+          <text x="350" y="148" font-family="Inter, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">From capture to insight &mdash; without friction</text>
+        </svg>
+        <p class="diagram-caption">Second Brain architecture: inputs flow through AI classification into a structured Notion database for retrieval.</p>
+      </div>
+
+      <h4>Challenges and Workarounds from the Live Session</h4>
+      <ul>
+        <li>Some participants couldn't access the microphone in browser-based Claude &mdash; the mobile app worked as a fallback</li>
+        <li>ChatGPT users discovered it can read from Notion but not write (an OpenAI product decision, not a technical limitation)</li>
+        <li>Thomas helped several participants with connector setup &mdash; "These connectors can be stubborn sometimes"</li>
+        <li>Discussion about Wispr Flow as an alternative input method for voice capture</li>
+      </ul>
+
+      <h4>The Telegram Demo</h4>
+      <p>Thomas showed his own advanced setup: a Telegram channel where voice messages, photos, and text are automatically classified by a serverless function and written to a tagged Notion database. "This is one small step beyond what you just built. I just narrowed the interface and added automatic classification."</p>
+    </article>
+
+    <!-- ===== SEGMENT 08 ===== -->
+    <article class="card fade-in" id="seg08">
+      <div class="card-header">
+        <span class="segment-number">08</span>
+        <div class="card-header-text">
+          <h3>Outlook &amp; Reality Check</h3>
+          <div class="card-badges">
+            <span class="badge badge-lecture">Lecture</span>
+            <span class="badge badge-demo">Demo</span>
+            <span class="badge badge-duration">20 Min</span>
+          </div>
+          <a href="https://gamma.app/docs/twkfm2mwi1334ud" target="_blank" rel="noopener" class="slide-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            Open Slides
+          </a>
+        </div>
+      </div>
+      <p>The closing segment combined live demos of advanced AI capabilities with important warnings about security and sovereignty.</p>
+
+      <h4>Part A &mdash; Live Demos</h4>
+
+      <p><strong>1. Lecture as Code</strong> &mdash; Showed how a participant's bug report was fixed with Claude Code in real time: "The participant said a link was broken. I told Claude to look into it. Within 2 minutes the public repository was updated and the connection repaired."</p>
+
+      <p><strong>2. Hugo (OpenClaw Agent)</strong> &mdash; Demonstration of an autonomous AI agent that:</p>
+      <ul>
+        <li>Manages its own LinkedIn channel</li>
+        <li>Generated a social media post about the lecture in real time</li>
+        <li>Used the Gemini API to create a custom image</li>
+        <li>Can be scheduled for automated posting via Typefully</li>
+        <li>Has been paper-trading crypto on an Alpaca API account for 2 days</li>
+      </ul>
+
+      <p><strong>3. Personalized Meeting Summaries</strong> &mdash; Showed an n8n workflow that:</p>
+      <ul>
+        <li>Takes meeting transcripts + participant profiles + areas of interest</li>
+        <li>Produces individualized summaries for each participant</li>
+        <li>"Each person gets their own infographic and personalized key takeaways"</li>
+      </ul>
+
+      <h4>Part B &mdash; Reality Check</h4>
+
+      <p><strong>4. Data Sovereignty &amp; the Cloud Act:</strong></p>
+      <ul>
+        <li>"The Cloud Act is not the reason not to go to the cloud. It stands for 'Clarifying Lawful Overseas Use of Data' &mdash; 95% of requests are rejected by cloud providers."</li>
+        <li>For criminal threats: major cloud providers offer better security than most mid-sized companies can build themselves</li>
+        <li>For state-level threats: different calculus. FISA 702, National Security Letters operate without public disclosure</li>
+        <li>"For 90% of use cases, the major providers are fine. For regulated industries with competitive IP that could clash with a powerful American company &mdash; there you need full sovereignty."</li>
+        <li>Practical Swiss context: FINMA has approved most cloud usage for banks. Data residency requirements exist but are manageable. Private banks are typically stricter by choice, not regulation.</li>
+      </ul>
+
+      <div class="pull-quote">
+        <p>"Treat AI chats like emails to Jeffrey Epstein. Don't plan crimes with ChatGPT &mdash; chat logs can be subpoenaed."</p>
+      </div>
+
+      <p><strong>6. Password Hygiene:</strong></p>
+      <ul>
+        <li>Unique password per application (auto-generated)</li>
+        <li>Password manager (1Password, NordPass, or Dashlane &mdash; not browser-based)</li>
+        <li>Two-factor authentication everywhere</li>
+        <li>API keys: separate per application, rotate on leak</li>
+        <li>Real-world case: the Colonial Pipeline hack started with a single default password (test123)</li>
+      </ul>
+    </article>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== Q&A SECTION ===== -->
+  <section class="section fade-in" id="qa">
+    <h2>Q&amp;A and Discussion Highlights</h2>
+    <p>The session was highly interactive throughout. Key discussion threads:</p>
+
+    <article class="card">
+      <h3>Change Management and AI Adoption</h3>
+      <ul>
+        <li><strong>The enthusiasm gap:</strong> Intrinsically motivated people find AI playful and see benefits. Those who feel it's imposed look for flaws and reasons not to use it.</li>
+        <li><strong>Reverse mentoring recipe:</strong> Pair enthusiasts with skeptics, but demand empathy from the young enthusiasts &mdash; "You need to treat it like teaching a child to walk, not like debugging code"</li>
+        <li><strong>The 80% reality:</strong> Like every technology adoption &mdash; Teams, Zoom, all had the same adoption curve. "No change management budget" is the first thing that gets cut, and then people wonder why adoption stalls.</li>
+      </ul>
+    </article>
+
+    <article class="card fade-in">
+      <h3>Tool Selection and Platform Decisions</h3>
+      <ul>
+        <li>Claude Pro for Notion write access (ChatGPT can only read)</li>
+        <li>Perplexity Pro for web research with citations</li>
+        <li>Gemini for image generation and YouTube video interpretation</li>
+        <li>Claude Code for anything requiring local machine access</li>
+        <li>"I try to stay platform-agnostic where possible. Each tool has its sweet spot."</li>
+      </ul>
+    </article>
+
+    <article class="card fade-in">
+      <h3>The "Next Level" Conversation</h3>
+      <ul>
+        <li>Several participants asked about building autonomous agents (OpenClaw)</li>
+        <li>Thomas' honest assessment: "The user experience isn't mature enough for a business audience yet. But it's coming."</li>
+        <li>He only started building his own VPS and Docker container two weeks before the lecture &mdash; "I'm an engineer, but I hadn't coded in 20 years. Claude Code taught me."</li>
+      </ul>
+    </article>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== EXERCISE REFERENCE ===== -->
+  <section class="section fade-in" id="exercises">
+    <h2>Exercise Quick Reference</h2>
+    <div class="exercise-grid">
+      <div class="exercise-card">
+        <span class="time-badge">20 Min</span>
+        <h4>Writing Profile</h4>
+        <p>Creates a personal voice profile document that teaches AI your style. Uses the Ruben Hassid method with a 10-question self-interview across 7 communication categories.</p>
+        <a href="https://github.com/thwinter-ch/ai-lectures/blob/master/2026_02_07_AIF/segments-de/03-writing-profile-exercise/README.md" target="_blank" rel="noopener" class="cta-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          View Guide
+        </a>
+      </div>
+      <div class="exercise-card">
+        <span class="time-badge">45 Min</span>
+        <h4>Company Research</h4>
+        <p>Two-stage AI research for board-ready company briefings. Stage 1: Deep Research with Perplexity. Stage 2: Strategy Synthesis with Claude (Golden Circle + BMC + VPC).</p>
+        <a href="https://github.com/thwinter-ch/ai-lectures/blob/master/2026_02_07_AIF/segments-de/05-company-research-exercise/README.md" target="_blank" rel="noopener" class="cta-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          View Guide
+        </a>
+      </div>
+      <div class="exercise-card">
+        <span class="time-badge">25 Min</span>
+        <h4>Second Brain</h4>
+        <p>Connects Claude to Notion for automatic knowledge capture. Build a structured database with auto-push, tagging, and AI-powered retrieval of your collected knowledge.</p>
+        <a href="https://github.com/thwinter-ch/ai-lectures/blob/master/2026_02_07_AIF/segments-de/07-second-brain-exercise/README.md" target="_blank" rel="noopener" class="cta-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          View Guide
+        </a>
+      </div>
+    </div>
+
+    <h3>Slide Decks</h3>
+    <div class="deck-grid">
+      <a href="https://gamma.app/docs/01-Wie-ich-diese-Vorlesung-erstellt-habe-atjj9amvea35m4a" target="_blank" rel="noopener" class="deck-card">
+        <div>
+          <span class="deck-label">Segment 01</span>
+          <div class="deck-title">How I Built This</div>
+        </div>
+        <span class="deck-btn">
+          Open Slides
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
+      <a href="https://gamma.app/docs/02-Die-Technologie-Revolution-myy1vq3y7d4x16s" target="_blank" rel="noopener" class="deck-card">
+        <div>
+          <span class="deck-label">Segment 02</span>
+          <div class="deck-title">The Technology Revolution</div>
+        </div>
+        <span class="deck-btn">
+          Open Slides
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
+      <a href="https://gamma.app/docs/v5gsyrz3bf5anxo" target="_blank" rel="noopener" class="deck-card">
+        <div>
+          <span class="deck-label">Segment 04</span>
+          <div class="deck-title">AI as a Leadership Skill</div>
+        </div>
+        <span class="deck-btn">
+          Open Slides
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
+      <a href="https://gamma.app/docs/e3131dy593gw4ai" target="_blank" rel="noopener" class="deck-card">
+        <div>
+          <span class="deck-label">Segment 06</span>
+          <div class="deck-title">Information Overload</div>
+        </div>
+        <span class="deck-btn">
+          Open Slides
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
+      <a href="https://gamma.app/docs/twkfm2mwi1334ud" target="_blank" rel="noopener" class="deck-card">
+        <div>
+          <span class="deck-label">Segment 08</span>
+          <div class="deck-title">Outlook &amp; Reality Check</div>
+        </div>
+        <span class="deck-btn">
+          Open Slides
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== TOOLS & RESOURCES ===== -->
+  <section class="section fade-in" id="tools">
+    <h2>Tools &amp; Resources</h2>
+    <h3>The Tech Stack Used</h3>
+    <div class="tool-grid">
+      <div class="tool-card">
+        <h4>Claude Pro</h4>
+        <p>Primary AI assistant + Notion connector</p>
+        <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>Perplexity Pro</h4>
+        <p>Web research with citations</p>
+        <a href="https://perplexity.ai" target="_blank" rel="noopener">perplexity.ai &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>Notion</h4>
+        <p>Second Brain database</p>
+        <a href="https://notion.so" target="_blank" rel="noopener">notion.so &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>Claude Code</h4>
+        <p>Built the lecture, live debugging</p>
+        <a href="https://claude.ai/claude-code" target="_blank" rel="noopener">claude.ai/claude-code &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>Gamma</h4>
+        <p>Slide creation from text prompts</p>
+        <a href="https://gamma.app" target="_blank" rel="noopener">gamma.app &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>Wispr Flow</h4>
+        <p>Voice-to-text capture</p>
+        <a href="https://wispr.ai" target="_blank" rel="noopener">wispr.ai &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>Optiverse</h4>
+        <p>Swiss meeting transcription (Swiss German capable)</p>
+        <a href="https://optiverse.ch" target="_blank" rel="noopener">optiverse.ch &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>n8n</h4>
+        <p>Workflow automation</p>
+        <a href="https://n8n.io" target="_blank" rel="noopener">n8n.io &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>OpenClaw</h4>
+        <p>Autonomous AI agents (Hugo)</p>
+        <a href="https://openclaw.com" target="_blank" rel="noopener">openclaw.com &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>Typefully</h4>
+        <p>Social media scheduling</p>
+        <a href="https://typefully.com" target="_blank" rel="noopener">typefully.com &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>1Password</h4>
+        <p>Password management</p>
+        <a href="https://1password.com" target="_blank" rel="noopener">1password.com &rarr;</a>
+      </div>
+    </div>
+
+    <h3>Recommended Next Steps</h3>
+    <ol class="steps-list">
+      <li><strong>This week:</strong> Use your Writing Profile in 3 different AI conversations. Notice where it's thin and refine it.</li>
+      <li><strong>This month:</strong> Run the company research exercise for a real client or competitor before your next important meeting.</li>
+      <li><strong>Ongoing:</strong> Feed your Second Brain daily. After a week, ask Claude: "What topics have been on my mind?"</li>
+      <li><strong>For the ambitious:</strong> Explore Claude Code (terminal-based) for tasks requiring local machine access.</li>
+      <li><strong>For teams:</strong> Consider the "reverse mentoring" approach &mdash; pair AI enthusiasts with skeptics, give both permission to learn.</li>
+    </ol>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== WHAT I WISH I'D KNOWN ===== -->
+  <section class="section fade-in" id="tips">
+    <h2>What I Wish I'd Known</h2>
+    <p>Practical tips from the live delivery:</p>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <span class="tip-number">1</span>
+        <p><strong>The Notion connector is fragile</strong> &mdash; Plan extra time for setup. Some participants needed 10+ minutes just for the MCP authorization flow.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-number">2</span>
+        <p><strong>ChatGPT can't write to Notion</strong> &mdash; Only Claude and Perplexity have native write connectors. This surprised several ChatGPT Plus subscribers.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-number">3</span>
+        <p><strong>Prompt output length matters</strong> &mdash; 30,000-word research outputs can overwhelm some tools. Start with 5,000-word summaries for quick results; go deep only when needed.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-number">4</span>
+        <p><strong>Voice input varies by platform</strong> &mdash; Claude in the browser sometimes lacks microphone access. The mobile app works. Wispr Flow is a workaround for desktop voice input.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-number">5</span>
+        <p><strong>Gamma slides need full screen</strong> &mdash; Thomas spent part of the lecture figuring out how Gamma presents in full screen. Download as PDF or use the native presentation mode.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-number">6</span>
+        <p><strong>The real value is in stage two</strong> &mdash; Deep Research is impressive but overwhelming. The Strategy Synthesis (Golden Circle + BMC + VPC) makes it actionable.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-number">7</span>
+        <p><strong>Run monthly, evaluate quarterly</strong> &mdash; Save research outputs as Markdown files. Run them monthly. Let AI identify trend shifts quarterly. The compound effect is enormous.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== KEY QUOTES ===== -->
+  <section class="section fade-in" id="quotes">
+    <h2>Key Quotes from the Session</h2>
+
+    <div class="key-quote-block">
+      <p>"AI gives you draft 7 instead of draft 1. You still need to get to draft 10."</p>
+    </div>
+
+    <div class="key-quote-block">
+      <p>"The bottleneck has shifted. The question used to be: 'Can AI do this?' Now it's: 'Can you articulate clearly enough to delegate?'"</p>
+    </div>
+
+    <div class="key-quote-block">
+      <p>"The 80% who quit expected a better search engine. The 20% who stayed understood they were managing a capable but unreliable team member."</p>
+    </div>
+
+    <div class="key-quote-block">
+      <p>"The leadership advantage used to be access to information. Now it's the escape velocity from information."</p>
+    </div>
+
+    <div class="key-quote-block">
+      <p>"Treat AI chats like emails to Jeffrey Epstein."</p>
+    </div>
+
+    <div class="key-quote-block">
+      <p>"The Cloud Act is not your enemy. The Cloud Act stands for 'Clarifying Lawful Overseas Use of Data.' 95% of requests are rejected."</p>
+    </div>
+
+    <div class="key-quote-block">
+      <p>"Explain it to me like I'm a complete idiot &mdash; because I can't figure out what you're trying to tell me."</p>
+    </div>
+
+    <p style="text-align: center; font-size: 0.85rem; color: #9ca3af; font-style: italic; margin-top: 0.5rem;">&mdash; On his favorite Claude Code prompt</p>
+  </section>
+
+  <!-- ===== PROVENANCE NOTE ===== -->
+  <section class="section fade-in" style="text-align: center; padding: 2rem 0; color: #9ca3af; font-size: 0.9rem; font-style: italic;">
+    <p>This recap was created based on the Gemini live transcript, the Optiverse summary, the prepared lecture scripts, and the exercise materials. The lecture recording is available to enrolled students.</p>
+  </section>
+
+</div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p style="font-family: 'Inter', sans-serif; font-size: 1.2rem; color: #ffffff; margin-bottom: 0.25rem;">AI Productivity Hacks for Leaders</p>
+  <p>CAS AI in Finance &mdash; HWZ Z&uuml;rich &mdash; February 7, 2026</p>
+  <div class="footer-divider"></div>
+  <p>
+    Repository: <a href="https://github.com/thwinter-ch/ai-lectures/tree/master/2026_02_07_AIF" target="_blank" rel="noopener">github.com/thwinter-ch/ai-lectures</a>
+  </p>
+  <p style="font-size: 0.8rem; margin-top: 1rem; color: rgba(255,255,255,0.35);">
+    Built with AI-powered workflows &mdash; the same tools taught in this lecture.
+  </p>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  // ===== Scroll-based fade-in with IntersectionObserver =====
+  (function() {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.fade-in').forEach(function(el) {
+      observer.observe(el);
+    });
+  })();
+
+  // ===== Nav shadow on scroll =====
+  (function() {
+    var nav = document.getElementById('navbar');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 20) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  })();
+
+  // ===== Mobile nav toggle =====
+  (function() {
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', function() {
+      toggle.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+
+    // Close menu when a link is clicked
+    links.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        toggle.classList.remove('open');
+        links.classList.remove('open');
+      });
+    });
+  })();
+
+  // ===== Smooth scroll for nav links (fallback for browsers without CSS smooth scroll) =====
+  (function() {
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        var targetId = this.getAttribute('href');
+        var target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          var offset = 70; // nav height
+          var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
