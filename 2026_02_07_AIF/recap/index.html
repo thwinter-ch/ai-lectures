@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KI-Produktivitäts-Hacks für Führungskräfte — Vorlesungs-Recap</title>
+  <meta name="description" content="Recap der CAS AI in Finance Vorlesung an der HWZ Zürich, 7. Februar 2026. KI-Produktivität, Writing Profiles, Unternehmensrecherche-Workflows und der Aufbau eines Second Brain.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #001447;
+      background: #ffffff;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: #001E6E; text-decoration: none; transition: color 0.2s ease; }
+    a:hover { color: #002FA8; }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4 { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #001447; line-height: 1.25; }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; }
+    h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 600; margin-bottom: 1rem; }
+    h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 600; margin-bottom: 0.75rem; }
+    h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    p { margin-bottom: 1rem; font-size: 1.05rem; }
+    strong { font-weight: 600; }
+    ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.4rem; font-size: 1.05rem; }
+    li::marker { color: #002FA8; }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(0, 20, 71, 0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 47, 168, 0.15);
+      transition: box-shadow 0.3s ease;
+    }
+    .nav.scrolled { box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15); }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 60px;
+    }
+    .nav-brand {
+      font-family: 'Inter', sans-serif; font-weight: 700;
+      font-size: 1.1rem; color: #ffffff; white-space: nowrap;
+    }
+    .nav-links { display: flex; gap: 0.15rem; align-items: center; }
+    .nav-links > a {
+      color: rgba(255,255,255,0.7); font-size: 0.8rem; font-weight: 500;
+      padding: 0.4rem 0.7rem; border-radius: 6px;
+      transition: all 0.2s ease; white-space: nowrap;
+    }
+    .nav-links > a:hover { color: #ffffff; background: rgba(255,255,255,0.1); }
+    /* Segments dropdown */
+    .nav-dropdown {
+      position: relative;
+    }
+    .nav-dropdown-trigger {
+      color: rgba(255,255,255,0.7); font-size: 0.8rem; font-weight: 500;
+      padding: 0.4rem 0.7rem; border-radius: 6px;
+      transition: all 0.2s ease; white-space: nowrap;
+      cursor: pointer; background: none; border: none; font-family: inherit;
+      display: flex; align-items: center; gap: 0.3rem;
+    }
+    .nav-dropdown-trigger:hover { color: #ffffff; background: rgba(255,255,255,0.1); }
+    .nav-dropdown-trigger svg { width: 10px; height: 10px; transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu {
+      display: none; position: absolute; top: calc(100% + 0.5rem); left: 50%; transform: translateX(-50%);
+      background: rgba(0, 20, 71, 0.98); border: 1px solid rgba(0, 47, 168, 0.2);
+      border-radius: 10px; padding: 0.5rem; min-width: 220px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a {
+      display: block; color: rgba(255,255,255,0.7); font-size: 0.8rem; font-weight: 500;
+      padding: 0.45rem 0.75rem; border-radius: 6px;
+      transition: all 0.2s ease; white-space: nowrap;
+    }
+    .nav-dropdown-menu a:hover { color: #ffffff; background: rgba(255,255,255,0.1); }
+    .nav-toggle {
+      display: none; background: none; border: none; cursor: pointer;
+      width: 28px; height: 20px; position: relative; z-index: 1001;
+    }
+    .nav-toggle span {
+      display: block; width: 100%; height: 2px; background: #ffffff;
+      position: absolute; left: 0; transition: all 0.3s ease;
+    }
+    .nav-toggle span:nth-child(1) { top: 0; }
+    .nav-toggle span:nth-child(2) { top: 9px; }
+    .nav-toggle span:nth-child(3) { top: 18px; }
+    .nav-toggle.open span:nth-child(1) { transform: rotate(45deg); top: 9px; }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg); top: 9px; }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #001447 0%, #001E6E 40%, #002FA8 100%);
+      padding: 10rem 2rem 5rem;
+      text-align: center; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(0, 47, 168, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(0, 47, 168, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+    .hero-label {
+      display: inline-block; font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(255,255,255,0.85); margin-bottom: 1.5rem;
+      padding: 0.4rem 1.2rem; border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 100px;
+    }
+    .hero h1 { color: #ffffff; margin-bottom: 1.5rem; }
+    .hero-meta {
+      color: rgba(255,255,255,0.6); font-size: 1.05rem; line-height: 1.8;
+    }
+    .hero-meta strong { color: rgba(255,255,255,0.85); }
+    .hero-divider {
+      width: 60px; height: 3px; background: #ffffff;
+      margin: 2rem auto 0; border-radius: 2px;
+    }
+
+    /* ===== MAIN LAYOUT ===== */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+    main { padding-top: 3rem; padding-bottom: 4rem; }
+
+    /* ===== SECTIONS ===== */
+    .section { margin-bottom: 4rem; }
+    .section.fade-in {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .section.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== SECTION DIVIDER ===== */
+    .section-divider {
+      width: 100%; height: 1px;
+      background: linear-gradient(to right, transparent, #c8d0e5, transparent);
+      margin: 3rem 0;
+    }
+
+    /* ===== CARDS ===== */
+    .card {
+      background: #ffffff;
+      border: 1px solid #dde3f0;
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .card:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+      transform: translateY(-2px);
+    }
+    .card-header {
+      display: flex; align-items: flex-start; gap: 1rem;
+      margin-bottom: 1.5rem; flex-wrap: wrap;
+    }
+    .segment-number {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px; min-width: 44px;
+      background: linear-gradient(135deg, #001447, #001E6E);
+      color: #ffffff; font-weight: 700; font-size: 0.9rem;
+      border-radius: 10px; font-family: 'Inter', sans-serif;
+    }
+    .card-header-text { flex: 1; }
+    .card-badges { display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap; }
+    .badge {
+      display: inline-block; font-size: 0.72rem; font-weight: 600;
+      padding: 0.25rem 0.7rem; border-radius: 100px;
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .badge-lecture { background: #eef2ff; color: #4338ca; }
+    .badge-exercise { background: #fef3e2; color: #b45309; }
+    .badge-demo { background: #ecfdf5; color: #059669; }
+    .badge-duration { background: #f3f4f6; color: #6b7280; }
+
+    .slide-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.82rem; font-weight: 600; color: #002FA8;
+      padding: 0.4rem 1rem; border: 1px solid rgba(0, 47, 168, 0.3);
+      border-radius: 8px; transition: all 0.2s ease; margin-top: 0.5rem;
+    }
+    .slide-btn:hover {
+      background: rgba(0, 47, 168, 0.08); color: #001E6E;
+      border-color: rgba(0, 47, 168, 0.5);
+    }
+    .slide-btn svg { width: 14px; height: 14px; }
+
+    /* ===== PULL QUOTES ===== */
+    .pull-quote {
+      border-left: 4px solid #002FA8;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      background: linear-gradient(135deg, #f5f7ff, #eef2ff);
+      border-radius: 0 8px 8px 0;
+    }
+    .pull-quote p {
+      font-family: 'Inter', sans-serif;
+      font-style: italic; font-size: 1.15rem;
+      color: #001447; line-height: 1.6; margin-bottom: 0;
+    }
+
+    /* ===== KEY QUOTES SECTION ===== */
+    .key-quote-block {
+      text-align: center; padding: 2.5rem 2rem; margin-bottom: 2rem;
+      position: relative;
+    }
+    .key-quote-block::before {
+      content: '\201C';
+      font-family: 'Inter', sans-serif;
+      font-size: 5rem; color: rgba(0, 47, 168, 0.2);
+      position: absolute; top: -0.5rem; left: 50%; transform: translateX(-50%);
+      line-height: 1;
+    }
+    .key-quote-block p {
+      font-family: 'Inter', sans-serif;
+      font-style: italic; font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      color: #001447; line-height: 1.5;
+      max-width: 680px; margin: 0 auto;
+    }
+
+    /* ===== CONCEPT LIST ===== */
+    .concept-item { margin-bottom: 0.8rem; }
+    .concept-item strong { color: #001447; }
+
+    /* ===== DATA CALLOUT ===== */
+    .data-callout {
+      display: flex; gap: 1.5rem; flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+    .data-point {
+      flex: 1; min-width: 180px;
+      background: #f0f3fa; border-radius: 10px;
+      padding: 1.25rem; text-align: center;
+    }
+    .data-point .number {
+      font-family: 'Inter', sans-serif;
+      font-size: 2rem; font-weight: 700;
+      color: #002FA8; display: block;
+    }
+    .data-point .label {
+      font-size: 0.85rem; color: #6b7280; margin-top: 0.25rem;
+    }
+
+    /* ===== EXERCISE TABLE ===== */
+    .exercise-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+    .exercise-card {
+      background: #ffffff; border: 1px solid #dde3f0;
+      border-radius: 12px; padding: 1.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex; flex-direction: column;
+    }
+    .exercise-card h4 { color: #001447; margin-bottom: 0.5rem; }
+    .exercise-card p { font-size: 0.95rem; color: #555; flex: 1; }
+    .exercise-card .time-badge {
+      display: inline-block; font-size: 0.75rem; font-weight: 600;
+      color: #002FA8; margin-bottom: 0.75rem;
+    }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: linear-gradient(135deg, #001447, #001E6E);
+      color: #ffffff; font-weight: 600; font-size: 0.85rem;
+      padding: 0.65rem 1.25rem; border-radius: 8px;
+      transition: all 0.25s ease; margin-top: 1rem; align-self: flex-start;
+    }
+    .cta-btn:hover {
+      color: #ffffff; transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 20, 71, 0.3);
+    }
+    .cta-btn svg { width: 14px; height: 14px; }
+
+    /* ===== SLIDE DECK GRID ===== */
+    .deck-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .deck-card {
+      background: linear-gradient(135deg, #001447, #001E6E);
+      border-radius: 10px; padding: 1.5rem;
+      color: #ffffff; transition: all 0.25s ease;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .deck-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0, 20, 71, 0.3); }
+    .deck-card .deck-label {
+      font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.7);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;
+    }
+    .deck-card .deck-title {
+      font-family: 'Inter', sans-serif; font-size: 1rem;
+      font-weight: 600; margin-bottom: 1rem; line-height: 1.3;
+    }
+    .deck-card .deck-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: #ffffff; font-size: 0.8rem; font-weight: 600;
+      transition: color 0.2s ease;
+    }
+    .deck-card .deck-btn:hover { color: rgba(255,255,255,0.8); }
+    .deck-card .deck-btn svg { width: 14px; height: 14px; }
+
+    /* ===== TOOL GRID ===== */
+    .tool-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .tool-card {
+      background: #f5f7fc; border: 1px solid #dde3f0;
+      border-radius: 10px; padding: 1.25rem;
+      transition: all 0.25s ease;
+    }
+    .tool-card:hover { border-color: #002FA8; box-shadow: 0 4px 12px rgba(0, 47, 168, 0.1); }
+    .tool-card h4 { font-family: 'Inter', sans-serif; font-size: 0.95rem; margin-bottom: 0.35rem; }
+    .tool-card p { font-size: 0.85rem; color: #6b7280; margin-bottom: 0.5rem; }
+    .tool-card a { font-size: 0.8rem; font-weight: 600; }
+
+    /* ===== NEXT STEPS ===== */
+    .steps-list { counter-reset: step-counter; list-style: none; padding-left: 0; }
+    .steps-list li {
+      counter-increment: step-counter;
+      position: relative; padding-left: 3rem; margin-bottom: 1.25rem;
+    }
+    .steps-list li::before {
+      content: counter(step-counter);
+      position: absolute; left: 0; top: 0;
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, #002FA8, #0035C0);
+      color: #ffffff; font-weight: 700; font-size: 0.85rem;
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-family: 'Inter', sans-serif;
+    }
+
+    /* ===== TIPS GRID ===== */
+    .tips-grid {
+      display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1.5rem 0;
+    }
+    .tip-card {
+      background: #f5f7ff; border: 1px solid #d5dced;
+      border-radius: 10px; padding: 1.25rem 1.5rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .tip-number {
+      display: flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; min-width: 28px;
+      background: #002FA8; color: #ffffff; font-weight: 700;
+      font-size: 0.75rem; border-radius: 50%;
+    }
+    .tip-card p { margin-bottom: 0; font-size: 0.95rem; }
+
+    /* ===== SVG DIAGRAMS ===== */
+    .diagram-container {
+      margin: 2rem 0; background: #f5f7fc;
+      border: 1px solid #dde3f0; border-radius: 12px;
+      padding: 2rem; text-align: center;
+    }
+    .diagram-container svg { max-width: 100%; height: auto; margin: 0 auto; display: block; }
+    .diagram-caption {
+      font-size: 0.85rem; color: #6b7280; margin-top: 1rem;
+      font-style: italic;
+    }
+
+    /* ===== OVERVIEW BOX ===== */
+    .overview-box {
+      background: linear-gradient(135deg, #f5f7fc, #e8edf8);
+      border: 1px solid #dde3f0;
+      border-radius: 12px;
+      padding: 2rem 2.5rem;
+      margin: 2rem 0;
+    }
+    .overview-box h3 { margin-bottom: 1rem; }
+    .overview-box ol { padding-left: 1.25rem; }
+
+    .thesis-box {
+      background: linear-gradient(135deg, #001447, #001E6E);
+      color: #ffffff; border-radius: 12px;
+      padding: 2rem 2.5rem; margin: 2rem 0;
+    }
+    .thesis-box strong { color: #ffffff; }
+    .thesis-box p { color: rgba(255,255,255,0.9); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #002FA8; color: rgba(255,255,255,0.6);
+      padding: 3rem 2rem; text-align: center;
+    }
+    footer a { color: #ffffff; }
+    footer a:hover { color: rgba(255,255,255,0.8); }
+    footer p { font-size: 0.9rem; margin-bottom: 0.5rem; }
+    .footer-divider {
+      width: 40px; height: 2px; background: rgba(255, 255, 255, 0.3);
+      margin: 1.5rem auto;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 60px; left: 0; right: 0;
+        background: rgba(0, 20, 71, 0.98);
+        padding: 1rem; gap: 0;
+        border-bottom: 1px solid rgba(0, 47, 168, 0.15);
+        max-height: calc(100vh - 60px); overflow-y: auto;
+      }
+      .nav-links.open > a, .nav-links.open .nav-dropdown-trigger { padding: 0.75rem 1rem; font-size: 0.9rem; width: 100%; }
+      .nav-links.open .nav-dropdown-menu {
+        display: block; position: static; transform: none;
+        background: rgba(0, 47, 168, 0.1); border: none; box-shadow: none;
+        padding: 0 0 0 1rem; min-width: 0;
+      }
+      .nav-links.open .nav-dropdown-menu a { padding: 0.6rem 1rem; font-size: 0.85rem; }
+      .nav-toggle { display: block; }
+      .hero { padding: 8rem 1.5rem 3.5rem; }
+      .card { padding: 1.5rem; }
+      .data-callout { flex-direction: column; }
+      .deck-grid { grid-template-columns: 1fr 1fr; }
+      .tool-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .deck-grid { grid-template-columns: 1fr; }
+      .nav-brand { font-size: 0.95rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print {
+      .nav, .nav-toggle { display: none !important; }
+      .hero { padding: 2rem; background: #f5f5f5 !important; }
+      .hero h1, .hero-meta, .hero-label { color: #001447 !important; }
+      .card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+      .deck-card { background: #f5f5f5 !important; color: #001447 !important; }
+      .thesis-box { background: #f5f5f5 !important; color: #001447 !important; }
+      body { font-size: 11pt; }
+      .section.fade-in { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="navbar">
+  <div class="nav-inner">
+    <span class="nav-brand">KI-Produktivitäts-Hacks</span>
+    <button class="nav-toggle" id="navToggle" aria-label="Navigation umschalten">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#overview">Überblick</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger">Segmente <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a href="#seg01">01 — How I Built This</a>
+          <a href="#seg02">02 — Tech-Revolution</a>
+          <a href="#seg03">03 — Writing Profile</a>
+          <a href="#seg04">04 — KI als Führungskompetenz</a>
+          <a href="#seg05">05 — Unternehmensrecherche</a>
+          <a href="#seg06">06 — Kognitive Grenzen</a>
+          <a href="#seg07">07 — Second Brain</a>
+          <a href="#seg08">08 — Ausblick & Reality Check</a>
+        </div>
+      </div>
+      <a href="#qa">Q&amp;A</a>
+      <a href="#exercises">Übungen</a>
+      <a href="#tools">Tools</a>
+      <a href="#quotes">Zitate</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero-content">
+    <span class="hero-label">CAS AI in Finance &mdash; Vorlesungs-Recap</span>
+    <h1>KI-Produktivitäts-Hacks für Führungskräfte</h1>
+    <p class="hero-meta">
+      <strong>HWZ Zürich</strong> &nbsp;|&nbsp; 7. Februar 2026, 13:00&ndash;16:45<br>
+      Dozent: <a href="https://www.linkedin.com/in/thwinter/" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.85); text-decoration: underline; text-underline-offset: 2px;"><strong>Thomas Winter</strong></a> &nbsp;|&nbsp; Studiengangsleiter: <a href="https://www.linkedin.com/in/comboeuf/" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.85); text-decoration: underline; text-underline-offset: 2px;"><strong>Patrick Comboeuf</strong></a>
+    </p>
+    <div class="hero-divider"></div>
+  </div>
+</header>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main>
+<div class="container">
+
+  <!-- ===== SESSION OVERVIEW ===== -->
+  <section class="section fade-in" id="overview">
+    <h2>Überblick über die Veranstaltung</h2>
+    <p>In einer 3,5-stündigen Praxis-Session haben 21 Finanzfachleute drei funktionierende KI-Systeme von Grund auf gebaut: ein persönliches Writing Profile, einen strukturierten Unternehmensrecherche-Workflow und ein Claude-zu-Notion «Second Brain». Die Vorlesung selbst wurde mit denselben Tools erstellt, die gelehrt wurden &mdash; eine bewusste Meta-Demonstration KI-gestützter Inhaltsproduktion.</p>
+
+    <div class="overview-box">
+      <h3>Was die Teilnehmenden mitgenommen haben</h3>
+      <ol>
+        <li><strong>Writing Style Profile</strong> &mdash; Ein persönliches Stimmprofil-Dokument, das der KI beibringt, wie Sie schreiben &mdash; nicht wie generischer Einheitsbrei</li>
+        <li><strong>Unternehmensrecherche-Workflow</strong> &mdash; Eine zweistufige Prompt-Kette (Deep Research &rarr; Strategie-Synthese), die verwaltungsratstaugliche Briefings produziert</li>
+        <li><strong>Second Brain</strong> &mdash; Eine Notion-Datenbank, die mit Claude für automatische Wissenserfassung verbunden ist</li>
+      </ol>
+    </div>
+
+    <div class="thesis-box">
+      <p><strong>Kernthese:</strong> KI-Erfolg ist keine Technologie-Kompetenz &mdash; es ist eine Führungskompetenz. Dieselben Fähigkeiten, die jemanden zu einer guten Führungskraft machen (klare Delegation, Qualitätsurteil, iteratives Feedback), bestimmen, wer mit KI erfolgreich ist.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== SEGMENT 01 ===== -->
+  <section class="section fade-in" id="seg01">
+    <h2>Segment-für-Segment-Recap</h2>
+    <article class="card">
+      <div class="card-header">
+        <span class="segment-number">01</span>
+        <div class="card-header-text">
+          <h3>Wie ich diese Vorlesung erstellt habe</h3>
+          <div class="card-badges">
+            <span class="badge badge-lecture">Vortrag</span>
+            <span class="badge badge-duration">15 Min</span>
+          </div>
+          <a href="https://gamma.app/docs/01-Wie-ich-diese-Vorlesung-erstellt-habe-atjj9amvea35m4a" target="_blank" rel="noopener" class="slide-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            Folien öffnen
+          </a>
+        </div>
+      </div>
+      <p>Das Eröffnungssegment diente als Glaubwürdigkeitsbeweis: Die gesamte Vorlesung wurde mit den KI-Tools erstellt, die gelehrt werden. Thomas zeigte die Produktionskette &mdash; von einem Sprach-Brainstorming beim Spazieren (Wispr Flow) über Recherche (Perplexity), parallele Agenten-Ausführung (Claude Code), Folienerstellung (Gamma) bis zur Wissenserfassung (Notion).</p>
+
+      <h4>Schlüsselmomente aus der Live-Session</h4>
+      <div class="pull-quote">
+        <p>"This isn't theory. This is me eating my own cooking."</p>
+      </div>
+      <ul>
+        <li>Der Zeitrahmen von Sprachnotiz bis fertige Vorlesung: unter zwei Wochen, als Nebenprojekt</li>
+        <li>Ehrliche Einschränkung: "AI gives you draft 7 instead of draft 1. You still need to get to draft 10."</li>
+      </ul>
+
+      <h4>Schlüsselkonzepte</h4>
+      <ul>
+        <li class="concept-item"><strong>Dogfooding-Prinzip</strong> &mdash; Wenn Sie KI-Workflows lehren, sollten diese Workflows das erstellt haben, was Sie lehren</li>
+        <li class="concept-item"><strong>Produktion leiten statt Inhalte erstellen</strong> &mdash; Die Rolle verschiebt sich vom Machen zum Orchestrieren</li>
+        <li class="concept-item"><strong>Infrastruktur, nicht Tools</strong> &mdash; «Sie lernen keine Tools. Sie bauen Infrastruktur. Der Ertrag kommt nicht heute &mdash; sondern jeden Tag danach.»</li>
+      </ul>
+    </article>
+
+    <!-- ===== SEGMENT 02 ===== -->
+    <article class="card fade-in" id="seg02">
+      <div class="card-header">
+        <span class="segment-number">02</span>
+        <div class="card-header-text">
+          <h3>Die Technologie-Revolution</h3>
+          <div class="card-badges">
+            <span class="badge badge-lecture">Vortrag</span>
+            <span class="badge badge-duration">15 Min</span>
+          </div>
+          <a href="https://gamma.app/docs/02-Die-Technologie-Revolution-myy1vq3y7d4x16s" target="_blank" rel="noopener" class="slide-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            Folien öffnen
+          </a>
+        </div>
+      </div>
+      <p>2026 ist das Jahr, in dem alle technischen Barrieren gefallen sind. Der neue Engpass ist nicht, was KI kann &mdash; sondern ob Menschen klar genug formulieren können, um zu delegieren.</p>
+
+      <h4>Schlüsselkonzepte</h4>
+      <ul>
+        <li class="concept-item"><strong>Der Durchbruch-Stack 2026:</strong> Alltagstaugliche Hardware, anhaltende Aufmerksamkeit (Agenten bleiben stundenlang fokussiert), persistenter Speicher über Sessions hinweg, MCP + Skills standardisieren Tool-Nutzung, autonome Browser-/Datei-Interaktion</li>
+        <li class="concept-item"><strong>Sie sind die Übersetzungsschicht</strong> &mdash; «Der Engpass hat sich verschoben. Früher war die Frage: ‹Kann KI das?› Heute: ‹Können SIE klar genug definieren, was getan werden soll, um es zu delegieren?›»</li>
+        <li class="concept-item"><strong>Das Mini-Me-Rennen</strong> &mdash; Wer baut Ihren KI-Doppelgänger zuerst? Sie, Ihr Konkurrent, oder niemand? Zinseszins-Effekte bedeuten, dass Early Movers den Vorsprung monatlich vergrössern</li>
+        <li class="concept-item"><strong>Zwei-Schichten-Architektur</strong> &mdash; Übersetzungsschicht (wo Menschen interagieren, Ambiguität bewältigen) + Aufgaben-Ausführungsschicht (wo Agenten glänzen, zuverlässig ausführen)</li>
+      </ul>
+
+      <h4>Highlights aus der Live-Diskussion</h4>
+      <ul>
+        <li>Thomas zeigte, wie Claude Code einen defekten Link im Repository während der Vorlesung in Echtzeit reparierte &mdash; das Konzept «Lecture as Code» in der Praxis</li>
+        <li>Mehrere Teilnehmende fragten nach Tool-Auswahl; Thomas betonte: «Die Frage ist nicht welches Tool &mdash; die 201-Kompetenzen sind tool-agnostisch»</li>
+      </ul>
+    </article>
+
+    <!-- ===== SEGMENT 03 ===== -->
+    <article class="card fade-in" id="seg03">
+      <div class="card-header">
+        <span class="segment-number">03</span>
+        <div class="card-header-text">
+          <h3>Writing-Profile-Übung</h3>
+          <div class="card-badges">
+            <span class="badge badge-exercise">Übung</span>
+            <span class="badge badge-duration">25 Min</span>
+          </div>
+          <a href="https://github.com/thwinter-ch/ai-lectures/blob/master/2026_02_07_AIF/segments-en/03-writing-profile-exercise/README.md" target="_blank" rel="noopener" class="cta-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            Übungsanleitung ansehen
+          </a>
+        </div>
+      </div>
+      <p>Die Teilnehmenden erstellten persönliche Stimmprofile nach der Ruben-Hassid-Methode &mdash; ein strukturiertes Selbstinterview, das Ihre «Schreib-DNA» extrahiert: Überzeugungen, Einschränkungen, Stilvorlieben und Muster.</p>
+
+      <h4>Was es bewirkt</h4>
+      <ul>
+        <li>10 Fragen im «Lite-Interview» über 7 Kategorien der Kommunikationspräferenzen</li>
+        <li>Erzeugt ein Markdown-Stimmprofil mit verbotenen Wörtern, Signature-Phrasen und tonalen Markern</li>
+        <li>Das Profil wird an jede KI-Konversation angehängt, damit Outputs wie Sie klingen &mdash; nicht wie alle anderen</li>
+      </ul>
+
+      <h4>Beobachtungen aus der Live-Session</h4>
+      <ul>
+        <li>Thomas stellte fest, dass die Übung «manchmal zur Psychologie-Sitzung wird &mdash; sie verrät Ihnen etwas über sich selbst, wo Sie präzise sind und wo nicht»</li>
+        <li>Die Teilnehmenden fanden es überraschend aufschlussreich: Das Framework drängt über vage Antworten wie «Ich halte Dinge gerne einfach» hinaus und fördert konkrete Präferenzen und instinktive Reaktionen zutage</li>
+        <li>Die Übung baut direkt die erste «201-Kompetenz» auf &mdash; Kontextqualität</li>
+      </ul>
+    </article>
+
+    <!-- ===== SEGMENT 04 ===== -->
+    <article class="card fade-in" id="seg04">
+      <div class="card-header">
+        <span class="segment-number">04</span>
+        <div class="card-header-text">
+          <h3>KI als Führungskompetenz</h3>
+          <div class="card-badges">
+            <span class="badge badge-lecture">Vortrag</span>
+            <span class="badge badge-duration">15 Min</span>
+          </div>
+          <a href="https://gamma.app/docs/v5gsyrz3bf5anxo" target="_blank" rel="noopener" class="slide-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            Folien öffnen
+          </a>
+        </div>
+      </div>
+      <p>Das datenreichste Segment. Thomas präsentierte Studien, die zeigen, warum 80 % der Leute KI-Tools nach 3 Wochen aufgeben &mdash; und was die erfolgreichen 20 % anders machen.</p>
+
+      <h4>Wichtige Datenpunkte</h4>
+      <div class="data-callout">
+        <div class="data-point">
+          <span class="number">80 %</span>
+          <span class="label">KI-Tools aufgegeben<br>nach 3 Wochen</span>
+        </div>
+        <div class="data-point">
+          <span class="number">+40 %</span>
+          <span class="label">Höhere Qualität<br>innerhalb der Kompetenzzone</span>
+        </div>
+        <div class="data-point">
+          <span class="number">-19 Pp.</span>
+          <span class="label">Schlechtere Leistung<br>ausserhalb der Frontier</span>
+        </div>
+      </div>
+
+      <ul>
+        <li><strong>Microsoft-Copilot-Studie:</strong> 300'000 Mitarbeitende erfasst. 80 % haben KI-Tools nach drei Wochen aufgegeben. Nicht 80 % der Leistungsschwachen &mdash; 80 % von allen.</li>
+        <li><strong>BCG-Harvard-Studie (758 Berater):</strong> Innerhalb der KI-Kompetenzzone: +12 % mehr Aufgaben, 25 % schneller, 40 % höhere Qualität. Ausserhalb: 19 Prozentpunkte <em>schlechter</em> als ohne KI.</li>
+        <li><strong>Die Jagged Frontier:</strong> KI-Fähigkeiten bilden keine saubere Linie. Sie sind gezackt, ungleichmässig und oft unsichtbar. «Wenn Sie nicht wissen, wo die Frontier liegt, hilft KI nicht nur nicht &mdash; sie verschlechtert Ihre Leistung aktiv.»</li>
+      </ul>
+
+      <!-- SVG DIAGRAM: Jagged Frontier -->
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Das Jagged-Frontier-Diagramm zeigt die unregelmässige Grenze zwischen Bereichen, in denen KI glänzt, und solchen, in denen KI Schwierigkeiten hat">
+          <defs>
+            <linearGradient id="greenZone" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#22c55e" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#22c55e" stop-opacity="0.05"/>
+            </linearGradient>
+            <linearGradient id="redZone" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#ef4444" stop-opacity="0.05"/>
+              <stop offset="100%" stop-color="#ef4444" stop-opacity="0.15"/>
+            </linearGradient>
+          </defs>
+          <!-- Background zones -->
+          <path d="M40,140 Q90,60 140,120 T240,80 T340,130 T440,70 T540,110 T640,90 L660,90 L660,30 L40,30 Z" fill="url(#greenZone)"/>
+          <path d="M40,140 Q90,60 140,120 T240,80 T340,130 T440,70 T540,110 T640,90 L660,90 L660,250 L40,250 Z" fill="url(#redZone)"/>
+          <!-- Jagged frontier line -->
+          <path d="M40,140 Q90,60 140,120 T240,80 T340,130 T440,70 T540,110 T640,90" fill="none" stroke="#001447" stroke-width="3" stroke-dasharray="8,4"/>
+          <!-- Zone labels -->
+          <text x="120" y="52" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#16a34a">KI GLÄNZT</text>
+          <text x="460" y="235" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#dc2626">KI SCHWÄCHELT</text>
+          <!-- Task dots in the green zone -->
+          <circle cx="100" cy="80" r="8" fill="#22c55e" opacity="0.7"/><text x="100" y="84" font-family="Inter" font-size="7" fill="#fff" text-anchor="middle">Entw.</text>
+          <circle cx="200" cy="55" r="8" fill="#22c55e" opacity="0.7"/><text x="200" y="59" font-family="Inter" font-size="7" fill="#fff" text-anchor="middle">Zus.</text>
+          <circle cx="350" cy="95" r="8" fill="#22c55e" opacity="0.7"/><text x="350" y="99" font-family="Inter" font-size="7" fill="#fff" text-anchor="middle">Code</text>
+          <circle cx="500" cy="60" r="8" fill="#22c55e" opacity="0.7"/><text x="500" y="64" font-family="Inter" font-size="7" fill="#fff" text-anchor="middle">Daten</text>
+          <circle cx="580" cy="75" r="8" fill="#22c55e" opacity="0.7"/><text x="580" y="79" font-family="Inter" font-size="7" fill="#fff" text-anchor="middle">Übers.</text>
+          <!-- Task dots in the red zone -->
+          <circle cx="160" cy="170" r="8" fill="#ef4444" opacity="0.7"/><text x="160" y="174" font-family="Inter" font-size="6.5" fill="#fff" text-anchor="middle">Ethik</text>
+          <circle cx="300" cy="190" r="8" fill="#ef4444" opacity="0.7"/><text x="300" y="194" font-family="Inter" font-size="6.5" fill="#fff" text-anchor="middle">Neuart.</text>
+          <circle cx="430" cy="160" r="8" fill="#ef4444" opacity="0.7"/><text x="430" y="164" font-family="Inter" font-size="6" fill="#fff" text-anchor="middle">Strateg.</text>
+          <circle cx="560" cy="185" r="8" fill="#ef4444" opacity="0.7"/><text x="560" y="189" font-family="Inter" font-size="6.5" fill="#fff" text-anchor="middle">Urteil</text>
+          <!-- Ambiguous dots near the line -->
+          <circle cx="260" cy="85" r="6" fill="#f59e0b" opacity="0.8"/><text x="260" y="88" font-family="Inter" font-size="6" fill="#fff" text-anchor="middle">?</text>
+          <circle cx="470" cy="78" r="6" fill="#f59e0b" opacity="0.8"/><text x="470" y="81" font-family="Inter" font-size="6" fill="#fff" text-anchor="middle">?</text>
+          <!-- Legend -->
+          <circle cx="55" cy="268" r="5" fill="#22c55e" opacity="0.7"/>
+          <text x="66" y="272" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">KI glänzt</text>
+          <circle cx="145" cy="268" r="5" fill="#ef4444" opacity="0.7"/>
+          <text x="156" y="272" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">KI schwächelt</text>
+          <circle cx="245" cy="268" r="5" fill="#f59e0b" opacity="0.8"/>
+          <text x="256" y="272" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">Unvorhersehbar</text>
+        </svg>
+        <p class="diagram-caption">Die Jagged Frontier: KI-Fähigkeiten bilden eine unregelmässige, unvorhersehbare Grenze &mdash; keine saubere Linie.</p>
+      </div>
+
+      <h4>Schlüsselkonzepte</h4>
+
+      <!-- SVG DIAGRAM: Centaur vs Cyborg -->
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Zentaur- vs. Cyborg-Arbeitsmodelle">
+          <!-- Panel 1: Centaur -->
+          <rect x="20" y="20" width="310" height="200" rx="12" fill="#f0f3fa" stroke="#c8d0e5" stroke-width="1.5"/>
+          <text x="175" y="50" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#001447" text-anchor="middle">Zentaur-Arbeit</text>
+          <!-- Human zone -->
+          <rect x="55" y="68" width="240" height="55" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1"/>
+          <text x="175" y="88" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#1e40af" text-anchor="middle">MENSCH</text>
+          <text x="175" y="105" font-family="Inter, sans-serif" font-size="9" fill="#3b82f6" text-anchor="middle">Strategie &middot; Urteil &middot; Richtung</text>
+          <!-- Divider line -->
+          <line x1="55" y1="133" x2="295" y2="133" stroke="#001447" stroke-width="2" stroke-dasharray="6,3"/>
+          <text x="175" y="143" font-family="Inter, sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">Klare Übergabe</text>
+          <!-- AI zone -->
+          <rect x="55" y="150" width="240" height="55" rx="8" fill="#fef3e2" stroke="#fbbf24" stroke-width="1"/>
+          <text x="175" y="170" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#b45309" text-anchor="middle">KI</text>
+          <text x="175" y="187" font-family="Inter, sans-serif" font-size="9" fill="#d97706" text-anchor="middle">Entwurf &middot; Recherche &middot; Ausführung</text>
+
+          <!-- Panel 2: Cyborg -->
+          <rect x="370" y="20" width="310" height="200" rx="12" fill="#f0f3fa" stroke="#c8d0e5" stroke-width="1.5"/>
+          <text x="525" y="50" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#001447" text-anchor="middle">Cyborg-Arbeit</text>
+          <!-- Intertwined stripes -->
+          <rect x="405" y="68" width="240" height="17" rx="4" fill="#dbeafe" stroke="none"/>
+          <rect x="405" y="88" width="240" height="17" rx="4" fill="#fef3e2" stroke="none"/>
+          <rect x="405" y="108" width="240" height="17" rx="4" fill="#dbeafe" stroke="none"/>
+          <rect x="405" y="128" width="240" height="17" rx="4" fill="#fef3e2" stroke="none"/>
+          <rect x="405" y="148" width="240" height="17" rx="4" fill="#dbeafe" stroke="none"/>
+          <rect x="405" y="168" width="240" height="17" rx="4" fill="#fef3e2" stroke="none"/>
+          <!-- Labels on stripes -->
+          <text x="525" y="80" font-family="Inter" font-size="8" fill="#1e40af" text-anchor="middle">Mensch beginnt den Satz...</text>
+          <text x="525" y="100" font-family="Inter" font-size="8" fill="#b45309" text-anchor="middle">...KI vervollständigt den Gedanken</text>
+          <text x="525" y="120" font-family="Inter" font-size="8" fill="#1e40af" text-anchor="middle">Mensch verfeinert die Richtung</text>
+          <text x="525" y="140" font-family="Inter" font-size="8" fill="#b45309" text-anchor="middle">KI generiert Alternativen</text>
+          <text x="525" y="160" font-family="Inter" font-size="8" fill="#1e40af" text-anchor="middle">Mensch wählt &amp; bearbeitet</text>
+          <text x="525" y="180" font-family="Inter" font-size="8" fill="#b45309" text-anchor="middle">KI poliert die Endversion</text>
+          <!-- Subtitle -->
+          <text x="525" y="202" font-family="Inter, sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">Fliessende, kontinuierliche Integration</text>
+        </svg>
+        <p class="diagram-caption">Zentaur-Arbeit: klare Arbeitsteilung mit sauberen Übergaben. Cyborg-Arbeit: kontinuierliches Mensch-KI-Zusammenspiel.</p>
+      </div>
+
+      <ul>
+        <li class="concept-item"><strong>Zentaur-Arbeit</strong> &mdash; Klare Arbeitsteilung. Mensch macht die Strategie, KI den Entwurf. Saubere Übergaben. Funktioniert am besten bei klar definierten Aufgaben.</li>
+        <li class="concept-item"><strong>Cyborg-Arbeit</strong> &mdash; Kontinuierliche Integration. KI beginnt einen Satz, Sie beenden ihn. Hin und her, fliessend. Funktioniert bei kreativer, explorativer Arbeit.</li>
+        <li class="concept-item"><strong>Die sechs 201-Kompetenzen:</strong> Kontextqualität, Qualitätsurteil, Aufgabenzerlegung, iterative Verfeinerung, Workflow-Integration, Frontier-Bewusstsein &mdash; «Das sind dieselben Kompetenzen, die jemanden zu einer guten Führungsperson machen.»</li>
+        <li class="concept-item"><strong>Die Erlaubnis-Lücke</strong> &mdash; Ihre gewissenhaftesten Mitarbeitenden steigen zuerst aus, wenn Sie nicht explizit die Erlaubnis schaffen zu lernen, vorübergehend zu scheitern und zu experimentieren.</li>
+      </ul>
+
+      <h4>Live-Diskussion &mdash; Change Management (erweiterte Fragerunde)</h4>
+      <p>Dieses Segment löste die längste Diskussion der Veranstaltung aus. Zentrale Gesprächsstränge:</p>
+
+      <div class="pull-quote">
+        <p>«Lassen Sie die Enthusiasten die anderen an die Hand nehmen &mdash; aber sagen Sie ihnen, dass es Empathie braucht. Nicht jeder begreift es beim dritten Versuch. Denken Sie daran wie ans Laufen beibringen bei einem Kind.»</p>
+      </div>
+
+      <ul>
+        <li><strong>Zur organisatorischen Realität:</strong> «Wenn Sie KI ohne Change Management einführen, ist das Ergebnis Chaos, nicht Zusammenarbeit. 20 % werden Experten, 20 % schleifen mit, und die Mehrheit sagt: ‹Das ist Unsinn.›»</li>
+        <li><strong>Zum Leistungsdip:</strong> «Ihr bester Wirtschaftsprüfer ist plötzlich drei Monate lang nicht mehr der Beste. Wenn Sie ihm keine Erlaubnis für diesen Dip geben, hört er entweder mit KI auf oder kündigt.»</li>
+        <li><strong>Zu Arbeitgeber-Grenzen:</strong> «Sie haben keine unbegrenzte Verantwortung, jeden mitzutragen, der sich weigert. Irgendwann, wenn jemand auf keinem Weg Ergebnisse liefern kann, ist das auch eine Realität.»</li>
+      </ul>
+    </article>
+
+    <!-- ===== SEGMENT 05 ===== -->
+    <article class="card fade-in" id="seg05">
+      <div class="card-header">
+        <span class="segment-number">05</span>
+        <div class="card-header-text">
+          <h3>Unternehmensrecherche-Übung</h3>
+          <div class="card-badges">
+            <span class="badge badge-exercise">Übung</span>
+            <span class="badge badge-duration">30 Min</span>
+          </div>
+          <a href="https://github.com/thwinter-ch/ai-lectures/blob/master/2026_02_07_AIF/segments-en/05-company-research-exercise/README.md" target="_blank" rel="noopener" class="cta-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            Übungsanleitung ansehen
+          </a>
+        </div>
+      </div>
+      <p>Ein zweistufiger KI-Recherche-Workflow, der verwaltungsratstaugliche Firmen-Briefings produziert.</p>
+
+      <h4>Stufe 1 &mdash; Deep Research (Perplexity Pro)</h4>
+      <ul>
+        <li>Strukturierter Recherche-Prompt, der 30'000+ Wörter Analyse generiert</li>
+        <li>Executive Summary, Produktetabelle, Wettbewerbermatrix, Risiko-Flags mit Quellenangaben</li>
+        <li>Die Teilnehmenden recherchierten ihr eigenes Unternehmen, Kunden oder Mitbewerber</li>
+      </ul>
+
+      <h4>Stufe 2 &mdash; Strategie-Synthese (Claude)</h4>
+      <ul>
+        <li>Füttert den Output von Stufe 1 in die Framework-Synthese</li>
+        <li>Produziert: Golden Circle (Why/How/What), Business Model Canvas (9 Blöcke), Value Proposition Canvas (Jobs/Pains/Gains)</li>
+        <li>Output: 10'000-Wort-Strategiedokument mit visuellen Hilfsmitteln</li>
+      </ul>
+
+      <h4>Beobachtungen aus der Live-Session</h4>
+      <div class="pull-quote">
+        <p>«Wenn Sie in ein Erstgespräch mit einem vollständigen Research-Brief plus Golden Circle plus BMC plus VPC gehen, sind Sie sofort der Held &mdash; weil der Kunde spürt, dass Sie sich wirklich für sein Geschäft interessieren.»</p>
+      </div>
+      <ul>
+        <li>Die Recherche eines Teilnehmenden zog 7'800 Quellen heran &mdash; was sowohl die Leistungsfähigkeit als auch die Herausforderung «Wie finde ich das Signal im Rauschen?» demonstrierte</li>
+        <li>Diskussion über die Nutzung als lebende Dokumente: monatlich durchführen, als Markdown speichern, KI quartalsweise Trendveränderungen identifizieren lassen</li>
+      </ul>
+    </article>
+
+    <!-- ===== BREAK ===== -->
+    <div style="text-align:center; padding: 1.5rem 0; color: #9ca3af; font-size: 0.9rem; font-style: italic;">
+      &mdash; Pause (15 Minuten) &mdash;
+    </div>
+
+    <!-- ===== SEGMENT 06 ===== -->
+    <article class="card fade-in" id="seg06">
+      <div class="card-header">
+        <span class="segment-number">06</span>
+        <div class="card-header-text">
+          <h3>Informationsflut + kognitive Grenzen</h3>
+          <div class="card-badges">
+            <span class="badge badge-lecture">Vortrag</span>
+            <span class="badge badge-duration">15 Min</span>
+          </div>
+          <a href="https://gamma.app/docs/e3131dy593gw4ai" target="_blank" rel="noopener" class="slide-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            Folien öffnen
+          </a>
+        </div>
+      </div>
+      <p>Dieses Segment kombinierte das ursprüngliche Material zur Informationsflut mit kognitionswissenschaftlicher Forschung und schuf damit das theoretische Fundament für die Second-Brain-Übung.</p>
+
+      <h4>Wichtige Daten</h4>
+      <div class="data-callout">
+        <div class="data-point">
+          <span class="number">120+</span>
+          <span class="label">E-Mails pro Tag<br>für Führungskräfte</span>
+        </div>
+        <div class="data-point">
+          <span class="number">28 %</span>
+          <span class="label">der Arbeitswoche<br>nur für E-Mail</span>
+        </div>
+        <div class="data-point">
+          <span class="number">23 Min</span>
+          <span class="label">Um nach einer<br>Unterbrechung wieder fokussiert zu sein</span>
+        </div>
+      </div>
+
+      <h4>Schlüsselkonzepte</h4>
+
+      <!-- SVG DIAGRAM: Miller's 7±2 -->
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Millers Gesetz 7 plus/minus 2: Das Arbeitsgedächtnis hält 5 bis 9 Elemente">
+          <!-- Title -->
+          <text x="350" y="25" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#001447" text-anchor="middle">Millers 7&#xB1;2 &mdash; Kapazität des Arbeitsgedächtnisses</text>
+          <!-- The 5 dotted circles (lower range) -->
+          <circle cx="130" cy="70" r="22" fill="none" stroke="#002FA8" stroke-width="2" stroke-dasharray="5,3" opacity="0.5"/>
+          <text x="130" y="75" font-family="Inter" font-size="10" fill="#002FA8" text-anchor="middle" opacity="0.6">5</text>
+          <circle cx="190" cy="70" r="22" fill="none" stroke="#002FA8" stroke-width="2" stroke-dasharray="5,3" opacity="0.5"/>
+          <text x="190" y="75" font-family="Inter" font-size="10" fill="#002FA8" text-anchor="middle" opacity="0.6">6</text>
+          <!-- The core 7 circles -->
+          <circle cx="250" cy="70" r="22" fill="#001447" stroke="none"/>
+          <circle cx="310" cy="70" r="22" fill="#001447" stroke="none"/>
+          <circle cx="370" cy="70" r="22" fill="#001447" stroke="none"/>
+          <circle cx="430" cy="70" r="22" fill="#001447" stroke="none"/>
+          <circle cx="490" cy="70" r="22" fill="#001447" stroke="none"/>
+          <!-- Labels inside core circles -->
+          <text x="250" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">1</text>
+          <text x="310" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">2</text>
+          <text x="370" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">3</text>
+          <text x="430" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">4</text>
+          <text x="490" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">5</text>
+          <!-- Additional 2 solid for "7" -->
+          <circle cx="250" cy="70" r="22" fill="#001447"/><text x="250" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">1</text>
+          <circle cx="310" cy="70" r="22" fill="#001447"/><text x="310" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">2</text>
+          <circle cx="370" cy="70" r="22" fill="#001447"/><text x="370" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">3</text>
+          <circle cx="430" cy="70" r="22" fill="#001447"/><text x="430" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">4</text>
+          <circle cx="490" cy="70" r="22" fill="#001447"/><text x="490" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="600">5</text>
+          <!-- Extra two at edges (solid for 7) -->
+          <circle cx="190" cy="70" r="22" fill="#001E6E" opacity="0.7"/><text x="190" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle">6</text>
+          <circle cx="550" cy="70" r="22" fill="#001E6E" opacity="0.7"/><text x="550" y="74" font-family="Inter" font-size="9" fill="#ffffff" text-anchor="middle">7</text>
+          <!-- Dotted extension circles (+2) -->
+          <circle cx="130" cy="70" r="22" fill="none" stroke="#002FA8" stroke-width="2" stroke-dasharray="5,3" opacity="0.45"/>
+          <text x="130" y="75" font-family="Inter" font-size="10" fill="#002FA8" text-anchor="middle" opacity="0.5">&minus;2</text>
+          <circle cx="610" cy="70" r="22" fill="none" stroke="#002FA8" stroke-width="2" stroke-dasharray="5,3" opacity="0.45"/>
+          <text x="610" y="75" font-family="Inter" font-size="10" fill="#002FA8" text-anchor="middle" opacity="0.5">+2</text>
+          <!-- Range bracket -->
+          <text x="370" y="120" font-family="Inter, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Arbeitsgedächtnis: 5 bis 9 Elemente &mdash; bei allen gleich</text>
+        </svg>
+        <p class="diagram-caption">Millers Gesetz: Das Arbeitsgedächtnis fasst ungefähr 7 Elemente (&plusmn;2). Auch CEOs und Genies unterliegen dieser Beschränkung.</p>
+      </div>
+
+      <ul>
+        <li class="concept-item"><strong>Millers 7&plusmn;2-Gesetz</strong> &mdash; Das Arbeitsgedächtnis fasst ungefähr 7 Elemente. «Jede Führungskraft in diesem Raum operiert im selben 7&plusmn;2-Gefängnis. Auch Mark Zuckerberg und Einstein.»</li>
+        <li class="concept-item"><strong>Die israelische Richtenstudie</strong> &mdash; Die Bewilligungsquote für Bewährung sank von 65 % nach dem Frühstück auf fast 0 % vor dem Mittagessen. «Jede Entscheidung, die Sie am Nachmittag treffen, ist potenziell beeinträchtigt. Nicht durch Informationsasymmetrie &mdash; durch den Blutzuckerspiegel.»</li>
+        <li class="concept-item"><strong>Informations-Fluchtgeschwindigkeit</strong> &mdash; «Der Führungsvorteil war früher Zugang zu Information. Heute ist es die Fluchtgeschwindigkeit aus der Information.»</li>
+        <li class="concept-item"><strong>Pull statt Push</strong> &mdash; Das alte Modell (alles abonnieren, breit lesen) brach zusammen, als Information unendlich wurde. Das neue Modell: Frage definieren, KI die Schwerarbeit machen lassen.</li>
+        <li class="concept-item"><strong>KI als kognitive Erweiterung</strong> &mdash; Kein Ersatz. Dieselbe Entwicklung wie Schrift als Gedächtniserweiterung, Taschenrechner als Rechenhilfe, Suchmaschinen als Abrufhilfe.</li>
+      </ul>
+
+      <h4>Einblicke aus der Live-Vermittlung</h4>
+      <ul>
+        <li>Thomas zeichnete die Datenexplosion nach: von Kilobytes (vor 1500) über Petabytes (1980er), Exabytes (2000er) bis zu Zettabytes (heute)</li>
+        <li>Verknüpfung zur vorherigen Übung: «Sie haben gerade 80'000 Wörter Recherche produziert. Wer liest das? Genau das ist das Informationsmanagement-Problem.»</li>
+        <li>Ehrliches Eingeständnis: «Ich habe einem Verwaltungsrats-Seminar im Dezember gesagt, dass persönliches Informationsmanagement das eine Problem ist, das ich nicht gelöst habe. Ich habe Evernote, OneNote, Capacities probiert &mdash; gleiche Resultate, anderes Logo.»</li>
+      </ul>
+    </article>
+
+    <!-- ===== SEGMENT 07 ===== -->
+    <article class="card fade-in" id="seg07">
+      <div class="card-header">
+        <span class="segment-number">07</span>
+        <div class="card-header-text">
+          <h3>Second-Brain-Übung</h3>
+          <div class="card-badges">
+            <span class="badge badge-exercise">Übung</span>
+            <span class="badge badge-duration">25 Min</span>
+          </div>
+          <a href="https://github.com/thwinter-ch/ai-lectures/blob/master/2026_02_07_AIF/segments-en/07-second-brain-exercise/README.md" target="_blank" rel="noopener" class="cta-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            Übungsanleitung ansehen
+          </a>
+        </div>
+      </div>
+      <p>Die Teilnehmenden verbanden Claude mit Notion und bauten ein System zur Wissenserfassung.</p>
+
+      <h4>Was sie gebaut haben</h4>
+      <ol>
+        <li>Claude-zu-Notion-Verbindung (One-Click-MCP-Integration)</li>
+        <li>Eine Notion-Datenbank mit strukturierten Feldern (Thema, Tags, Quelle, Massnahmen)</li>
+        <li>Auto-Push-Anweisungen: Sagen Sie am Ende jeder Claude-Konversation «save this» und es wird zusammengefasst + in die Datenbank geschrieben</li>
+      </ol>
+
+      <h4>Warum das wichtig ist</h4>
+      <div class="pull-quote">
+        <p>«Die meisten Wissensmanagement-Systeme sterben an Reibung. Dieses System beseitigt die Reibung.»</p>
+      </div>
+      <div class="pull-quote">
+        <p>«Wenn Sie es regelmässig füttern, entstehen Muster. Die KI kann Ihnen sagen, welche Themen Sie beschäftigt haben &mdash; sie wird zum Spiegel Ihres eigenen Denkens.»</p>
+      </div>
+
+      <!-- SVG DIAGRAM: Second Brain Flow -->
+      <div class="diagram-container">
+        <svg viewBox="0 0 700 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Second-Brain-Flussdiagramm: Eingabe zu Klassifikation zu Speicherung zu Abruf">
+          <!-- Step 1: Input -->
+          <rect x="20" y="40" width="130" height="80" rx="10" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+          <text x="85" y="68" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#1e40af" text-anchor="middle">Eingabe</text>
+          <text x="85" y="86" font-family="Inter" font-size="9" fill="#3b82f6" text-anchor="middle">Sprache</text>
+          <text x="85" y="99" font-family="Inter" font-size="9" fill="#3b82f6" text-anchor="middle">Text</text>
+          <text x="85" y="112" font-family="Inter" font-size="9" fill="#3b82f6" text-anchor="middle">Foto</text>
+          <!-- Arrow 1 -->
+          <path d="M155,80 L190,80" stroke="#001447" stroke-width="2" marker-end="url(#arrowhead)"/>
+          <!-- Step 2: Classification Agent -->
+          <rect x="195" y="40" width="150" height="80" rx="10" fill="#fef3e2" stroke="#fbbf24" stroke-width="1.5"/>
+          <text x="270" y="68" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#b45309" text-anchor="middle">Klassifikation</text>
+          <text x="270" y="86" font-family="Inter" font-size="9" fill="#d97706" text-anchor="middle">KI-Agent</text>
+          <text x="270" y="102" font-family="Inter" font-size="8" fill="#d97706" text-anchor="middle">(auto. Taggen &amp; Zusammenfassen)</text>
+          <!-- Arrow 2 -->
+          <path d="M350,80 L385,80" stroke="#001447" stroke-width="2" marker-end="url(#arrowhead)"/>
+          <!-- Step 3: Notion Database -->
+          <rect x="390" y="40" width="140" height="80" rx="10" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+          <text x="460" y="68" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#059669" text-anchor="middle">Notion-DB</text>
+          <text x="460" y="86" font-family="Inter" font-size="9" fill="#10b981" text-anchor="middle">Getaggt &amp;</text>
+          <text x="460" y="99" font-family="Inter" font-size="9" fill="#10b981" text-anchor="middle">strukturiert</text>
+          <!-- Arrow 3 -->
+          <path d="M535,80 L570,80" stroke="#001447" stroke-width="2" marker-end="url(#arrowhead)"/>
+          <!-- Step 4: AI Retrieval -->
+          <rect x="575" y="40" width="110" height="80" rx="10" fill="#f3e8ff" stroke="#c084fc" stroke-width="1.5"/>
+          <text x="630" y="68" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#7c3aed" text-anchor="middle">KI-gestützter</text>
+          <text x="630" y="86" font-family="Inter" font-size="9" fill="#8b5cf6" text-anchor="middle">Abruf</text>
+          <text x="630" y="102" font-family="Inter" font-size="8" fill="#8b5cf6" text-anchor="middle">&amp; Erkenntnisse</text>
+          <!-- Arrowhead marker -->
+          <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#001447"/>
+            </marker>
+          </defs>
+          <!-- Bottom label -->
+          <text x="350" y="148" font-family="Inter, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Von der Erfassung zur Erkenntnis &mdash; ohne Reibung</text>
+        </svg>
+        <p class="diagram-caption">Second-Brain-Architektur: Eingaben fliessen durch KI-Klassifikation in eine strukturierte Notion-Datenbank zum Abruf.</p>
+      </div>
+
+      <h4>Herausforderungen und Workarounds aus der Live-Session</h4>
+      <ul>
+        <li>Einige Teilnehmende konnten im Browser-basierten Claude nicht auf das Mikrofon zugreifen &mdash; die Mobile-App funktionierte als Fallback</li>
+        <li>ChatGPT-Nutzende entdeckten, dass es aus Notion lesen, aber nicht schreiben kann (Produktentscheid von OpenAI, keine technische Einschränkung)</li>
+        <li>Thomas half mehreren Teilnehmenden beim Connector-Setup &mdash; «Diese Connectoren können manchmal stur sein»</li>
+        <li>Diskussion über Wispr Flow als alternative Eingabemethode für Spracherfassung</li>
+      </ul>
+
+      <h4>Die Telegram-Demo</h4>
+      <p>Thomas zeigte sein eigenes fortgeschrittenes Setup: einen Telegram-Kanal, in dem Sprachnachrichten, Fotos und Text automatisch von einer Serverless-Funktion klassifiziert und in eine getaggte Notion-Datenbank geschrieben werden. «Das ist ein kleiner Schritt über das hinaus, was Sie gerade gebaut haben. Ich habe nur das Interface verengt und automatische Klassifikation hinzugefügt.»</p>
+    </article>
+
+    <!-- ===== SEGMENT 08 ===== -->
+    <article class="card fade-in" id="seg08">
+      <div class="card-header">
+        <span class="segment-number">08</span>
+        <div class="card-header-text">
+          <h3>Ausblick &amp; Reality Check</h3>
+          <div class="card-badges">
+            <span class="badge badge-lecture">Vortrag</span>
+            <span class="badge badge-demo">Demo</span>
+            <span class="badge badge-duration">20 Min</span>
+          </div>
+          <a href="https://gamma.app/docs/twkfm2mwi1334ud" target="_blank" rel="noopener" class="slide-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            Folien öffnen
+          </a>
+        </div>
+      </div>
+      <p>Das Schlusssegment kombinierte Live-Demos fortgeschrittener KI-Fähigkeiten mit wichtigen Warnungen zu Sicherheit und Souveränität.</p>
+
+      <h4>Teil A &mdash; Live-Demos</h4>
+
+      <p><strong>1. Lecture as Code</strong> &mdash; Zeigte, wie ein Fehlerbericht eines Teilnehmenden mit Claude Code in Echtzeit behoben wurde: «Der Teilnehmer sagte, ein Link sei kaputt. Ich sagte Claude, es solle nachschauen. Innerhalb von 2 Minuten war das öffentliche Repository aktualisiert und die Verbindung repariert.»</p>
+
+      <p><strong>2. Hugo (OpenClaw-Agent)</strong> &mdash; Demonstration eines autonomen KI-Agenten, der:</p>
+      <ul>
+        <li>Seinen eigenen LinkedIn-Kanal verwaltet</li>
+        <li>In Echtzeit einen Social-Media-Post über die Vorlesung generierte</li>
+        <li>Die Gemini-API nutzte, um ein massgeschneidertes Bild zu erstellen</li>
+        <li>Für automatisiertes Posting über Typefully geplant werden kann</li>
+        <li>Seit 2 Tagen auf einem Alpaca-API-Konto Paper-Trading mit Krypto betreibt</li>
+      </ul>
+
+      <p><strong>3. Personalisierte Meeting-Zusammenfassungen</strong> &mdash; Zeigte einen n8n-Workflow, der:</p>
+      <ul>
+        <li>Meeting-Transkripte + Teilnehmerprofile + Interessengebiete aufnimmt</li>
+        <li>Individualisierte Zusammenfassungen für jeden Teilnehmenden produziert</li>
+        <li>«Jede Person bekommt ihre eigene Infografik und personalisierte Kernpunkte»</li>
+      </ul>
+
+      <h4>Teil B &mdash; Reality Check</h4>
+
+      <p><strong>4. Datensouveränität &amp; der Cloud Act:</strong></p>
+      <ul>
+        <li>«Der Cloud Act ist nicht der Grund, nicht in die Cloud zu gehen. Es steht für ‹Clarifying Lawful Overseas Use of Data› &mdash; 95 % der Anfragen werden von Cloud-Anbietern abgelehnt.»</li>
+        <li>Bei kriminellen Bedrohungen: Grosse Cloud-Anbieter bieten bessere Sicherheit als die meisten mittelständischen Firmen selbst aufbauen können</li>
+        <li>Bei staatlichen Bedrohungen: andere Rechnung. FISA 702, National Security Letters operieren ohne öffentliche Offenlegung</li>
+        <li>«Für 90 % der Anwendungsfälle sind die grossen Anbieter in Ordnung. Für regulierte Branchen mit wettbewerbsrelevantem IP, das mit einem mächtigen amerikanischen Unternehmen kollidieren könnte &mdash; da brauchen Sie volle Souveränität.»</li>
+        <li>Praktischer Schweizer Kontext: Die FINMA hat die meiste Cloud-Nutzung für Banken genehmigt. Dateresidenz-Anforderungen bestehen, sind aber handhabbar. Privatbanken sind typischerweise strenger aus eigener Entscheidung, nicht wegen Regulierung.</li>
+      </ul>
+
+      <div class="pull-quote">
+        <p>"Treat AI chats like emails to Jeffrey Epstein. Don't plan crimes with ChatGPT &mdash; chat logs can be subpoenaed."</p>
+      </div>
+
+      <p><strong>6. Passwort-Hygiene:</strong></p>
+      <ul>
+        <li>Einzigartiges Passwort pro Anwendung (automatisch generiert)</li>
+        <li>Passwort-Manager (1Password, NordPass oder Dashlane &mdash; nicht browserbasiert)</li>
+        <li>Zwei-Faktor-Authentifizierung überall</li>
+        <li>API-Keys: separat pro Anwendung, bei Leak rotieren</li>
+        <li>Realer Fall: Der Colonial-Pipeline-Hack begann mit einem einzigen Standard-Passwort (test123)</li>
+      </ul>
+    </article>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== Q&A SECTION ===== -->
+  <section class="section fade-in" id="qa">
+    <h2>Highlights aus Q&amp;A und Diskussion</h2>
+    <p>Die Session war durchgehend sehr interaktiv. Zentrale Diskussionsstränge:</p>
+
+    <article class="card">
+      <h3>Change Management und KI-Einführung</h3>
+      <ul>
+        <li><strong>Die Begeisterungs-Lücke:</strong> Intrinsisch motivierte Menschen empfinden KI als spielerisch und sehen Vorteile. Wer es als auferlegt empfindet, sucht nach Fehlern und Gründen, es nicht zu nutzen.</li>
+        <li><strong>Reverse-Mentoring-Rezept:</strong> Enthusiasten mit Skeptikern zusammenbringen, aber Empathie von den jungen Enthusiasten einfordern &mdash; «Sie müssen es behandeln wie einem Kind das Laufen beibringen, nicht wie Code debuggen»</li>
+        <li><strong>Die 80-%-Realität:</strong> Wie bei jeder Technologie-Einführung &mdash; Teams, Zoom, alle hatten dieselbe Adoptionskurve. «Kein Change-Management-Budget» ist das Erste, was gestrichen wird, und dann wundert man sich, warum die Adoption stockt.</li>
+      </ul>
+    </article>
+
+    <article class="card fade-in">
+      <h3>Tool-Auswahl und Plattform-Entscheide</h3>
+      <ul>
+        <li>Claude Pro für Notion-Schreibzugriff (ChatGPT kann nur lesen)</li>
+        <li>Perplexity Pro für Webrecherche mit Quellenangaben</li>
+        <li>Gemini für Bildgenerierung und YouTube-Video-Interpretation</li>
+        <li>Claude Code für alles, was lokalen Maschinenzugriff erfordert</li>
+        <li>«Ich versuche, wo möglich plattform-agnostisch zu sein. Jedes Tool hat seinen Sweet Spot.»</li>
+      </ul>
+    </article>
+
+    <article class="card fade-in">
+      <h3>Das «Next Level»-Gespräch</h3>
+      <ul>
+        <li>Mehrere Teilnehmende fragten nach dem Bau autonomer Agenten (OpenClaw)</li>
+        <li>Thomas' ehrliche Einschätzung: «Die User Experience ist noch nicht reif für ein Business-Publikum. Aber es kommt.»</li>
+        <li>Den Aufbau seines eigenen VPS und Docker-Containers begann er erst zwei Wochen vor der Vorlesung &mdash; «Ich bin Ingenieur, aber ich habe 20 Jahre nicht programmiert. Claude Code hat es mir beigebracht.»</li>
+      </ul>
+    </article>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== EXERCISE REFERENCE ===== -->
+  <section class="section fade-in" id="exercises">
+    <h2>Übungs-Kurzreferenz</h2>
+    <div class="exercise-grid">
+      <div class="exercise-card">
+        <span class="time-badge">20 Min</span>
+        <h4>Writing Profile</h4>
+        <p>Erstellt ein persönliches Stimmprofil-Dokument, das der KI Ihren Stil beibringt. Verwendet die Ruben-Hassid-Methode mit einem 10-Fragen-Selbstinterview über 7 Kommunikationskategorien.</p>
+        <a href="https://github.com/thwinter-ch/ai-lectures/blob/master/2026_02_07_AIF/segments-en/03-writing-profile-exercise/README.md" target="_blank" rel="noopener" class="cta-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          Anleitung ansehen
+        </a>
+      </div>
+      <div class="exercise-card">
+        <span class="time-badge">45 Min</span>
+        <h4>Unternehmensrecherche</h4>
+        <p>Zweistufige KI-Recherche für verwaltungsratstaugliche Firmen-Briefings. Stufe 1: Deep Research mit Perplexity. Stufe 2: Strategie-Synthese mit Claude (Golden Circle + BMC + VPC).</p>
+        <a href="https://github.com/thwinter-ch/ai-lectures/blob/master/2026_02_07_AIF/segments-en/05-company-research-exercise/README.md" target="_blank" rel="noopener" class="cta-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          Anleitung ansehen
+        </a>
+      </div>
+      <div class="exercise-card">
+        <span class="time-badge">25 Min</span>
+        <h4>Second Brain</h4>
+        <p>Verbindet Claude mit Notion für automatische Wissenserfassung. Bauen Sie eine strukturierte Datenbank mit Auto-Push, Tagging und KI-gestütztem Abruf Ihres gesammelten Wissens.</p>
+        <a href="https://github.com/thwinter-ch/ai-lectures/blob/master/2026_02_07_AIF/segments-en/07-second-brain-exercise/README.md" target="_blank" rel="noopener" class="cta-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          Anleitung ansehen
+        </a>
+      </div>
+    </div>
+
+    <h3>Foliensätze</h3>
+    <div class="deck-grid">
+      <a href="https://gamma.app/docs/01-Wie-ich-diese-Vorlesung-erstellt-habe-atjj9amvea35m4a" target="_blank" rel="noopener" class="deck-card">
+        <div>
+          <span class="deck-label">Segment 01</span>
+          <div class="deck-title">How I Built This</div>
+        </div>
+        <span class="deck-btn">
+          Folien öffnen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
+      <a href="https://gamma.app/docs/02-Die-Technologie-Revolution-myy1vq3y7d4x16s" target="_blank" rel="noopener" class="deck-card">
+        <div>
+          <span class="deck-label">Segment 02</span>
+          <div class="deck-title">Die Technologie-Revolution</div>
+        </div>
+        <span class="deck-btn">
+          Folien öffnen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
+      <a href="https://gamma.app/docs/v5gsyrz3bf5anxo" target="_blank" rel="noopener" class="deck-card">
+        <div>
+          <span class="deck-label">Segment 04</span>
+          <div class="deck-title">KI als Führungskompetenz</div>
+        </div>
+        <span class="deck-btn">
+          Folien öffnen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
+      <a href="https://gamma.app/docs/e3131dy593gw4ai" target="_blank" rel="noopener" class="deck-card">
+        <div>
+          <span class="deck-label">Segment 06</span>
+          <div class="deck-title">Informationsflut</div>
+        </div>
+        <span class="deck-btn">
+          Folien öffnen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
+      <a href="https://gamma.app/docs/twkfm2mwi1334ud" target="_blank" rel="noopener" class="deck-card">
+        <div>
+          <span class="deck-label">Segment 08</span>
+          <div class="deck-title">Ausblick &amp; Reality Check</div>
+        </div>
+        <span class="deck-btn">
+          Folien öffnen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== TOOLS & RESOURCES ===== -->
+  <section class="section fade-in" id="tools">
+    <h2>Tools &amp; Ressourcen</h2>
+    <h3>Der verwendete Tech-Stack</h3>
+    <div class="tool-grid">
+      <div class="tool-card">
+        <h4>Claude Pro</h4>
+        <p>Primärer KI-Assistent + Notion-Connector</p>
+        <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>Perplexity Pro</h4>
+        <p>Webrecherche mit Quellenangaben</p>
+        <a href="https://perplexity.ai" target="_blank" rel="noopener">perplexity.ai &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>Notion</h4>
+        <p>Second-Brain-Datenbank</p>
+        <a href="https://notion.so" target="_blank" rel="noopener">notion.so &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>Claude Code</h4>
+        <p>Hat die Vorlesung gebaut, Live-Debugging</p>
+        <a href="https://claude.ai/claude-code" target="_blank" rel="noopener">claude.ai/claude-code &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>Gamma</h4>
+        <p>Folienerstellung aus Text-Prompts</p>
+        <a href="https://gamma.app" target="_blank" rel="noopener">gamma.app &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>Wispr Flow</h4>
+        <p>Sprache-zu-Text-Erfassung</p>
+        <a href="https://wispr.ai" target="_blank" rel="noopener">wispr.ai &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>Optiverse</h4>
+        <p>Schweizer Meeting-Transkription (schweizerdeutsch-fähig)</p>
+        <a href="https://optiverse.ch" target="_blank" rel="noopener">optiverse.ch &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>n8n</h4>
+        <p>Workflow-Automatisierung</p>
+        <a href="https://n8n.io" target="_blank" rel="noopener">n8n.io &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>OpenClaw</h4>
+        <p>Autonome KI-Agenten (Hugo)</p>
+        <a href="https://openclaw.com" target="_blank" rel="noopener">openclaw.com &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>Typefully</h4>
+        <p>Social-Media-Planung</p>
+        <a href="https://typefully.com" target="_blank" rel="noopener">typefully.com &rarr;</a>
+      </div>
+      <div class="tool-card">
+        <h4>1Password</h4>
+        <p>Passwort-Verwaltung</p>
+        <a href="https://1password.com" target="_blank" rel="noopener">1password.com &rarr;</a>
+      </div>
+    </div>
+
+    <h3>Empfohlene nächste Schritte</h3>
+    <ol class="steps-list">
+      <li><strong>Diese Woche:</strong> Verwenden Sie Ihr Writing Profile in 3 verschiedenen KI-Konversationen. Bemerken Sie, wo es dünn ist, und ergänzen Sie es.</li>
+      <li><strong>Diesen Monat:</strong> Führen Sie die Unternehmensrecherche-Übung für einen echten Kunden oder Mitbewerber vor Ihrem nächsten wichtigen Meeting durch.</li>
+      <li><strong>Laufend:</strong> Füttern Sie Ihr Second Brain täglich. Fragen Sie nach einer Woche Claude: «Welche Themen haben mich beschäftigt?»</li>
+      <li><strong>Für Ambitionierte:</strong> Entdecken Sie Claude Code (terminalbasiert) für Aufgaben, die lokalen Maschinenzugriff erfordern.</li>
+      <li><strong>Für Teams:</strong> Erwägen Sie den «Reverse Mentoring»-Ansatz &mdash; stellen Sie KI-Enthusiasten mit Skeptikern zusammen, geben Sie beiden die Erlaubnis zu lernen.</li>
+    </ol>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== WHAT I WISH I'D KNOWN ===== -->
+  <section class="section fade-in" id="tips">
+    <h2>Was ich gerne vorher gewusst hätte</h2>
+    <p>Praktische Tipps aus der Live-Durchführung:</p>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <span class="tip-number">1</span>
+        <p><strong>Der Notion-Connector ist fragil</strong> &mdash; Planen Sie zusätzliche Zeit für das Setup ein. Einige Teilnehmende brauchten 10+ Minuten allein für den MCP-Autorisierungsablauf.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-number">2</span>
+        <p><strong>ChatGPT kann nicht nach Notion schreiben</strong> &mdash; Nur Claude und Perplexity haben native Schreib-Connectoren. Das überraschte mehrere ChatGPT-Plus-Abonnenten.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-number">3</span>
+        <p><strong>Die Länge des Prompt-Outputs zählt</strong> &mdash; 30'000-Wort-Recherche-Outputs können manche Tools überfordern. Beginnen Sie mit 5'000-Wort-Zusammenfassungen für schnelle Ergebnisse; gehen Sie nur bei Bedarf in die Tiefe.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-number">4</span>
+        <p><strong>Spracheingabe variiert je nach Plattform</strong> &mdash; Claude im Browser hat manchmal keinen Mikrofon-Zugriff. Die Mobile-App funktioniert. Wispr Flow ist ein Workaround für Spracheingabe am Desktop.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-number">5</span>
+        <p><strong>Gamma-Folien brauchen Vollbild</strong> &mdash; Thomas verbrachte einen Teil der Vorlesung damit herauszufinden, wie Gamma im Vollbild präsentiert. Als PDF herunterladen oder den nativen Präsentationsmodus verwenden.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-number">6</span>
+        <p><strong>Der echte Wert liegt in der zweiten Stufe</strong> &mdash; Deep Research ist beeindruckend, aber überwältigend. Die Strategie-Synthese (Golden Circle + BMC + VPC) macht es handlungsfähig.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-number">7</span>
+        <p><strong>Monatlich durchführen, quartalsweise auswerten</strong> &mdash; Speichern Sie Recherche-Outputs als Markdown-Dateien. Führen Sie sie monatlich durch. Lassen Sie KI quartalsweise Trendveränderungen identifizieren. Der Zinseszins-Effekt ist enorm.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== KEY QUOTES ===== -->
+  <section class="section fade-in" id="quotes">
+    <h2>Zentrale Zitate aus der Veranstaltung</h2>
+
+    <div class="key-quote-block">
+      <p>"AI gives you draft 7 instead of draft 1. You still need to get to draft 10."</p>
+    </div>
+
+    <div class="key-quote-block">
+      <p>«Der Engpass hat sich verschoben. Früher war die Frage: ‹Kann KI das?› Heute: ‹Können Sie klar genug formulieren, um zu delegieren?›»</p>
+    </div>
+
+    <div class="key-quote-block">
+      <p>«Die 80 %, die aufgehört haben, erwarteten eine bessere Suchmaschine. Die 20 %, die geblieben sind, haben verstanden, dass sie ein fähiges, aber unzuverlässiges Teammitglied führen.»</p>
+    </div>
+
+    <div class="key-quote-block">
+      <p>«Der Führungsvorteil war früher Zugang zu Information. Heute ist es die Fluchtgeschwindigkeit aus der Information.»</p>
+    </div>
+
+    <div class="key-quote-block">
+      <p>"Treat AI chats like emails to Jeffrey Epstein."</p>
+    </div>
+
+    <div class="key-quote-block">
+      <p>«Der Cloud Act ist nicht Ihr Feind. Der Cloud Act steht für ‹Clarifying Lawful Overseas Use of Data›. 95 % der Anfragen werden abgelehnt.»</p>
+    </div>
+
+    <div class="key-quote-block">
+      <p>«Erklären Sie es mir, als wäre ich ein kompletter Idiot &mdash; weil ich nicht rausbekomme, was Sie mir sagen wollen.»</p>
+    </div>
+
+    <p style="text-align: center; font-size: 0.85rem; color: #9ca3af; font-style: italic; margin-top: 0.5rem;">&mdash; Über seinen liebsten Claude-Code-Prompt</p>
+  </section>
+
+  <!-- ===== PROVENANCE NOTE ===== -->
+  <section class="section fade-in" style="text-align: center; padding: 2rem 0; color: #9ca3af; font-size: 0.9rem; font-style: italic;">
+    <p>Dieses Recap wurde auf Basis des Gemini-Live-Transkripts, der Optiverse-Zusammenfassung, der vorbereiteten Vorlesungsskripte und der Übungsmaterialien erstellt. Die Vorlesungsaufzeichnung ist für eingeschriebene Studierende verfügbar.</p>
+  </section>
+
+</div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p style="font-family: 'Inter', sans-serif; font-size: 1.2rem; color: #ffffff; margin-bottom: 0.25rem;">KI-Produktivitäts-Hacks für Führungskräfte</p>
+  <p>CAS AI in Finance &mdash; HWZ Zürich &mdash; 7. Februar 2026</p>
+  <div class="footer-divider"></div>
+  <p>
+    Repository: <a href="https://github.com/thwinter-ch/ai-lectures" target="_blank" rel="noopener">github.com/thwinter-ch/ai-lectures</a>
+  </p>
+  <p style="font-size: 0.8rem; margin-top: 1rem; color: rgba(255,255,255,0.35);">
+    Erstellt mit KI-gestützten Workflows &mdash; denselben Tools, die in dieser Vorlesung gelehrt werden.
+  </p>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  // ===== Scroll-based fade-in with IntersectionObserver =====
+  (function() {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.fade-in').forEach(function(el) {
+      observer.observe(el);
+    });
+  })();
+
+  // ===== Nav shadow on scroll =====
+  (function() {
+    var nav = document.getElementById('navbar');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 20) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  })();
+
+  // ===== Mobile nav toggle =====
+  (function() {
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', function() {
+      toggle.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+
+    // Close menu when a link is clicked
+    links.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        toggle.classList.remove('open');
+        links.classList.remove('open');
+      });
+    });
+  })();
+
+  // ===== Smooth scroll for nav links (fallback for browsers without CSS smooth scroll) =====
+  (function() {
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        var targetId = this.getAttribute('href');
+        var target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          var offset = 70; // nav height
+          var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

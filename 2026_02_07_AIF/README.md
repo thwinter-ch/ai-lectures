@@ -65,6 +65,14 @@ Falls ihr die CHF 20 nicht investieren möchtet: Kein Problem — ihr könnt die
 
 ---
 
+## Nach der Vorlesung
+
+**[Vorlesungs-Recap (Web)](recap/index.html)** — Vollständige Zusammenfassung mit allen Segmenten, Übungslinks und Diskussionshighlights.
+
+Auch verfügbar als: [Markdown Version](recap/LECTURE-RECAP.md)
+
+---
+
 ## Vorbereitung
 
 - [ ] Notion-Account erstellen

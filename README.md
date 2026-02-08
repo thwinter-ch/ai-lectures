@@ -24,6 +24,7 @@ ai-lectures/
 ├── 2026_02_07_AIF/       # Current: Feb 7 AI Productivity Hacks
 │   ├── segments-de/      # 8 segments in German (5 lectures + 3 exercises)
 │   ├── segments-en/      # 8 segments in English
+│   ├── recap/            # Post-lecture recap website + LinkedIn series
 │   └── BUILD_LOG.md      # How this repo was built
 └── templates/            # Starter files for participants
 ```
@@ -34,7 +35,7 @@ ai-lectures/
 |------|-------------|-------|--------|
 | 2025-04 | AIF | AI Productivity Hacks for Leaders | archived |
 | 2025-12 | HWZ CAS VR | Technology for Board Directors | archived |
-| **2026-02-07** | **AIF** | **AI Productivity Hacks for Leaders** | **[Active](2026_02_07_AIF/README.md)** |
+| **2026-02-07** | **AIF** | **AI Productivity Hacks for Leaders** | **[Active](2026_02_07_AIF/README.md)** · **[Recap](2026_02_07_AIF/recap/index.html)** |
 | 2026-04-25 | AIF | AI und Deep Tech Future Outlook | planned |
 
 ## For Participants
@@ -81,6 +82,7 @@ ai-lectures/
 ├── 2026_02_07_AIF/       # Aktuell: 7. Feb KI-Produktivitäts-Hacks
 │   ├── segments-de/      # 8 Segmente auf Deutsch (5 Vorträge + 3 Übungen)
 │   ├── segments-en/      # 8 Segmente auf Englisch
+│   ├── recap/            # Vorlesungs-Recap Website + LinkedIn-Serie
 │   └── BUILD_LOG.md      # Wie dieses Repo erstellt wurde
 └── templates/            # Vorlagen für Teilnehmende
 ```
@@ -91,7 +93,7 @@ ai-lectures/
 |-------|-------------|-------|--------|
 | 2025-04 | AIF | KI-Produktivitäts-Hacks für Führungskräfte | archiviert |
 | 2025-12 | HWZ CAS VR | Technologie für Verwaltungsräte | archiviert |
-| **2026-02-07** | **AIF** | **KI-Produktivitäts-Hacks für Führungskräfte** | **[Aktiv](2026_02_07_AIF/README.md)** |
+| **2026-02-07** | **AIF** | **KI-Produktivitäts-Hacks für Führungskräfte** | **[Aktiv](2026_02_07_AIF/README.md)** · **[Recap](2026_02_07_AIF/recap/index.html)** |
 | 2026-04-25 | AIF | KI und Deep Tech Zukunftsausblick | geplant |
 
 ## Für Teilnehmende

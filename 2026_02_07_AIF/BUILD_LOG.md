@@ -312,6 +312,140 @@ The lecture brainstorm document (`2026_02_07_AIF/AI Productivity Hacks for Execu
 
 ---
 
+## 2026-02-08: Post-Lecture Package — Recap Page + LinkedIn Series
+
+**Session goal:** Turn raw lecture transcript + materials into a student recap website and a 10-post LinkedIn knowledge series.
+
+### Methodology: Lecture → Post-Production Pipeline
+
+This documents the repeatable workflow for turning any delivered lecture into post-lecture deliverables.
+
+#### Step 1: Capture (During Lecture)
+
+| Tool | Output | Cost |
+|------|--------|------|
+| **Optiverse** | Meeting transcription + summary PDF | Subscription (~CHF 30/mo) |
+| **Gemini (Google Meet)** | Full transcript with timestamps (.md) | Included with Workspace |
+
+**Key:** Run both simultaneously. Optiverse handles Swiss German well; Gemini provides timestamped raw transcript. The transcript is messy (voice-to-text artifacts) but contains all actual delivered content, including Q&A and tangents.
+
+#### Step 2: Content Synthesis (Claude Code, ~2 hours)
+
+**Inputs:**
+- Gemini transcript (~91KB, ~2h50m of content)
+- Optiverse summary PDF
+- All prepared lecture scripts (`segments-en/*/script.md`)
+- Exercise instruction files (`segments-en/*/README.md`)
+- Timetable, tech stack, build log
+
+**Process:**
+1. Read all source materials into context
+2. Cross-reference transcript (what was *actually said*) with scripts (what was *planned*)
+3. Extract Q&A highlights, anecdotes, and live demonstrations not in scripts
+4. Anonymize all student references (no names from transcript)
+5. Produce `LECTURE-RECAP.md` — the editorial backbone
+
+**Output:** Single markdown file covering: session overview, segment-by-segment recap (enriched with live delivery), Q&A highlights, exercise quick-reference with links, tools & resources, practical tips.
+
+**Quality check:** Every Gamma deck link verified. Every GitHub exercise link verified. No PII.
+
+#### Step 3: Web Page Production (Claude Code + frontend-design, ~1 hour)
+
+**Input:** `LECTURE-RECAP.md`
+
+**Process:**
+1. Transform markdown into self-contained HTML (all CSS inline, vanilla JS only)
+2. Design: long-read article style, mobile-responsive, smooth scroll navigation
+3. Create inline SVG diagrams for key concepts (jagged frontier, centaur/cyborg, 7±2, second brain flow)
+4. Add image placeholder slots for AI-generated illustrations
+5. Test in browser (desktop + mobile viewport)
+
+**Output:** `recap/index.html` — opens in any browser, no build step, no dependencies.
+
+**Hosting:** GitHub Pages from repo root or `/docs` folder. URL added to main README.
+
+#### Step 4: LinkedIn Series Production (Claude Code, ~1 hour)
+
+**Input:** `LECTURE-RECAP.md` + lecture scripts
+
+**Process:**
+1. Extract 10 standalone insights from lecture content
+2. Write each as a LinkedIn-native post (hook → insight → takeaway → CTA)
+3. Series branding: "AI x Leadership | X/10"
+4. Schedule: 2 posts/day over 5 days
+5. Review for standalone value — each post must work for someone who wasn't at the lecture
+
+**Output:** 10 markdown files in `recap/linkedin-series/`
+
+**Publishing:** Via Typefully API/interface for scheduling + analytics.
+
+#### Step 5: Illustrations (Optional, Gemini API)
+
+**Input:** Image prompts written during Step 3
+
+**Process:**
+1. Write precise image prompts for 4-6 key concept illustrations
+2. Generate via Gemini (free tier or API ~$0.15/call via OpenRouter)
+3. Review quality; retry or switch to Gemini chat interface if needed
+
+**Output:** PNG files in `recap/images/`
+
+**Budget:** ~$2 for ~10-15 API calls.
+
+#### Step 6: Publish and Cross-Link
+
+1. Enable GitHub Pages (Settings → Pages → Source: main branch)
+2. Add recap URL to main `README.md`
+3. Schedule LinkedIn posts via Typefully
+4. Send recap link to students (via email or LMS)
+
+### Decisions Made
+
+| Decision | Rationale |
+|----------|-----------|
+| Self-contained HTML (no framework) | Zero dependencies = opens anywhere, perfect for GitHub Pages |
+| LinkedIn posts as standalone knowledge | "Look at my lecture" posts get zero engagement; standalone insights get shared |
+| Markdown first, HTML second | Editorial backbone in markdown makes content reusable across formats |
+| Parallelize web page + LinkedIn series | Independent tasks, same source material, halves production time |
+| SVG diagrams over generated images | Instant, free, sharp at any resolution, self-contained in HTML |
+
+### Work Completed
+
+1. **Created `recap/LECTURE-RECAP.md`** — Full editorial recap from transcript + scripts + exercise materials
+2. **Created `recap/index.html`** — Production-quality web page with SVG diagrams and scroll animations
+3. **Created 10 LinkedIn posts** in `recap/linkedin-series/` — "AI x Leadership" series
+4. **Documented methodology** — This entry (repeatable for future lectures)
+
+### Cost Breakdown
+
+| Item | Cost | Notes |
+|------|------|-------|
+| Claude Code (Opus) | ~$5-8 in API | Content synthesis + web page + LinkedIn posts |
+| Optiverse | Included in subscription | Meeting transcription |
+| Gemini transcript | Included in Workspace | Google Meet auto-transcription |
+| Gamma decks | Included in subscription | Created during lecture prep phase |
+| GitHub Pages | Free | Static hosting |
+| Typefully | Included in subscription | LinkedIn scheduling |
+| **Total incremental cost** | **~$5-8** | The lecture itself is the expensive part |
+
+### Learnings
+
+- The Gemini transcript is messy but gold — it captures Q&A, tangents, and anecdotes that are absent from prepared scripts. The recap is dramatically richer for it.
+- Cross-referencing "what was planned" (scripts) with "what was said" (transcript) reveals the most interesting content: the live digressions, the extended discussions, the honest admissions.
+- Self-contained HTML is the right call for educational content. No build step = any student can view it on any device immediately.
+- LinkedIn series should be written AFTER the recap, not in parallel with the recap. The recap crystallizes the insights; the posts extract them.
+- 10 posts from a 3.5-hour lecture is easy — the constraint is making each one standalone, not finding enough material.
+
+### Outstanding
+
+- [ ] Generate illustrations via Gemini API (4-6 concept visuals)
+- [ ] Enable GitHub Pages and verify public URL
+- [ ] Schedule LinkedIn posts via Typefully
+- [ ] Send recap link to enrolled students
+- [ ] Add recap URL to main README.md
+
+---
+
 ## Template for Future Entries
 
 ```markdown
