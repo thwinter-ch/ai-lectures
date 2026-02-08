@@ -25,6 +25,19 @@ Alles an einem Ort — Zusammenfassung jedes Segments, Schlüsselzitate, alle Sl
 | Übung: Writing Profile | [Anleitung](https://github.com/thwinter-ch/ai-lectures/blob/master/2026_02_07_AIF/segments-de/03-writing-profile-exercise/README.md) |
 | Übung: Unternehmensrecherche | [Anleitung](https://github.com/thwinter-ch/ai-lectures/blob/master/2026_02_07_AIF/segments-de/05-company-research-exercise/README.md) |
 | Übung: Second Brain | [Anleitung](https://github.com/thwinter-ch/ai-lectures/blob/master/2026_02_07_AIF/segments-de/07-second-brain-exercise/README.md) |
+
+### Slide Decks
+
+| Segment | Deck |
+|---------|------|
+| 01 — How I Built This | [Slides](https://gamma.app/docs/01-Wie-ich-diese-Vorlesung-erstellt-habe-atjj9amvea35m4a) |
+| 02 — Technology Revolution | [Slides](https://gamma.app/docs/02-Die-Technologie-Revolution-myy1vq3y7d4x16s) |
+| 04 — AI as Managerial Skill | [Slides](https://gamma.app/docs/v5gsyrz3bf5anxo) |
+| 06 — Information Overload | [Slides](https://gamma.app/docs/e3131dy593gw4ai) |
+| 08 — Ausblick & Realitätscheck | [Slides](https://gamma.app/docs/twkfm2mwi1334ud) |
+
+| | |
+|-----|------|
 | Alle Materialien (GitHub) | [Repository](https://github.com/thwinter-ch/ai-lectures/tree/master/2026_02_07_AIF) |
 
 ### Empfohlene nächste Schritte
