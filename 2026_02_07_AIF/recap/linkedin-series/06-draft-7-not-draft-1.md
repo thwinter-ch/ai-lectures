@@ -1,31 +1,21 @@
-<!-- Post 8/12 | Schedule: Day 4, PM | Topic: Draft 7, Not Draft 1 -->
+<!-- Post 8/12 | Schedule: Day 4, PM | Topic: Draft 7, Not Draft 1 | Pillar: AI in Production -->
 
-AI doesn't give you a first draft.
+AI doesn't give you a first draft. It gives you draft 7.
 
-It gives you draft 7.
+Already synthesized, structured, polished. Competent. Reasonable.
 
-This one reframe changed how I think about every AI interaction.
+Also not done.
 
-Here's what I mean. When you ask AI to write something — an email, a strategy doc, a proposal — the output isn't raw material. It's already been through multiple implicit iterations. It's synthesized patterns, applied structure, smoothed the language.
+The trap: "wow, that's pretty good" → hit send. Draft 7 isn't draft 10. The gap between 7 and 10 is where your expertise, your judgment, and your actual voice live.
 
-What comes out is polished. Competent. Reasonable.
+Draft 7 is missing: your client context. The political subtext. The thing you know but didn't say in the prompt. The tone that signals a human wrote this.
 
-It's also not done.
+I use this framing constantly. Built an entire exercise around it — students create a writing profile first, then use it as context for everything else. The difference between generic AI output and output that sounds like them is that profile document.
 
-The trap is thinking "wow, that's pretty good" and hitting send. Because draft 7 isn't draft 10. And the distance between 7 and 10 is where your expertise, your judgment, and your voice live.
+The real productivity gain isn't "AI did my work." It's "AI eliminated the blank page and the first six rounds of iteration."
 
-Draft 7 is missing: your specific client context, the political subtext of the situation, the thing you know but didn't say in the prompt, the tone that signals "I actually wrote this."
-
-The people who use AI well treat it exactly this way. They don't expect perfection. They expect a running start.
-
-Instead of staring at a blank page for 45 minutes, they start with a competent draft 7 and spend 15 minutes turning it into a draft 10 that's genuinely theirs.
-
-That's the real productivity gain. Not "AI did my work." It's "AI eliminated the blank page and the first six rounds of iteration."
-
-Next time you get an AI output, try this: before you accept anything, ask yourself — what would I change if I'd written this myself? What's missing that only I know?
-
-That's your draft 8. Now keep going.
+You start at draft 7. You still have to get to 10. But starting at 7 instead of 0 changes everything about how fast you ship.
 
 AI x Leadership | 8/12
 
-#AIProductivity #ContentCreation #Writing #Leadership #CreativeProcess
+#FieldAI #AIinProduction #ContextEngineering

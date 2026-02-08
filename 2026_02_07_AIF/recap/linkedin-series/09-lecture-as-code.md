@@ -1,33 +1,23 @@
-<!-- Post 11/12 | Schedule: Day 6, AM | Topic: Lecture as Code -->
+<!-- Post 11/12 | Schedule: Day 6, AM | Topic: Lecture as Code (workflow) | Pillar: Building in the Open -->
 
-I built a 3.5-hour university lecture in 2 weeks.
+Built a 3.5-hour university lecture in 2 weeks. As a side project. While running a company.
 
-As a side project. While running a company.
+The workflow:
 
-Not because I'm exceptional. Because the production model changed.
+Voice brainstorm while walking (Wispr Flow) → AI research per topic (Perplexity) → parallel agent execution for content structuring (Claude Code) → slide generation from text (Gamma) → version control (GitHub)
 
-Here's the workflow:
+My role shifted. I didn't create content. I directed production.
 
-Voice brainstorm while walking (Wispr Flow) -> AI research on every topic (Perplexity) -> Parallel agent execution for content structuring (Claude Code) -> Slide generation from text (Gamma) -> Knowledge capture and version control (Notion + GitHub)
+Same shift that happened when execs stopped writing their own memos and started managing people who did. Except now the "people" are AI agents and the management cycle is minutes.
 
-The lecture was built using the same AI tools it teaches. Deliberately. Because if you teach AI workflows, those workflows should have built the thing you're teaching. Anything else is theory.
+The lecture teaches AI workflows. The lecture was built with AI workflows. Deliberately. Because if you teach AI and your own lecture isn't built with AI, you're doing theory.
 
-But here's the part that actually matters: my role shifted.
+Total cost: ~$15 in API calls. Two weeks of evenings. Five slide decks, three hands-on exercises, bilingual documentation, a public recap page.
 
-I didn't create content. I directed production.
+The entire thing is open source. Every prompt, every decision, every script.
 
-The difference is fundamental. Creating content means you're the one writing, designing, researching, formatting. Directing production means you define the vision, set quality standards, assign tasks to the right tools, and review output.
-
-Same shift that happened when executives stopped writing their own memos and started managing people who did. Except now the "people" are AI agents, and the management cycle is minutes, not days.
-
-During the live session, a student reported a broken link in the course materials. I told Claude Code to investigate. Within 2 minutes — during the lecture — the bug was found, fixed, and pushed to the public repository. Live. In front of 21 people.
-
-That's not a party trick. That's what "lecture as code" means: the content is a living system, not a static file.
-
-If you produce anything repeatable — reports, training, documentation, analysis — ask yourself: what would it look like if I directed production instead of doing production?
-
-The answer might free up more time than any productivity hack you've tried.
+→ https://github.com/thwinter-ch/ai-lectures/tree/master/2026_02_07_AIF
 
 AI x Leadership | 11/12
 
-#ContentCreation #AIProductivity #Education #FutureOfWork #Leadership
+#BuildInPublic #FieldAI #AIinProduction

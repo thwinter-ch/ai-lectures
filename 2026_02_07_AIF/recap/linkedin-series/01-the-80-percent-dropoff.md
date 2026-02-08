@@ -1,33 +1,25 @@
-<!-- Post 3/12 | Schedule: Day 2, AM | Topic: The 80% Drop-Off -->
+<!-- Post 3/12 | Schedule: Day 2, AM | Topic: The 80% Drop-Off | Pillar: AI in Production -->
 
 Microsoft tracked 300,000 Copilot users.
 
-80% quit after 3 weeks.
+80% quit after 3 weeks. Not the tech-illiterate. Everyone.
 
-Not the tech-illiterate. Not the "old guard." Everyone. Across all departments, all seniority levels.
+They expected a better search engine. What they got was a capable but unreliable direct report that needed managing.
 
-So what happened?
+There's a gap nobody teaches. Call it the 201 problem.
 
-They expected a better search engine. What they got was a capable but unreliable team member that needed managing.
+101 is easy: open ChatGPT, type a prompt, get impressed.
 
-Here's the thing nobody talks about: there's a massive gap between the tutorial and transformation. Call it the "201 problem."
+301 is the dream: agents running your research, writing your docs, managing your knowledge.
 
-Level 101 is easy. You sign up, you ask it to write an email, you're impressed. Cool party trick.
+201 is where everyone stalls: judging output quality, decomposing tasks, iterating on mediocre results. The skills that actually determine who gets value from AI.
 
-Level 301 is the dream. AI handles your research, drafts your strategy docs, manages your knowledge. Real productivity gains.
+The 20% who survived? They figured out 201 on their own. They treated AI like a new hire — gave it clear briefs, reviewed its work, refined their instructions.
 
-But 201 — the part where you learn to judge output quality, decompose tasks, iterate on mediocre results — that's where everyone stalls. And nobody teaches it.
+Same skills that make someone good at managing people.
 
-The 20% who survived that 3-week drop-off? They figured out 201 on their own. They treated AI like a new hire: gave it clear briefs, reviewed its work critically, refined their instructions.
-
-They didn't have more technical skill. They had better management instincts.
-
-If you're rolling out AI in your organization, stop investing in "intro to ChatGPT" workshops. Your people already know how to type a prompt.
-
-Start investing in the 201 skills: task decomposition, quality judgment, iterative refinement.
-
-That's where the 80% get stuck. That's where you can actually move the needle.
+I built an entire lecture around teaching these 201 skills to finance execs. Three exercises, three real deliverables they keep. Not slides about AI. Systems they use on Monday.
 
 AI x Leadership | 3/12
 
-#AIAdoption #Leadership #DigitalTransformation #AIStrategy #Productivity
+#FieldAI #AIinProduction #BoardToBot

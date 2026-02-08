@@ -1,38 +1,23 @@
-<!-- Post 9/12 | Schedule: Day 5, AM | Topic: Information Escape Velocity -->
+<!-- Post 9/12 | Schedule: Day 5, AM | Topic: Information Escape Velocity | Pillar: Board → Bot -->
 
 The executive advantage used to be access to information.
 
-Now it's escape velocity FROM information.
+Now it's escape velocity from it.
 
-Some numbers that should concern you:
+120+ emails/day. 28% of the workweek on email. 23 hours/week in meetings. 23 minutes to refocus after one interruption.
 
-- 120+ emails per day for the average executive
-- 28% of the workweek spent on email alone
-- 23 hours per week in meetings
-- 23 minutes to refocus after a single interruption (UC Irvine)
+And Miller's Law: working memory holds ~7 items. You, me, the CEO of Goldman Sachs. Same 7-item prison.
 
-And here's the kicker from cognitive science: your working memory holds roughly 7 items. That's Miller's Law. It applies to everyone. You, me, the CEO of Goldman Sachs. Same 7-item prison.
+Past a threshold, more data = worse decisions made with higher confidence. The Israeli judges study nailed this: parole approval dropped from 65% to near 0% before lunch. Not because cases changed. Because glucose levels changed.
 
-More data does not equal better decisions. Past a threshold, more data equals worse decisions made with higher confidence.
+The old model: subscribe to everything, read broadly, stay informed. That model broke when information became infinite.
 
-The Israeli Judges Study proved this brutally: parole approval dropped from 65% after breakfast to nearly 0% before lunch. Not because the cases changed. Because glucose levels changed. Every afternoon decision you make is potentially compromised — not by information asymmetry, but by biology.
+New model: define the question first. Let AI retrieve and synthesize. Pull, not push.
 
-The old information model was "subscribe to everything, read broadly, stay informed." That model broke when information became infinite.
+I told a board seminar in December that personal information management was the one problem I hadn't solved. Tried Evernote, OneNote, Capacities. Same results, different logo.
 
-The new model: define the question first, then let AI do the retrieval.
-
-Pull, not push.
-
-Instead of reading 50 articles to find the 3 relevant paragraphs, you ask a specific question and get a synthesized answer with sources.
-
-Instead of attending a 60-minute meeting to catch 5 minutes of relevant content, you read an AI-generated summary filtered for your role.
-
-The skill isn't consuming more. It's asking better questions and trusting AI to do the heavy lifting on retrieval.
-
-Start here: pick one information stream you consume out of habit (a newsletter, a recurring meeting, a report). Replace it with an AI-driven pull workflow. See what you actually miss.
-
-I bet it's less than you think.
+Then I built a system that actually works. That's the next post.
 
 AI x Leadership | 9/12
 
-#InformationOverload #Productivity #Leadership #CognitiveScience #DecisionMaking
+#BoardToBot #FieldAI #DecisionSystems

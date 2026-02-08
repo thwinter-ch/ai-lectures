@@ -1,33 +1,25 @@
-<!-- Post 6/12 | Schedule: Day 3, PM | Topic: Centaurs and Cyborgs -->
+<!-- Post 6/12 | Schedule: Day 3, PM | Topic: Centaurs and Cyborgs | Pillar: AI in Production -->
 
-The 20% who actually succeed with AI don't use it one way.
+The top 20% of AI users don't use it one way.
 
-They use it two ways. And they switch between them constantly.
+They switch between two modes constantly.
 
-The BCG-Harvard research identified two distinct work patterns among top AI performers:
+𝗖𝗲𝗻𝘁𝗮𝘂𝗿: Clean division. You do strategy, AI does the draft. Clear handoffs. Best for defined tasks with known inputs and outputs.
 
-**Centaur work.** Clean division of labor. You do the strategy, AI does the draft. You set the direction, AI handles the research. Clear handoffs, like a relay race.
+Cyborg: Continuous integration. AI starts, you reshape, AI refines, you redirect. Fluid. Best for creative work where the destination isn't clear.
 
-Best for: well-defined tasks with clear inputs and outputs.
+Most people pick one and stick with it.
 
-**Cyborg work.** Continuous integration. AI starts a sentence, you finish it. You outline a framework, AI fills it, you restructure, AI refines. Back and forth, fluid, almost conversational.
+The people who get real value read the task, pick the right mode, and switch mid-stream when the work changes character.
 
-Best for: creative, exploratory work where the destination isn't clear yet.
+Strategy session? Start centaur. Give AI the research brief, review output, apply judgment.
 
-Most people try one pattern and stick with it.
+Client proposal? Go cyborg. Generate options, reshape, ask for alternatives, merge the best parts.
 
-The people who thrive do something different. They read the task, decide which pattern fits, and switch mid-stream when the work changes character.
+I watch this happen live in exercises. The students who produce the best company research start centaur (structured prompt, let it run) then shift cyborg when they're refining the strategic synthesis.
 
-Strategy session? Start as a centaur. Give AI the research brief, review the output, apply your judgment.
-
-Drafting a client proposal? Go cyborg. Let AI generate options, reshape them, ask for alternatives, merge the best parts.
-
-The mistake is treating AI like it has one mode. It doesn't. And neither should you.
-
-Here's a practical test for your next project: before you open an AI chat, ask yourself — is this a handoff task or a collaboration task? Then work accordingly.
-
-That one question will improve your output more than any prompt engineering course.
+Nobody taught them that. They figured it out in 30 minutes because the exercise forced both modes.
 
 AI x Leadership | 6/12
 
-#AIProductivity #FutureOfWork #WorkPatterns #Leadership #HumanAICollaboration
+#FieldAI #AIinProduction #HITL

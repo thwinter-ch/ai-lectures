@@ -1,37 +1,23 @@
-<!-- Post 7/12 | Schedule: Day 4, AM | Topic: The Permission Gap -->
+<!-- Post 7/12 | Schedule: Day 4, AM | Topic: The Permission Gap | Pillar: Board → Bot -->
 
-Your best employees quit AI first.
+Your best people quit AI first.
 
-Not because they're incapable. Because they're conscientious.
+Not because they can't. Because they're careful.
 
-Think about it. Your top financial auditor has spent years building a reputation for precision. For getting it right. For being the person others rely on.
+Your top financial auditor has years of reputation built on precision. You hand them an AI tool. The output is 80% right and 20% sloppy. Their name goes on it.
 
-Now you hand them an AI tool and say "use this."
+They stop using it. Rational decision.
 
-They try it. The output is 80% right but 20% sloppy. Their name is on it. Their reputation is on the line. So they do the rational thing.
+This came up hard in a lecture I gave to finance execs. The longest discussion of the day — 20 minutes off-script.
 
-They stop using it.
+One insight that landed: "Your best auditor is suddenly not the best for three months. If you don't give them permission for that dip, they'll quit either the AI or the job."
 
-This is the Permission Gap — and it's the real AI adoption blocker hiding in plain sight.
+Someone said: treat it like teaching a kid to walk. Not like debugging code. Patience, not process.
 
-Your most skilled, most careful, most valuable people will opt out of AI before your average performers do. Not from ignorance. From professionalism.
+The permission gap isn't a technology problem. It's a management failure. The 80% who abandon AI aren't incapable. Many are your most conscientious people making a rational choice because nobody told them it's OK to be temporarily worse.
 
-Because nobody told them it's okay to be temporarily worse.
-
-Learning any new tool means a performance dip. A pianist switching techniques sounds worse for months before they sound better. A surgeon learning robotic surgery is slower before they're faster.
-
-AI is no different. There's a learning dip. And if your culture punishes that dip — even implicitly — your best people will avoid it entirely.
-
-Three things leaders need to do:
-
-1. **Say it out loud.** "You have explicit permission to experiment. Temporary quality dips are expected and accepted."
-
-2. **Protect the learning period.** Give people low-stakes projects to practice on before high-stakes deadlines.
-
-3. **Reward the attempt, not just the output.** The person who tried AI and produced a mediocre first result is closer to transformation than the person who never tried.
-
-The Permission Gap isn't a technology problem. It's a leadership problem. And it's yours to close.
+Say it out loud. Protect the learning period. That's the intervention.
 
 AI x Leadership | 7/12
 
-#Leadership #ChangeManagement #AIAdoption #OrganizationalCulture #Transformation
+#BoardToBot #FieldAI #AIinProduction
