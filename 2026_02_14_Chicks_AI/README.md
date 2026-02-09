@@ -64,7 +64,25 @@ Das Second Brain ist nicht nur ein Ablagesystem. **Der echte Wert entsteht durch
 - Projekte mit persistenten Anweisungen
 - Längere Kontextfenster für komplexe Abfragen
 
+### Second Brain = Prompt-Bibliothek
+Der eigentliche Hack: **Speichere Prompts, die funktioniert haben.**
+- "Der E-Mail-Prompt, der bei meinem Chef ankommt"
+- "Der Zusammenfassungs-Prompt für lange Dokumente"
+- "Der Feedback-Prompt, der konstruktiv klingt"
+
+Je länger du sammelst, desto mächtiger wird dein System. Das ist der Compound Effect.
+
 **Referenz:** Detaillierte Anleitung in `../2026_02_07_AIF/segments-de/07-second-brain-exercise/`
+
+## Professionelle Headshots mit Gemini
+
+Übung: Erstelle ein professionelles Profilbild mit KI-Bildgenerierung.
+
+- **Tool:** Google Gemini (kostenlos)
+- **Kontext:** LinkedIn-Foto, internes Firmenprofil, Bewerbungsunterlagen
+- **Prompt-Vorlage:** Siehe `prompts/headshot-prompt.md`
+
+Die Teilnehmerinnen bekommen den Basis-Prompt und passen ihn an (Hintergrund, Stil, Kleidung).
 
 ## Sicherheits-Slides (aus HWZ AIF Lecture)
 
