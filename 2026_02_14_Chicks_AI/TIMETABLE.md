@@ -2,27 +2,28 @@
 
 **Datum:** Samstag, 14. Februar 2026  
 **Beginn:** 10:00  
-**Ende:** ~14:30
+**Ende:** ~15:15
 
 ---
 
 | Zeit | # | Segment | Format | Dauer |
 |------|---|---------|--------|-------|
-| 10:00 | 1 | **Was ist KI eigentlich?** | Vortrag | 15 min |
-| 10:15 | 2 | **Erstes KI-Gespräch** — eine echte Frage stellen | Hands-on | 20 min |
-| 10:35 | 3 | **Besser fragen = bessere Antworten** | Vortrag | 15 min |
-| 10:50 | 4 | **Firmen-/Branchen-Recherche** — KI als Recherche-Partner | Hands-on | 25 min |
-| 11:15 | 🍴 | **Mittagspause** | | 60 min |
-| 12:15 | 5 | **Dein Schreibstil** — 10-Fragen-Übung | Hands-on | 25 min |
-| 12:40 | 6 | **Professionelles Profilbild** — Gemini Bildgenerierung | Hands-on | 20 min |
-| 13:00 | 7 | **Wissen organisieren** — Second Brain + Optiverse Demo | Demo | 20 min |
-| 13:20 | 8 | **KI-Avatar erstellen** — HeyGen | Hands-on | 20 min |
-| 13:40 | 9 | **Dokumente als Podcast** — NotebookLM | Hands-on | 20 min |
-| 14:00 | 10 | **Sicherheit** — Passwörter & was man KI nicht sagt | Vortrag | 15 min |
-| 14:15 | 11 | **Ausblick & Spickzettel** — Was jetzt? | Abschluss | 15 min |
-| 14:30 | | **Ende / Fragen** | | |
+| 10:00 | ☕ | **Ankommen & Kaffee** | | 30 min |
+| 10:30 | 1 | **Was ist KI eigentlich?** | Vortrag | 15 min |
+| 10:45 | 2 | **Erstes KI-Gespräch** — eine echte Frage stellen | Hands-on | 20 min |
+| 11:05 | 3 | **Besser fragen = bessere Antworten** | Vortrag | 15 min |
+| 11:20 | 4 | **Firmen-/Branchen-Recherche** — KI als Recherche-Partner | Hands-on | 40 min |
+| 12:00 | 🍴 | **Mittagspause** | | 60 min |
+| 13:00 | 5 | **Dein Schreibstil** — 10-Fragen-Übung | Hands-on | 25 min |
+| 13:25 | 6 | **Professionelles Profilbild** — Gemini Bildgenerierung | Hands-on | 20 min |
+| 13:45 | 7 | **Wissen organisieren** — Second Brain + Optiverse Demo | Demo | 20 min |
+| 14:05 | 8 | **KI-Avatar erstellen** — HeyGen | Hands-on | 20 min |
+| 14:25 | 9 | **Dokumente als Podcast** — NotebookLM | Hands-on | 20 min |
+| 14:45 | 10 | **Sicherheit** — Passwörter & was man KI nicht sagt | Vortrag | 15 min |
+| 15:00 | 11 | **Ausblick & Spickzettel** — Was jetzt? | Abschluss | 15 min |
+| 15:15 | | **Ende** | | |
 
-**Gesamtdauer:** 4.5 Stunden inkl. 1h Mittagspause
+**Gesamtdauer:** 5h 15min (inkl. 30min Kaffee + 1h Mittagspause)
 
 ---
 
@@ -46,7 +47,6 @@
 |---------------|---------|
 | HeyGen dauert zu lang | Nur Demo, nicht alle einzeln |
 | NotebookLM | Als "Hausaufgabe" mitgeben |
-| Allgemein | Lunch kürzen auf 45 min |
 
 ---
 
