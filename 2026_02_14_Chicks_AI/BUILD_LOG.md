@@ -11,6 +11,9 @@
 - WhatsApp-Engagement startet Sonntag 9. Feb
 - Bilder von Hugo und Kari als Aufhänger geplant (Kari = Andreas Meerschweinchen von früher!)
 
+### Additional segment idea
+- Show Andrea's Second Brain (Notion) — Thomas is building this for her. Real-world demo of how AI + knowledge management works for a non-technical person.
+
 ### TODO
 - [ ] Einladungs-Email verfassen
 - [ ] Kalendereinladung erstellen
