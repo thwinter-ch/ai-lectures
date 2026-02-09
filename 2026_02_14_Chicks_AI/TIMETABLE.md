@@ -1,41 +1,60 @@
 # 🐣 Chicks & AI — Zeitplan
 
-**Datum:** Samstag, 14. Februar 2026
-**Beginn:** TBD (Vorschlag: 09:00)
-**Ende:** ~13:00
+**Datum:** Samstag, 14. Februar 2026  
+**Beginn:** 09:00 (Vorschlag)  
+**Ende:** ~13:30
 
 ---
 
-| Zeit | # | Segment | Typ | Dauer | Was bleibt |
-|------|---|---------|-----|-------|------------|
-| 09:00 | 1 | **Was ist KI eigentlich?** Entmystifizieren, zeigen dass es ein Gespräch ist | Vortrag | 20 min | Verständnis statt Angst |
-| 09:20 | 2 | **Erstes KI-Gespräch** — eine echte Frage aus dem Alltag stellen | Übung | 20 min | Ihr erstes echtes KI-Gespräch |
-| 09:45 | 3 | **Besser fragen = bessere Antworten** — Rolle, Kontext, Format | Vortrag | 15 min | Die "Zauberformel" fürs Prompting |
-| 10:00 | 4 | **Deine KI-Stimme** — 10 Fragen, damit die KI schreibt wie du | Übung | 25 min | Persönlicher Schreibstil-Prompt (behalten!) |
-| 10:30 | ☕ | **Pause** | | 15 min | Kaffee & Austausch |
-| 10:45 | 5 | **Bilder aus dem Nichts** — Bildgenerierung mit Gemini | Übung | 20 min | Ein selbst generiertes Bild |
-| 11:05 | 6 | **Dein KI-Avatar** — HeyGen Foto-Avatar erstellen | Übung | 25 min | Ein kurzes Video von sich selbst als Avatar |
-| 11:35 | 7 | **KI als Lernpartner** — NotebookLM: Artikel rein, Podcast raus | Übung | 20 min | Ein KI-generierter Podcast |
-| 12:00 | 8 | **Sicherheit & Privatsphäre** — Passwort-Manager + was man KI NICHT sagt | Vortrag | 15 min | Sicherheitsbewusstsein |
-| 12:15 | 9 | **Was jetzt?** — Zusammenfassung + Spickzettel für Montag | Vortrag | 15 min | Cheat Sheet + Zuversicht |
-| 12:30 | | **Ende / Fragen / Apéro** | | 30 min | |
+| Zeit | # | Segment | Format | Dauer |
+|------|---|---------|--------|-------|
+| 09:00 | 1 | **Was ist KI eigentlich?** | Vortrag | 15 min |
+| 09:15 | 2 | **Erstes KI-Gespräch** — eine echte Frage stellen | Hands-on | 20 min |
+| 09:35 | 3 | **Besser fragen = bessere Antworten** | Vortrag | 15 min |
+| 09:50 | 4 | **Firmen-/Branchen-Recherche** — KI als Recherche-Partner | Hands-on | 20 min |
+| 10:10 | 5 | **Dein Schreibstil** — 10-Fragen-Übung | Hands-on | 25 min |
+| 10:35 | ☕ | **Pause** | | 15 min |
+| 10:50 | 6 | **Professionelles Profilbild** — Gemini Bildgenerierung | Hands-on | 20 min |
+| 11:10 | 7 | **Wissen organisieren** — Second Brain + Optiverse Demo | Demo | 20 min |
+| 11:30 | 8 | **KI-Avatar erstellen** — HeyGen | Hands-on | 20 min |
+| 11:50 | 9 | **Dokumente als Podcast** — NotebookLM | Hands-on | 20 min |
+| 12:10 | 10 | **Sicherheit** — Passwörter & was man KI nicht sagt | Vortrag | 15 min |
+| 12:25 | 11 | **Ausblick & Spickzettel** — Was jetzt? | Abschluss | 15 min |
+| 12:40 | | **Ende / Fragen / Apéro** | | 30+ min |
+
+**Gesamtdauer:** ~4 Stunden inkl. Pause und Apéro
+
+---
+
+## Was sie mitnehmen
+
+| Segment | Konkretes Ergebnis |
+|---------|-------------------|
+| Erstes Gespräch | Erste echte KI-Erfahrung |
+| Recherche | Infos über ihre Branche/Firma |
+| 10-Fragen | Persönlicher Schreibstil-Prompt |
+| Profilbild | KI-generiertes LinkedIn-Foto |
+| HeyGen | Kurzes Avatar-Video von sich |
+| NotebookLM | Dokument als Podcast |
+| Abschluss | Spickzettel mit Tools + Prompts |
 
 ---
 
 ## Kürzen wenn nötig
 
-| Wenn die Zeit knapp wird… | Dann… |
-|---------------------------|-------|
-| Segment 6 (HeyGen) dauert zu lang | Demo statt alle einzeln |
-| Segment 7 (NotebookLM) | Kann als "Hausaufgabe" mitgegeben werden |
-| Allgemein | Pausen kürzen, nicht Übungen |
+| Wenn knapp... | Dann... |
+|---------------|---------|
+| HeyGen dauert zu lang | Nur Demo, nicht alle einzeln |
+| NotebookLM | Als "Hausaufgabe" mitgeben |
+| Allgemein | Pausen kürzen, nicht Hands-on |
+
+---
 
 ## Checkliste vor Ort
 
-- [ ] WLAN-Zugang für alle (Name + Passwort ausdrucken)
+- [ ] WLAN-Zugang (Name + Passwort ausdrucken)
 - [ ] Steckdosen / Verlängerungskabel
-- [ ] Alle haben Google-Account (für Gemini, NotebookLM)
-- [ ] HeyGen Free-Tier Accounts vorbereitet
+- [ ] Alle haben Google-Account
 - [ ] Beamer / grosser Bildschirm
 - [ ] Spickzettel ausgedruckt
 - [ ] Snacks & Getränke ☕🥐
