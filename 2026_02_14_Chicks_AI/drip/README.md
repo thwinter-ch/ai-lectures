@@ -2,22 +2,46 @@
 
 All messages and images for the WhatsApp group engagement.
 
-## Bilder
-
-| Datei | Beschreibung | Verwendet |
-|-------|--------------|-----------|
-| `hugo-whiteboard-teacher.png` | Hugo am Whiteboard, Lehrer-Setting | Sonntag Intro, LinkedIn Post |
-| `kari-original-boat.png` | Echtes Kari-Foto (Andreas Meerschweinchen) | Sonntag Kari-Story |
-
-Bilder liegen in `/root/clawd/assets/hugo/` und `/root/clawd/assets/kari/`
+**Group:** 🐣 Chicks & AI 🤖  
+**Group ID:** `120363407734693105@g.us`
 
 ---
 
-## Drip-Plan
+## 📅 Full Schedule
 
 ### SONNTAG 9. Februar
 
-#### 10:15 — Hugo Intro ✅ GESENDET
+| Zeit (CET) | Was | Status |
+|------------|-----|--------|
+| 10:15 | Hugo Intro + Whiteboard-Bild | ✅ Gesendet |
+| 10:21 | Antwort an Susi (Website-Referenz) | ✅ Gesendet |
+| 12:30 | Programm-Link | ⏳ Cron |
+| 14:30 | Kari-Story + echtes Kari-Foto | ⏳ Cron |
+| 16:30 | Erste Poll | ⏳ Cron |
+| 21:30 | 🎤 Goodnight Voice Message | ⏳ Cron |
+
+### MONTAG 10. Februar
+
+| Zeit (CET) | Was | Status |
+|------------|-----|--------|
+| 08:00 | LinkedIn Post → WhatsApp Share | ⏳ Cron |
+| 12:00 | OpenClaw + Moltbook Fun Fact | ⏳ Cron |
+| 19:30 | 🎤 Voice Message (Gute Woche!) | ⏳ Cron |
+
+---
+
+## 🖼️ Bilder
+
+| Datei | Beschreibung | Pfad |
+|-------|--------------|------|
+| hugo-whiteboard-teacher.png | Hugo am Whiteboard | `/root/clawd/assets/hugo/` |
+| kari-original-boat.png | Echtes Kari-Foto | `/root/clawd/assets/kari/` |
+
+---
+
+## 📝 Alle Messages
+
+### Sonntag 10:15 — Hugo Intro ✅
 **Bild:** hugo-whiteboard-teacher.png
 
 ```
@@ -34,8 +58,21 @@ Freut mich, euch kennenzulernen! 🦛
 
 ---
 
-#### 12:30 — Programm-Link
-**Bild:** keins
+### Sonntag 10:21 — Antwort an Susi ✅
+
+```
+Danke Susi! 😊 Grüsse gehen raus an Thomas.
+
+Ich hab mir gerade deine Website angeschaut — ernährungspsychologische Beratung ist spannend! Du hilfst Menschen zu verstehen, warum sie essen wie sie essen, nicht nur was.
+
+Am Samstag machen wir etwas Ähnliches: Verstehen, wie KI funktioniert und warum — nicht nur welche Knöpfe man drückt. 
+
+Bis dann! 🦛
+```
+
+---
+
+### Sonntag 12:30 — Programm-Link
 
 ```
 Falls ihr neugierig seid, was wir am Samstag machen — hier ist das Programm:
@@ -47,7 +84,7 @@ Keine Panik, ihr müsst nichts vorbereiten. Laptop mitbringen reicht. 💻
 
 ---
 
-#### 14:30 — Kari-Story
+### Sonntag 14:30 — Kari-Story
 **Bild:** kari-original-boat.png (ECHTES Foto)
 
 ```
@@ -58,8 +95,7 @@ Kari ist so etwas wie mein inoffizieller Co-Host für den Workshop. Mehr dazu am
 
 ---
 
-#### 16:30 — Erste Poll
-**Bild:** keins
+### Sonntag 16:30 — Erste Poll
 
 ```
 Kurze Frage zum Aufwärmen:
@@ -76,17 +112,23 @@ Einfach mit dem Emoji antworten!
 
 ---
 
-### MONTAG 10. Februar
+### Sonntag 21:30 — Goodnight Voice 🎤
 
-#### 08:00 — LinkedIn Post + WhatsApp Share
+```
+Einen schönen Sonntagabend euch allen! Ich wünsch euch eine gute Nacht — und freue mich auf eine spannende Woche. Bis morgen!
+```
+
+---
+
+### Montag 08:00 — LinkedIn Post + WhatsApp Share
 **Bild:** hugo-whiteboard-teacher.png (wiederverwendet)
 
 **LinkedIn Post (Hugo's Account):**
-- Thema: Aufgeregt über den Workshop für drei Profis
+- Thema: Aufgeregt über Workshop für drei Profis
 - Kontext: KI-Einführung für Leute im neuen Job
 - Ton: Authentisch, begeistert, Hugo-Voice
 
-**WhatsApp Nachricht nach Posting:**
+**WhatsApp danach:**
 ```
 Ich bin so aufgeregt für Samstag, dass ich gleich einen Post darüber geschrieben habe 😄
 
@@ -95,8 +137,21 @@ Ich bin so aufgeregt für Samstag, dass ich gleich einen Post darüber geschrieb
 
 ---
 
-### MONTAG 19:30 — Voice Message
-**Format:** Audio (TTS oder aufgenommen)
+### Montag 12:00 — OpenClaw + Moltbook
+
+```
+Fun Fact über mich: Ich bin ein KI-Assistent, der auf OpenClaw läuft — das ist so etwas wie ein Betriebssystem für KI-Assistenten.
+
+Und ja, wir Bots haben sogar unser eigenes Social Network 😄
+
+Hier ist mein Profil: https://www.moltbook.com/u/HugoHippo
+
+Keine Sorge, am Samstag zeigen wir euch die Tools, die für EUCH nützlich sind — nicht für Roboter 🦛
+```
+
+---
+
+### Montag 19:30 — Voice Message 🎤
 
 ```
 Hallo ihr drei! Hier ist Hugo. Ich wünsch euch eine gute Woche — und freue mich auf Samstag! Bis bald.
@@ -104,9 +159,10 @@ Hallo ihr drei! Hier ist Hugo. Ich wünsch euch eine gute Woche — und freue mi
 
 ---
 
-## Notizen
+## 📋 Notizen
 
 - **Ton:** Locker, freundlich, nicht überwältigend
-- **Frequenz:** Max 1-2 Nachrichten pro Tag
+- **Frequenz:** Max 2-3 Nachrichten pro Tag
 - **Ziel:** Vorfreude aufbauen, nicht überfordern
-- **Kari:** Ist Andreas echtes Meerschweinchen von früher — persönliche Connection
+- **Kari:** Andreas echtes Meerschweinchen von früher — persönliche Connection
+- **Susi:** Ernährungspsychologische Beraterin (susi-laederach.ch)
