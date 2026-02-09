@@ -9,12 +9,28 @@
 
 ## Zielgruppe
 
-Kaufmännische Angestellte ohne KI-Erfahrung. Eine arbeitet in einer Arztpraxis (Praxisassistenz). Keine Premium-Accounts, kein strukturiertes Prompting. Wir starten bei Null.
+Kaufmännische Angestellte ohne KI-Erfahrung. Zwei haben gerade neue Jobs angefangen (eine davon HR), eine arbeitet in einer Arztpraxis. Keine Premium-Accounts, kein strukturiertes Prompting. Wir starten bei Null.
+
+## Meta-Story: KI für den neuen Job
+
+Der rote Faden durch alle Übungen: **Wie nutze ich KI, um in einem neuen Job schneller produktiv zu werden?**
+
+Das passt perfekt, weil zwei Teilnehmerinnen gerade frisch gestartet sind. Jede Übung wird auf diesen Kontext bezogen:
+
+| Übung | Neuer-Job-Kontext |
+|-------|-------------------|
+| Erstes KI-Gespräch | "Was muss ich über [Branche/Rolle] wissen?" |
+| Strukturiertes Prompting | Professionelle E-Mails an neue Kollegen |
+| 10-Fragen-Übung | Dein professioneller Schreibstil für die neue Rolle |
+| Second Brain | Alles aus dem Onboarding ablegen → später abfragen |
+| Bildgenerierung | LinkedIn-Foto, Präsentationsvisuals |
+| HeyGen Avatar | Vorstellungsvideo fürs neue Team |
+| NotebookLM | Firmenhandbuch als Podcast verdauen |
 
 ## Konzept
 
 - **Hands-on first:** Jedes Thema wird sofort praktisch ausprobiert
-- **Nur kostenlose Tools:** Keine Bezahlschranken
+- **Nur kostenlose Tools:** Keine Bezahlschranken (ausser $20 für Claude Pro — lohnt sich!)
 - **Deutsch:** Alle Materialien auf Deutsch
 - **Hugo als Sidekick:** Bringt Humor, erklärt einfach, macht Übungen interaktiv
 - **WhatsApp-Gruppe:** Vorab-Engagement, Polls, Voice Messages, Erinnerungen
@@ -28,6 +44,27 @@ Kaufmännische Angestellte ohne KI-Erfahrung. Eine arbeitet in einer Arztpraxis 
 | HeyGen (free tier) | Foto-Avatar erstellen |
 | NotebookLM | Lerninhalte als Podcast |
 | Hugo via WhatsApp | Live-Assistent, Polls, Spass |
+
+## Second Brain — Der Wert liegt in den Fragen
+
+Das Second Brain ist nicht nur ein Ablagesystem. **Der echte Wert entsteht durch die Abfragen.**
+
+### Demo-Flow (Andrea's Setup)
+1. **Telegram-Intake:** Schnell Gedanken, Notizen, Erkenntnisse reinwerfen
+2. **Automatische Klassifizierung:** System sortiert nach Thema, Priorität, Kontext
+3. **Notion-Datenbank:** Alles durchsuchbar und verknüpft
+4. **Die Magie — Abfragen:**
+   - "Was hat mein Chef letzte Woche über Prioritäten gesagt?"
+   - "Welche Prozesse habe ich noch nicht verstanden?"
+   - "Wer sind die wichtigsten Ansprechpartner für X?"
+   - "Was waren meine grössten Learnings im ersten Monat?"
+
+### Warum $20/Monat für Claude Pro?
+- Notion-Integration (MCP) für automatisches Speichern
+- Projekte mit persistenten Anweisungen
+- Längere Kontextfenster für komplexe Abfragen
+
+**Referenz:** Detaillierte Anleitung in `../2026_02_07_AIF/segments-de/07-second-brain-exercise/`
 
 ## Sicherheits-Slides (aus HWZ AIF Lecture)
 
