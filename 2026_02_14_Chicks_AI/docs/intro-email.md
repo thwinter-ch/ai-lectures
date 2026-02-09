@@ -6,7 +6,9 @@ Betreff: `🐣 Chicks & AI — Samstag, 14. Februar`
 
 Liebe [Namen],
 
-Am Samstag machen wir einen lockeren Halbtages-Workshop zum Thema KI im Arbeitsalltag. Hier ist der Plan:
+Am Samstag machen wir einen lockeren Halbtages-Workshop zum Thema KI im Arbeitsalltag. 
+
+**Der rote Faden:** Wie nutzt man KI, um in einem neuen Job schneller produktiv zu werden? Von der Recherche über die erste E-Mail bis zum organisierten Wissen — alles, was in den ersten Wochen hilft.
 
 📅 Samstag, 14. Februar, 11:00 – ca. 15:00  
 📍 [ORT]
