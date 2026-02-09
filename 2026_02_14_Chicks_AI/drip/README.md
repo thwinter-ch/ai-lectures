@@ -58,17 +58,18 @@ Freut mich, euch kennenzulernen! 🦛
 
 ---
 
-### Sonntag 10:21 — Antwort an Susi ✅
+### Sonntag 10:21 — Antwort an Teilnehmerin ✅
 
 ```
-Danke Susi! 😊 Grüsse gehen raus an Thomas.
+Danke [Name]! 😊 Grüsse gehen raus an Thomas.
 
-Ich hab mir gerade deine Website angeschaut — ernährungspsychologische Beratung ist spannend! Du hilfst Menschen zu verstehen, warum sie essen wie sie essen, nicht nur was.
+Ich hab mir gerade deine Website angeschaut — [Beruf] ist spannend! Du hilfst Menschen zu verstehen, warum sie [tun was sie tun], nicht nur was.
 
 Am Samstag machen wir etwas Ähnliches: Verstehen, wie KI funktioniert und warum — nicht nur welche Knöpfe man drückt. 
 
 Bis dann! 🦛
 ```
+*(Personalisiert basierend auf Website-Recherche)*
 
 ---
 
@@ -165,4 +166,4 @@ Hallo ihr drei! Hier ist Hugo. Ich wünsch euch eine gute Woche — und freue mi
 - **Frequenz:** Max 2-3 Nachrichten pro Tag
 - **Ziel:** Vorfreude aufbauen, nicht überfordern
 - **Kari:** Andreas echtes Meerschweinchen von früher — persönliche Connection
-- **Susi:** Ernährungspsychologische Beraterin (susi-laederach.ch)
+- **Teilnehmerinnen:** Recherchiert via Website für personalisierte Antworten
