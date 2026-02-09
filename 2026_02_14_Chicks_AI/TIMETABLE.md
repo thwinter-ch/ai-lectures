@@ -1,28 +1,28 @@
 # 🐣 Chicks & AI — Zeitplan
 
 **Datum:** Samstag, 14. Februar 2026  
-**Beginn:** 09:00 (Vorschlag)  
-**Ende:** ~13:30
+**Beginn:** 11:00  
+**Ende:** ~15:00
 
 ---
 
 | Zeit | # | Segment | Format | Dauer |
 |------|---|---------|--------|-------|
-| 09:00 | 1 | **Was ist KI eigentlich?** | Vortrag | 15 min |
-| 09:15 | 2 | **Erstes KI-Gespräch** — eine echte Frage stellen | Hands-on | 20 min |
-| 09:35 | 3 | **Besser fragen = bessere Antworten** | Vortrag | 15 min |
-| 09:50 | 4 | **Firmen-/Branchen-Recherche** — KI als Recherche-Partner | Hands-on | 20 min |
-| 10:10 | 5 | **Dein Schreibstil** — 10-Fragen-Übung | Hands-on | 25 min |
-| 10:35 | ☕ | **Pause** | | 15 min |
-| 10:50 | 6 | **Professionelles Profilbild** — Gemini Bildgenerierung | Hands-on | 20 min |
-| 11:10 | 7 | **Wissen organisieren** — Second Brain + Optiverse Demo | Demo | 20 min |
-| 11:30 | 8 | **KI-Avatar erstellen** — HeyGen | Hands-on | 20 min |
-| 11:50 | 9 | **Dokumente als Podcast** — NotebookLM | Hands-on | 20 min |
-| 12:10 | 10 | **Sicherheit** — Passwörter & was man KI nicht sagt | Vortrag | 15 min |
-| 12:25 | 11 | **Ausblick & Spickzettel** — Was jetzt? | Abschluss | 15 min |
-| 12:40 | | **Ende / Fragen / Apéro** | | 30+ min |
+| 11:00 | 1 | **Was ist KI eigentlich?** | Vortrag | 15 min |
+| 11:15 | 2 | **Erstes KI-Gespräch** — eine echte Frage stellen | Hands-on | 20 min |
+| 11:35 | 3 | **Besser fragen = bessere Antworten** | Vortrag | 15 min |
+| 11:50 | 4 | **Firmen-/Branchen-Recherche** — KI als Recherche-Partner | Hands-on | 25 min |
+| 12:15 | 🍴 | **Mittagspause** | | 30 min |
+| 12:45 | 5 | **Dein Schreibstil** — 10-Fragen-Übung | Hands-on | 25 min |
+| 13:10 | 6 | **Professionelles Profilbild** — Gemini Bildgenerierung | Hands-on | 20 min |
+| 13:30 | 7 | **Wissen organisieren** — Second Brain + Optiverse Demo | Demo | 20 min |
+| 13:50 | 8 | **KI-Avatar erstellen** — HeyGen | Hands-on | 20 min |
+| 14:10 | 9 | **Dokumente als Podcast** — NotebookLM | Hands-on | 20 min |
+| 14:30 | 10 | **Sicherheit** — Passwörter & was man KI nicht sagt | Vortrag | 15 min |
+| 14:45 | 11 | **Ausblick & Spickzettel** — Was jetzt? | Abschluss | 15 min |
+| 15:00 | | **Ende / Fragen** | | |
 
-**Gesamtdauer:** ~4 Stunden inkl. Pause und Apéro
+**Gesamtdauer:** 4 Stunden inkl. Mittagspause
 
 ---
 
@@ -57,4 +57,4 @@
 - [ ] Alle haben Google-Account
 - [ ] Beamer / grosser Bildschirm
 - [ ] Spickzettel ausgedruckt
-- [ ] Snacks & Getränke ☕🥐
+- [ ] Mittagessen organisiert 🍴
