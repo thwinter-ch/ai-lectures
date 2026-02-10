@@ -346,11 +346,12 @@
     }
 
     /* ===== ANIMATIONS ===== */
-    .fade-in {
+    /* Fade-in: only hide elements when JS is confirmed working (progressive enhancement) */
+    .js-ready .fade-in {
       opacity: 0; transform: translateY(20px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
@@ -1386,11 +1387,20 @@ walk me through Phase 1 when I'm ready.</div>
 
 <!-- ===== SCRIPTS ===== -->
 <script>
-  // Fade-in on scroll
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  // Fade-in on scroll (progressive enhancement)
+  (function() {
+    if (!('IntersectionObserver' in window)) return;
+    document.documentElement.classList.add('js-ready');
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+    }, { threshold: 0.05 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+    setTimeout(function() {
+      document.querySelectorAll('.fade-in:not(.visible)').forEach(el => el.classList.add('visible'));
+    }, 4000);
+  })();
 
   // Nav scroll shadow
   const nav = document.getElementById('navbar');

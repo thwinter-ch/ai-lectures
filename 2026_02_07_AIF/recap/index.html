@@ -143,11 +143,12 @@
 
     /* ===== SECTIONS ===== */
     .section { margin-bottom: 4rem; }
-    .section.fade-in {
+    /* Fade-in: only hide elements when JS is confirmed working (progressive enhancement) */
+    .js-ready .fade-in {
       opacity: 0; transform: translateY(30px);
       transition: opacity 0.7s ease-out, transform 0.7s ease-out;
     }
-    .section.fade-in.visible { opacity: 1; transform: translateY(0); }
+    .js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     /* ===== SECTION DIVIDER ===== */
     .section-divider {
@@ -447,7 +448,7 @@
       .deck-card { background: #f5f5f5 !important; color: #001447 !important; }
       .thesis-box { background: #f5f5f5 !important; color: #001447 !important; }
       body { font-size: 11pt; }
-      .section.fade-in { opacity: 1 !important; transform: none !important; }
+      .fade-in { opacity: 1 !important; transform: none !important; }
     }
   </style>
 </head>
@@ -1368,7 +1369,16 @@
 <!-- ===== JAVASCRIPT ===== -->
 <script>
   // ===== Scroll-based fade-in with IntersectionObserver =====
+  // Progressive enhancement: content is visible by default.
+  // We add .js-ready to <html> only when IntersectionObserver is available,
+  // which activates the CSS that hides .fade-in elements before they animate in.
+  // If IntersectionObserver is missing (old browsers), content stays fully visible.
   (function() {
+    if (!('IntersectionObserver' in window)) return; // content stays visible
+
+    // Signal to CSS that JS animation is ready
+    document.documentElement.classList.add('js-ready');
+
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
@@ -1377,13 +1387,21 @@
         }
       });
     }, {
-      threshold: 0.08,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.05,
+      rootMargin: '0px 0px -30px 0px'
     });
 
     document.querySelectorAll('.fade-in').forEach(function(el) {
       observer.observe(el);
     });
+
+    // Safety net: if any .fade-in element is still hidden after 4 seconds
+    // (e.g. observer failed silently, viewport edge case), force them visible.
+    setTimeout(function() {
+      document.querySelectorAll('.fade-in:not(.visible)').forEach(function(el) {
+        el.classList.add('visible');
+      });
+    }, 4000);
   })();
 
   // ===== Nav shadow on scroll =====
