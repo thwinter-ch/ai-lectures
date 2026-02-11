@@ -1,21 +1,21 @@
 # Lectures
 
-Wiederverwendbare Vortragsmodule. Jeder Eintrag ist ein README mit Links zu Scripts und Gamma-Prompts in den jeweiligen Vorlesungsordnern -- keine Duplikate.
+Reusable presentation modules. Each entry is a README linking to scripts and Gamma prompts in the source lecture folders -- no duplication.
 
 ## Index
 
-| Lecture | Dauer | Thema | Quelle |
-|---------|-------|-------|--------|
-| [technology-revolution](technology-revolution/) | 15 min | Warum AI keine App ist, sondern eine Schicht | 2026_02_07_AIF/02 |
-| [ai-managerial-skill](ai-managerial-skill/) | 15 min | Centaurs, Cyborgs und die Jagged Frontier | 2026_02_07_AIF/04 |
-| [information-overload](information-overload/) | 10 min | 7±2 und warum Second Brain kein Luxus ist | 2026_02_07_AIF/06 |
-| [outlook-reality-check](outlook-reality-check/) | 10 min | Was kommt als naechstes -- und was nicht | 2026_02_07_AIF/08 |
-| [how-i-built-this](how-i-built-this/) | 15 min | Meta-Vortrag: Lecture as Code in Aktion | 2026_02_07_AIF/01 |
+| Lecture | Duration | Topic | Source | Content |
+|---------|----------|-------|--------|---------|
+| [technology-revolution](technology-revolution/) | 15 min | Why AI is a layer, not an app | 2026_02_07_AIF/02 | DE |
+| [ai-managerial-skill](ai-managerial-skill/) | 15 min | Centaurs, Cyborgs and the Jagged Frontier | 2026_02_07_AIF/04 | DE |
+| [information-overload](information-overload/) | 10 min | 7+/-2 and why Second Brain is not a luxury | 2026_02_07_AIF/06 | DE |
+| [outlook-reality-check](outlook-reality-check/) | 10 min | What comes next -- and what does not | 2026_02_07_AIF/08 | DE |
+| [how-i-built-this](how-i-built-this/) | 15 min | Meta-talk: Lecture as Code in action | 2026_02_07_AIF/01 | DE |
 
-## Aufbau
+## Anatomy
 
-Jede Lecture hat eine `README.md` mit:
-- Kernthese (1 Satz)
-- Links zu Script und Gamma-Prompt im Quell-Vorlesungsordner
-- Welche Practices gut davor/danach passen
-- Eingesetzt in: welche Vorlesungen dieses Modul verwenden
+Each lecture has a `README.md` with:
+- Core thesis (1 sentence)
+- Links to script and Gamma prompt in the source lecture folder
+- Which practices pair well before/after
+- Used in: which lectures use this module
