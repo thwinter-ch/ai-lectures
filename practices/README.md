@@ -14,9 +14,8 @@ Reusable playbooks that work standalone or as part of a lecture. Each practice c
 | [avatar-video](avatar-video/) | 15 min | HeyGen | testing | DE |
 | [drip-feed-engagement](drip-feed-engagement/) | -- | WhatsApp, HeyGen | testing | DE |
 | [podcast-from-doc](podcast-from-doc/) | 10 min | NotebookLM | testing | DE |
-| [newsletter-signal-filter](newsletter-signal-filter/) | 15 min | Gemini (Gmail), Claude, n8n | stub | -- |
+| [signal-filter](signal-filter/) | varies | Gemini (native), n8n, OpenClaw | stub | -- |
 | [inbox-action-items](inbox-action-items/) | 15 min | Gemini (Gmail), Claude, n8n | stub | -- |
-| [prompt-extractor](prompt-extractor/) | 20 min | Perplexity Pro, Claude | stub | -- |
 
 ## Status Legend
 
