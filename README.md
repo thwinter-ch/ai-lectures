@@ -21,12 +21,15 @@ Every lecture segment has its own folder with scripts, prompts, and build artifa
 
 ```
 ai-lectures/
-├── 2026_02_07_AIF/       # Current: Feb 7 AI Productivity Hacks
+├── practices/            # Reusable playbooks (writing profile, company research, ...)
+├── experiments/          # Things being tested, not yet proven
+├── templates/            # Instructor ops (email templates, logistics)
+├── 2026_02_07_AIF/       # Feb 7 AI Productivity Hacks (delivered)
 │   ├── segments-de/      # 8 segments in German (5 lectures + 3 exercises)
-│   ├── segments-en/      # 8 segments in English
 │   ├── recap/            # Post-lecture recap website + LinkedIn series
 │   └── BUILD_LOG.md      # How this repo was built
-└── templates/            # Starter files for participants
+├── 2026_02_14_Chicks_AI/ # Feb 14 Workshop (in progress)
+└── LECTURE-AS-CODE-MANUAL.md  # The methodology
 ```
 
 ## Lectures
@@ -79,12 +82,15 @@ Die gesamte Vorlesung vom 7. Februar wurde in ~4 Sessions mit Claude Code + GSD-
 
 ```
 ai-lectures/
-├── 2026_02_07_AIF/       # Aktuell: 7. Feb KI-Produktivitäts-Hacks
+├── practices/            # Wiederverwendbare Playbooks (Schreibprofil, Recherche, ...)
+├── experiments/          # Dinge die getestet werden
+├── templates/            # Dozenten-Vorlagen (E-Mails, Logistik)
+├── 2026_02_07_AIF/       # 7. Feb KI-Produktivitäts-Hacks (geliefert)
 │   ├── segments-de/      # 8 Segmente auf Deutsch (5 Vorträge + 3 Übungen)
-│   ├── segments-en/      # 8 Segmente auf Englisch
 │   ├── recap/            # Vorlesungs-Recap Website + LinkedIn-Serie
 │   └── BUILD_LOG.md      # Wie dieses Repo erstellt wurde
-└── templates/            # Vorlagen für Teilnehmende
+├── 2026_02_14_Chicks_AI/ # 14. Feb Workshop (in Arbeit)
+└── LECTURE-AS-CODE-MANUAL.md  # Die Methodik
 ```
 
 ## Vorlesungen

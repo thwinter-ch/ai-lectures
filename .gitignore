@@ -86,10 +86,10 @@ HANDOFF.md
 **/summary/
 
 # -----------------------------------------------------------------------------
-# Working screenshots (not for repo)
+# Working screenshots in root (moved to proper folders)
 # -----------------------------------------------------------------------------
-recap-*.png
-hwz-*.png
+/recap-*.png
+/hwz-*.png
 
 # -----------------------------------------------------------------------------
 # English content (outdated, DE is primary)

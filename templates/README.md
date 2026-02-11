@@ -1,24 +1,22 @@
 # Templates
 
-Starter files and templates for lectures and participant communication.
+Operative Vorlagen fuer die Vorlesungslogistik. Dozenten-seitig, nicht fuer Teilnehmende.
 
-## Available Templates
+Fuer Uebungen und Prompts siehe [practices/](../practices/).
 
-| Template | Description |
-|----------|-------------|
-| [prereqs-email-template.md](prereqs-email-template.md) | Pre-session email with prerequisites (DE/EN) |
+## Verfuegbare Vorlagen
 
-## For Participants
+| Vorlage | Zweck | Versand via |
+|---------|-------|-------------|
+| [prereqs-email-template.md](prereqs-email-template.md) | Vorbereitungs-E-Mail mit Voraussetzungen (DE/EN) | n8n oder manuell |
+| [day-of-email-template.md](day-of-email-template.md) | Erinnerung am Kurstag mit Materialien-Link | n8n oder manuell |
 
-These files can be downloaded and used as starting points:
+## Variablen-Konvention
 
-- Prompt libraries
-- Tool setup guides
-- Exercise templates
-
-## For Instructors
-
-Communication templates for:
-- Pre-session preparation emails
-- Reminder emails
-- Follow-up materials
+Alle Vorlagen verwenden `{{variable}}` Platzhalter:
+- `{{name}}` -- Teilnehmer-Vorname
+- `{{session_title}}` -- Kurstitel
+- `{{session_date}}` -- Datum
+- `{{session_time}}` -- Uhrzeit
+- `{{repo_url}}` -- GitHub-Link zu den Materialien
+- `{{instructor_names}}` -- Dozentennamen
