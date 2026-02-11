@@ -11,6 +11,9 @@ Wiederverwendbare Playbooks, die eigenständig oder als Teil einer Vorlesung fun
 | [second-brain](second-brain/) | 25 min | Claude Pro + Notion | proven |
 | [email-writing](email-writing/) | 10 min | Claude, ChatGPT, Gemini | proven |
 | [document-summary](document-summary/) | 10 min | Claude, ChatGPT, Gemini | proven |
+| [avatar-video](avatar-video/) | 15 min | HeyGen | testing |
+| [drip-feed-engagement](drip-feed-engagement/) | -- | WhatsApp, HeyGen | testing |
+| [podcast-from-doc](podcast-from-doc/) | 10 min | NotebookLM | testing |
 | [newsletter-signal-filter](newsletter-signal-filter/) | 15 min | Gemini (Gmail), Claude, n8n | stub |
 | [inbox-action-items](inbox-action-items/) | 15 min | Gemini (Gmail), Claude, n8n | stub |
 | [prompt-extractor](prompt-extractor/) | 20 min | Perplexity Pro, Claude | stub |

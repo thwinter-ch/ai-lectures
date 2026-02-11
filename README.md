@@ -21,8 +21,8 @@ Every lecture segment has its own folder with scripts, prompts, and build artifa
 
 ```
 ai-lectures/
-├── practices/            # Reusable playbooks (writing profile, company research, ...)
-├── experiments/          # Things being tested, not yet proven
+├── practices/            # Reusable playbooks (proven, testing, stubs)
+├── lectures/             # Reusable presentation modules
 ├── templates/            # Instructor ops (email templates, logistics)
 ├── 2026_02_07_AIF/       # Feb 7 AI Productivity Hacks (delivered)
 │   ├── segments-de/      # 8 segments in German (5 lectures + 3 exercises)
@@ -82,8 +82,8 @@ Die gesamte Vorlesung vom 7. Februar wurde in ~4 Sessions mit Claude Code + GSD-
 
 ```
 ai-lectures/
-├── practices/            # Wiederverwendbare Playbooks (Schreibprofil, Recherche, ...)
-├── experiments/          # Dinge die getestet werden
+├── practices/            # Wiederverwendbare Playbooks (proven, testing, stubs)
+├── lectures/             # Wiederverwendbare Vortragsmodule
 ├── templates/            # Dozenten-Vorlagen (E-Mails, Logistik)
 ├── 2026_02_07_AIF/       # 7. Feb KI-Produktivitäts-Hacks (geliefert)
 │   ├── segments-de/      # 8 Segmente auf Deutsch (5 Vorträge + 3 Übungen)
