@@ -36,14 +36,37 @@ Your voice is not locked into one platform. The profile is a `.md` file that wor
 
 ## Which AI to use
 
-| Platform | Recommended? | Session persistence | Notes |
-|----------|-------------|-------------------|-------|
-| **Claude Pro** | Best | Projects (persistent instructions) | Profile goes into Project Instructions -- persists across chats |
-| **ChatGPT Plus** | Good | Custom Instructions / GPT memory | Use Custom Instructions, not memory (memory is unreliable) |
-| **Gemini** | Works | None | Big context window, but no persistent storage |
-| **Perplexity** | Not ideal | None | Designed for search, not interviews |
+This exercise is a long conversation -- 10 questions for lite, 100 for full. What matters:
 
-**Bottom line:** Use whatever you already pay for. The profile itself is a text file -- once exported, it works in any AI.
+1. **Can it hold a conversation?** The AI needs to ask follow-ups, push back on vague answers, and remember what you said 20 questions ago. Search tools (Perplexity) and short-context models aren't built for this.
+2. **Will it burn your credits?** A 100-question interview can take 2-3 hours. If you're on a Pro plan with a top-tier model, you'll hit rate limits fast.
+3. **Can you store the result?** The profile is most useful when the AI remembers it across conversations. Some platforms support this natively, others don't.
+
+### Recommended setup per platform
+
+**Claude**
+- **Max plan ($200/mo):** Use Opus -- unlimited, best follow-up questions
+- **Pro plan ($20/mo):** Use Sonnet -- Opus will hit your rate limit after 10-15 minutes of back-and-forth, which kills the interview flow
+- After the interview: save the profile in **Project Instructions** (persists across all chats in that project)
+
+**ChatGPT Plus**
+- Use the latest model (currently o3) -- it's the default, no need to change anything
+- Skip "thinking mode" / extended thinking -- unnecessary for an interview and eats your quota faster
+- After the interview: paste the profile into **Custom Instructions** (Settings -> Personalization)
+- Don't rely on ChatGPT's "memory" feature -- it's unreliable and summarizes unpredictably
+
+**Gemini**
+- Any mode works (Fast is fine for this)
+- Big context window, so even the full 100-question version won't run out of space
+- After the interview: create a **Gem** (Gemini's version of a custom chatbot -- you give it instructions and it remembers them across conversations). Paste your profile as the Gem's instructions. Alternative: just paste the profile at the start of each new conversation
+
+**Perplexity -- not recommended**
+- Perplexity is a search engine that can chat, not a chat AI that can search. It's optimized for "find me an answer," not "interview me for 2 hours"
+- Shorter context window, tends to lose the thread after 15-20 exchanges
+- No persistent storage for the result
+- Use it for research, not for this
+
+**Bottom line:** Use whatever you already pay for. The profile itself is a text file -- once exported, it works in any AI. But for the interview itself, pick a model that can hold a long conversation without eating your quota.
 
 ---
 
@@ -58,7 +81,7 @@ Your voice is not locked into one platform. The profile is a `.md` file that wor
 7. The AI generates your voice profile at the end
 8. Save it (see below)
 
-> **Tipp:** Vage Antworten wie "Ich halte es gerne einfach" produzieren generische Profile. Was zahlt: konkrete Beispiele, echte Argernisse, spezifische Worter die du hasst. Je ehrlicher, desto besser das Ergebnis.
+> **Tip:** Vague answers like "I like to keep things simple" produce generic profiles. What counts: concrete examples, real pet peeves, specific words you hate. The more honest you are, the better the result.
 
 ---
 
@@ -84,8 +107,8 @@ Your voice is not locked into one platform. The profile is a `.md` file that wor
 3. Or: create a GPT with the profile as its instructions
 
 **Gemini:**
-1. No persistent storage -- paste the profile at the start of each conversation
-2. Or: create a Gem with the profile as its instructions
+1. Create a **Gem** (Settings -> Gems -> New) and paste your profile as its instructions -- it remembers across conversations
+2. Or: paste the profile at the start of each new conversation
 
 **Any other AI:**
 1. Paste the profile at the beginning of your conversation

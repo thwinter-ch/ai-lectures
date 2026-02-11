@@ -8,6 +8,7 @@ Reusable playbooks that work standalone or as part of a lecture. Each practice c
 |----------|----------|-------|--------|---------|
 | [writing-profile](writing-profile/) | 20 min | Claude Pro, ChatGPT, Gemini | proven | DE |
 | [company-research](company-research.md) | 30 min | Perplexity Pro, Claude Pro | proven | DE |
+| [second-brain](second-brain.md) | 25 min | Claude Pro + Notion | proven | DE |
 
 ## Status Legend
 
