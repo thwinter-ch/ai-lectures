@@ -23,39 +23,34 @@ Ein lockerer Tagesworkshop für Menschen ohne technischen Hintergrund, die KI im
 
 ---
 
-## Was wir machen
+## Block 1: Mit KI sprechen lernen (10:30–12:00)
 
-| Block | Thema | Ihr bekommt... |
-|-------|-------|----------------|
-| 1 | Mit KI sprechen lernen | Euer persönliches Schreibstil-Profil |
-| 2 | Informationsflut managen | YouTube in 30s zusammengefasst, Podcast aus Dokumenten |
-| 3 | Spass & Abschluss | KI-Profilbild, Video-Avatar, Spickzettel |
-
-Details: [ZEITPLAN.md](./ZEITPLAN.md)
+| Was | Material |
+|-----|----------|
+| Die KI-Landschaft (Vortrag + 3 Live-Demos) | [Folien](https://gamma.app/docs/mta1sj1l9t6wvfr) |
+| Schreibstil-Übung: KI lernt deinen Stil | [Anleitung](./segments-de/02-schreibstil-uebung/kochbuch.md) |
 
 ---
 
-## Vorträge (Gamma-Decks)
+## Block 2: Die Informationsflut managen (13:00–14:05)
 
-| # | Deck | Folien | Link |
-|---|------|--------|------|
-| 1 | [Die KI-Landschaft](./segments-de/01-ki-landschaft/gamma-prompt.md) | 10 | [Gamma](https://gamma.app/docs/mta1sj1l9t6wvfr) |
-| 2 | [Informationsflut & RAG](./segments-de/04-information-overload/gamma-prompt.md) | 3 | [Gamma](https://gamma.app/docs/7xdu02zfmvxss7v) |
-| 3 | [Sicherheit](./segments-de/09-sicherheit/gamma-prompt.md) | 4 | [Gamma](https://gamma.app/docs/4rw7ega2m20n46d) |
-| 4 | [Ausblick](./segments-de/10-ausblick/gamma-prompt.md) | 4 | [Gamma](https://gamma.app/docs/q3ebs9vy1gptykw) |
+| Was | Material |
+|-----|----------|
+| Informationsflut & RAG (Vortrag) | [Folien](https://gamma.app/docs/7xdu02zfmvxss7v) |
+| Recherche: YouTube in 30 Sekunden zusammenfassen | [Anleitung](./segments-de/05-recherche/kochbuch.md) |
+| NotebookLM: Dokument als Podcast hören | [Anleitung](./segments-de/06-notebooklm/kochbuch.md) |
+| Second Brain: Wissen speichern & abrufen | [Anleitung](./segments-de/03-second-brain/kochbuch.md) |
 
 ---
 
-## Kochbücher (Schritt-für-Schritt-Anleitungen)
+## Block 3: Spass & Abschluss (14:05–15:15)
 
-| # | Übung | Kochbuch |
-|---|-------|----------|
-| 1 | Schreibstil-Übung | [kochbuch.md](./segments-de/02-schreibstil-uebung/kochbuch.md) |
-| 2 | Recherche & Zusammenfassen | [kochbuch.md](./segments-de/05-recherche/kochbuch.md) |
-| 3 | NotebookLM Podcast | [kochbuch.md](./segments-de/06-notebooklm/kochbuch.md) |
-| 4 | KI-Profilbild | [kochbuch.md](./segments-de/07-profilbild/kochbuch.md) |
-| 5 | HeyGen Avatar | [kochbuch.md](./segments-de/08-heygen-avatar/kochbuch.md) |
-| 6 | Second Brain (flex) | [kochbuch.md](./segments-de/03-second-brain/kochbuch.md) |
+| Was | Material |
+|-----|----------|
+| KI-Profilbild mit Gemini erstellen | [Anleitung](./segments-de/07-profilbild/kochbuch.md) |
+| Video-Avatar mit HeyGen erstellen | [Anleitung](./segments-de/08-heygen-avatar/kochbuch.md) |
+| Sicherheit (Vortrag) | [Folien](https://gamma.app/docs/4rw7ega2m20n46d) |
+| Ausblick & Spickzettel | [Folien](https://gamma.app/docs/q3ebs9vy1gptykw) |
 
 ---
 
@@ -72,9 +67,9 @@ Details: [ZEITPLAN.md](./ZEITPLAN.md)
 
 ---
 
-## Prompt-Vorlagen
+## Vorlagen zum Kopieren
 
-Fertige Vorlagen zum Kopieren: [prompts/](./prompts/)
+Fertige Prompts für den Alltag: [prompts/](./prompts/)
 
 ---
 

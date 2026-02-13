@@ -17,7 +17,7 @@ Kaffee, Setup, Willkommen. Hugo-Video als Opener.
 
 | Zeit | Was | Format | Dauer |
 |------|-----|--------|-------|
-| 10:30 | **Die KI-Landschaft** — Einmaleins/Zweimaleins/Dreimaleins, 6 Fähigkeiten, Eure Fragen, Modell-Matrix, 3 Live-Demos (Claude+Gmail, ChatGPT+Booking, Gemini+YouTube), Kontextportabilität | Vortrag + Demo | 40 min |
+| 10:30 | [**Die KI-Landschaft**](https://gamma.app/docs/mta1sj1l9t6wvfr) — Einmaleins/Zweimaleins/Dreimaleins, 6 Fähigkeiten, Eure Fragen, Modell-Matrix, 3 Live-Demos (Claude+Gmail, ChatGPT+Booking, Gemini+YouTube), Kontextportabilität | Vortrag + Demo | 40 min |
 | 11:10 | **Schreibstil-Übung** — 10-Fragen-Interview, KI erstellt dein Schreibprofil | Hands-on (Kochbuch) | 30 min |
 | 11:40 | Puffer / Fragen | | 20 min |
 
@@ -36,7 +36,7 @@ Kaffee, Setup, Willkommen. Hugo-Video als Opener.
 
 | Zeit | Was | Format | Dauer |
 |------|-----|--------|-------|
-| 13:00 | **Informationsflut & RAG** — 7±2-Limit, Richter-Studie, Push→Pull, Open-Book-Prüfung | Vortrag | 15 min |
+| 13:00 | [**Informationsflut & RAG**](https://gamma.app/docs/7xdu02zfmvxss7v) — 7±2-Limit, Richter-Studie, Push→Pull, Open-Book-Prüfung | Vortrag | 15 min |
 | 13:15 | **Recherche & Zusammenfassen** — YouTube mit Gemini, Dokumente zusammenfassen | Hands-on (Kochbuch) | 25 min |
 | 13:40 | **NotebookLM** — Dokument hochladen, Podcast generieren, anhören | Hands-on (Kochbuch) | 15 min |
 | 13:55 | **Second Brain** — Demo oder Übung (je nach Zeit) | Flex | 10 min |
@@ -54,8 +54,8 @@ Kaffee, Setup, Willkommen. Hugo-Video als Opener.
 |------|-----|--------|-------|
 | 14:05 | **KI-Profilbild** — Gemini Bildgenerierung | Hands-on (Kochbuch) | 20 min |
 | 14:25 | **KI-Avatar** — HeyGen Video erstellen (Demo oder Übung) | Flex | 15 min |
-| 14:40 | **Sicherheit** — Was man KI nicht sagt, Gratis vs. Bezahlt, Passwort-Manager, Phishing | Vortrag | 15 min |
-| 14:55 | **Ausblick & Spickzettel** — Was ihr gebaut habt, Takeaways, Nächste Schritte | Abschluss | 15 min |
+| 14:40 | [**Sicherheit**](https://gamma.app/docs/4rw7ega2m20n46d) — Was man KI nicht sagt, Gratis vs. Bezahlt, Passwort-Manager, Phishing | Vortrag | 15 min |
+| 14:55 | [**Ausblick & Spickzettel**](https://gamma.app/docs/q3ebs9vy1gptykw) — Was ihr gebaut habt, Takeaways, Nächste Schritte | Abschluss | 15 min |
 | 15:10 | **Ende** | | |
 
 ### Was ihr mitnehmt (Block 3)
