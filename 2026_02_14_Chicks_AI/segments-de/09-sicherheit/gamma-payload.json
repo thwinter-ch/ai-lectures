@@ -1,0 +1,19 @@
+{
+  "textMode": "preserve",
+  "cardSplit": "inputTextBreaks",
+  "themeId": "zewcfhidto4owzx",
+  "sharingOptions": {
+    "externalAccess": "view"
+  },
+  "imageOptions": {
+    "source": "aiGenerated"
+  },
+  "cardOptions": {
+    "dimensions": "16x9"
+  },
+  "textOptions": {
+    "language": "de"
+  },
+  "additionalInstructions": "Schweizer Deutsch: NIEMALS ß verwenden, immer ss. Umlaute (ä, ö, ü) sind korrekt. Helles, einladendes Design. Cartoon-artig, illustrativ. Minimaler Text pro Folie, maximal 20 Wörter. Keine Stockfotos. Thema ist Sicherheit, aber Ton bleibt freundlich und ermutigend, nicht bedrohlich.",
+  "inputText": "## Folie 1: Was man KI NICHT sagt\n\n**Titel:** Drei Dinge, die KI nie erfahren darf\n\n**Visuell:** Drei grosse Cartoon-\"Verboten\"-Schilder (rot, nicht bedrohlich): Passwörter, Bankdaten (IBAN/Kreditkarten), AHV-Nummer/Ausweis-Nummern.\n\n**Schlüsseltext:** \"Würdest du das einem Fremden auf der Strasse sagen? Dann sag's auch nicht der KI.\"\n\n**Sprechernotiz:** Alles was ihr nicht laut im Zug sagen würdet, gebt ihr auch nicht in die KI ein. Keine Passwörter, keine Bankdaten, keine AHV-Nummern.\n\n---\n\n## Folie 2: Gratis vs. Bezahlt\n\n**Titel:** Gratis = Deine Daten trainieren die KI\n\n**Visuell:** Zweispaltig. Links \"Gratis-Version\" — Deine Texte fliessen in einen grossen Topf (KI lernt daraus). Rechts \"Bezahlt ($20/Mt)\" — Deine Texte bleiben in verschlossenem Tresor.\n\n**Schlüsseltext:** \"Bezahlt heisst: Deine Daten bleiben privat.\"\n\n**Unterstützend:** Gratis: Chats können zum Training verwendet werden. Bezahlt: Chats werden NICHT zum Training verwendet. Tipp: Für private Sachen bezahlte Version nutzen.\n\n**Sprechernotiz:** Bei der Gratis-Version können eure Texte zum Training der KI verwendet werden. Bei der bezahlten Version passiert das nicht. Für persönliche Sachen: Bezahlt nutzen.\n\n---\n\n## Folie 3: Passwort-Manager\n\n**Titel:** Ein Passwort für alles\n\n**Visuell:** Illustration: Ein grosser Schlüssel der viele kleine Schlösser öffnet. Zwei Empfehlungskarten: 1Password ($3/Mt, einfach, schön) und Bitwarden (gratis, Open Source).\n\n**Schlüsseltext:** \"Ein Master-Passwort. Der Rest passiert automatisch.\"\n\n**Sprechernotiz:** Ihr habt wahrscheinlich überall das gleiche Passwort. Ein Passwort-Manager speichert alle eure Passwörter sicher. 1Password kostet $3 pro Monat, Bitwarden ist gratis.\n\n---\n\n## Folie 4: Phishing\n\n**Titel:** KI macht Betrüger besser\n\n**Visuell:** Zwei E-Mails nebeneinander: Links alter Spam mit Tippfehlern und schlechter Grammatik. Rechts perfekte, persönliche KI-generierte Phishing-Mail die echt aussieht.\n\n**Schlüsseltext:** \"Früher waren Betrüger-Mails leicht zu erkennen. Jetzt nicht mehr.\"\n\n**Unterstützend:** Im Zweifel: Nicht klicken, direkt anrufen. Absender-Adresse genau prüfen. Zeitdruck = Warnsignal.\n\n**Sprechernotiz:** KI macht nicht nur euch besser — sie macht auch Betrüger besser. Neue Regel: Wenn eine Mail Zeitdruck macht, seid misstrauisch. Lieber einmal zu viel anrufen als einmal zu wenig."
+}

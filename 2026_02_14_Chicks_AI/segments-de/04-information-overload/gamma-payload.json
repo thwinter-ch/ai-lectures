@@ -1,0 +1,19 @@
+{
+  "textMode": "preserve",
+  "cardSplit": "inputTextBreaks",
+  "themeId": "zewcfhidto4owzx",
+  "sharingOptions": {
+    "externalAccess": "view"
+  },
+  "imageOptions": {
+    "source": "aiGenerated"
+  },
+  "cardOptions": {
+    "dimensions": "16x9"
+  },
+  "textOptions": {
+    "language": "de"
+  },
+  "additionalInstructions": "Schweizer Deutsch: NIEMALS ß verwenden, immer ss. Umlaute (ä, ö, ü) sind korrekt. Helles, einladendes Design. Cartoon-artig, illustrativ. Minimaler Text pro Folie, maximal 20 Wörter. Keine Stockfotos, keine generischen KI-Gehirn-Bilder. Fröhlich und ermutigend.",
+  "inputText": "## Folie 1: Warum mehr nicht besser ist\n\n**Titel:** Dein Gehirn hat ein Limit\n\n**Visuell:** Zweigeteilt: Links grosse illustrative \"7±2\" mit sieben bunten Kreisen/Kugeln die im Kopf Platz finden, darüber \"Das passt rein.\" Rechts eine Infografik-Kurve durch den Tag: Morgens hoch (65%), Nachmittags fast null (~0%). Darunter: \"Israelische Richter — gleiche Fälle, andere Tageszeit.\"\n\n**Schlüsseltext:** \"7 Dinge gleichzeitig. Mehr geht nicht. Biologie, nicht Disziplin.\"\n\n**Sprechernotiz:** Euer Gehirn hält ungefähr 7 Dinge gleichzeitig. Das ist nicht Faulheit — das ist Biologie. Israelische Richter: Morgens 65% Bewährung, vor Mittag fast 0%. Nicht weil die Fälle schlechter waren — weil das Gehirn müde war.\n\n---\n\n## Folie 2: Von Push zu Pull\n\n**Titel:** Früher lesen. Heute fragen.\n\n**Visuell:** Zwei-Zeilen-Flussdiagramm. Oben durchgestrichen/ausgegraut: \"Info → Du → Filtern → Vielleicht nutzen\" (überladen, chaotisch). Unten hervorgehoben/leuchtend: \"Frage → KI → Antwort → Handeln\" (sauber, klar).\n\n**Schlüsseltext:** \"Nicht mehr lesen. Gezielt fragen.\"\n\n**Sprechernotiz:** Früher musste man alles lesen um informiert zu bleiben. Heute ertrinken wir. Die Lösung: Der KI die richtige Frage stellen. Pull statt Push. Genau das machen wir gleich mit YouTube-Videos und Dokumenten.\n\n---\n\n## Folie 3: Was ist RAG?\n\n**Titel:** Die KI liest DEIN Dokument\n\n**Visuell:** Illustration einer Person in einer Prüfung mit offenem Buch. Buch beschriftet: \"Dein PDF / Dein Video / Dein Dokument\". Vergleich: Links geschlossenes Buch = \"Ohne RAG: KI weiss nur was sie gelernt hat\", rechts offenes Buch = \"Mit RAG: KI liest DEIN Material\".\n\n**Schlüsseltext:** \"Open-Book-Prüfung für die KI\"\n\n**Unterstützend:** Die KI liest nicht das Internet. Die KI liest DEIN Dokument. Deshalb funktioniert NotebookLM so gut.\n\n**Sprechernotiz:** Stellt euch eine Prüfung vor. Ohne Unterlagen — alles aus dem Kopf. Das ist KI normalerweise. RAG ist wie eine Open-Book-Prüfung. Ihr gebt der KI EUER Dokument und sie liest es. Deshalb funktioniert NotebookLM: Dokument hochladen, KI macht Podcast daraus. Das ist RAG in Aktion."
+}
