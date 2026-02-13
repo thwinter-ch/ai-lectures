@@ -1,4 +1,4 @@
-# 🔍 Kochbuch: Recherche & Zusammenfassen
+# 🔍 YouTube-Video zusammenfassen mit Gemini
 
 Lass die KI ein YouTube-Video für dich zusammenfassen – spare Zeit und behalte das Wichtigste.
 

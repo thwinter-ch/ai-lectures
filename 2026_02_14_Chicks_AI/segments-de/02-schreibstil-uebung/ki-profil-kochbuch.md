@@ -30,11 +30,12 @@ Die Fragen:
 1. Was machst du beruflich? Was ist dein Fachgebiet?
    (z.B. "Ich arbeite in der Pflege", "Ich bin im HR", "Ich bin selbständig")
 
-2. Wie sieht dein typischer Arbeitstag aus? Welche Aufgaben nimmst du dir vor?
-   (z.B. "Viel E-Mail, Meetings, Berichte schreiben", "Kundengespräche, Planung")
+2. Was fällt dir schwer im Umgang mit KI? Was frustriert dich?
+   (z.B. "Ich weiss nie, wie ich anfangen soll", "Die Antworten sind zu lang",
+    "Es klingt nie nach mir", "Ich hab noch gar keine Erfahrung")
 
-3. Verwendest du Emojis in beruflichen Nachrichten?
-   (z.B. "Ja, oft 😊", "Nur bei Leuten die ich gut kenne", "Nie")
+3. Verwendest du Emojis wenn du schreibst?
+   (z.B. "Ja, ständig 😊", "Nur bei Freunden", "Nie")
 
 4. Schreibst du eher kurz und knapp oder eher ausführlich?
    (z.B. "So kurz wie möglich", "Kommt drauf an", "Ich schreibe gerne ausführlich")
@@ -45,9 +46,11 @@ Die Fragen:
 6. Welche Floskeln oder Redewendungen verwendest du oft?
    (z.B. "Liebe Grüsse", "Kurze Frage:", "Danke dir!", "Passt!")
 
-7. Verwendest du Humor in Nachrichten? Wenn ja: Eher Ironie, Wortspiele,
-   Selbstironie, oder trockener Humor?
-   (z.B. "Ja, oft Selbstironie", "Eher trocken", "Nein, lieber sachlich")
+7. Verwendest du Humor in Nachrichten?
+   (z.B. "Ja, ich mache mich gerne über mich selbst lustig",
+    "Eher trocken, so understatement-mässig",
+    "Wortspiele finde ich lustig",
+    "Nein, ich bleibe lieber sachlich")
 
 8. Schreibst du eher in Stichpunkten oder in ganzen Sätzen?
    (z.B. "Fast immer Stichpunkte", "Kommt auf die Situation an", "Immer Fliesstext")
@@ -59,9 +62,11 @@ Die Fragen:
     (z.B. "Liebe Grüsse", "LG", "Cheers", "Bis bald!", einfach gar nichts)
 
 Nach allen 10 Fragen: Erstelle ein "KI-Profil" — eine Zusammenfassung
-meiner Person und meines Kommunikationsstils als Anweisung, die ich in
-Zukunft am Anfang jeder KI-Unterhaltung einfügen kann. Das Profil soll
-enthalten: Wer ich bin, was ich mache, und wie ich kommuniziere.
+meiner Person und meines Kommunikationsstils als Anweisung an die KI.
+Das Profil soll in der Du-Form geschrieben sein (z.B. "Du schreibst für
+Sandra. Sie arbeitet im HR und kommuniziert direkt und freundlich...").
+Es soll enthalten: Wer ich bin, was ich mache, wie ich kommuniziere,
+und was mir im Umgang mit KI wichtig ist.
 ```
 
 ### 4. Beantworte die Fragen ehrlich
@@ -74,20 +79,35 @@ Die KI stellt dir jetzt eine Frage nach der anderen. Antworte spontan und ehrlic
 
 Nach der letzten Frage erstellt die KI automatisch dein persönliches Profil.
 
-### 6. Kopiere und speichere dein Profil
+### 6. Kopiere dein Profil
 
-Markiere die Zusammenfassung, kopiere sie (Ctrl+C / Cmd+C) und speichere sie irgendwo — in einer Notiz-App, einem Dokument, oder schick sie dir selbst per E-Mail.
+Markiere die Zusammenfassung und kopiere sie (Ctrl+C / Cmd+C).
+
+### 7. Speichere das Profil in deiner KI
+
+Jetzt kommt der wichtigste Schritt: Du speicherst das Profil **direkt in der KI**, damit sie sich immer an dich erinnert — in jeder neuen Unterhaltung.
+
+**In Claude:**
+1. Klicke oben links auf dein **Profil-Symbol** (Kreis mit deinem Buchstaben)
+2. Wähle **"Einstellungen"** (oder "Settings")
+3. Klicke auf **"Profil"** (oder "Profile")
+4. Unter **"Was soll Claude über dich wissen?"** (oder "What would you like Claude to know about you?"): Füge dein Profil ein (Ctrl+V / Cmd+V)
+5. Klicke **Speichern**
+
+**In ChatGPT:**
+1. Klicke oben rechts auf dein **Profil-Symbol**
+2. Wähle **"ChatGPT personalisieren"** (oder "Customize ChatGPT")
+3. Im oberen Feld **"Was soll ChatGPT über dich wissen?"**: Füge dein Profil ein
+4. Klicke **Speichern**
+
+**Das war's!** Ab jetzt kennt die KI dich — in jeder neuen Unterhaltung, ohne dass du etwas tun musst.
 
 ## Fertig!
 
-Du hast jetzt ein persönliches KI-Profil. Dieses kannst du in Zukunft am Anfang jeder KI-Unterhaltung einfügen — dann weiss die KI sofort, wer du bist und wie du kommunizierst.
+Teste es gleich: Starte eine **neue** Unterhaltung und schreib einfach:
 
-**Beispiel-Verwendung:**
 ```
-Hier ist mein Profil:
-[DEIN PROFIL HIER EINFÜGEN]
-
-Bitte schreibe mir eine E-Mail an mein Team über die nächste Sitzung.
+Schreibe mir eine kurze E-Mail an mein Team über die nächste Sitzung am Dienstag.
 ```
 
-**Probier's gleich aus:** Lass die KI mit deinem Profil eine E-Mail oder Nachricht schreiben. Fühlt sich das nach dir an?
+Die KI sollte jetzt in deinem Stil schreiben — ohne dass du etwas erklären musst. Fühlt sich das nach dir an?

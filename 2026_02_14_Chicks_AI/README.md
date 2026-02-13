@@ -1,4 +1,4 @@
-# 🐣 Chicks & AI — KI-Workshop
+# Chicks & AI — KI-Workshop
 
 **Datum:** Samstag, 14. Februar 2026
 **Zeit:** 10:00–15:15
@@ -28,7 +28,7 @@ Ein lockerer Tagesworkshop für Menschen ohne technischen Hintergrund, die KI im
 | Was | Material |
 |-----|----------|
 | Die KI-Landschaft (Vortrag + 3 Live-Demos) | [Folien](https://gamma.app/docs/mta1sj1l9t6wvfr) |
-| Dein persönliches KI-Profil erstellen | [Anleitung](./segments-de/02-schreibstil-uebung/kochbuch.md) |
+| Dein persönliches KI-Profil erstellen | [KI-Profil Kochbuch](./segments-de/02-schreibstil-uebung/ki-profil-kochbuch.md) |
 
 ---
 
@@ -36,10 +36,10 @@ Ein lockerer Tagesworkshop für Menschen ohne technischen Hintergrund, die KI im
 
 | Was | Material |
 |-----|----------|
-| Informationsflut & RAG (Vortrag) | [Folien](https://gamma.app/docs/7xdu02zfmvxss7v) |
-| YouTube-Videos in 30 Sekunden zusammenfassen | [Anleitung](./segments-de/05-recherche/kochbuch.md) |
-| Dokument als Podcast hören (NotebookLM) | [Anleitung](./segments-de/06-notebooklm/kochbuch.md) |
-| Second Brain: Wissen speichern & abrufen (Demo) | [Anleitung](./segments-de/03-second-brain/kochbuch.md) |
+| Die Informationsflut (Vortrag) | [Folien](https://gamma.app/docs/7xdu02zfmvxss7v) |
+| YouTube-Videos in 30 Sekunden zusammenfassen | [Recherche Kochbuch](./segments-de/05-recherche/recherche-kochbuch.md) |
+| Dokument als Podcast hören (NotebookLM) | [NotebookLM Kochbuch](./segments-de/06-notebooklm/notebooklm-kochbuch.md) |
+| Second Brain: Wissen speichern & abrufen (Demo) | [Second Brain Kochbuch](./segments-de/03-second-brain/second-brain-kochbuch.md) |
 
 ---
 
@@ -47,8 +47,8 @@ Ein lockerer Tagesworkshop für Menschen ohne technischen Hintergrund, die KI im
 
 | Was | Material |
 |-----|----------|
-| KI-Profilbild mit Gemini erstellen | [Anleitung](./segments-de/07-profilbild/kochbuch.md) |
-| Video-Avatar mit HeyGen (Demo) | [Anleitung](./segments-de/08-heygen-avatar/kochbuch.md) |
+| KI-Profilbild mit Gemini erstellen | [Profilbild Kochbuch](./segments-de/07-profilbild/profilbild-kochbuch.md) |
+| Video-Avatar mit HeyGen (Demo) | [Avatar Kochbuch](./segments-de/08-heygen-avatar/avatar-kochbuch.md) |
 | Sicherheit (Vortrag) | [Folien](https://gamma.app/docs/4rw7ega2m20n46d) |
 | Ausblick & Spickzettel | [Folien](https://gamma.app/docs/q3ebs9vy1gptykw) |
 
@@ -58,10 +58,10 @@ Ein lockerer Tagesworkshop für Menschen ohne technischen Hintergrund, die KI im
 
 | Tool | Wofür | Link |
 |------|-------|------|
-| Claude | Schreiben, E-Mails, Tools | claude.ai |
-| ChatGPT | Alles-Könner | chatgpt.com |
-| Gemini | Bilder, YouTube | gemini.google.com |
-| Perplexity | Recherche | perplexity.ai |
+| Claude | Schreiben, E-Mails, Zusammenfassen | claude.ai |
+| ChatGPT | Schreiben, Recherche, Planung | chatgpt.com |
+| Gemini | Bilder erstellen, YouTube zusammenfassen | gemini.google.com |
+| Perplexity | Recherche mit Quellenangaben | perplexity.ai |
 | NotebookLM | Podcasts aus Dokumenten | notebooklm.google.com |
 | HeyGen | Video-Avatare | heygen.com |
 

@@ -1,4 +1,4 @@
-# 🎧 Kochbuch: NotebookLM Podcast
+# 🎧 Dokument als Podcast hören mit NotebookLM
 
 Verwandle ein Dokument in einen Podcast – zwei KI-Stimmen diskutieren über dein Thema.
 
