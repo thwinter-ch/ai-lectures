@@ -54,8 +54,7 @@ Kaffee, Setup, Willkommen. Hugo-Video als Opener.
 |------|-----|--------|-------|
 | 14:05 | **KI-Profilbild** — Gemini Bildgenerierung | [Hands-on](./segments-de/07-profilbild/profilbild-kochbuch.md) | 20 min |
 | 14:25 | **KI-Avatar** — HeyGen Video erstellen (Demo oder Übung) | Flex | 15 min |
-| 14:40 | [**Sicherheit**](https://gamma.app/docs/4rw7ega2m20n46d) — Was man KI nicht sagt, Gratis vs. Bezahlt, Passwort-Manager, Phishing | Vortrag | 15 min |
-| 14:55 | [**Ausblick & Spickzettel**](https://gamma.app/docs/q3ebs9vy1gptykw) — Was gebaut wurde, Takeaways, Nächste Schritte | Abschluss | 15 min |
+| 14:40 | [**Sicherheit & Zusammenfassung**](https://gamma.app/docs/4rw7ega2m20n46d) — Was man KI nicht sagt, Gratis vs. Bezahlt, Passwort-Manager, Phishing, Recap, Spickzettel | Vortrag + Abschluss | 30 min |
 | 15:10 | **Ende** | | |
 
 ### Takeaways Block 3

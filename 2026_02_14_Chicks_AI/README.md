@@ -49,8 +49,7 @@ Ein lockerer Tagesworkshop für Menschen ohne technischen Hintergrund, die KI im
 |-----|----------|
 | KI-Profilbild mit Gemini erstellen | [Profilbild Kochbuch](./segments-de/07-profilbild/profilbild-kochbuch.md) |
 | Video-Avatar mit HeyGen (Demo) | [Avatar Kochbuch](./segments-de/08-heygen-avatar/avatar-kochbuch.md) |
-| Sicherheit (Vortrag) | [Folien](https://gamma.app/docs/4rw7ega2m20n46d) |
-| Ausblick & Spickzettel | [Folien](https://gamma.app/docs/q3ebs9vy1gptykw) |
+| Sicherheit & Zusammenfassung (Vortrag) | [Folien](https://gamma.app/docs/4rw7ega2m20n46d) |
 
 ---
 
