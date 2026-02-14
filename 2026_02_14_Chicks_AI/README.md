@@ -7,6 +7,13 @@
 
 ---
 
+## Workshop-Recap
+
+Strukturierte Zusammenfassung des Tages mit allen Themen, Zitaten und Links:
+[Recap (HTML)](./recap/index.html) · [Recap (Markdown)](./recap/index.md)
+
+---
+
 ## Worum geht's?
 
 Ein lockerer Tagesworkshop für Menschen ohne technischen Hintergrund, die KI im Alltag nutzen möchten. Kurze Erklärungen, dann direkt ausprobieren.

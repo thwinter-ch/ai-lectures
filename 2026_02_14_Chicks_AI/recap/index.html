@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chicks & AI — Workshop-Recap</title>
+  <meta name="description" content="Recap des Chicks & AI Workshops, 14. Februar 2026. KI im Alltag nutzen — persönliches KI-Profil, YouTube-Zusammenfassung, NotebookLM-Podcasts und mehr.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #1E1B4B;
+      background: #ffffff;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: #8B5CF6; text-decoration: none; transition: color 0.2s ease; }
+    a:hover { color: #D946EF; }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4 { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #1E1B4B; line-height: 1.25; }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; }
+    h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 600; margin-bottom: 1rem; }
+    h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 600; margin-bottom: 0.75rem; }
+    h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    p { margin-bottom: 1rem; font-size: 1.05rem; }
+    strong { font-weight: 600; }
+    ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.4rem; font-size: 1.05rem; }
+    li::marker { color: #D946EF; }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(30, 27, 75, 0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(217, 70, 239, 0.15);
+      transition: box-shadow 0.3s ease;
+    }
+    .nav.scrolled { box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15); }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 60px;
+    }
+    .nav-brand {
+      font-family: 'Inter', sans-serif; font-weight: 700;
+      font-size: 1.1rem; color: #ffffff; white-space: nowrap;
+    }
+    .nav-links { display: flex; gap: 0.15rem; align-items: center; }
+    .nav-links > a {
+      color: rgba(255,255,255,0.7); font-size: 0.8rem; font-weight: 500;
+      padding: 0.4rem 0.7rem; border-radius: 6px;
+      transition: all 0.2s ease; white-space: nowrap;
+    }
+    .nav-links > a:hover { color: #ffffff; background: rgba(255,255,255,0.1); }
+    /* Segments dropdown */
+    .nav-dropdown {
+      position: relative;
+    }
+    .nav-dropdown-trigger {
+      color: rgba(255,255,255,0.7); font-size: 0.8rem; font-weight: 500;
+      padding: 0.4rem 0.7rem; border-radius: 6px;
+      transition: all 0.2s ease; white-space: nowrap;
+      cursor: pointer; background: none; border: none; font-family: inherit;
+      display: flex; align-items: center; gap: 0.3rem;
+    }
+    .nav-dropdown-trigger:hover { color: #ffffff; background: rgba(255,255,255,0.1); }
+    .nav-dropdown-trigger svg { width: 10px; height: 10px; transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu {
+      display: none; position: absolute; top: calc(100% + 0.5rem); left: 50%; transform: translateX(-50%);
+      background: rgba(30, 27, 75, 0.98); border: 1px solid rgba(217, 70, 239, 0.2);
+      border-radius: 10px; padding: 0.5rem; min-width: 220px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a {
+      display: block; color: rgba(255,255,255,0.7); font-size: 0.8rem; font-weight: 500;
+      padding: 0.45rem 0.75rem; border-radius: 6px;
+      transition: all 0.2s ease; white-space: nowrap;
+    }
+    .nav-dropdown-menu a:hover { color: #ffffff; background: rgba(255,255,255,0.1); }
+    .nav-toggle {
+      display: none; background: none; border: none; cursor: pointer;
+      width: 28px; height: 20px; position: relative; z-index: 1001;
+    }
+    .nav-toggle span {
+      display: block; width: 100%; height: 2px; background: #ffffff;
+      position: absolute; left: 0; transition: all 0.3s ease;
+    }
+    .nav-toggle span:nth-child(1) { top: 0; }
+    .nav-toggle span:nth-child(2) { top: 9px; }
+    .nav-toggle span:nth-child(3) { top: 18px; }
+    .nav-toggle.open span:nth-child(1) { transform: rotate(45deg); top: 9px; }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg); top: 9px; }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #1E1B4B 0%, #5B21B6 40%, #D946EF 100%);
+      padding: 10rem 2rem 5rem;
+      text-align: center; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(217, 70, 239, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+    .hero-label {
+      display: inline-block; font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(255,255,255,0.85); margin-bottom: 1.5rem;
+      padding: 0.4rem 1.2rem; border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 100px;
+    }
+    .hero h1 { color: #ffffff; margin-bottom: 1.5rem; }
+    .hero-meta {
+      color: rgba(255,255,255,0.6); font-size: 1.05rem; line-height: 1.8;
+    }
+    .hero-meta strong { color: rgba(255,255,255,0.85); }
+    .hero-divider {
+      width: 60px; height: 3px; background: #ffffff;
+      margin: 2rem auto 0; border-radius: 2px;
+    }
+
+    /* ===== MAIN LAYOUT ===== */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+    main { padding-top: 3rem; padding-bottom: 4rem; }
+
+    /* ===== SECTIONS ===== */
+    .section { margin-bottom: 4rem; }
+    /* Fade-in: only hide elements when JS is confirmed working (progressive enhancement) */
+    .js-ready .fade-in {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== SECTION DIVIDER ===== */
+    .section-divider {
+      width: 100%; height: 1px;
+      background: linear-gradient(to right, transparent, #e8d4f0, transparent);
+      margin: 3rem 0;
+    }
+
+    /* ===== CARDS ===== */
+    .card {
+      background: #ffffff;
+      border: 1px solid #f3e8fb;
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 2px 12px rgba(217, 70, 239, 0.04), 0 1px 3px rgba(139, 92, 246, 0.03);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .card:hover {
+      box-shadow: 0 8px 30px rgba(217, 70, 239, 0.12), 0 2px 8px rgba(139, 92, 246, 0.06);
+      transform: translateY(-2px);
+    }
+    .card-header {
+      display: flex; align-items: flex-start; gap: 1rem;
+      margin-bottom: 1.5rem; flex-wrap: wrap;
+    }
+    .segment-number {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px; min-width: 44px;
+      background: linear-gradient(135deg, #1E1B4B, #5B21B6);
+      color: #ffffff; font-weight: 700; font-size: 0.9rem;
+      border-radius: 10px; font-family: 'Inter', sans-serif;
+    }
+    .card-header-text { flex: 1; }
+    .card-badges { display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap; }
+    .badge {
+      display: inline-block; font-size: 0.72rem; font-weight: 600;
+      padding: 0.25rem 0.7rem; border-radius: 100px;
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .badge-lecture { background: #f5f3ff; color: #7c3aed; }
+    .badge-exercise { background: #fef3e2; color: #b45309; }
+    .badge-demo { background: #ecfdf5; color: #059669; }
+    .badge-duration { background: #f3f4f6; color: #6b7280; }
+
+    .slide-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.82rem; font-weight: 600; color: #8B5CF6;
+      padding: 0.4rem 1rem; border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 8px; transition: all 0.2s ease; margin-top: 0.5rem;
+    }
+    .slide-btn:hover {
+      background: rgba(139, 92, 246, 0.08); color: #5B21B6;
+      border-color: rgba(139, 92, 246, 0.5);
+    }
+    .slide-btn svg { width: 14px; height: 14px; }
+
+    /* ===== PULL QUOTES ===== */
+    .pull-quote {
+      border-left: 4px solid #D946EF;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      background: linear-gradient(135deg, #fdf4ff, #fae8ff);
+      border-radius: 0 8px 8px 0;
+    }
+    .pull-quote p {
+      font-family: 'Inter', sans-serif;
+      font-style: italic; font-size: 1.15rem;
+      color: #1E1B4B; line-height: 1.6; margin-bottom: 0;
+    }
+
+    /* ===== KEY QUOTES SECTION ===== */
+    .key-quote-block {
+      text-align: center; padding: 2.5rem 2rem; margin-bottom: 2rem;
+      position: relative;
+    }
+    .key-quote-block::before {
+      content: '\201C';
+      font-family: 'Inter', sans-serif;
+      font-size: 5rem; color: rgba(217, 70, 239, 0.2);
+      position: absolute; top: -0.5rem; left: 50%; transform: translateX(-50%);
+      line-height: 1;
+    }
+    .key-quote-block p {
+      font-family: 'Inter', sans-serif;
+      font-style: italic; font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      color: #1E1B4B; line-height: 1.5;
+      max-width: 680px; margin: 0 auto;
+    }
+
+    /* ===== CONCEPT LIST ===== */
+    .concept-item { margin-bottom: 0.8rem; }
+    .concept-item strong { color: #1E1B4B; }
+
+    /* ===== DATA CALLOUT ===== */
+    .data-callout {
+      display: flex; gap: 1.5rem; flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+    .data-point {
+      flex: 1; min-width: 180px;
+      background: #fdf4ff; border-radius: 10px;
+      padding: 1.25rem; text-align: center;
+    }
+    .data-point .number {
+      font-family: 'Inter', sans-serif;
+      font-size: 2rem; font-weight: 700;
+      color: #D946EF; display: block;
+    }
+    .data-point .label {
+      font-size: 0.85rem; color: #6b7280; margin-top: 0.25rem;
+    }
+
+    /* ===== EXERCISE TABLE ===== */
+    .exercise-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+    .exercise-card {
+      background: #ffffff; border: 1px solid #f3e8fb;
+      border-radius: 12px; padding: 1.75rem;
+      box-shadow: 0 2px 8px rgba(217, 70, 239, 0.04);
+      display: flex; flex-direction: column;
+    }
+    .exercise-card h4 { color: #1E1B4B; margin-bottom: 0.5rem; }
+    .exercise-card p { font-size: 0.95rem; color: #555; flex: 1; }
+    .exercise-card .time-badge {
+      display: inline-block; font-size: 0.75rem; font-weight: 600;
+      color: #8B5CF6; margin-bottom: 0.75rem;
+    }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: linear-gradient(135deg, #5B21B6, #8B5CF6);
+      color: #ffffff; font-weight: 600; font-size: 0.85rem;
+      padding: 0.65rem 1.25rem; border-radius: 8px;
+      transition: all 0.25s ease; margin-top: 1rem; align-self: flex-start;
+    }
+    .cta-btn:hover {
+      color: #ffffff; transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+    }
+    .cta-btn svg { width: 14px; height: 14px; }
+
+    /* ===== TOOL GRID ===== */
+    .tool-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .tool-card {
+      background: #fdf4ff; border: 1px solid #f3e8fb;
+      border-radius: 10px; padding: 1.25rem;
+      transition: all 0.25s ease;
+    }
+    .tool-card:hover { border-color: #D946EF; box-shadow: 0 4px 12px rgba(217, 70, 239, 0.15); }
+    .tool-card h4 { font-family: 'Inter', sans-serif; font-size: 0.95rem; margin-bottom: 0.35rem; }
+    .tool-card p { font-size: 0.85rem; color: #6b7280; margin-bottom: 0.5rem; }
+    .tool-card a { font-size: 0.8rem; font-weight: 600; }
+
+    /* ===== NEXT STEPS ===== */
+    .steps-list { counter-reset: step-counter; list-style: none; padding-left: 0; }
+    .steps-list li {
+      counter-increment: step-counter;
+      position: relative; padding-left: 3rem; margin-bottom: 1.25rem;
+    }
+    .steps-list li::before {
+      content: counter(step-counter);
+      position: absolute; left: 0; top: 0;
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, #8B5CF6, #D946EF);
+      color: #ffffff; font-weight: 700; font-size: 0.85rem;
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-family: 'Inter', sans-serif;
+    }
+
+    /* ===== OVERVIEW BOX ===== */
+    .overview-box {
+      background: linear-gradient(135deg, #fdf4ff, #fae8ff);
+      border: 1px solid #f3e8fb;
+      border-radius: 12px;
+      padding: 2rem 2.5rem;
+      margin: 2rem 0;
+    }
+    .overview-box h3 { margin-bottom: 1rem; }
+    .overview-box ul { padding-left: 1.25rem; }
+
+    .thesis-box {
+      background: linear-gradient(135deg, #1E1B4B, #5B21B6);
+      color: #ffffff; border-radius: 12px;
+      padding: 2rem 2.5rem; margin: 2rem 0;
+    }
+    .thesis-box strong { color: #ffffff; }
+    .thesis-box p { color: rgba(255,255,255,0.9); }
+
+    /* ===== MODEL MATRIX ===== */
+    .model-matrix {
+      margin: 1.5rem 0;
+      background: #fdf4ff;
+      border: 1px solid #f3e8fb;
+      border-radius: 10px;
+      padding: 1.5rem;
+      overflow-x: auto;
+    }
+    .model-matrix table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .model-matrix th,
+    .model-matrix td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #f3e8fb;
+    }
+    .model-matrix th {
+      font-weight: 600;
+      color: #1E1B4B;
+      font-size: 0.9rem;
+    }
+    .model-matrix td {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .model-matrix tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #8B5CF6; color: rgba(255,255,255,0.6);
+      padding: 3rem 2rem; text-align: center;
+    }
+    footer a { color: #ffffff; }
+    footer a:hover { color: rgba(255,255,255,0.8); }
+    footer p { font-size: 0.9rem; margin-bottom: 0.5rem; }
+    .footer-divider {
+      width: 40px; height: 2px; background: rgba(255, 255, 255, 0.3);
+      margin: 1.5rem auto;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 60px; left: 0; right: 0;
+        background: rgba(30, 27, 75, 0.98);
+        padding: 1rem; gap: 0;
+        border-bottom: 1px solid rgba(217, 70, 239, 0.15);
+        max-height: calc(100vh - 60px); overflow-y: auto;
+      }
+      .nav-links.open > a, .nav-links.open .nav-dropdown-trigger { padding: 0.75rem 1rem; font-size: 0.9rem; width: 100%; }
+      .nav-links.open .nav-dropdown-menu {
+        display: block; position: static; transform: none;
+        background: rgba(139, 92, 246, 0.1); border: none; box-shadow: none;
+        padding: 0 0 0 1rem; min-width: 0;
+      }
+      .nav-links.open .nav-dropdown-menu a { padding: 0.6rem 1rem; font-size: 0.85rem; }
+      .nav-toggle { display: block; }
+      .hero { padding: 8rem 1.5rem 3.5rem; }
+      .card { padding: 1.5rem; }
+      .data-callout { flex-direction: column; }
+      .tool-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .nav-brand { font-size: 0.95rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print {
+      .nav, .nav-toggle { display: none !important; }
+      .hero { padding: 2rem; background: #f5f5f5 !important; }
+      .hero h1, .hero-meta, .hero-label { color: #1E1B4B !important; }
+      .card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+      .thesis-box { background: #f5f5f5 !important; color: #1E1B4B !important; }
+      body { font-size: 11pt; }
+      .fade-in { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="navbar">
+  <div class="nav-inner">
+    <span class="nav-brand">Chicks &amp; AI</span>
+    <button class="nav-toggle" id="navToggle" aria-label="Navigation umschalten">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#overview">Überblick</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger">Segmente <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a href="#seg01">01 — Die KI-Landschaft</a>
+          <a href="#seg02">02 — Dein KI-Profil</a>
+          <a href="#seg03">03 — Die Informationsflut</a>
+          <a href="#seg04">04 — YouTube mit Gemini</a>
+          <a href="#seg05">05 — NotebookLM Podcast</a>
+          <a href="#seg06">06 — Second Brain</a>
+          <a href="#seg07">07 — KI-Profilbild</a>
+          <a href="#seg08">08 — Sicherheit &amp; Zusammenfassung</a>
+        </div>
+      </div>
+      <a href="#exercises">Übungen</a>
+      <a href="#tools">Tools</a>
+      <a href="#quotes">Zitate</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero-content">
+    <span class="hero-label">Workshop-Recap</span>
+    <h1>Chicks &amp; AI</h1>
+    <p class="hero-meta">
+      <strong>Samstag, 14. Februar 2026</strong><br>
+      10:00&ndash;15:15 &nbsp;|&nbsp; Gabi, Sandra, Susi, Andrea, Marcello &nbsp;|&nbsp; Thomas &amp; Hugo
+    </p>
+    <div class="hero-divider"></div>
+  </div>
+</header>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main>
+<div class="container">
+
+  <!-- ===== SESSION OVERVIEW ===== -->
+  <section class="section fade-in" id="overview">
+    <h2>Überblick über den Workshop</h2>
+    <p>Ein lockerer Tagesworkshop für Menschen ohne technischen Hintergrund, die KI im Alltag nutzen möchten. Kurze Erklärungen, dann direkt ausprobieren.</p>
+
+    <div class="overview-box">
+      <h3>Was die Teilnehmer gebaut haben</h3>
+      <ul>
+        <li>Persönliches KI-Profil in Claude &amp; ChatGPT gespeichert</li>
+        <li>YouTube-Video in 30 Sekunden zusammengefasst (Gemini)</li>
+        <li>Dokument als Podcast gehört (NotebookLM)</li>
+        <li>KI-generiertes Profilbild erstellt (Gemini)</li>
+        <li>Second Brain kennengelernt (Notion + Claude)</li>
+      </ul>
+    </div>
+
+    <div class="thesis-box">
+      <p><strong>Roter Faden:</strong> Die KI soll so arbeiten wie IHR — nicht umgekehrt.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== SEGMENT 01 ===== -->
+  <section class="section fade-in" id="seg01">
+    <h2>Segment-für-Segment-Recap</h2>
+    <article class="card">
+      <div class="card-header">
+        <span class="segment-number">01</span>
+        <div class="card-header-text">
+          <h3>Die KI-Landschaft</h3>
+          <div class="card-badges">
+            <span class="badge badge-lecture">Vortrag</span>
+            <span class="badge badge-demo">Demo</span>
+            <span class="badge badge-duration">40 Min</span>
+          </div>
+          <a href="https://gamma.app/docs/mta1sj1l9t6wvfr" target="_blank" rel="noopener" class="slide-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            Folien öffnen
+          </a>
+        </div>
+      </div>
+      <p>Überblick über die KI-Modelllandschaft: Welches Tool kann was — und wo liegen die Grenzen. Kein Modell kann alles, jedes hat Stärken in bestimmten Bereichen.</p>
+
+      <h4>Kernkonzepte</h4>
+      <ul>
+        <li class="concept-item"><strong>Determinismus vs. Nicht-Determinismus</strong> — Traditionelle Computer liefern bei gleicher Eingabe immer die gleiche Ausgabe. KI nicht. Die gleiche Frage fünfmal gestellt ergibt fünf verschiedene Antworten — ähnlich wie bei einem Menschen an fünf verschiedenen Tagen.</li>
+        <li class="concept-item"><strong>Jagged Frontier (Zackige Grenze)</strong> — Die Grenze zwischen "KI ist besser" und "KI ist schlechter" verläuft nicht gerade, sondern zackt. Was vor zwei Monaten unmöglich war, funktioniert heute. Diese Grenze bewegt sich permanent.</li>
+        <li class="concept-item"><strong>Kontextfenster</strong> — Wie der Arbeitsspeicher des Gehirns: Nach 50% Füllung nimmt die Denkfähigkeit dramatisch ab. Neuer Chat = Schlaf für die KI.</li>
+        <li class="concept-item"><strong>KI führen wie Mitarbeiter</strong> — Klare, präzise Anweisungen liefern bessere Ergebnisse als höfliches Herumdrucksen. "Ausführen, kommandieren, kontrollieren, korrigieren."</li>
+        <li class="concept-item"><strong>Kritisches Denken</strong> — Die wichtigste Fähigkeit 2026. Nur weil es auf dem Bildschirm steht, heisst es nicht, dass es stimmt.</li>
+      </ul>
+
+      <h4>Modell-Matrix</h4>
+      <div class="model-matrix">
+        <table>
+          <thead>
+            <tr>
+              <th>Modell</th>
+              <th>Stärke</th>
+              <th>Schwäche</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Claude</strong></td>
+              <td>Tools (E-Mail schreiben, Datenbanken)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><strong>ChatGPT</strong></td>
+              <td>Scheduling, Planung, breite Nutzung</td>
+              <td>Tools anbinden, faul bei Anweisungen</td>
+            </tr>
+            <tr>
+              <td><strong>Gemini</strong></td>
+              <td>Bilder generieren, YouTube zusammenfassen</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><strong>Perplexity</strong></td>
+              <td>Quellenbasierte Recherche</td>
+              <td>Wenig eigenes Wissen, alles aus Suche</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>3 Live-Demos</h4>
+      <ol class="steps-list">
+        <li><strong>ChatGPT + Booking.com</strong> — Ferienplanung für Finnland: Hausboot am Saimasee + 3 Tage Helsinki, inkl. Hotelvorschläge und Rahmenprogramm</li>
+        <li><strong>Gemini + YouTube</strong> — 17-Minuten-Video über die Kreuzfahrtindustrie in 30 Sekunden zusammengefasst, mit Gesundheitsbranche-Perspektive</li>
+        <li><strong>Claude + Gmail</strong> — E-Mail lesen, beantworten und direkt versenden — Hugo demonstriert, wie man die KI "zwingt", ihre Tools zu benutzen</li>
+      </ol>
+
+      <div class="pull-quote">
+        <p>Wenn es sich anfühlt, dass alles unter Kontrolle ist, fährst du nicht schnell genug.</p>
+      </div>
+
+      <h4>Daten</h4>
+      <div class="data-callout">
+        <div class="data-point">
+          <span class="number">5x</span>
+          <span class="label">Gleiche Frage,<br>verschiedene Antworten</span>
+        </div>
+        <div class="data-point">
+          <span class="number">50%</span>
+          <span class="label">Ab hier nimmt<br>Denkfähigkeit ab</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== SEGMENT 02 ===== -->
+    <article class="card fade-in" id="seg02">
+      <div class="card-header">
+        <span class="segment-number">02</span>
+        <div class="card-header-text">
+          <h3>Dein KI-Profil erstellen</h3>
+          <div class="card-badges">
+            <span class="badge badge-exercise">Übung</span>
+            <span class="badge badge-duration">30 Min</span>
+          </div>
+          <a href="../segments-de/02-schreibstil-uebung/ki-profil-kochbuch.md" class="cta-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            Kochbuch öffnen
+          </a>
+        </div>
+      </div>
+      <p>Die KI interviewt jeden Teilnehmer mit 10 Fragen: Wer bist du? Was machst du? Was fällt dir schwer? Wie soll die KI mit dir reden? Aus den Antworten erstellt die KI ein persönliches Profil, das in den Einstellungen von Claude und ChatGPT gespeichert wird.</p>
+
+      <p><strong>Warum das wichtig ist:</strong> Die Kontextqualität — also wie gut die KI weiss, mit wem sie redet — ist die erste der 6 Schlüsselfähigkeiten. Je besser das Profil, desto relevanter die Antworten.</p>
+
+      <h4>Die 6 Fähigkeiten (Zweimaleins)</h4>
+      <ol class="steps-list">
+        <li><strong>Kontextqualität</strong> — Der KI sagen, wer man ist</li>
+        <li><strong>Qualitätsurteil</strong> — Kritisches Denken: Macht die Antwort Sinn?</li>
+        <li><strong>Aufgabenzerlegung</strong> — Grosse Aufgaben in kleine Schritte brechen</li>
+        <li><strong>Iterative Verfeinerung</strong> — Dranbleiben, nachbessern, nicht aufgeben</li>
+        <li><strong>Workflow-Integration</strong> — KI in den Alltag einbauen</li>
+        <li><strong>Grenzbewusstsein</strong> — Erkennen, wann KI nicht das richtige Werkzeug ist</li>
+      </ol>
+
+      <div class="pull-quote">
+        <p>Militärische Anweisungen funktionieren sehr gut: ausführen, kommandieren, kontrollieren, korrigieren.</p>
+      </div>
+    </article>
+
+    <!-- ===== SEGMENT 03 ===== -->
+    <article class="card fade-in" id="seg03">
+      <div class="card-header">
+        <span class="segment-number">03</span>
+        <div class="card-header-text">
+          <h3>Die Informationsflut</h3>
+          <div class="card-badges">
+            <span class="badge badge-lecture">Vortrag</span>
+            <span class="badge badge-duration">15 Min</span>
+          </div>
+          <a href="https://gamma.app/docs/7xdu02zfmvxss7v" target="_blank" rel="noopener" class="slide-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            Folien öffnen
+          </a>
+        </div>
+      </div>
+      <p>Warum mehr Daten nicht automatisch zu besseren Entscheidungen führen. Von Gutenbergs Druckerpresse über Petabyte bis zur KI-Ära — die Datenmenge explodiert, aber das menschliche Gehirn hat sich nicht verändert.</p>
+
+      <h4>Kernkonzepte</h4>
+      <ul>
+        <li class="concept-item"><strong>Miller's Law (7±2)</strong> — Das Arbeitsgedächtnis kann nur 7 (plus/minus 2) Elemente gleichzeitig halten. Diese biologische Grenze hat sich seit der Steinzeit nicht verändert.</li>
+        <li class="concept-item"><strong>Israelische Richter-Studie</strong> — Die Wahrscheinlichkeit, dass ein Richter eine Bewährungsstrafe ausspricht, liegt morgens bei 65% und sinkt vor dem Mittagessen auf faktisch 0%. Kognitive Ermüdung ist real und messbar.</li>
+        <li class="concept-item"><strong>Push → Pull</strong> — In der alten Welt war Zugang zu Information das Privileg. Heute ist die Fähigkeit, aus dem Lärm das Signal zu filtern, der entscheidende Vorteil.</li>
+        <li class="concept-item"><strong>Know-how-Halbwertszeit</strong> — Wissen hat heute eine Halbwertszeit von 6 Monaten (früher 10 Jahre). Jeder Arzt ohne Dauerfortbildung ist ein "potentieller Verbrecher" gegenüber seinen Patienten.</li>
+      </ul>
+
+      <div class="pull-quote">
+        <p>Der Trick ist: Wie filterst du aus dem gigantischen Lärm die richtigen Sachen raus?</p>
+      </div>
+
+      <h4>Daten</h4>
+      <div class="data-callout">
+        <div class="data-point">
+          <span class="number">7±2</span>
+          <span class="label">Arbeitsgedächtnis-Limit</span>
+        </div>
+        <div class="data-point">
+          <span class="number">65%→0%</span>
+          <span class="label">Bewährungs-<br>wahrscheinlichkeit</span>
+        </div>
+        <div class="data-point">
+          <span class="number">6 Monate</span>
+          <span class="label">Know-how-<br>Halbwertszeit</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== SEGMENT 04 ===== -->
+    <article class="card fade-in" id="seg04">
+      <div class="card-header">
+        <span class="segment-number">04</span>
+        <div class="card-header-text">
+          <h3>YouTube-Videos zusammenfassen mit Gemini</h3>
+          <div class="card-badges">
+            <span class="badge badge-exercise">Übung</span>
+            <span class="badge badge-duration">25 Min</span>
+          </div>
+          <a href="../segments-de/05-recherche/recherche-kochbuch.md" class="cta-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            Kochbuch öffnen
+          </a>
+        </div>
+      </div>
+      <p>Live-Demo und Übung: Ein 17-Minuten YouTube-Video in Sekunden zusammenfassen mit Gemini. Die Teilnehmer lernen, wie man Videos nicht mehr komplett schauen muss, sondern die KI die Essenz extrahieren lässt.</p>
+
+      <p><strong>Anwendungsbeispiel:</strong> "Ich habe keine Lust, dieses 17-Minuten-Video über die Kreuzfahrtindustrie zu schauen. Gib mir die Essenz — und übersetze die 3 wichtigsten Punkte in konkrete Umsetzungen für meinen Job."</p>
+    </article>
+
+    <!-- ===== SEGMENT 05 ===== -->
+    <article class="card fade-in" id="seg05">
+      <div class="card-header">
+        <span class="segment-number">05</span>
+        <div class="card-header-text">
+          <h3>NotebookLM: Dokument als Podcast</h3>
+          <div class="card-badges">
+            <span class="badge badge-exercise">Übung</span>
+            <span class="badge badge-duration">15 Min</span>
+          </div>
+          <a href="../segments-de/06-notebooklm/notebooklm-kochbuch.md" class="cta-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            Kochbuch öffnen
+          </a>
+        </div>
+      </div>
+      <p>Google NotebookLM nimmt Dokumente, Webseiten und YouTube-Links als Quellen und erstellt daraus Zusammenfassungen, Podcasts, Flashcards und Infografiken. Der geschlossene Kontext bedeutet: Die KI zieht ihr Wissen nur aus den Quellen, die man ihr gibt — weniger Halluzinationen.</p>
+
+      <p><strong>Live-Beispiel:</strong> Das Buch "Wolf und Bär" von Andrea — alle Podcastfolgen hochgeladen, Zusammenfassung generiert, als Podcast angehört. Andrea musste das Buch nicht komplett durchlesen.</p>
+
+      <h4>Anwendungsideen</h4>
+      <ul>
+        <li>Pro Fachthema ein Notebook anlegen</li>
+        <li>Quellen über Zeit sammeln (Links, PDFs, YouTube)</li>
+        <li>Podcast generieren zum Pendeln</li>
+        <li>Flashcards für Prüfungsvorbereitung</li>
+      </ul>
+
+      <div class="pull-quote">
+        <p>NotebookLM — aus irgendeinem Grund ein Tool, das gut wie niemand kennt und benutzt.</p>
+      </div>
+    </article>
+
+    <!-- ===== SEGMENT 06 ===== -->
+    <article class="card fade-in" id="seg06">
+      <div class="card-header">
+        <span class="segment-number">06</span>
+        <div class="card-header-text">
+          <h3>Second Brain (Demo)</h3>
+          <div class="card-badges">
+            <span class="badge badge-demo">Demo</span>
+            <span class="badge badge-duration">10 Min</span>
+          </div>
+          <a href="../segments-de/03-second-brain/second-brain-kochbuch.md" class="cta-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            Kochbuch öffnen
+          </a>
+        </div>
+      </div>
+      <p>Ein Second Brain ist eine persönliche Wissensdatenbank, die von KI verwaltet wird. Claude (als einziges Modell) kann in eine Notion-Datenbank schreiben — nicht nur lesen.</p>
+
+      <h4>So funktioniert es</h4>
+      <ol class="steps-list">
+        <li>Ideen per Chat an Claude schicken</li>
+        <li>Claude klassifiziert, taggt und schreibt in die Notion-Datenbank</li>
+        <li>Später Claude fragen: "Was sind meine Hauptthemen der letzten 2 Wochen?"</li>
+        <li>Claude liest die Datenbank und erstellt Muster-Analysen</li>
+      </ol>
+
+      <p><strong>Vereinfachte Version für Andrea:</strong> Sprachnotizen und Fotos per Telegram an eine KI schicken, die automatisch klassifiziert und in eine Datenbank schreibt. Business-Ideen, Gedanken, Fotos — alles wird sortiert und durchsuchbar.</p>
+    </article>
+
+    <!-- ===== SEGMENT 07 ===== -->
+    <article class="card fade-in" id="seg07">
+      <div class="card-header">
+        <span class="segment-number">07</span>
+        <div class="card-header-text">
+          <h3>KI-Profilbild erstellen</h3>
+          <div class="card-badges">
+            <span class="badge badge-exercise">Übung</span>
+            <span class="badge badge-duration">20 Min</span>
+          </div>
+          <a href="../segments-de/07-profilbild/profilbild-kochbuch.md" class="cta-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            Kochbuch öffnen
+          </a>
+        </div>
+      </div>
+      <p>Mit Gemini ein persönliches KI-Profilbild generieren. Gemini (Imagen 3) ist mit Abstand am besten bei der Bildgenerierung.</p>
+    </article>
+
+    <!-- ===== SEGMENT 08 ===== -->
+    <article class="card fade-in" id="seg08">
+      <div class="card-header">
+        <span class="segment-number">08</span>
+        <div class="card-header-text">
+          <h3>Sicherheit &amp; Zusammenfassung</h3>
+          <div class="card-badges">
+            <span class="badge badge-lecture">Vortrag</span>
+            <span class="badge badge-duration">30 Min</span>
+          </div>
+          <a href="https://gamma.app/docs/4rw7ega2m20n46d" target="_blank" rel="noopener" class="slide-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            Folien öffnen
+          </a>
+        </div>
+      </div>
+
+      <h4>Was man KI nicht sagen sollte</h4>
+      <ul>
+        <li>Persönlich identifizierbare Daten (PIIs): Löhne, Krankengeschichten, Personaldaten</li>
+        <li>Nicht das Problem ist KI in der Cloud — das Problem ist das gesamte Sicherheitsdispositiv</li>
+      </ul>
+
+      <h4>Gratis vs. Bezahlt</h4>
+      <ul>
+        <li><strong>Bezahlt (20 CHF/Monat):</strong> Längere Chats, Tool-Zugänge, Tasks, Projekte</li>
+        <li><strong>Gratis:</strong> Eingeschränkte Nutzung, häufige Timeouts, keine Projekte</li>
+      </ul>
+
+      <h4>Passwort-Sicherheit</h4>
+      <ul>
+        <li>Jeder Service braucht ein einzigartiges, automatisch generiertes Passwort</li>
+        <li>2-Faktor-Authentifizierung überall wo möglich</li>
+        <li>Passwort-Manager nutzen (Apple Keychain für Apple-only, sonst dedizierter Manager)</li>
+        <li>Colonial Pipeline Hack: Gesamte Ostküsten-Ölversorgung lahmgelegt — Ursache: Passwort "123" auf einem Steuerungs-PC</li>
+      </ul>
+
+      <h4>KI im regulierten Umfeld</h4>
+      <ul>
+        <li>Kein Unternehmen ist zu klein oder zu reguliert für KI</li>
+        <li>Cloud-Dienste von Microsoft/Google sind sicherer als lokale Systeme kleiner Firmen</li>
+        <li>Für sensible Branchen: Gehostete KI-Lösungen in der Schweiz/EU (z.B. Chatbot-Lösungen für Gemeinden)</li>
+        <li>"Dein Feind ist nicht Donald Trump — dein Feind ist ein ärgerlicher Mitarbeiter"</li>
+      </ul>
+
+      <div class="pull-quote">
+        <p>Dein Feind ist nicht Donald Trump — dein Feind ist ein ärgerlicher Mitarbeiter.</p>
+      </div>
+
+      <h4>Daten</h4>
+      <div class="data-callout">
+        <div class="data-point">
+          <span class="number">123</span>
+          <span class="label">Das Passwort, das die<br>US-Ostküste lahmlegte</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== EXERCISES ===== -->
+  <section class="section fade-in" id="exercises">
+    <h2>Alle Übungen</h2>
+    <div class="exercise-grid">
+      <div class="exercise-card">
+        <span class="time-badge">30 Min</span>
+        <h4>Dein KI-Profil erstellen</h4>
+        <p>Die KI interviewt dich mit 10 Fragen und erstellt ein persönliches Profil für Claude und ChatGPT.</p>
+        <a href="../segments-de/02-schreibstil-uebung/ki-profil-kochbuch.md" class="cta-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          Kochbuch öffnen
+        </a>
+      </div>
+
+      <div class="exercise-card">
+        <span class="time-badge">25 Min</span>
+        <h4>YouTube-Video zusammenfassen</h4>
+        <p>Ein YouTube-Video in Sekunden zusammenfassen mit Gemini — nie wieder lange Videos komplett schauen.</p>
+        <a href="../segments-de/05-recherche/recherche-kochbuch.md" class="cta-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          Kochbuch öffnen
+        </a>
+      </div>
+
+      <div class="exercise-card">
+        <span class="time-badge">15 Min</span>
+        <h4>Dokument als Podcast (NotebookLM)</h4>
+        <p>Dokumente, PDFs und YouTube-Links als Podcast anhören mit NotebookLM.</p>
+        <a href="../segments-de/06-notebooklm/notebooklm-kochbuch.md" class="cta-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          Kochbuch öffnen
+        </a>
+      </div>
+
+      <div class="exercise-card">
+        <span class="time-badge">Demo</span>
+        <h4>Second Brain aufbauen</h4>
+        <p>Persönliche Wissensdatenbank mit Claude und Notion — automatische Wissenserfassung.</p>
+        <a href="../segments-de/03-second-brain/second-brain-kochbuch.md" class="cta-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          Kochbuch öffnen
+        </a>
+      </div>
+
+      <div class="exercise-card">
+        <span class="time-badge">20 Min</span>
+        <h4>KI-Profilbild erstellen</h4>
+        <p>Mit Gemini ein persönliches KI-Profilbild generieren — Imagen 3 ist unschlagbar bei Bildern.</p>
+        <a href="../segments-de/07-profilbild/profilbild-kochbuch.md" class="cta-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          Kochbuch öffnen
+        </a>
+      </div>
+
+      <div class="exercise-card">
+        <span class="time-badge">Bonus</span>
+        <h4>KI-Avatar mit HeyGen</h4>
+        <p>Video-Avatare erstellen mit HeyGen — dein digitaler Zwilling spricht für dich.</p>
+        <a href="../segments-de/08-heygen-avatar/avatar-kochbuch.md" class="cta-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          Kochbuch öffnen
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== TOOLS ===== -->
+  <section class="section fade-in" id="tools">
+    <h2>Tools-Übersicht</h2>
+    <div class="tool-grid">
+      <div class="tool-card">
+        <h4>Claude</h4>
+        <p>Schreiben, E-Mails, Tools, Datenbanken</p>
+        <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai &rarr;</a>
+      </div>
+
+      <div class="tool-card">
+        <h4>ChatGPT</h4>
+        <p>Schreiben, Recherche, Planung</p>
+        <a href="https://chatgpt.com" target="_blank" rel="noopener">chatgpt.com &rarr;</a>
+      </div>
+
+      <div class="tool-card">
+        <h4>Gemini</h4>
+        <p>Bilder erstellen, YouTube zusammenfassen</p>
+        <a href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com &rarr;</a>
+      </div>
+
+      <div class="tool-card">
+        <h4>Perplexity</h4>
+        <p>Recherche mit Quellenangaben</p>
+        <a href="https://perplexity.ai" target="_blank" rel="noopener">perplexity.ai &rarr;</a>
+      </div>
+
+      <div class="tool-card">
+        <h4>NotebookLM</h4>
+        <p>Podcasts aus Dokumenten</p>
+        <a href="https://notebooklm.google.com" target="_blank" rel="noopener">notebooklm.google.com &rarr;</a>
+      </div>
+
+      <div class="tool-card">
+        <h4>HeyGen</h4>
+        <p>Video-Avatare</p>
+        <a href="https://heygen.com" target="_blank" rel="noopener">heygen.com &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== QUOTES ===== -->
+  <section class="section fade-in" id="quotes">
+    <h2>Beste Zitate des Tages</h2>
+
+    <div class="key-quote-block">
+      <p>Wenn es sich anfühlt, dass alles unter Kontrolle ist, fährst du nicht schnell genug.</p>
+    </div>
+
+    <div class="key-quote-block">
+      <p>KI ist nicht deterministisch — die gleiche Frage gibt fünf verschiedene Antworten.</p>
+    </div>
+
+    <div class="key-quote-block">
+      <p>Militärische Anweisungen funktionieren sehr gut: ausführen, kommandieren, kontrollieren, korrigieren.</p>
+    </div>
+
+    <div class="key-quote-block">
+      <p>Kritisches Denken ist die wichtigste Fähigkeit im Jahr 2026.</p>
+    </div>
+
+    <div class="key-quote-block">
+      <p>Der Trick ist: Wie filterst du aus dem gigantischen Lärm die richtigen Sachen raus?</p>
+    </div>
+
+    <div class="key-quote-block">
+      <p>NotebookLM — aus irgendeinem Grund ein Tool, das gut wie niemand kennt.</p>
+    </div>
+
+    <div class="key-quote-block">
+      <p>Dein Feind ist nicht Donald Trump — dein Feind ist ein ärgerlicher Mitarbeiter.</p>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p style="font-family: 'Inter', sans-serif; font-size: 1.2rem; color: #ffffff; margin-bottom: 0.25rem;">Chicks &amp; AI</p>
+  <p>Workshop-Recap &mdash; 14. Februar 2026</p>
+  <div class="footer-divider"></div>
+  <p>
+    Repository: <a href="../../" rel="noopener">GitHub Repo</a>
+  </p>
+  <p style="font-size: 0.8rem; margin-top: 1rem; color: rgba(255,255,255,0.35);">
+    Recap generiert aus dem Workshop-Transkript mit Claude Opus 4.6
+  </p>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  // ===== Scroll-based fade-in with IntersectionObserver =====
+  // Progressive enhancement: content is visible by default.
+  // We add .js-ready to <html> only when IntersectionObserver is available,
+  // which activates the CSS that hides .fade-in elements before they animate in.
+  // If IntersectionObserver is missing (old browsers), content stays fully visible.
+  (function() {
+    if (!('IntersectionObserver' in window)) return; // content stays visible
+
+    // Signal to CSS that JS animation is ready
+    document.documentElement.classList.add('js-ready');
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.05,
+      rootMargin: '0px 0px -30px 0px'
+    });
+
+    document.querySelectorAll('.fade-in').forEach(function(el) {
+      observer.observe(el);
+    });
+
+    // Safety net: if any .fade-in element is still hidden after 4 seconds
+    // (e.g. observer failed silently, viewport edge case), force them visible.
+    setTimeout(function() {
+      document.querySelectorAll('.fade-in:not(.visible)').forEach(function(el) {
+        el.classList.add('visible');
+      });
+    }, 4000);
+  })();
+
+  // ===== Nav shadow on scroll =====
+  (function() {
+    var nav = document.getElementById('navbar');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 20) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  })();
+
+  // ===== Mobile nav toggle =====
+  (function() {
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', function() {
+      toggle.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+
+    // Close menu when a link is clicked
+    links.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        toggle.classList.remove('open');
+        links.classList.remove('open');
+      });
+    });
+  })();
+
+  // ===== Smooth scroll for nav links (fallback for browsers without CSS smooth scroll) =====
+  (function() {
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        var targetId = this.getAttribute('href');
+        var target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          var offset = 70; // nav height
+          var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
