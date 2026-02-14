@@ -10,7 +10,7 @@
 ## Workshop-Recap
 
 Strukturierte Zusammenfassung des Tages mit allen Themen, Zitaten und Links:
-[Recap (HTML)](./recap/index.html) · [Recap (Markdown)](./recap/index.md)
+[**Recap ansehen**](https://thwinter-ch.github.io/ai-lectures/2026_02_14_Chicks_AI/recap/index.html) · [Markdown-Version](./recap/index.md)
 
 ---
 
