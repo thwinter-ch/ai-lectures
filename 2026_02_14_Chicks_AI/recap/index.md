@@ -1,8 +1,10 @@
-# Chicks & AI — Workshop-Recap
+# 🐣 Chicks & AI — Workshop-Recap
+
+[GitHub Repository](https://github.com/thwinter-ch/ai-lectures/tree/master/2026_02_14_Chicks_AI)
 
 **Datum:** Samstag, 14. Februar 2026
 **Zeit:** 10:00–15:15
-**Teilnehmer:** Gabi, Sandra, Susi, Andrea, Marcello (+ Thomas & Hugo)
+**Teilnehmer:** Gabi, Sandra, Susi, Andrea, Marcello (+ Thomas ⛄ & Hugo 🦛)
 **Sprache:** Deutsch
 
 ---
@@ -44,12 +46,12 @@ Ein lockerer Tagesworkshop für Menschen ohne technischen Hintergrund, die KI im
 
 **Modell-Matrix:**
 
-| Modell | Stärke | Schwäche |
-|--------|--------|----------|
-| Claude | Tools (E-Mail schreiben, Datenbanken) | — |
-| ChatGPT | Scheduling, Planung, breite Nutzung | Tools anbinden, faul bei Anweisungen |
-| Gemini | Bilder generieren, YouTube zusammenfassen | — |
-| Perplexity | Quellenbasierte Recherche | Wenig eigenes Wissen, alles aus Suche |
+| Modell | Stärke |
+|--------|--------|
+| Claude | Tools (E-Mail schreiben, Datenbanken anbinden) |
+| ChatGPT | Schweizer Taschenmesser — kann ein bisschen alles, aber nichts dramatisch besser als andere |
+| Gemini | Bilder generieren, YouTube zusammenfassen |
+| Perplexity | Quellenbasierte Recherche — jede Antwort mit sauberen Quellenangaben |
 
 **3 Live-Demos:**
 
@@ -57,7 +59,7 @@ Ein lockerer Tagesworkshop für Menschen ohne technischen Hintergrund, die KI im
 2. **Gemini + YouTube** — 17-Minuten-Video über die Kreuzfahrtindustrie in 30 Sekunden zusammengefasst, mit Gesundheitsbranche-Perspektive
 3. **Claude + Gmail** — E-Mail lesen, beantworten und direkt versenden — Hugo demonstriert, wie man die KI "zwingt", ihre Tools zu benutzen
 
-> *"Wenn es sich anfühlt, dass alles unter Kontrolle ist, fährst du nicht schnell genug."* — Mario Andretti
+> *"Wenn es sich anfühlt, dass alles unter Kontrolle ist, fährst du nicht schnell genug."* — Mario Andretti, Formel-1-Weltmeister 1978
 
 ---
 
@@ -94,8 +96,8 @@ Warum mehr Daten nicht automatisch zu besseren Entscheidungen führen. Von Guten
 
 - **Miller's Law (7±2)** — Das Arbeitsgedächtnis kann nur 7 (plus/minus 2) Elemente gleichzeitig halten. Diese biologische Grenze hat sich seit der Steinzeit nicht verändert.
 - **Israelische Richter-Studie** — Die Wahrscheinlichkeit, dass ein Richter eine Bewährungsstrafe ausspricht, liegt morgens bei 65% und sinkt vor dem Mittagessen auf faktisch 0%. Kognitive Ermüdung ist real und messbar.
-- **Push → Pull** — In der alten Welt war Zugang zu Information das Privileg. Heute ist die Fähigkeit, aus dem Lärm das Signal zu filtern, der entscheidende Vorteil.
-- **Know-how-Halbwertszeit** — Wissen hat heute eine Halbwertszeit von 6 Monaten (früher 10 Jahre). Jeder Arzt ohne Dauerfortbildung ist ein "potentieller Verbrecher" gegenüber seinen Patienten.
+- **Signal-to-Noise Ratio** — In der alten Welt war Zugang zu Information das Privileg (Push). Heute ist die Fähigkeit, aus dem Lärm das Signal zu filtern, der entscheidende Vorteil (Pull). Die Signal-to-Noise Ratio — das Verhältnis von nützlicher Information zu Rauschen — ist die zentrale Herausforderung.
+- **Know-how-Halbwertszeit** — Medizinisches Wissen hat laut Harvard Medical School eine Halbwertszeit von ca. 18–24 Monaten. Klinische Forschungsergebnisse veralten im Schnitt nach 5,5 Jahren (BMJ 2023). Jeder Arzt ohne Dauerfortbildung riskiert, mit veraltetem Wissen zu behandeln.
 
 > *"Der Trick ist: Wie filterst du aus dem gigantischen Lärm die richtigen Sachen raus?"*
 
@@ -160,8 +162,9 @@ Mit Gemini ein persönliches KI-Profilbild generieren. Gemini (Imagen 3) ist mit
 [Folien](https://gamma.app/docs/4rw7ega2m20n46d)
 
 **Was man KI nicht sagen sollte:**
+- Alles, was bei einer gerichtlichen Vorladung (Subpoena) problematisch wäre — Chat-Verläufe bei Cloud-Anbietern können von Behörden angefordert werden
 - Persönlich identifizierbare Daten (PIIs): Löhne, Krankengeschichten, Personaldaten
-- Nicht das Problem ist KI in der Cloud — das Problem ist das gesamte Sicherheitsdispositiv
+- Geschäftsgeheimnisse, die man nicht in einer E-Mail an einen Dritten schicken würde
 
 **Gratis vs. Bezahlt:**
 - Bezahlt (20 CHF/Monat): Längere Chats, Tool-Zugänge, Tasks, Projekte
@@ -171,13 +174,12 @@ Mit Gemini ein persönliches KI-Profilbild generieren. Gemini (Imagen 3) ist mit
 - Jeder Service braucht ein einzigartiges, automatisch generiertes Passwort
 - 2-Faktor-Authentifizierung überall wo möglich
 - Passwort-Manager nutzen (Apple Keychain für Apple-only, sonst dedizierter Manager)
-- Colonial Pipeline Hack: Gesamte Ostküsten-Ölversorgung lahmgelegt — Ursache: Passwort "123" auf einem Steuerungs-PC
+- Colonial Pipeline Hack (2021): Ein wiederverwendetes Passwort ohne 2-Faktor-Authentifizierung auf einem alten VPN-Zugang legte die Ölversorgung der gesamten US-Ostküste lahm. Kein Hightech-Angriff — einfach schlechte Passwort-Hygiene.
 
-**KI im regulierten Umfeld:**
-- Kein Unternehmen ist zu klein oder zu reguliert für KI
-- Cloud-Dienste von Microsoft/Google sind sicherer als lokale Systeme kleiner Firmen
-- Für sensible Branchen: Gehostete KI-Lösungen in der Schweiz/EU (z.B. Chatbot-Lösungen für Gemeinden)
-- "Dein Feind ist nicht Donald Trump — dein Feind ist ein ärgerlicher Mitarbeiter"
+**Das eigentliche Sicherheitsproblem:**
+- Nicht die Cloud-Anbieter sind das Risiko — Microsoft und Google investieren Milliarden in Sicherheit, die kein KMU je erreicht
+- Das Problem ist die eigene Infrastruktur: schwache Passwörter, fehlende 2FA, frustrierte Mitarbeiter mit Adminrechten
+- "Dein Feind ist nicht der Cloud-Anbieter — dein Feind ist ein ärgerlicher Mitarbeiter, der deine IT sabotiert"
 
 > *"Kritisches Denken ist die wichtigste Fähigkeit im Jahr 2026."*
 
@@ -199,7 +201,7 @@ Mit Gemini ein persönliches KI-Profilbild generieren. Gemini (Imagen 3) ist mit
 ## Beste Zitate des Tages
 
 > *"Wenn es sich anfühlt, dass alles unter Kontrolle ist, fährst du nicht schnell genug."*
-> — Mario Andretti (zitiert von Thomas)
+> — Mario Andretti, Formel-1-Weltmeister 1978
 
 > *"KI ist nicht deterministisch — die gleiche Frage gibt fünf verschiedene Antworten."*
 
@@ -211,7 +213,7 @@ Mit Gemini ein persönliches KI-Profilbild generieren. Gemini (Imagen 3) ist mit
 
 > *"NotebookLM — aus irgendeinem Grund ein Tool, das gut wie niemand kennt."*
 
-> *"Dein Feind ist nicht Donald Trump — dein Feind ist ein ärgerlicher Mitarbeiter."*
+> *"Dein Feind ist nicht der Cloud-Anbieter — dein Feind ist ein ärgerlicher Mitarbeiter."*
 
 ---
 
