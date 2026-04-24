@@ -26,4 +26,6 @@ Zwei Videos von **Nate B. Jones**, die beim Aufbau dieser Session als Input dien
 
 Dieses Repo wird bis zum 25. April laufend aktualisiert. Ich baue offen.
 
+**Folien:** [gamma.app/docs/49lh0epgvfuuwkz](https://gamma.app/docs/49lh0epgvfuuwkz)
+
 **Kontakt:** Thomas Winter — [linkedin.com/in/thwinter](https://www.linkedin.com/in/thwinter/)
